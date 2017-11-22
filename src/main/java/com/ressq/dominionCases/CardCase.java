@@ -44,9 +44,9 @@ public class CardCase {
 		List<MultiPointObject> translateAndDraw = new ArrayList<>();
 		
 		/////////
-		Rectangle backFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
-		backFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
-		translateAndDraw.add(backFoldUnder);
+		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
+		bottomFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
+		translateAndDraw.add(bottomFoldUnder);
 		
 		/////////
 		Rectangle bottom = new Rectangle(SHOULDER_HEIGHT, thickness);
@@ -56,6 +56,31 @@ public class CardCase {
 		CardBody mainCardBody = new CardBody(Card.WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		mainCardBody.applyTranslation(0, bottom.getHeight());
 		translateAndDraw.add(mainCardBody);
+		
+		/////////
+		Rectangle top = new Rectangle(SHOULDER_HEIGHT, thickness);
+		top.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight());
+		translateAndDraw.add(top);
+		
+		/////////
+		Rectangle topFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
+		topFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, bottom.getHeight() + mainCardBody.getHeight());
+		translateAndDraw.add(topFoldUnder);
+		
+		/////////
+		Rectangle back = new Rectangle(thickness, Card.WIDTH);
+		back.applyTranslation(-1 * thickness, bottom.getHeight());
+		translateAndDraw.add(back);
+		
+		/////////
+		Rectangle backFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, Card.WIDTH);
+		backFoldUnder.applyTranslation(-1 * back.getWidth() - backFoldUnder.getWidth(), bottom.getHeight());
+		translateAndDraw.add(backFoldUnder);
+		
+		/////////
+		CardBody upsideDownCardBody = new CardBody(Card.WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
+		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
+		translateAndDraw.add(upsideDownCardBody);
 		
 		translateAndDraw.forEach(mpo -> {
 			mpo.applyTranslation(centerX, centerY);
