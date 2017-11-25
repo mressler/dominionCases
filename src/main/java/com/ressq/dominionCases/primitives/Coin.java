@@ -8,12 +8,13 @@ import com.ressq.dominionCases.helpers.ContentStream;
 
 public class Coin implements Drawable {
 
+	private Point imageBottomLeft;
+	private double theta;
+	
 	private float width;
 	private float height;
 	
 	private PDImageXObject coinImage;
-	private Point imageBottomLeft;
-	private double theta;
 	
 	public Coin(PDImageXObject coinImage, float width, float height) {
 		this.coinImage = coinImage;

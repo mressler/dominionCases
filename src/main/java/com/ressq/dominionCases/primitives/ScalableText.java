@@ -8,6 +8,9 @@ import com.ressq.dominionCases.helpers.ContentStream;
 
 public class ScalableText implements Drawable {
 
+	public static int BBOX_HEIGHT_DIVISOR = 1700;
+	public static int STRING_WIDTH_DIVISOR = 1000;
+	
 	private Point bottomLeft;
 	private float theta;
 
@@ -15,7 +18,11 @@ public class ScalableText implements Drawable {
 	private PDFont font;
 	private int fontSize;
 	
-	public ScalableText(String text, PDFont font, float maxWidth, float maxHeight) {
+	public ScalableText(
+		String text, PDFont font, 
+		float maxWidth, float maxHeight,
+		TextAlignment alignment) 
+	{
 		bottomLeft = new Point(0, 0);
 		theta = 0;
 		this.text = text;
@@ -27,17 +34,19 @@ public class ScalableText implements Drawable {
 		}
 		
 		float height = getHeightForFontSize(fontSize);
-		bottomLeft.applyTranslation(0, (maxHeight - height) / 2);
+		
+		float xAlignment = alignment.getStartingX(maxWidth, getWidthForFontSize(fontSize));
+		
+		bottomLeft.applyTranslation(xAlignment, (maxHeight - height) / 2);
 	}
 	
 	private float getHeightForFontSize(int fontSize) {
-		return fontSize * (font.getFontDescriptor().getFontBoundingBox().getHeight() / 1700);
+		return fontSize * (font.getFontDescriptor().getFontBoundingBox().getHeight() / BBOX_HEIGHT_DIVISOR);
 	}
 	
-	@SuppressWarnings("unused")
 	private float getWidthForFontSize(int fontSize) {
 		try {
-			return fontSize * (font.getStringWidth(text) / 1000);
+			return fontSize * (font.getStringWidth(text) / STRING_WIDTH_DIVISOR);
 		} catch (IOException e) {
 			throw new RuntimeException("Error while calculating width", e);
 		}
@@ -45,14 +54,14 @@ public class ScalableText implements Drawable {
 	
 	private int getFontSizeToScaleToWidth(float width) {
 		try {
-			return (int) (width / (font.getStringWidth(text) / 1000));
+			return (int) (width / (font.getStringWidth(text) / STRING_WIDTH_DIVISOR));
 		} catch (IOException e) {
 			throw new RuntimeException("Error while calculating width", e);
 		}
 	}
 	
 	private int getFontSizeToScaleToHeight(float height) {
-		return (int) (height / (font.getFontDescriptor().getFontBoundingBox().getHeight() / 1700));
+		return (int) (height / (font.getFontDescriptor().getFontBoundingBox().getHeight() / BBOX_HEIGHT_DIVISOR));
 	}
 	
 	@Override

@@ -15,6 +15,8 @@ import com.ressq.dominionCases.helpers.ContentStream;
 import com.ressq.dominionCases.primitives.CardBody;
 import com.ressq.dominionCases.primitives.Drawable;
 import com.ressq.dominionCases.primitives.Rectangle;
+import com.ressq.dominionCases.primitives.ScalableText;
+import com.ressq.dominionCases.primitives.TextAlignment;
 import com.ressq.dominionCases.primitives.TopFlap;
 import com.ressq.dominionCases.primitives.Transformable;
 
@@ -26,6 +28,7 @@ public class CardCase implements Transformable {
 	public static final float FOLD_UNDER_WIDTH = inchesToPixels(0.5);
 	public static final float EXTERNAL_GLUE_WIDTH = inchesToPixels(0.3);
 	public static final float FLAP_HEIGHT = inchesToPixels(0.3);
+	public static final float TEXT_PADDING = 2.5f;
 	
 	private int cardCost;
 	private String cardName;
@@ -58,6 +61,17 @@ public class CardCase implements Transformable {
 		Rectangle top = new Rectangle(SHOULDER_HEIGHT, thickness);
 		top.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight());
 		translateAndDraw.add(top);
+
+		/////////
+		ScalableText topText = new ScalableText(
+			cardName, titleFont,
+			top.getWidth() - TEXT_PADDING * 2, 
+			top.getHeight() - TEXT_PADDING * 2,
+			TextAlignment.CENTER);
+		topText.applyTranslation(
+			TEXT_PADDING, 
+			bottom.getHeight() + mainCardBody.getHeight() + TEXT_PADDING);
+		translateAndDraw.add(topText);
 		
 		/////////
 		TopFlap topFlap = new TopFlap(

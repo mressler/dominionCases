@@ -1,5 +1,7 @@
 package com.ressq.dominionCases.primitives;
 
+import static com.ressq.dominionCases.CardCase.TEXT_PADDING;
+
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
@@ -7,7 +9,6 @@ import com.ressq.dominionCases.helpers.ContentStream;
 
 public class TopFlap extends MultiPointObject {
 
-	public static final float TEXT_PADDING = 2.5f;
 	public static final float IMAGE_PADDING = 1;
 	
 	private ScalableText title;
@@ -32,8 +33,9 @@ public class TopFlap extends MultiPointObject {
 		
 		title = new ScalableText(
 				cardName, titleFont, 
-				width - 2 * height - coinWidth - TEXT_PADDING,
-				height - 2 * TEXT_PADDING);
+				width - 2 * height - coinWidth - TEXT_PADDING, // Only 1x TEXT_PADDING because the last part is on a slant. Fine to creep in a bit
+				height - 2 * TEXT_PADDING,
+				TextAlignment.LEFT);
 		title.applyTranslation(
 				height + coinWidth + TEXT_PADDING, 
 				TEXT_PADDING);
