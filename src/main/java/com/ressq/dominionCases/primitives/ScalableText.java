@@ -6,7 +6,7 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.dominionCases.helpers.ContentStream;
 
-public class ScalableText implements Drawable, Transformable {
+public class ScalableText implements Drawable {
 
 	private Point bottomLeft;
 	private float theta;

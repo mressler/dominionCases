@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 import com.ressq.dominionCases.helpers.ContentStream;
 import com.ressq.dominionCases.helpers.MinMaxHolder;
 
-public abstract class MultiPointObject implements Transformable, Drawable {
+public abstract class MultiPointObject implements Drawable {
 
 	private List<Point> corners;
 	

@@ -31,7 +31,11 @@ public class App
 		
 		PDImageXObject coinImage = PDImageXObject.createFromFile("coin.png", masterDoc);
 		
-		CardCase cCase = new CardCase(250f, 400f, 10, coinImage, trajan);
+		CardCase cCase = new CardCase(
+				10,
+				3, "Village", "You know what to do",
+				coinImage, trajan);
+		cCase.applyTranslation(250f, 400f);
 		cCase.draw(cStream);
 		
 //		cStream.beginText();

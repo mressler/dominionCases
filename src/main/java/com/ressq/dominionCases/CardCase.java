@@ -1,5 +1,7 @@
 package com.ressq.dominionCases;
 
+import static com.ressq.dominionCases.Card.*;
+
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,52 +13,33 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.dominionCases.helpers.ContentStream;
 import com.ressq.dominionCases.primitives.CardBody;
-import com.ressq.dominionCases.primitives.MultiPointObject;
+import com.ressq.dominionCases.primitives.Drawable;
 import com.ressq.dominionCases.primitives.Rectangle;
 import com.ressq.dominionCases.primitives.TopFlap;
+import com.ressq.dominionCases.primitives.Transformable;
 
-public class CardCase {
+public class CardCase implements Transformable {
 
-	public static final float PEEK_HEIGHT = Card.HEIGHT - 20f;
-	public static final float SHOULDER_SIZE = 40f;
+	public static final float PEEK_HEIGHT = HEIGHT;
+	public static final float SHOULDER_SIZE = inchesToPixels(0.4);
 	public static final float SHOULDER_HEIGHT = PEEK_HEIGHT - SHOULDER_SIZE;
-	public static final float FOLD_UNDER_WIDTH = 40f;
-	public static final float EXTERNAL_GLUE_WIDTH = 20f;
-	public static final float FLAP_HEIGHT = 25f;
-	
-	private float centerX;
-	private float centerY;
-	private float rotationDegrees;
+	public static final float FOLD_UNDER_WIDTH = inchesToPixels(0.5);
+	public static final float EXTERNAL_GLUE_WIDTH = inchesToPixels(0.3);
+	public static final float FLAP_HEIGHT = inchesToPixels(0.3);
 	
 	private int cardCost;
 	private String cardName;
-	private int cardCount;
 	private String description;
 	
-	private PDImageXObject coinImage;
-	private PDFont titleFont;
+	List<Drawable> translateAndDraw;
 	
 	public CardCase(
-			float centerX, float centerY, 
-			int cardCount, 
+			int cardCount,
+			int cardCost, String cardName, String description,
 			PDImageXObject coinImage, PDFont titleFont) 
 	{
-		this.centerX = centerX;
-		this.centerY = centerY;
-		this.cardCount = cardCount;
-		this.coinImage = coinImage;
-		
-		this.titleFont = titleFont;
-	}
-	
-	public void draw(PDPageContentStream cStream) throws IOException {
-		cStream.setLineWidth(1f);
-		cStream.setStrokingColor(Color.BLACK);
-		
-		float thickness = Card.getThicknessFor(cardCount);
-		ContentStream drawStream = new ContentStream(cStream);
-		List<MultiPointObject> translateAndDraw = new ArrayList<>();
-		
+		float thickness = getThicknessFor(cardCount);
+		translateAndDraw = new ArrayList<>();
 		/////////
 		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		bottomFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
@@ -67,7 +50,7 @@ public class CardCase {
 		translateAndDraw.add(bottom);
 		
 		/////////
-		CardBody mainCardBody = new CardBody(Card.WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
+		CardBody mainCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		mainCardBody.applyTranslation(0, bottom.getHeight());
 		translateAndDraw.add(mainCardBody);
 		
@@ -77,7 +60,10 @@ public class CardCase {
 		translateAndDraw.add(top);
 		
 		/////////
-		TopFlap topFlap = new TopFlap(SHOULDER_HEIGHT, FLAP_HEIGHT, coinImage, titleFont);
+		TopFlap topFlap = new TopFlap(
+			SHOULDER_HEIGHT, FLAP_HEIGHT,
+			cardCost, cardName,
+			coinImage, titleFont);
 		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
 		translateAndDraw.add(topFlap);
 		
@@ -87,30 +73,53 @@ public class CardCase {
 		translateAndDraw.add(topFoldUnder);
 		
 		/////////
-		Rectangle back = new Rectangle(thickness, Card.WIDTH);
+		Rectangle back = new Rectangle(thickness, WIDTH);
 		back.applyTranslation(-1 * thickness, bottom.getHeight());
 		translateAndDraw.add(back);
 		
 		/////////
-		Rectangle backFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, Card.WIDTH);
-		backFoldUnder.applyTranslation(-1 * back.getWidth() - backFoldUnder.getWidth(), bottom.getHeight());
-		translateAndDraw.add(backFoldUnder);
+		float glueWidth = Math.max(EXTERNAL_GLUE_WIDTH, FOLD_UNDER_WIDTH - thickness);
+		Rectangle externalGlueArea = new Rectangle(glueWidth, WIDTH);
+		externalGlueArea.applyTranslation(-1 * back.getWidth() - externalGlueArea.getWidth(), bottom.getHeight());
+		translateAndDraw.add(externalGlueArea);
 		
 		/////////
-		CardBody upsideDownCardBody = new CardBody(Card.WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
+		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
 		translateAndDraw.add(upsideDownCardBody);
 		
 		/////////
-		TopFlap upsideDownTopFlap = new TopFlap(SHOULDER_HEIGHT, FLAP_HEIGHT, coinImage, titleFont);
+		TopFlap upsideDownTopFlap = new TopFlap(
+				SHOULDER_HEIGHT, FLAP_HEIGHT,
+				cardCost, cardName,
+				coinImage, titleFont);
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		translateAndDraw.add(upsideDownTopFlap);
+	}
+	
+	public void draw(PDPageContentStream cStream) throws IOException {
+		cStream.setLineWidth(1f);
+		cStream.setStrokingColor(Color.BLACK);
+		
+		ContentStream drawStream = new ContentStream(cStream);
 		
 		translateAndDraw.forEach(mpo -> {
-			mpo.applyTranslation(centerX, centerY);
 			mpo.draw(drawStream);
 		});
-		
+	}
+
+	@Override
+	public void applyRotation(double theta) {
+		translateAndDraw.forEach(d -> {
+			d.applyRotation(theta);
+		});
+	}
+
+	@Override
+	public void applyTranslation(float deltaX, float deltaY) {
+		translateAndDraw.forEach(d -> {
+			d.applyTranslation(deltaX, deltaY);
+		});
 	}
 }
