@@ -1,13 +1,15 @@
 package com.ressq.dominionCases;
 
-import java.awt.Color;
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 /**
  * Hello world!
@@ -22,11 +24,14 @@ public class App
 		PDPage helloPage = new PDPage();
 		masterDoc.addPage(helloPage);
 		
-		PDFont font = PDType1Font.HELVETICA;
+		PDFont trajan = PDType0Font.load(masterDoc, new File("Trajan Pro Regular.ttf"));
+		PDFont times = PDType1Font.TIMES_ROMAN;
 		
 		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
 		
-		CardCase cCase = new CardCase(250f, 400f, 10);
+		PDImageXObject coinImage = PDImageXObject.createFromFile("coin.png", masterDoc);
+		
+		CardCase cCase = new CardCase(250f, 400f, 10, coinImage, trajan);
 		cCase.draw(cStream);
 		
 //		cStream.beginText();

@@ -1,6 +1,5 @@
 package com.ressq.dominionCases.primitives;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -10,16 +9,26 @@ import com.ressq.dominionCases.helpers.MinMaxHolder;
 
 public abstract class MultiPointObject implements Transformable, Drawable {
 
-	protected List<Point> corners;
+	private List<Point> corners;
 	
 	protected MultiPointObject(int initialCapacity) {
 		corners = new ArrayList<Point>(initialCapacity);
 	}
 	
+	protected void add(Point somePoint) {
+		corners.add(somePoint);
+	}
+	
+	protected void addPoint(float x, float y) {
+		corners.add(new Point(x, y));
+	}
+	
+	@Override
 	public void applyRotation(double theta) {
 		corners.stream().forEach(p -> p.applyRotation(theta));
 	}
 
+	@Override
 	public void applyTranslation(float deltaX, float deltaY) {
 		corners.stream().forEach(p -> p.applyTranslation(deltaX, deltaY));
 	}
@@ -34,11 +43,7 @@ public abstract class MultiPointObject implements Transformable, Drawable {
 		allPoints = allPoints.skip(1);
 		allPoints.forEach(cStream::lineTo);
 		
-		try {
-			cStream.closeAndStroke();
-		} catch (IOException e) {
-			throw new RuntimeException("Error while drawing MultiPointObject", e);
-		}
+		cStream.closeAndStroke();
 	}
 	
 	public float getHeight() {

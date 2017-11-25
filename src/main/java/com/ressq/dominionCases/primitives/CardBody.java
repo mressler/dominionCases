@@ -4,11 +4,11 @@ public class CardBody extends MultiPointObject {
 
 	public CardBody(float height, float shoulderNotch, float overallWidth) {
 		super(6);
-		corners.add(new Point(0, 0));
-		corners.add(new Point(0, height));
-		corners.add(new Point(overallWidth - shoulderNotch, height));
-		corners.add(new Point(overallWidth, height - shoulderNotch));
-		corners.add(new Point(overallWidth, shoulderNotch));
-		corners.add(new Point(overallWidth - shoulderNotch, 0));
+		addPoint(0, 0);
+		addPoint(0, height);
+		addPoint(overallWidth - shoulderNotch, height);
+		addPoint(overallWidth, height - shoulderNotch);
+		addPoint(overallWidth, shoulderNotch);
+		addPoint(overallWidth - shoulderNotch, 0);
 	}
 }

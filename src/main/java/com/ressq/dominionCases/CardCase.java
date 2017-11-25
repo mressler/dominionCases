@@ -6,11 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.dominionCases.helpers.ContentStream;
 import com.ressq.dominionCases.primitives.CardBody;
 import com.ressq.dominionCases.primitives.MultiPointObject;
 import com.ressq.dominionCases.primitives.Rectangle;
+import com.ressq.dominionCases.primitives.TopFlap;
 
 public class CardCase {
 
@@ -19,6 +22,7 @@ public class CardCase {
 	public static final float SHOULDER_HEIGHT = PEEK_HEIGHT - SHOULDER_SIZE;
 	public static final float FOLD_UNDER_WIDTH = 40f;
 	public static final float EXTERNAL_GLUE_WIDTH = 20f;
+	public static final float FLAP_HEIGHT = 25f;
 	
 	private float centerX;
 	private float centerY;
@@ -29,10 +33,20 @@ public class CardCase {
 	private int cardCount;
 	private String description;
 	
-	public CardCase(float centerX, float centerY, int cardCount) {
+	private PDImageXObject coinImage;
+	private PDFont titleFont;
+	
+	public CardCase(
+			float centerX, float centerY, 
+			int cardCount, 
+			PDImageXObject coinImage, PDFont titleFont) 
+	{
 		this.centerX = centerX;
 		this.centerY = centerY;
 		this.cardCount = cardCount;
+		this.coinImage = coinImage;
+		
+		this.titleFont = titleFont;
 	}
 	
 	public void draw(PDPageContentStream cStream) throws IOException {
@@ -63,6 +77,11 @@ public class CardCase {
 		translateAndDraw.add(top);
 		
 		/////////
+		TopFlap topFlap = new TopFlap(SHOULDER_HEIGHT, FLAP_HEIGHT, coinImage, titleFont);
+		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
+		translateAndDraw.add(topFlap);
+		
+		/////////
 		Rectangle topFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		topFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, bottom.getHeight() + mainCardBody.getHeight());
 		translateAndDraw.add(topFoldUnder);
@@ -81,6 +100,12 @@ public class CardCase {
 		CardBody upsideDownCardBody = new CardBody(Card.WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
 		translateAndDraw.add(upsideDownCardBody);
+		
+		/////////
+		TopFlap upsideDownTopFlap = new TopFlap(SHOULDER_HEIGHT, FLAP_HEIGHT, coinImage, titleFont);
+		upsideDownTopFlap.applyRotation(Math.PI);
+		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
+		translateAndDraw.add(upsideDownTopFlap);
 		
 		translateAndDraw.forEach(mpo -> {
 			mpo.applyTranslation(centerX, centerY);
