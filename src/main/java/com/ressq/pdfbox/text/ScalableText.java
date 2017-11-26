@@ -1,6 +1,6 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.text;
 
-import static com.ressq.dominionCases.helpers.FontInfo.*;
+import static com.ressq.pdfbox.helpers.FontInfo.*;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 

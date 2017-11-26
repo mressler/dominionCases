@@ -1,11 +1,11 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.primitives;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import com.ressq.dominionCases.helpers.ContentStream;
-import com.ressq.dominionCases.helpers.MinMaxHolder;
+import com.ressq.helpers.MinMaxHolder;
+import com.ressq.pdfbox.helpers.ContentStream;
 
 public abstract class MultiPointObject implements Drawable {
 

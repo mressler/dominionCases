@@ -1,11 +1,15 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.dominionCases.shapes;
 
-import static com.ressq.dominionCases.CardCase.TEXT_PADDING;
+import static com.ressq.dominionCases.shapes.CardCase.TEXT_PADDING;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
-import com.ressq.dominionCases.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.primitives.Image;
+import com.ressq.pdfbox.primitives.MultiPointObject;
+import com.ressq.pdfbox.text.ScalableText;
+import com.ressq.pdfbox.text.TextAlignment;
 
 public class TopFlap extends MultiPointObject {
 

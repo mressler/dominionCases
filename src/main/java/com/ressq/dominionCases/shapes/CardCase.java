@@ -1,6 +1,6 @@
-package com.ressq.dominionCases;
+package com.ressq.dominionCases.shapes;
 
-import static com.ressq.dominionCases.Card.*;
+import static com.ressq.dominionCases.shapes.Card.*;
 
 import java.awt.Color;
 import java.io.IOException;
@@ -11,14 +11,12 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
-import com.ressq.dominionCases.helpers.ContentStream;
-import com.ressq.dominionCases.primitives.CardBody;
-import com.ressq.dominionCases.primitives.Drawable;
-import com.ressq.dominionCases.primitives.Rectangle;
-import com.ressq.dominionCases.primitives.ScalableText;
-import com.ressq.dominionCases.primitives.TextAlignment;
-import com.ressq.dominionCases.primitives.TopFlap;
-import com.ressq.dominionCases.primitives.Transformable;
+import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.primitives.Drawable;
+import com.ressq.pdfbox.primitives.Transformable;
+import com.ressq.pdfbox.shapes.Rectangle;
+import com.ressq.pdfbox.text.ScalableText;
+import com.ressq.pdfbox.text.TextAlignment;
 
 public class CardCase implements Transformable {
 

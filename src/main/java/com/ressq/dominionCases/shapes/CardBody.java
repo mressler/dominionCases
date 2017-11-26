@@ -1,4 +1,6 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.dominionCases.shapes;
+
+import com.ressq.pdfbox.primitives.MultiPointObject;
 
 public class CardBody extends MultiPointObject {
 

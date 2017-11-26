@@ -1,4 +1,6 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.shapes;
+
+import com.ressq.pdfbox.primitives.MultiPointObject;
 
 public class Rectangle extends MultiPointObject {
 	

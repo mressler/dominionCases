@@ -1,4 +1,4 @@
-package com.ressq.dominionCases.helpers;
+package com.ressq.pdfbox.helpers;
 
 import java.io.IOException;
 

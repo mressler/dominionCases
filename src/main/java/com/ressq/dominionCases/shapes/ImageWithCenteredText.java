@@ -1,9 +1,12 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.dominionCases.shapes;
 
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
-import com.ressq.dominionCases.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.primitives.Image;
+import com.ressq.pdfbox.text.BasicText;
+import com.ressq.pdfbox.text.TextAlignment;
 
 public class ImageWithCenteredText extends Image {
 

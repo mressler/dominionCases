@@ -11,6 +11,8 @@ import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import com.ressq.dominionCases.shapes.CardCase;
+
 /**
  * Hello world!
  *

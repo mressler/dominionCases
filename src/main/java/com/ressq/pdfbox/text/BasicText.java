@@ -1,9 +1,10 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.text;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
-import com.ressq.dominionCases.helpers.ContentStream;
-import com.ressq.dominionCases.helpers.FontInfo;
+import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.FontInfo;
+import com.ressq.pdfbox.primitives.BottomLeftAware;
 
 public class BasicText extends BottomLeftAware {
 

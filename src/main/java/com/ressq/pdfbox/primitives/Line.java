@@ -1,4 +1,4 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.primitives;
 
 public class Line extends MultiPointObject {
 

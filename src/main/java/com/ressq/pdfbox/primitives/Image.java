@@ -1,10 +1,10 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.primitives;
 
 import java.awt.geom.AffineTransform;
 
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
-import com.ressq.dominionCases.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.ContentStream;
 
 public class Image extends BottomLeftAware {
 	

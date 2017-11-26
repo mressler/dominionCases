@@ -1,4 +1,4 @@
-package com.ressq.dominionCases;
+package com.ressq.dominionCases.shapes;
 
 public class Card {
 

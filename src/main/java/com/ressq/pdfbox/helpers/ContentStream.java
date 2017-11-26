@@ -1,4 +1,4 @@
-package com.ressq.dominionCases.helpers;
+package com.ressq.pdfbox.helpers;
 
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.util.Matrix;
 
-import com.ressq.dominionCases.primitives.Point;
+import com.ressq.pdfbox.primitives.Point;
 
 public class ContentStream {
 

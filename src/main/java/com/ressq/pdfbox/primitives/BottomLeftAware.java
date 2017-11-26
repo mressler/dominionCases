@@ -1,6 +1,6 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.primitives;
 
-import com.ressq.dominionCases.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.ContentStream;
 
 public abstract class BottomLeftAware implements Drawable {
 

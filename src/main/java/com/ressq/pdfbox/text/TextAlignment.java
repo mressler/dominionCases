@@ -1,4 +1,4 @@
-package com.ressq.dominionCases.primitives;
+package com.ressq.pdfbox.text;
 
 public enum TextAlignment {
 
