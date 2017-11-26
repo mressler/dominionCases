@@ -1,41 +1,44 @@
 package com.ressq.dominionCases.shapes;
 
-import static com.ressq.dominionCases.shapes.CardCase.TEXT_PADDING;
+import static com.ressq.dominionCases.shapes.CardCase.*;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
-import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.primitives.Image;
 import com.ressq.pdfbox.primitives.MultiPointObject;
 import com.ressq.pdfbox.text.ScalableText;
 import com.ressq.pdfbox.text.TextAlignment;
 
-public class TopFlap extends MultiPointObject {
+public class TopFlap extends CompositeDrawable {
 
 	public static final float IMAGE_PADDING = 1;
 	
-	private ScalableText title;
-	private Image coin;
+	private MultiPointObject outline;
 	
 	public TopFlap(
 		float width, float height, 
 		Integer cardCost, String cardName, 
 		PDImageXObject coinImage, PDFont titleFont) 
 	{
-		super(4);
-		addPoint(0, 0);
-		addPoint(height, height);
-		addPoint(width - height, height);
-		addPoint(width, 0);
+		super();
+		
+		outline = new MultiPointObject(4);
+		outline.addPoint(0, 0);
+		outline.addPoint(height, height);
+		outline.addPoint(width - height, height);
+		outline.addPoint(width, 0);
+		add(outline);
 		
 		float coinWidth = height - IMAGE_PADDING * 2;
 		float coinHeight = coinWidth;
 		
-		coin = new ImageWithCenteredText(cardCost.toString(), coinImage, coinWidth, coinHeight);
+		Image coin = new ImageWithCenteredText(cardCost.toString(), coinImage, coinWidth, coinHeight);
 		coin.applyTranslation(height,  (height - coinHeight) / 2);
+		add(coin);
 		
-		title = new ScalableText(
+		ScalableText title = new ScalableText(
 				cardName, titleFont, 
 				width - 2 * height - coinWidth - TEXT_PADDING, // Only 1x TEXT_PADDING because the last part is on a slant. Fine to creep in a bit
 				height - 2 * TEXT_PADDING,
@@ -43,29 +46,16 @@ public class TopFlap extends MultiPointObject {
 		title.applyTranslation(
 				height + coinWidth + TEXT_PADDING, 
 				TEXT_PADDING);
-	}
-	
-	@Override
-	public void applyRotation(double theta) {
-		super.applyRotation(theta);
-		
-		title.applyRotation(theta);
-		coin.applyRotation(theta);
+		add(title);
 	}
 
 	@Override
-	public void applyTranslation(float deltaX, float deltaY) {
-		super.applyTranslation(deltaX, deltaY);
-		
-		title.applyTranslation(deltaX, deltaY);
-		coin.applyTranslation(deltaX, deltaY);
+	public float getHeight() {
+		return outline.getHeight();
 	}
 
 	@Override
-	public void draw(ContentStream cStream) {
-		super.draw(cStream);
-		
-		title.draw(cStream);
-		coin.draw(cStream);
+	public float getWidth() {
+		return outline.getWidth();
 	}
 }

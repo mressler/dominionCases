@@ -7,19 +7,19 @@ import java.util.stream.Stream;
 import com.ressq.helpers.MinMaxHolder;
 import com.ressq.pdfbox.helpers.ContentStream;
 
-public abstract class MultiPointObject implements Drawable {
+public class MultiPointObject implements Drawable {
 
 	private List<Point> corners;
 	
-	protected MultiPointObject(int initialCapacity) {
+	public MultiPointObject(int initialCapacity) {
 		corners = new ArrayList<Point>(initialCapacity);
 	}
 	
-	protected void add(Point somePoint) {
+	public void add(Point somePoint) {
 		corners.add(somePoint);
 	}
 	
-	protected void addPoint(float x, float y) {
+	public void addPoint(float x, float y) {
 		corners.add(new Point(x, y));
 	}
 	

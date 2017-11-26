@@ -28,4 +28,14 @@ public class Image extends BottomLeftAware {
 		cStream.drawImage(coinImage, imageTransform);
 	}
 
+	@Override
+	public float getHeight() {
+		return height;
+	}
+
+	@Override
+	public float getWidth() {
+		return width;
+	}
+
 }

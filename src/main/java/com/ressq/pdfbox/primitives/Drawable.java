@@ -6,4 +6,8 @@ public interface Drawable extends Transformable {
 
 	public void draw(ContentStream cStream);
 	
+	public float getHeight();
+	
+	public float getWidth();
+	
 }

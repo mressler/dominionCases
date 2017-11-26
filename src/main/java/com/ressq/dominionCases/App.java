@@ -1,5 +1,6 @@
 package com.ressq.dominionCases;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 
@@ -12,6 +13,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.dominionCases.shapes.CardCase;
+import com.ressq.pdfbox.helpers.ContentStream;
 
 /**
  * Hello world!
@@ -38,7 +40,13 @@ public class App
 				3, "Village", "You know what to do",
 				coinImage, trajan);
 		cCase.applyTranslation(250f, 400f);
-		cCase.draw(cStream);
+		
+
+		cStream.setLineWidth(1f);
+		cStream.setStrokingColor(Color.BLACK);
+		
+		ContentStream drawStream = new ContentStream(cStream);
+		cCase.draw(drawStream);
 		
 //		cStream.beginText();
 //		cStream.setFont(font, 22);
