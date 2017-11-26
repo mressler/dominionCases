@@ -12,11 +12,11 @@ public class TopFlap extends MultiPointObject {
 	public static final float IMAGE_PADDING = 1;
 	
 	private ScalableText title;
-	private Coin coin;
+	private Image coin;
 	
 	public TopFlap(
 		float width, float height, 
-		int cardCost, String cardName, 
+		Integer cardCost, String cardName, 
 		PDImageXObject coinImage, PDFont titleFont) 
 	{
 		super(4);
@@ -28,7 +28,7 @@ public class TopFlap extends MultiPointObject {
 		float coinWidth = height - IMAGE_PADDING * 2;
 		float coinHeight = coinWidth;
 		
-		coin = new Coin(coinImage, coinWidth, coinHeight);
+		coin = new ImageWithCenteredText(cardCost.toString(), coinImage, coinWidth, coinHeight);
 		coin.applyTranslation(height,  (height - coinHeight) / 2);
 		
 		title = new ScalableText(
