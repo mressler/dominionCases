@@ -99,6 +99,21 @@ public class CardCase extends CompositeDrawable {
 		add(upsideDownCardBody);
 		
 		/////////
+		Rectangle workableArea = new Rectangle(PEEK_HEIGHT - glueWidth, WIDTH - 2*SHOULDER_SIZE);
+		workableArea.applyTranslation(0, SHOULDER_SIZE);
+		workableArea.applyRotation(Math.PI);
+		workableArea.applyTranslation(PEEK_HEIGHT, 0);
+		add(workableArea);
+		
+//		MultiLineText secondaryText = new MultiLineText(
+//				mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
+//				PDType1Font.TIMES_ROMAN, 14, 7, 
+//				SHOULDER_HEIGHT, mainCardBody.getHeight());
+//		secondaryText.applyRotation(Math.PI);
+//		secondaryText.applyTranslation(secondaryText.getWidth(), 0);
+//		add(secondaryText);
+		
+		/////////
 		TopFlap upsideDownTopFlap = new TopFlap(
 				SHOULDER_HEIGHT, FLAP_HEIGHT,
 				cardCost, cardName,

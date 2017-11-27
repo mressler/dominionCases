@@ -15,6 +15,7 @@ public class MultiLineText extends CompositeDrawable {
 	private float width;
 	
 	private String remainingText;
+	private int usedFontSize;
 	
 	public MultiLineText(
 		String text, PDFont font, int preferredFontSize, int minFontSize,
@@ -24,28 +25,28 @@ public class MultiLineText extends CompositeDrawable {
 		this.width = width;
 		this.height = height;
 
-		int fontSize = preferredFontSize; // Do I not overflow at all?
+		usedFontSize = preferredFontSize; // Do I not overflow at all?
 		float fillFontSize = FontInfo.getFillFontSize(
 				font, text, 
 				width - 2*TEXT_PADDING, height - 2*TEXT_PADDING, 
 				LINE_SPACING);
 		if (fillFontSize < minFontSize) {
-			fontSize = (int) Math.floor(minFontSize); // Do I overflow a lot and need to get smushed
+			usedFontSize = (int) Math.floor(minFontSize); // Do I overflow a lot and need to get smushed
 		} else if (fillFontSize < preferredFontSize) {
-			fontSize = (int) Math.floor(fillFontSize); // Do I overflow a little and need to shrink?
+			usedFontSize = (int) Math.floor(fillFontSize); // Do I overflow a little and need to shrink?
 		}
 		
 		Point bottomLeft = new Point(0, 0);
-		float fontHeight = FontInfo.getHeightForFontSize(font, fontSize);
+		float fontHeight = FontInfo.getHeightForFontSize(font, usedFontSize);
 		bottomLeft.applyTranslation(TEXT_PADDING, height - fontHeight - TEXT_PADDING);
 		
 		int lastSplit = 0;
 		int splitIndex = 0;
 		do {
-			splitIndex = getSegmentationIndex(text, font, fontSize, lastSplit, width - 2*TEXT_PADDING);
+			splitIndex = getSegmentationIndex(text, font, usedFontSize, lastSplit, width - 2*TEXT_PADDING);
 			
 			// Split the line
-			BasicText oneLine = new BasicText(text.substring(lastSplit, splitIndex), font, fontSize);
+			BasicText oneLine = new BasicText(text.substring(lastSplit, splitIndex), font, usedFontSize);
 			oneLine.applyTranslation(bottomLeft.getX(), bottomLeft.getY());
 			add(oneLine);
 			
@@ -90,6 +91,14 @@ public class MultiLineText extends CompositeDrawable {
 	@Override
 	public float getWidth() {
 		return width;
+	}
+	
+	public String getRemainingText() {
+		return remainingText;
+	}
+	
+	public int getUsedFontSize() {
+		return usedFontSize;
 	}
 
 }
