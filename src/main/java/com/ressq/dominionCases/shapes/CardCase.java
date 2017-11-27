@@ -3,10 +3,12 @@ package com.ressq.dominionCases.shapes;
 import static com.ressq.dominionCases.shapes.Card.*;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.shapes.Rectangle;
+import com.ressq.pdfbox.text.MultiLineText;
 import com.ressq.pdfbox.text.ScalableText;
 import com.ressq.pdfbox.text.TextAlignment;
 
@@ -43,6 +45,13 @@ public class CardCase extends CompositeDrawable {
 		mainCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		mainCardBody.applyTranslation(0, bottom.getHeight());
 		add(mainCardBody);
+
+		/////////
+		MultiLineText mainText = new MultiLineText(
+				description, PDType1Font.TIMES_ROMAN, 14, 
+				mainCardBody.getWidth(), mainCardBody.getHeight());
+		mainText.applyTranslation(0, bottom.getHeight());
+		add(mainText);
 		
 		/////////
 		Rectangle top = new Rectangle(SHOULDER_HEIGHT, thickness);

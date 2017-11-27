@@ -8,31 +8,35 @@ import com.ressq.pdfbox.primitives.Point;
 
 public class MultiLineText extends CompositeDrawable {
 	
+	public static float TEXT_PADDING = 10f;
+	
 	private float height;
 	private float width;
 	
 	public MultiLineText(
 		String text, PDFont font, int fontSize,
-		Point bottomLeft, float width, float height) 
+		float width, float height) 
 	{
 		super();
 		this.width = width;
 		this.height = height;
 		
+		Point bottomLeft = new Point(0, 0);
 		float fontHeight = FontInfo.getHeightForFontSize(font, fontSize);
-		bottomLeft.applyTranslation(0, height);
+		bottomLeft.applyTranslation(TEXT_PADDING, height - fontHeight - TEXT_PADDING);
 		
-		int lastSplit = -1;
+		int lastSplit = 0;
 		int splitIndex = 0;
 		do {
-			bottomLeft.applyTranslation(0,  -1 * fontHeight); // Move to the new line
-			splitIndex = getSegmentationIndex(text, font, fontSize, lastSplit + 1, width); // Split the line, +1 to skip the last space
+			splitIndex = getSegmentationIndex(text, font, fontSize, lastSplit, width - 2*TEXT_PADDING);
 			
+			// Split the line
 			BasicText oneLine = new BasicText(text.substring(lastSplit, splitIndex), font, fontSize);
-			oneLine.applyTranslation(0, bottomLeft.getY());
+			oneLine.applyTranslation(bottomLeft.getX(), bottomLeft.getY());
 			add(oneLine);
 			
-			lastSplit = splitIndex;
+			lastSplit = splitIndex + 1; // +1 to skip the last space
+			bottomLeft.applyTranslation(0,  -1.5f * fontHeight); // Move to the new line
 		} while (splitIndex != text.length());
 	}
 	
@@ -46,7 +50,7 @@ public class MultiLineText extends CompositeDrawable {
 		
 		do {
 			candidateIndex = spaceIndex;
-			spaceIndex = text.indexOf(" ", candidateIndex);
+			spaceIndex = text.indexOf(" ", candidateIndex + 1);
 			if (spaceIndex == -1) {
 				return text.length();
 			}

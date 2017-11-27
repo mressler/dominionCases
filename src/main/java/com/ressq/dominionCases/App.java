@@ -9,7 +9,6 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.dominionCases.shapes.CardCase;
@@ -29,7 +28,6 @@ public class App
 		masterDoc.addPage(helloPage);
 		
 		PDFont trajan = PDType0Font.load(masterDoc, new File("Trajan Pro Regular.ttf"));
-		PDFont times = PDType1Font.TIMES_ROMAN;
 		
 		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
 		
@@ -37,7 +35,7 @@ public class App
 		
 		CardCase cCase = new CardCase(
 				10,
-				3, "Village", "You know what to do",
+				3, "Village", "You trash a card from your hand if you can, and then gain a card whether or not you trashed one. The gained card comes from the Supply and is put into your discard pile.",
 				coinImage, trajan);
 		cCase.applyTranslation(250f, 400f);
 		
