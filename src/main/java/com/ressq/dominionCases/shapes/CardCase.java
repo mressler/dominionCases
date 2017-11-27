@@ -48,7 +48,7 @@ public class CardCase extends CompositeDrawable {
 
 		/////////
 		MultiLineText mainText = new MultiLineText(
-				description, PDType1Font.TIMES_ROMAN, 14, 
+				description, PDType1Font.TIMES_ROMAN, 14, 7, 
 				mainCardBody.getWidth(), mainCardBody.getHeight());
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);

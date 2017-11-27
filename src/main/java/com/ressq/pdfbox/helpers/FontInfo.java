@@ -32,4 +32,26 @@ public class FontInfo {
 	public static int getFontSizeToScaleToHeight(PDFont font, float height) {
 		return (int) (height / (font.getFontDescriptor().getFontBoundingBox().getHeight() / BBOX_HEIGHT_DIVISOR));
 	}
+
+	// Total Area = w * h
+	// Line count = fontSize * fontWidth / width 
+	// Total Height Used = Line Count * fontHeight * lineSpacing * fontSize
+	// Percentage area used = totalHeight / height
+	// "Fill" font size = totalHeight = height
+	// height = (fontSize * fontWidth / width) * fontHeight * lineSpacing * fontSize
+	// height = fontSize^2 * fontWidth * fontHeight * lineSpacing / width
+	// (height * width) / (fontWidth * fontHeight * lineSpacing) = fontSize^2
+	public static float getFillFontSize(
+			PDFont font, String text, 
+			float width, float height, float lineSpacing) 
+	{
+		try {
+			float fontWidth = (font.getStringWidth(text) / STRING_WIDTH_DIVISOR);
+			float fontHeight = (font.getFontDescriptor().getFontBoundingBox().getHeight() / BBOX_HEIGHT_DIVISOR);
+			
+			return (float) Math.sqrt(height * width / (fontWidth * fontHeight * lineSpacing));
+		} catch (IOException e) {
+			throw new RuntimeException("Error while calculating width", e);
+		}
+	}
 }

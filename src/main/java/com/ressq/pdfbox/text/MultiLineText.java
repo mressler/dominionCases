@@ -9,17 +9,31 @@ import com.ressq.pdfbox.primitives.Point;
 public class MultiLineText extends CompositeDrawable {
 	
 	public static float TEXT_PADDING = 10f;
+	public static float LINE_SPACING = 1.5f; // Multiplier for height
 	
 	private float height;
 	private float width;
 	
+	private String remainingText;
+	
 	public MultiLineText(
-		String text, PDFont font, int fontSize,
+		String text, PDFont font, int preferredFontSize, int minFontSize,
 		float width, float height) 
 	{
 		super();
 		this.width = width;
 		this.height = height;
+
+		int fontSize = preferredFontSize; // Do I not overflow at all?
+		float fillFontSize = FontInfo.getFillFontSize(
+				font, text, 
+				width - 2*TEXT_PADDING, height - 2*TEXT_PADDING, 
+				LINE_SPACING);
+		if (fillFontSize < minFontSize) {
+			fontSize = (int) Math.floor(minFontSize); // Do I overflow a lot and need to get smushed
+		} else if (fillFontSize < preferredFontSize) {
+			fontSize = (int) Math.floor(fillFontSize); // Do I overflow a little and need to shrink?
+		}
 		
 		Point bottomLeft = new Point(0, 0);
 		float fontHeight = FontInfo.getHeightForFontSize(font, fontSize);
@@ -36,8 +50,14 @@ public class MultiLineText extends CompositeDrawable {
 			add(oneLine);
 			
 			lastSplit = splitIndex + 1; // +1 to skip the last space
-			bottomLeft.applyTranslation(0,  -1.5f * fontHeight); // Move to the new line
-		} while (splitIndex != text.length());
+			bottomLeft.applyTranslation(0, -1 * LINE_SPACING * fontHeight); // Move to the new line
+			
+			// While we have more text to split and more room to put the text
+		} while ((splitIndex < text.length()) && (bottomLeft.getY() > TEXT_PADDING));
+		
+		if (splitIndex < text.length()) {
+			remainingText = text.substring(lastSplit);
+		}
 	}
 	
 	private static int getSegmentationIndex(
