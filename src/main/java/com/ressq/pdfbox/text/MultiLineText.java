@@ -4,6 +4,7 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.pdfbox.helpers.FontInfo;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
+import com.ressq.pdfbox.primitives.MultiPointObject;
 import com.ressq.pdfbox.primitives.Point;
 
 public class MultiLineText extends CompositeDrawable {
@@ -19,7 +20,7 @@ public class MultiLineText extends CompositeDrawable {
 	
 	public MultiLineText(
 		String text, PDFont font, int preferredFontSize, int minFontSize,
-		float width, float height) 
+		float width, float height, MultiPointObject boundingArea) 
 	{
 		super();
 		this.width = width;

@@ -14,15 +14,11 @@ public class MinMaxHolder<T extends Comparable<T>> {
 	}
 	
 	public void accept(T value) {
-		if (min == null) {
-			min = value;
-		} else if (value.compareTo(min) < 0) {
+		if ((min == null) || (value.compareTo(min) < 0)) {
 			min = value;
 		}
 		
-		if (max == null) {
-			max = value;
-		} else if (max.compareTo(value) < 0) {
+		if ((max == null) || (max.compareTo(value) < 0)) {
 			max = value;
 		}
 	}

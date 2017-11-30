@@ -43,15 +43,17 @@ public class CardCase extends CompositeDrawable {
 		
 		/////////
 		mainCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
-		mainCardBody.applyTranslation(0, bottom.getHeight());
 		add(mainCardBody);
 
 		/////////
 		MultiLineText mainText = new MultiLineText(
 				description, PDType1Font.TIMES_ROMAN, 14, 7, 
-				mainCardBody.getWidth(), mainCardBody.getHeight());
+				mainCardBody.getWidth(), mainCardBody.getHeight(), mainCardBody);
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
+		
+		// Now apply the CardBody translation since we had used it for the MultiLineText
+		mainCardBody.applyTranslation(0, bottom.getHeight());
 		
 		/////////
 		Rectangle top = new Rectangle(SHOULDER_HEIGHT, thickness);
