@@ -3,6 +3,7 @@ package com.ressq.pdfbox.text;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.pdfbox.helpers.FontInfo;
+import com.ressq.pdfbox.helpers.Tuple;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.primitives.MultiPointObject;
 import com.ressq.pdfbox.primitives.Point;
@@ -44,7 +45,12 @@ public class MultiLineText extends CompositeDrawable {
 		int lastSplit = 0;
 		int splitIndex = 0;
 		do {
-			splitIndex = getSegmentationIndex(text, font, usedFontSize, lastSplit, width - 2*TEXT_PADDING);
+			Tuple<Point> bottomWidth = boundingArea.getHorizontalIntersections(bottomLeft.getX(), bottomLeft.getY());
+			Tuple<Point> topWidth = boundingArea.getHorizontalIntersections(bottomLeft.getX(), bottomLeft.getY() + fontHeight);
+			
+			float minWidth = Math.min(bottomWidth.y.getX() - bottomLeft.getX(), topWidth.y.getX() - bottomLeft.getX());
+			
+			splitIndex = getSegmentationIndex(text, font, usedFontSize, lastSplit, minWidth - 2*TEXT_PADDING);
 			
 			// Split the line
 			BasicText oneLine = new BasicText(text.substring(lastSplit, splitIndex), font, usedFontSize);

@@ -40,6 +40,15 @@ public class BisectClosest<T extends Comparable<T>> {
 		return closestGreaterThan;
 	}
 	
+	public static <T extends Comparable<T>> 
+	Collector<T, BisectClosest<T>, BisectClosest<T>> bisect(T on) 
+	{
+		return Collector.of(
+				() -> new BisectClosest<T>(on),
+				BisectClosest::accept, 
+				BisectClosest::merge);
+	}
+	
 	public static <T extends Comparable<T>, U> Collector<T, BisectClosest<T>, U> bisect(
 			T on, 
 			Function<BisectClosest<T>, U> then) 
