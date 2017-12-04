@@ -48,7 +48,7 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		MultiLineText mainText = new MultiLineText(
 				description, PDType1Font.TIMES_ROMAN, 14, 7, 
-				mainCardBody.getWidth(), mainCardBody.getHeight(), mainCardBody);
+				mainCardBody);
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
 		
@@ -97,23 +97,23 @@ public class CardCase extends CompositeDrawable {
 		
 		/////////
 		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
-		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
 		add(upsideDownCardBody);
 		
 		/////////
-		Rectangle workableArea = new Rectangle(PEEK_HEIGHT - glueWidth, WIDTH - 2*SHOULDER_SIZE);
-		workableArea.applyTranslation(0, SHOULDER_SIZE);
-		workableArea.applyRotation(Math.PI);
-		workableArea.applyTranslation(PEEK_HEIGHT, 0);
-		add(workableArea);
+		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
+		MultiLineText secondaryText = new MultiLineText(
+				mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
+				PDType1Font.TIMES_ROMAN, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
+				workableArea2);
+		secondaryText.applyRotation(Math.PI);
+		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
+		add(secondaryText);
 		
-//		MultiLineText secondaryText = new MultiLineText(
-//				mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
-//				PDType1Font.TIMES_ROMAN, 14, 7, 
-//				SHOULDER_HEIGHT, mainCardBody.getHeight());
-//		secondaryText.applyRotation(Math.PI);
-//		secondaryText.applyTranslation(secondaryText.getWidth(), 0);
-//		add(secondaryText);
+		// Now apply the CardBody translation since we are finished with it
+		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
+//		workableArea2.applyRotation(Math.PI);
+//		workableArea2.applyTranslation(workableArea2.getWidth() + glueWidth, 0);
+//		add(workableArea2);
 		
 		/////////
 		TopFlap upsideDownTopFlap = new TopFlap(

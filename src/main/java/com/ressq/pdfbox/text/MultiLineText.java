@@ -21,11 +21,11 @@ public class MultiLineText extends CompositeDrawable {
 	
 	public MultiLineText(
 		String text, PDFont font, int preferredFontSize, int minFontSize,
-		float width, float height, MultiPointObject boundingArea) 
+		MultiPointObject boundingArea) 
 	{
 		super();
-		this.width = width;
-		this.height = height;
+		this.width = boundingArea.getWidth();
+		this.height = boundingArea.getHeight();
 
 		usedFontSize = preferredFontSize; // Do I not overflow at all?
 		float fillFontSize = FontInfo.getFillFontSize(
