@@ -3,6 +3,7 @@ package com.ressq.dominionCases;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -11,6 +12,11 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import com.fasterxml.jackson.core.JsonParser.Feature;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
+import com.ressq.dominionCases.dto.CardDatabase;
 import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
 
@@ -20,18 +26,31 @@ import com.ressq.pdfbox.helpers.ContentStream;
  */
 public class App 
 {
+	private static URL getResource(String res) {
+		return App.class.getClassLoader().getResource(res);
+	}
+	
 	public static void main(String[] args) throws IOException 
 	{
+		URL cardDBUrl = getResource("dominionCards.json");
+		
+		ObjectMapper om = new ObjectMapper();
+		om.configure(Feature.ALLOW_COMMENTS, true);
+		ObjectReader dbReader = om.readerFor(CardDatabase.class);
+		CardDatabase db = dbReader.readValue(cardDBUrl.openStream());
+		
 		PDDocument masterDoc = new PDDocument();
 		
 		PDPage helloPage = new PDPage();
 		masterDoc.addPage(helloPage);
 		
-		PDFont trajan = PDType0Font.load(masterDoc, new File("Trajan Pro Regular.ttf"));
+		URL trajanUrl = getResource("Trajan Pro Regular.ttf");
+		PDFont trajan = PDType0Font.load(masterDoc, trajanUrl.openStream());
 		
 		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
 		
-		PDImageXObject coinImage = PDImageXObject.createFromFile("coin.png", masterDoc);
+		URL coinUrl = getResource("coin.png");
+		PDImageXObject coinImage = PDImageXObject.createFromFile(coinUrl.getFile(), masterDoc);
 		
 		CardCase cCase = new CardCase(
 				10,
