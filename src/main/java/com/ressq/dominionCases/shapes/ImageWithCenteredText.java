@@ -4,6 +4,7 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.FontInfo;
 import com.ressq.pdfbox.primitives.Image;
 import com.ressq.pdfbox.text.BasicText;
 import com.ressq.pdfbox.text.TextAlignment;
@@ -15,7 +16,9 @@ public class ImageWithCenteredText extends Image {
 	public ImageWithCenteredText(String text, PDImageXObject coinImage, float width, float height) {
 		super(coinImage, width, height);
 		
-		centeredText = new BasicText(text, PDType1Font.TIMES_BOLD, 14);
+		int fontSize = FontInfo.getFontSizeToScaleToHeight(PDType1Font.TIMES_BOLD, height / 2);
+		
+		centeredText = new BasicText(text, PDType1Font.TIMES_BOLD, fontSize);
 		float startingX = TextAlignment.CENTER.getStartingX(width, centeredText.getWidth());
 		float startingY = TextAlignment.CENTER.getStartingX(height, centeredText.getHeight());
 		centeredText.applyTranslation(startingX, startingY);

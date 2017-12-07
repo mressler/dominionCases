@@ -1,6 +1,9 @@
 package com.ressq.dominionCases.shapes;
 
-import static com.ressq.dominionCases.shapes.Card.*;
+import static com.ressq.dominionCases.shapes.Card.HEIGHT;
+import static com.ressq.dominionCases.shapes.Card.WIDTH;
+import static com.ressq.dominionCases.shapes.Card.getThicknessFor;
+import static com.ressq.dominionCases.shapes.Card.inchesToPixels;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
@@ -11,6 +14,7 @@ import com.ressq.pdfbox.shapes.Rectangle;
 import com.ressq.pdfbox.text.MultiLineText;
 import com.ressq.pdfbox.text.ScalableText;
 import com.ressq.pdfbox.text.TextAlignment;
+import com.ressq.pdfbox.text.TextSubstitution;
 
 public class CardCase extends CompositeDrawable {
 
@@ -47,8 +51,8 @@ public class CardCase extends CompositeDrawable {
 
 		/////////
 		MultiLineText mainText = new MultiLineText(
-				description, PDType1Font.TIMES_ROMAN, 14, 7, 
-				mainCardBody);
+			description, PDType1Font.TIMES_ROMAN, 14, 7, 
+			mainCardBody, getReplaceTextElement(coinImage));
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
 		
@@ -102,9 +106,9 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
 		MultiLineText secondaryText = new MultiLineText(
-				mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
-				PDType1Font.TIMES_ROMAN, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
-				workableArea2);
+			mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
+			PDType1Font.TIMES_ROMAN, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
+			workableArea2, getReplaceTextElement(coinImage));
 		secondaryText.applyRotation(Math.PI);
 		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
 		add(secondaryText);
@@ -123,6 +127,16 @@ public class CardCase extends CompositeDrawable {
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);
+	}
+	
+	private MultiLineText.GetTextElement getReplaceTextElement(PDImageXObject coinImage) {
+		return (text, font, fontSize) -> {
+			return new TextSubstitution(
+				text, font, fontSize,
+				"<(\\d)>", (m, height) -> {
+					return new ImageWithCenteredText(m.group(1), coinImage, height, height);
+				});
+		};
 	}
 
 	@Override
