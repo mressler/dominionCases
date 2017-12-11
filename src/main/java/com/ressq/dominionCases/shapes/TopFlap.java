@@ -41,7 +41,7 @@ public class TopFlap extends CompositeDrawable {
 		ScalableText title = new ScalableText(
 				cardName, titleFont, 
 				width - 2 * height - coinWidth - TEXT_PADDING, // Only 1x TEXT_PADDING because the last part is on a slant. Fine to creep in a bit
-				height - 2 * TEXT_PADDING,
+				height - 2 * TEXT_PADDING, height - 2 * TEXT_PADDING,
 				TextAlignment.LEFT);
 		title.applyTranslation(
 				height + coinWidth + TEXT_PADDING, 

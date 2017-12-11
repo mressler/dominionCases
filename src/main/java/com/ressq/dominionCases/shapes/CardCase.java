@@ -65,7 +65,7 @@ public class CardCase extends CompositeDrawable {
 		ScalableText topText = new ScalableText(
 			cardName, titleFont,
 			top.getWidth() - TEXT_PADDING * 2, 
-			top.getHeight() - TEXT_PADDING * 2,
+			getThicknessFor(10) - TEXT_PADDING * 2, top.getHeight() - TEXT_PADDING * 2,
 			TextAlignment.CENTER);
 		topText.applyTranslation(
 			TEXT_PADDING, 
