@@ -102,7 +102,7 @@ public class CardCase extends CompositeDrawable {
 		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
 		MultiLineText secondaryText = new MultiLineText(
 			mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
-			contentFont, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
+			contentFont, mainText.getUsedFontSize(), 7, 
 			workableArea2, imageRepo);
 		secondaryText.applyRotation(Math.PI);
 		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
