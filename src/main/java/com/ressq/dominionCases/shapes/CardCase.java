@@ -6,7 +6,6 @@ import static com.ressq.dominionCases.shapes.Card.getThicknessFor;
 import static com.ressq.dominionCases.shapes.Card.inchesToPixels;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.pdfbox.primitives.CompositeDrawable;
@@ -31,7 +30,7 @@ public class CardCase extends CompositeDrawable {
 	public CardCase(
 			int cardCount,
 			int cardCost, String cardName, String description,
-			PDImageXObject coinImage, PDFont titleFont) 
+			PDImageXObject coinImage, PDFont titleFont, PDFont contentFont) 
 	{
 		super();
 		
@@ -51,7 +50,7 @@ public class CardCase extends CompositeDrawable {
 
 		/////////
 		MultiLineText mainText = new MultiLineText(
-			description, PDType1Font.TIMES_ROMAN, 14, 7, 
+			description, contentFont, 14, 7, 
 			mainCardBody, getReplaceTextElement(coinImage));
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
@@ -107,7 +106,7 @@ public class CardCase extends CompositeDrawable {
 		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
 		MultiLineText secondaryText = new MultiLineText(
 			mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
-			PDType1Font.TIMES_ROMAN, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
+			contentFont, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
 			workableArea2, getReplaceTextElement(coinImage));
 		secondaryText.applyRotation(Math.PI);
 		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
