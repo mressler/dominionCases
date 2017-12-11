@@ -95,12 +95,12 @@ public class MultiLineText extends CompositeDrawable {
 			candidateIndex = spaceIndex;
 			spaceIndex = text.indexOf(" ", candidateIndex + 1);
 			if (spaceIndex == -1) {
-				return text.length();
+				spaceIndex = text.length();
 			}
 			
 			textLength = FontInfo.getWidthForFontSize(
 					font, text.substring(beginningIndex, spaceIndex), fontSize);
-		} while (textLength < width);
+		} while ((textLength < width) && (candidateIndex < text.length()));
 		
 		return candidateIndex;
 	}
