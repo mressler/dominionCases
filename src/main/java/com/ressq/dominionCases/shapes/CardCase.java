@@ -1,19 +1,15 @@
 package com.ressq.dominionCases.shapes;
 
-import static com.ressq.dominionCases.shapes.Card.HEIGHT;
-import static com.ressq.dominionCases.shapes.Card.WIDTH;
-import static com.ressq.dominionCases.shapes.Card.getThicknessFor;
-import static com.ressq.dominionCases.shapes.Card.inchesToPixels;
+import static com.ressq.dominionCases.shapes.Card.*;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
+import com.ressq.dominionCases.DominionImageRepository;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.shapes.Rectangle;
 import com.ressq.pdfbox.text.MultiLineText;
 import com.ressq.pdfbox.text.ScalableText;
 import com.ressq.pdfbox.text.TextAlignment;
-import com.ressq.pdfbox.text.TextSubstitution;
 
 public class CardCase extends CompositeDrawable {
 
@@ -30,7 +26,7 @@ public class CardCase extends CompositeDrawable {
 	public CardCase(
 			int cardCount,
 			int cardCost, String cardName, String description,
-			PDImageXObject coinImage, PDFont titleFont, PDFont contentFont) 
+			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
 	{
 		super();
 		
@@ -51,7 +47,7 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		MultiLineText mainText = new MultiLineText(
 			description, contentFont, 14, 7, 
-			mainCardBody, getReplaceTextElement(coinImage));
+			mainCardBody, imageRepo);
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
 		
@@ -78,7 +74,7 @@ public class CardCase extends CompositeDrawable {
 		TopFlap topFlap = new TopFlap(
 			SHOULDER_HEIGHT, FLAP_HEIGHT,
 			cardCost, cardName,
-			coinImage, titleFont);
+			imageRepo.getCoinImage(), titleFont);
 		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
 		add(topFlap);
 		
@@ -107,7 +103,7 @@ public class CardCase extends CompositeDrawable {
 		MultiLineText secondaryText = new MultiLineText(
 			mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
 			contentFont, mainText.getUsedFontSize(), mainText.getUsedFontSize(), 
-			workableArea2, getReplaceTextElement(coinImage));
+			workableArea2, imageRepo);
 		secondaryText.applyRotation(Math.PI);
 		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
 		add(secondaryText);
@@ -122,20 +118,10 @@ public class CardCase extends CompositeDrawable {
 		TopFlap upsideDownTopFlap = new TopFlap(
 				SHOULDER_HEIGHT, FLAP_HEIGHT,
 				cardCost, cardName,
-				coinImage, titleFont);
+				imageRepo.getCoinImage(), titleFont);
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);
-	}
-	
-	private MultiLineText.GetTextElement getReplaceTextElement(PDImageXObject coinImage) {
-		return (text, font, fontSize) -> {
-			return new TextSubstitution(
-				text, font, fontSize,
-				"<(\\d)>", (m, height) -> {
-					return new ImageWithCenteredText(m.group(1), coinImage, height, height);
-				});
-		};
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class MultiLineText extends CompositeDrawable {
 	private String remainingText;
 	private int usedFontSize;
 	
-	public static interface GetTextElement {
+	public static interface TextElementFactory {
 		public Drawable getTextElement(String text, PDFont font, int fontSize);
 	}
 	
@@ -28,7 +28,7 @@ public class MultiLineText extends CompositeDrawable {
 	 * For use with MultiLineText constructor. 
 	 * @return Return a function that will construct BasicText elements for its text lines.
 	 */
-	public static GetTextElement getBasicTextElement() {
+	public static TextElementFactory getBasicTextElement() {
 		return (text, font, fontSize) -> {
 			return new BasicText(text, font, fontSize);
 		};
@@ -36,7 +36,7 @@ public class MultiLineText extends CompositeDrawable {
 	
 	public MultiLineText(
 		String text, PDFont font, int preferredFontSize, int minFontSize,
-		MultiPointObject boundingArea, GetTextElement elementConstructor) 
+		MultiPointObject boundingArea, TextElementFactory elementConstructor) 
 	{
 		super();
 		this.width = boundingArea.getWidth();
