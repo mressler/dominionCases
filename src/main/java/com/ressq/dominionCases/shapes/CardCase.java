@@ -22,6 +22,8 @@ public class CardCase extends CompositeDrawable {
 	public static final float TEXT_PADDING = 2.5f;
 	
 	private CardBody mainCardBody;
+	private float foldWidth;
+	private float thickness;
 	
 	public CardCase(
 			int cardCount,
@@ -30,7 +32,7 @@ public class CardCase extends CompositeDrawable {
 	{
 		super();
 		
-		float thickness = getThicknessFor(cardCount);
+		thickness = getThicknessFor(cardCount);
 		/////////
 		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		bottomFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
@@ -94,6 +96,8 @@ public class CardCase extends CompositeDrawable {
 		externalGlueArea.applyTranslation(-1 * back.getWidth() - externalGlueArea.getWidth(), bottom.getHeight());
 		add(externalGlueArea);
 		
+		foldWidth = glueWidth + thickness;
+		
 		/////////
 		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		add(upsideDownCardBody);
@@ -131,6 +135,22 @@ public class CardCase extends CompositeDrawable {
 
 	@Override
 	public float getWidth() {
+		return mainCardBody.getWidth() + foldWidth;
+	}
+	
+	public float getMainCardHeight() {
+		return mainCardBody.getHeight();
+	}
+	
+	public float getMainCardWidth() {
 		return mainCardBody.getWidth();
+	}
+	
+	public float getFoldWidth() {
+		return foldWidth;
+	}
+	
+	public float getThickness() {
+		return thickness;
 	}
 }

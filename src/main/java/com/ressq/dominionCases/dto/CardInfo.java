@@ -22,6 +22,7 @@ public class CardInfo {
 	private Boolean hasPotion;
 	
 	private String description;
+	private String errata;
 	private Integer actions;
 	private Integer coins;
 	private Integer cards;
@@ -154,6 +155,14 @@ public class CardInfo {
 		this.description = description;
 	}
 
+	public String getErrata() {
+		return errata;
+	}
+
+	public void setErrata(String errata) {
+		this.errata = errata;
+	}
+
 	public Integer getActions() {
 		return actions;
 	}
@@ -195,7 +204,7 @@ public class CardInfo {
 	}
 
 	public Integer getStandardCount() {
-		return standardCount;
+		return standardCount != null ? standardCount : 10;
 	}
 
 	public void setStandardCount(Integer standardCount) {
