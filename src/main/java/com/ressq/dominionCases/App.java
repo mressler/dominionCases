@@ -3,8 +3,6 @@ package com.ressq.dominionCases;
 import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
-import java.util.function.BiConsumer;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -21,7 +19,6 @@ import com.ressq.dominionCases.dto.CardDatabase;
 import com.ressq.dominionCases.dto.CardInfo;
 import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
-import com.ressq.pdfbox.text.TextAlignment;
 
 /**
  * Hello world!
@@ -75,76 +72,6 @@ public class App {
 		masterDoc.close();
 	}
 	
-	public static class MultiCardInfo {
-		public float totalWidth;
-		public float totalHeight;
-		
-		public BiConsumer<Float, Float> applyTranslations;
-		
-		private MultiCardInfo() {}
-		
-		public static MultiCardInfo forOneCard(CardCase cardOne) {
-			MultiCardInfo forOne = new MultiCardInfo();
-			forOne.totalHeight = cardOne.getHeight();
-			forOne.totalWidth = cardOne.getWidth();
-			
-			forOne.applyTranslations = (centerX, centerY) -> {
-				cardOne.applyTranslation(
-					centerX - forOne.totalWidth / 2 + cardOne.getWidthLeftOfOrigin(), 
-					centerY - forOne.totalHeight / 2 + cardOne.getHeightBelowOrigin());
-			};
-			
-			return forOne;
-		}
-		
-		public static MultiCardInfo forTwoCards(CardCase cardOne, CardCase cardTwo) {
-			float maxFoldWidth = Math.max(cardOne.getWidthLeftOfOrigin(), cardTwo.getWidthLeftOfOrigin());
-			
-			MultiCardInfo forTwo = new MultiCardInfo();
-			forTwo.totalHeight = cardOne.getHeightAboveOrigin() + cardTwo.getHeightAboveOrigin();
-			forTwo.totalWidth = cardOne.getWidthRightOfOrigin() + cardTwo.getWidthRightOfOrigin() + maxFoldWidth;
-			
-			forTwo.applyTranslations = (centerX, centerY) -> {
-				cardOne.applyTranslation(
-					centerX - forTwo.totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth,
-					centerY + forTwo.totalHeight / 2 - cardOne.getHeightAboveOrigin());
-				cardTwo.applyTranslation(
-					centerX - forTwo.totalWidth / 2 + cardTwo.getWidthRightOfOrigin(), 
-					centerY + forTwo.totalHeight / 2 - cardOne.getHeightAboveOrigin());
-			};
-			
-			return forTwo;
-		}
-		
-		public static MultiCardInfo forThreeCards(CardCase cardOne, CardCase cardTwo, CardCase cardThree) {
-			MultiCardInfo forThree = new MultiCardInfo();
-			
-			float maxFoldWidth = Math.max(cardOne.getWidthLeftOfOrigin(), cardTwo.getWidthLeftOfOrigin());
-			float widthToRight = Math.max(cardOne.getWidthRightOfOrigin(), cardThree.getHeightAboveOrigin());
-			
-			forThree.totalWidth = cardTwo.getWidthRightOfOrigin() + maxFoldWidth + widthToRight;
-			
-			float caseThreeTop = Math.max(
-					cardTwo.getHeightAboveOrigin(),
-					cardOne.getHeightBelowOrigin() + cardThree.getWidthLeftOfOrigin());
-			forThree.totalHeight = cardOne.getHeightAboveOrigin() + caseThreeTop + cardThree.getWidthRightOfOrigin();
-			
-			forThree.applyTranslations = (centerX, centerY) -> {
-				cardOne.applyTranslation(
-						centerX - forThree.totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth, 
-						centerY + forThree.totalHeight / 2 - cardOne.getHeightAboveOrigin());
-				cardTwo.applyTranslation(
-						centerX - forThree.totalWidth / 2 + cardTwo.getWidthRightOfOrigin(),
-						centerY + forThree.totalHeight / 2 - cardOne.getHeightAboveOrigin());
-				cardThree.applyTranslation(
-						centerX - forThree.totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth,
-						centerY + forThree.totalHeight / 2 - cardOne.getHeightAboveOrigin() - caseThreeTop);
-			};
-			
-			return forThree;
-		}
-	}
-	
 	private static void pageForThreeCards(PDDocument masterDoc, CardInfo cardOne, CardInfo cardTwo, CardInfo cardThree) throws IOException {
 		PDPage helloPage = new PDPage();
 		masterDoc.addPage(helloPage);
@@ -164,31 +91,10 @@ public class App {
 		CardCase caseTwo = caseForCardInfo(cardTwo);
 		CardCase caseThree = caseForCardInfo(cardThree);
 		
-		float maxFoldWidth = Math.max(caseOne.getWidthLeftOfOrigin(), caseTwo.getWidthLeftOfOrigin());
-		float widthToRight = Math.max(caseOne.getWidthRightOfOrigin(), caseThree.getHeightAboveOrigin());
+		MultiCardInfo.forThreeCards(caseOne, caseTwo, caseThree).applyTranslations.accept(centerX, centerY);
 		
-		float totalWidth = caseTwo.getWidthRightOfOrigin() + maxFoldWidth + widthToRight;
-		
-		float caseThreeTop = Math.max(
-				caseTwo.getHeightAboveOrigin(),
-				caseOne.getHeightBelowOrigin() + caseThree.getWidthLeftOfOrigin());
-		float totalHeight = caseOne.getHeightAboveOrigin() + caseThreeTop + caseThree.getWidthRightOfOrigin();
-		
-		caseOne.applyTranslation(
-				centerX - totalWidth / 2 + caseTwo.getWidthRightOfOrigin() + maxFoldWidth, 
-				centerY + totalHeight / 2 - caseOne.getHeightAboveOrigin());
 		caseOne.draw(drawStream);
-		
-		caseTwo.applyRotation(Math.PI);
-		caseTwo.applyTranslation(
-				centerX - totalWidth / 2 + caseTwo.getWidthRightOfOrigin(),
-				centerY + totalHeight / 2 - caseOne.getHeightAboveOrigin());
 		caseTwo.draw(drawStream);
-		
-		caseThree.applyRotation(3 * Math.PI / 2);
-		caseThree.applyTranslation(
-				centerX - totalWidth / 2 + caseTwo.getWidthRightOfOrigin() + maxFoldWidth,
-				centerY + totalHeight / 2 - caseOne.getHeightAboveOrigin() - caseThreeTop);
 		caseThree.draw(drawStream);
 		
 		cStream.close();
