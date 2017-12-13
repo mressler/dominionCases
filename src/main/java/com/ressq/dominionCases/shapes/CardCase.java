@@ -130,27 +130,28 @@ public class CardCase extends CompositeDrawable {
 
 	@Override
 	public float getHeight() {
-		return mainCardBody.getHeight();
+		return getHeightAboveOrigin() + getHeightBelowOrigin();
 	}
 
 	@Override
 	public float getWidth() {
-		return mainCardBody.getWidth() + foldWidth;
+		return getWidthLeftOfOrigin() + getWidthRightOfOrigin();
 	}
 	
-	public float getMainCardHeight() {
-		return mainCardBody.getHeight();
+	public float getHeightAboveOrigin() {
+		return mainCardBody.getHeight() + 2 * thickness + FLAP_HEIGHT;
 	}
 	
-	public float getMainCardWidth() {
-		return mainCardBody.getWidth();
+	public float getHeightBelowOrigin() {
+		return mainCardBody.getHeight() + FLAP_HEIGHT;
 	}
 	
-	public float getFoldWidth() {
+	public float getWidthLeftOfOrigin() {
 		return foldWidth;
 	}
 	
-	public float getThickness() {
-		return thickness;
+	public float getWidthRightOfOrigin() {
+		return mainCardBody.getWidth();
 	}
+	
 }
