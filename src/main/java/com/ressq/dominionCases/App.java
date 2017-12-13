@@ -3,6 +3,8 @@ package com.ressq.dominionCases;
 import java.awt.Color;
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -65,13 +67,74 @@ public class App {
 			loadImageResource(masterDoc, "debt.png"),
 			loadImageResource(masterDoc, "victory.png"));
 		
+		LinkedList<CardCase> allCases = db.getCards().stream()
+				.map(App::caseForCardInfo)
+				.collect(Collectors.toCollection(LinkedList<CardCase>::new));
+		
+//		do {
+//			consumeCards(masterDoc, allCases);
+//		} while (!allCases.isEmpty());
+		
 		// First page
-		pageForThreeCards(masterDoc, db.getCards().get(0), db.getCards().get(1), db.getCards().get(2));
+		pageForThreeCards(masterDoc, db.getCards().get(7), db.getCards().get(1), db.getCards().get(2));
 		
 		masterDoc.save("temp.pdf");
 		masterDoc.close();
 	}
 	
+	private static void consumeCards(PDDocument masterDoc, LinkedList<CardCase> allCases) throws IOException {
+		PDPage helloPage = new PDPage();
+		masterDoc.addPage(helloPage);
+		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
+		ContentStream drawStream = new ContentStream(cStream);
+		
+		PDRectangle trimBox = helloPage.getTrimBox();
+		float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
+		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
+		
+		CardCase cards[] = new CardCase[3];
+		cards[0] = allCases.pop();
+		PDRectangle candidateSize = MultiCardInfo.getSizeFor(cards[0], false);
+		MultiCardInfo info;
+		if ((candidateSize.getHeight() < trimBox.getHeight()) && 
+			(candidateSize.getWidth() < trimBox.getWidth()) &&
+			!allCases.isEmpty()) 
+		{
+			cards[1] = allCases.pop();
+			candidateSize = MultiCardInfo.getSizeFor(cards[0], cards[1], false);
+			if ((candidateSize.getHeight() < trimBox.getHeight()) && 
+				(candidateSize.getWidth() < trimBox.getWidth()) && 
+				!allCases.isEmpty()) 
+			{
+				cards[2] = allCases.pop();
+				candidateSize = MultiCardInfo.getSizeFor(cards[0], cards[1], cards[2], false);
+				if ((candidateSize.getHeight() < trimBox.getHeight()) && 
+					(candidateSize.getWidth() < trimBox.getWidth()) && 
+					!allCases.isEmpty()) 
+				{
+					info = new MultiCardInfo(cards[0], cards[1], cards[2]);
+				} else {
+					allCases.push(cards[2]);
+					info = new MultiCardInfo(cards[0], cards[1]);
+				}
+			} else {
+				allCases.push(cards[1]);
+				info = new MultiCardInfo(cards[0]);
+			}
+		} else {
+			if (allCases.isEmpty()) {
+				info = new MultiCardInfo(cards[0]);
+			} else {
+				throw new IllegalArgumentException("Single card stack does not fit!");
+			}
+		}
+		
+		info.applyTranslation(centerX, centerY);
+		info.draw(drawStream);
+		
+		cStream.close();
+	}
+
 	private static void pageForThreeCards(PDDocument masterDoc, CardInfo cardOne, CardInfo cardTwo, CardInfo cardThree) throws IOException {
 		PDPage helloPage = new PDPage();
 		masterDoc.addPage(helloPage);
@@ -80,22 +143,18 @@ public class App {
 		cStream.setStrokingColor(Color.BLACK);
 		ContentStream drawStream = new ContentStream(cStream);
 		
-		cardOne.setStandardCount(30);
-		cardThree.setStandardCount(30);
-		
 		PDRectangle trimBox = helloPage.getTrimBox();
 		float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
 		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
 		
 		CardCase caseOne = caseForCardInfo(cardOne);
-		CardCase caseTwo = caseForCardInfo(cardTwo);
-		CardCase caseThree = caseForCardInfo(cardThree);
+		//CardCase caseTwo = caseForCardInfo(cardTwo);
+		//CardCase caseThree = caseForCardInfo(cardThree);
 		
-		MultiCardInfo.forThreeCards(caseOne, caseTwo, caseThree).applyTranslations.accept(centerX, centerY);
-		
-		caseOne.draw(drawStream);
-		caseTwo.draw(drawStream);
-		caseThree.draw(drawStream);
+		MultiCardInfo info = new MultiCardInfo(caseOne);//, caseTwo, caseThree);
+		info.applyTranslation(centerX, centerY);
+
+		info.draw(drawStream);
 		
 		cStream.close();
 	}
