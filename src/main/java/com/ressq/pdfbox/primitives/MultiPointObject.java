@@ -71,7 +71,7 @@ public class MultiPointObject implements Drawable {
 		return streamBuilder.build();
 	}
 	
-	public Tuple<Point> getHorizontalIntersections(float fromX, float fromY) {
+	public Tuple<Point, Point> getHorizontalIntersections(float fromX, float fromY) {
 		Line horizontal = Line.getHorizontal(fromY);
 		
 		BisectClosest<Float> results = getLines()
@@ -80,7 +80,7 @@ public class MultiPointObject implements Drawable {
 			.map(Point::getX) // Get the X coordinate of intersection
 			.collect(BisectClosest.bisect(fromX)); // Bisect about the fromPoint.x
 		
-		Tuple<Point> leftRight = new Tuple<>(); // and then turn back to points since we know the y
+		Tuple<Point, Point> leftRight = new Tuple<>(); // and then turn back to points since we know the y
 		leftRight.x = new Point(results.getClosestLessThan(), fromY);
 		leftRight.y = new Point(results.getClosestGreaterThan(), fromY);
 		
