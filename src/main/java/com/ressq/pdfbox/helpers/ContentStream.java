@@ -34,6 +34,24 @@ public class ContentStream {
 		}
 	}
 	
+	public void drawImage(PDImageXObject image, double theta, float x, float y, float width, float height) {
+		try {
+			contentStream.saveGraphicsState();
+			Matrix rotate = new Matrix();
+			rotate.rotate(theta);
+			contentStream.transform(rotate);
+			
+			Point bottomLeft = new Point(x, y);
+			bottomLeft.applyRotation(-1 * theta);
+			
+			contentStream.drawImage(image, bottomLeft.getX(), bottomLeft.getY(), width, height);
+			
+			contentStream.restoreGraphicsState();
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error drawing image", e);
+		}
+	}
+	
 	public void drawImage(PDImageXObject image, AffineTransform imageTransform) {
 		try {
 			contentStream.drawImage(image, new Matrix(imageTransform));
