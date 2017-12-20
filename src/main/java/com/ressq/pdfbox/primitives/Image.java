@@ -1,7 +1,5 @@
 package com.ressq.pdfbox.primitives;
 
-import java.awt.geom.AffineTransform;
-
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.pdfbox.helpers.ContentStream;
@@ -21,11 +19,7 @@ public class Image extends BottomLeftAware {
 
 	@Override
 	public void draw(ContentStream cStream) {
-		AffineTransform imageTransform = 
-				new AffineTransform(width, 0, 0, height, bottomLeft.getX(), bottomLeft.getY());
-		imageTransform.rotate(theta);
-		
-		cStream.drawImage(coinImage, imageTransform);
+		cStream.drawImage(coinImage, theta, bottomLeft.getX(), bottomLeft.getY(), width, height);
 	}
 
 	@Override
