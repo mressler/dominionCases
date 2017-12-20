@@ -32,4 +32,11 @@ public class CardDatabase {
 	public void setCards(List<CardInfo> cards) {
 		this.cards = cards;
 	}
+	
+	public CardInfo getCardByName(String name) {
+		return cards.stream()
+				.filter(ci -> ci.getName().equalsIgnoreCase(name))
+				.findAny()
+				.orElseThrow(() -> new IllegalArgumentException("No card named " + name));
+	}
 }
