@@ -46,27 +46,31 @@ public class MultiLineText extends CompositeDrawable {
 		this.height = boundingArea.getHeight();
 
 		usedFontSize = preferredFontSize; // Do I not overflow at all?
-		float fillFontSize = FontInfo.getFillFontSize(
-				font, text, 
-				width - 2*TEXT_PADDING, height - 2*TEXT_PADDING, 
-				LINE_SPACING);
-		if (fillFontSize < minFontSize) {
-			usedFontSize = minFontSize; // Do I overflow a lot and need to get smushed
-		} else if (fillFontSize < preferredFontSize) {
-			usedFontSize = (int) Math.floor(fillFontSize); // Do I overflow a little and need to shrink?
+		if (text.indexOf("\n") == -1) { // Only do best guess if there are no \n's
+			float fillFontSize = FontInfo.getFillFontSize(
+					font, text, 
+					width - 2*TEXT_PADDING, height - 2*TEXT_PADDING, 
+					LINE_SPACING);
+			if (fillFontSize < minFontSize) {
+				usedFontSize = minFontSize; // Do I overflow a lot and need to get smushed
+			} else if (fillFontSize < preferredFontSize) {
+				usedFontSize = (int) Math.floor(fillFontSize); // Do I overflow a little and need to shrink?
+			}
 		}
 		
 		Point bottomLeft = new Point(0, 0);
 		float fontHeight = FontInfo.getHeightForFontSize(font, usedFontSize);
-		bottomLeft.applyTranslation(TEXT_PADDING, height - fontHeight - TEXT_PADDING);
+		bottomLeft.applyTranslation(TEXT_PADDING, height - TEXT_PADDING);
 		float startingHeight = bottomLeft.getY();
 		float endingHeight = TEXT_PADDING;
-		int numLines = (int) (Math.floor((startingHeight - endingHeight) / (fontHeight * LINE_SPACING)) + 1);
+		int numLines;
 		
 		usedFontSize++; // We have a best guess, let's use that below. (We'll be decrementing right away, so increment here) 
 		List<Tuple<Tuple<Integer, Integer>, Point>> segmentationInformation;
 		do {
 			usedFontSize--;
+			fontHeight = FontInfo.getHeightForFontSize(font, usedFontSize);
+			numLines = (int) Math.floor((startingHeight - endingHeight) / (fontHeight * LINE_SPACING));
 			segmentationInformation = segmentTextToFontSize(text, font, usedFontSize, bottomLeft, boundingArea);
 		} while ((usedFontSize > minFontSize) && (segmentationInformation.size() > numLines));
 		
@@ -82,28 +86,6 @@ public class MultiLineText extends CompositeDrawable {
 		if (numLines < segmentationInformation.size()) {
 			remainingText = text.substring(segmentationInformation.get(numLines).x.x);
 		}
-//		
-//		int lastSplit = 0;
-//		int splitIndex = 0;
-//		do {
-//			float minWidth = getWidthAtPoint(bottomLeft, boundingArea, fontHeight);
-//			
-//			splitIndex = getSegmentationIndex(text, font, usedFontSize, lastSplit, minWidth - 2*TEXT_PADDING);
-//			
-//			// Split the line
-//			Drawable oneLine = elementConstructor.getTextElement(text.substring(lastSplit, splitIndex), font, usedFontSize);
-//			oneLine.applyTranslation(bottomLeft.getX(), bottomLeft.getY());
-//			add(oneLine);
-//			
-//			lastSplit = splitIndex + 1; // +1 to skip the last space
-//			bottomLeft.applyTranslation(0, -1 * LINE_SPACING * fontHeight); // Move to the new line
-//			
-//			// While we have more text to split and more room to put the text
-//		} while ((splitIndex < text.length()) && (bottomLeft.getY() > TEXT_PADDING));
-//		
-//		if (splitIndex < text.length()) {
-//			remainingText = text.substring(lastSplit);
-//		}
 	}
 	
 	private float getWidthAtPoint(Point somePoint, MultiPointObject boundingArea, float fontHeight) {
@@ -124,7 +106,7 @@ public class MultiLineText extends CompositeDrawable {
 		List<Tuple<Tuple<Integer, Integer>, Point>> segmentationInformation = new ArrayList<>();
 		int lastSplit = 0;
 		int splitIndex = 0;
-		Point currentPoint = new Point(beginningPoint.getX(), beginningPoint.getY());
+		Point currentPoint = new Point(beginningPoint.getX(), beginningPoint.getY() - LINE_SPACING * fontHeight);
 		do {
 			float minWidth = getWidthAtPoint(currentPoint, boundingArea, fontHeight);
 			
@@ -152,8 +134,15 @@ public class MultiLineText extends CompositeDrawable {
 		do {
 			candidateIndex = spaceIndex;
 			spaceIndex = text.indexOf(" ", candidateIndex + 1);
+			int newLineIndex = text.indexOf("\n", candidateIndex + 1);
+			if (((newLineIndex != -1) && (newLineIndex < spaceIndex)) || (spaceIndex == -1 && newLineIndex != -1)) {
+				spaceIndex = newLineIndex;
+			}
 			if (spaceIndex == -1) {
 				spaceIndex = text.length();
+			}
+			if ((candidateIndex < text.length()) && (text.charAt(candidateIndex) == '\n')) {
+				return candidateIndex;
 			}
 			
 			textLength = FontInfo.getWidthForFontSize(
