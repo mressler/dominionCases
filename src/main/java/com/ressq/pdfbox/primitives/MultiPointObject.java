@@ -50,13 +50,19 @@ public class MultiPointObject implements Drawable {
 	}
 	
 	public float getHeight() {
-		return corners.stream().map(Point::getY).collect(
-				MinMaxHolder.collectThen(mmh -> mmh.getMax() - mmh.getMin()));
+		return corners.stream()
+					.map(Point::getY)
+					.collect(
+							MinMaxHolder.collectThen(mmh -> mmh.getMax() - mmh.getMin())
+					);
 	}
 	
 	public float getWidth() {
-		return corners.stream().map(Point::getX).collect(
-				MinMaxHolder.collectThen(mmh -> mmh.getMax() - mmh.getMin()));
+		return corners.stream()
+					.map(Point::getX)
+					.collect(
+							MinMaxHolder.collectThen(mmh -> mmh.getMax() - mmh.getMin())
+					);
 	}
 	
 	public Stream<Line> getLines() {
