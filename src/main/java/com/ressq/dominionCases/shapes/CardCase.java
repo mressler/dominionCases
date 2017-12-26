@@ -27,7 +27,7 @@ public class CardCase extends CompositeDrawable {
 	
 	public CardCase(
 			int cardCount,
-			int cardCost, String cardName, String description,
+			Integer cardCost, String cardName, String description,
 			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
 	{
 		super();

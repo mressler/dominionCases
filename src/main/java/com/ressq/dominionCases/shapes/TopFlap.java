@@ -34,9 +34,13 @@ public class TopFlap extends CompositeDrawable {
 		float coinWidth = height - IMAGE_PADDING * 2;
 		float coinHeight = coinWidth;
 		
-		Image coin = new ImageWithCenteredText(cardCost.toString(), coinImage, coinWidth, coinHeight);
-		coin.applyTranslation(height,  (height - coinHeight) / 2);
-		add(coin);
+		if (cardCost != null) {
+			Image coin = new ImageWithCenteredText(cardCost.toString(), coinImage, coinWidth, coinHeight);
+			coin.applyTranslation(height,  (height - coinHeight) / 2);
+			add(coin);
+		} else {
+			coinWidth = 0;
+		}
 		
 		ScalableText title = new ScalableText(
 				cardName, titleFont, 
