@@ -2773,446 +2773,446 @@
 		}
 	],
 	"recommendedKingdoms" : [
-		 {
-			 "name" : "Introduction",
-			 "cards" : ["Cache","Crossroads","Develop","Haggler","Jack of all Trades","Margrave","Nomad Camp","Oasis","Spice Merchant","Stables"]
-		 },
-		 {
-			 "name" : "Fair Trades",
-			 "cards" : ["Border Village","Cartographer","Develop","Duchess","Farmland","Ill-Gotten Gains","Noble Brigand","Silk Road","Stables","Trader"]
-		 },
-		 {
-			 "name" : "Bargains",
-			 "cards" : ["Border Village","Cache","Duchess","Fool's Gold","Haggler","Highway","Nomad Camp","Scheme","Spice Merchant","Trader"]
-		 },
-		 {
-			 "name" : "Gambits",
-			 "cards" : ["Cartographer","Crossroads","Embassy","Inn","Jack of all Trades","Mandarin","Nomad Camp","Oasis","Oracle","Tunnel"]
-		 },
-		 {
-			 "name" : "Highway Robbery",
-			 "cards" : ["Cellar","Library","Moneylender","Throne Room","Workshop","Highway","Inn","Margrave","Noble Brigand","Oasis"]
-		 },
-		 {
-			 "name" : "Adventures Abroad",
-			 "cards" : ["Adventurer","Chancellor","Festival","Laboratory","Remodel","Crossroads","Farmland","Fool's Gold","Oracle","Spice Merchant"]
-		 },
-		 {
-			 "name" : "Money for Nothing",
-			 "cards" : ["Coppersmith","Great Hall","Pawn","Shanty Town","Torturer","Cache","Cartographer","Jack of all Trades","Silk Road","Tunnel"]
-		 },
-		 {
-			 "name" : "Money for Nothing - 2nd Edition",
-			 "cards" : ["Replace","Patrol","Pawn","Shanty Town","Torturer","Cache","Cartographer","Jack of all Trades","Silk Road","Tunnel"]
-		 },
-		 {
-			 "name" : "The Duke's Ball",
-			 "cards" : ["Conspirator","Duke","Harem","Masquerade","Upgrade","Duchess","Haggler","Inn","Noble Brigand","Scheme"]
-		 },
-		 {
-			 "name" : "The Duke's Ball - 2nd Edition",
-			 "cards" : ["Baron","Conspirator","Nobles","Secret Passage","Wishing Well","Armory","Ironmonger","Mystic","Rebuild","Vagrant"]
-		 },
-		 {
-			 "name" : "Travelers",
-			 "cards" : ["Cutpurse","Island","Lookout","Merchant Ship","Warehouse","Cartographer","Crossroads","Farmland","Silk Road","Stables"]
-		 },
-		 {
-			 "name" : "Diplomacy",
-			 "cards" : ["Ambassador","Bazaar","Caravan","Embargo","Smugglers","Embassy","Farmland","Ill-Gotten Gains","Noble Brigand","Trader"]
-		 },
-		 {
-			 "name" : "Schemes and Dreams",
-			 "cards" : ["Apothecary","Apprentice","Herbalist","Philosopher's Stone","Transmute","Duchess","Fool's Gold","Ill-Gotten Gains","Jack of all Trades","Scheme"]
-		 },
-		 {
-			 "name" : "Wine Country",
-			 "cards" : ["Apprentice","Familiar","Golem","University","Vineyard","Crossroads","Farmland","Haggler","Highway","Nomad Camp"]
-		 },
-		 {
-			 "name" : "Instant Gratification",
-			 "cards" : ["Bishop","Expand","Hoard","Mint","Watchtower","Farmland","Haggler","Ill-Gotten Gains","Noble Brigand","Trader"]
-		 },
-		 {
-			 "name" : "Treasure Trove",
-			 "cards" : ["Bank","Monument","Royal Seal","Trade Route","Venture","Cache","Develop","Fool's Gold","Ill-Gotten Gains","Mandarin"]
-		 },
-		 {
-			 "name" : "Blue Harvest",
-			 "cards" : ["Hamlet","Horn of Plenty","Horse Traders","Jester","Tournament","Fool's Gold","Mandarin","Noble Brigand","Trader","Tunnel"]
-		 },
-		 {
-			 "name" : "Traveling Circus",
-			 "cards" : ["Fairgrounds","Farming Village","Hunting Party","Jester","Menagerie","Border Village","Embassy","Fool's Gold","Nomad Camp","Oasis"]
-		 },
-		 {
-			 "name" : "Forbidden Arts",
-			 "cards" : ["Apprentice","Familiar","Possession","University","Cellar","Council Room","Gardens","Laboratory","Thief","Throne Room"]
-		 },
-		 {
-			 "name" : "Forbidden Arts - 2nd Edition",
-			 "cards" : ["Bandit","Cellar","Council Room","Gardens","Laboratory","Throne Room","Apprentice","Familiar","Possession","University"]
-		 },
-		 {
-			 "name" : "Potion Mixers",
-			 "cards" : ["Alchemist","Apothecary","Golem","Herbalist","Transmute","Cellar","Chancellor","Festival","Militia","Smithy"]
-		 },
-		 {
-			 "name" : "Potion Mixers - 2nd Edition",
-			 "cards" : ["Cellar","Festival","Militia","Poacher","Smithy","Alchemist","Apothecary","Golem","Herbalist","Transmute"]
-		 },
-		 {
-			 "name" : "Chemistry Lesson",
-			 "cards" : ["Alchemist","Golem","Philosopher's Stone","University","Bureaucrat","Market","Moat","Remodel","Witch","Woodcutter"]
-		 },
-		 {
-			 "name" : "Chemistry Lesson - 2nd Edition",
-			 "cards" : ["Alchemist","Golem","Philosopher's Stone","University","Bureaucrat","Market","Moat","Remodel","Witch","Vassal"]
-		 },
-		 {
-			 "name" : "Servants",
-			 "cards" : ["Golem","Possession","Scrying Pool","Transmute","Vineyard","Conspirator","Great Hall","Minion","Pawn","Steward"]
-		 },
-		 {
-			 "name" : "Servants - 2nd Edition",
-			 "cards" : ["Golem","Possession","Scrying Pool","Transmute","Vineyard","Conspirator","Mill","Minion","Pawn","Steward"]
-		 },
-		 {
-			 "name" : "Secret Research",
-			 "cards" : ["Familiar","Herbalist","Philosopher's Stone","University","Bridge","Masquerade","Minion","Nobles","Shanty Town","Torturer"]
-		 },
-		 {
-			 "name" : "Pools, Tools, and Fools",
-			 "cards" : ["Apothecary","Apprentice","Golem","Scrying Pool","Baron","Coppersmith","Ironworks","Nobles","Trading Post","Wishing Well"]
-		 },
-		 {
-			 "name" : "Pools, Tools, and Fools - 2nd Edition",
-			 "cards" : ["Apothecary","Apprentice","Golem","Scrying Pool","Baron","Ironworks","Lurker","Nobles","Trading Post","Wishing Well"]
-		 },
-		 {
-			 "name" : "Bounty of the Hunt",
-			 "cards" : ["Harvest","Horn of Plenty","Hunting Party","Menagerie","Tournament","Cellar","Festival","Militia","Moneylender","Smithy"]
-		 },
-		 {
-			 "name" : "Bad Omens",
-			 "cards" : ["Fortune Teller","Hamlet","Horn of Plenty","Jester","Remake","Adventurer","Bureaucrat","Laboratory","Spy","Throne Room"]
-		 },
-		 {
-			 "name" : "Jester's Workshop",
-			 "cards" : ["Fairgrounds","Farming Village","Horse Traders","Jester","Young Witch","Feast","Laboratory","Market","Remodel","Workshop","Chancellor"]
-		 },
-		 {
-			 "name" : "Last Laughs",
-			 "cards" : ["Farming Village","Harvest","Horse Traders","Hunting Party","Jester","Minion","Nobles","Pawn","Steward","Swindler"]
-		 },
-		 {
-			 "name" : "The Spice of Life",
-			 "cards" : ["Fairgrounds","Horn of Plenty","Remake","Tournament","Young Witch","Coppersmith","Courtyard","Great Hall","Mining Village","Tribute","Wishing Well"]
-		 },
-		 {
-			 "name" : "The Spice of Life - 2nd Edition",
-			 "cards" : ["Fairgrounds","Horn of Plenty","Remake","Tournament","Young Witch","Courtier","Courtyard","Diplomat","Mining Village","Replace","Wishing Well"]
-		 },
-		 {
-			 "name" : "Small Victories",
-			 "cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Great Hall","Harem","Pawn"]
-		 },
-		 {
-			 "name" : "Small Victories - 2nd Edition",
-			 "cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Harem","Pawn","Secret Passage"]
-		 },
-		 {
-			 "name" : "Name that Card",
-			 "cards" : ["Courtyard","Harem","Nobles","Replace","Wishing Well","Baker","Doctor","Plaza","Advisor","Masterpiece"]
-		 },
-		 {
-			 "name" : "Tricks of the Trade",
-			 "cards" : ["Conspirator","Masquerade","Mill","Nobles","Secret Passage","Stonemason","Herald","Soothsayer","Journeyman","Butcher"]
-		 },
-		 {
-			 "name" : "Decisions, Decisions",
-			 "cards" : ["Bridge","Pawn","Mining Village","Upgrade","Duke","Merchant Guild","Candlestick Maker","Masterpiece","Taxman","Butcher"]
-		 },
-		 {
-			 "name" : "Beginners",
-			 "cards" : ["Bank","Counting House","Expand","Goons","Monument","Rabble","Royal Seal","Venture","Watchtower","Worker's Village"]
-		 },
-		 {
-			 "name" : "Friendly Interactive",
-			 "cards" : ["Bishop","City","Contraband","Forge","Hoard","Peddler","Royal Seal","Trade Route","Vault","Worker's Village"]
-		 },
-		 {
-			 "name" : "Big actions",
-			 "cards" : ["City","Expand","Grand Market","King's Court","Loan","Mint","Quarry","Rabble","Talisman","Vault"]
-		 },
-		 {
-			 "name" : "Biggest Money",
-			 "cards" : ["Bank","Grand Market","Mint","Royal Seal","Venture","Adventurer","Laboratory","Mine","Moneylender","Spy"]
-		 },
-		 {
-			 "name" : "Biggest Money - 2nd Edition",
-			 "cards" : ["Bank","Grand Market","Mint","Royal Seal","Venture","Artisan", "Harbinger", "Laboratory","Throne Room"]
-		 },
-		 {
-			 "name" : "The King's Army",
-			 "cards" : ["Expand","Goons","King's Court","Rabble","Vault","Bureaucrat","Council Room","Moat","Spy","Village"]
-		 },
-		 {
-			 "name" : "The King's Army - 2nd Edition",
-			 "cards" : ["Expand","Goons","King's Court","Rabble","Vault","Bureaucrat","Council Room","Moat","Merchant","Village"]
-		 },
-		 {
-			 "name" : "The Good Life",
-			 "cards" : ["Contraband","Counting House","Hoard","Monument","Mountebank","Bureaucrat","Cellar","Chancellor","Gardens","Village"]
-		 },
-		 {
-			 "name" : "The Good Life - 2nd Edition",
-			 "cards" : ["Contraband","Counting House","Hoard","Monument","Mountebank","Artisan","Bureaucrat","Cellar","Gardens","Village"]
-		 },
-		 {
-			 "name" : "Paths to Victory",
-			 "cards" : ["Bishop","Counting House","Goons","Monument","Peddler","Baron","Harem","Pawn","Shanty Town","Upgrade"]
-		 },
-		 {
-			 "name" : "All Along the Watchtower",
-			 "cards" : ["Hoard","Talisman","Trade Route","Vault","Watchtower","Bridge","Great Hall","Mining Village","Pawn","Torturer"]
-		 },
-		 {
-			 "name" : "All Along the Watchtower - 2nd Edition",
-			 "cards" : ["Hoard","Talisman","Trade Route","Vault","Watchtower","Bridge","Mill","Mining Village","Pawn","Torturer"]
-		 },
-		 {
-			 "name" : "Lucky Seven",
-			 "cards" : ["Bank","Expand","Forge","King's Court","Vault","Bridge","Coppersmith","Swindler","Tribute","Wishing Well"]
-		 },
-		 {
-			 "name" : "Lucky Seven - 2nd Edition",
-			 "cards" : ["Bank","Expand","Forge","King's Court","Vault","Bridge","Lurker","Patrol","Swindler","Wishing Well"]
-		 },
-		 {
-			 "name" : "Victory Dance",
-			 "cards" : ["Bridge","Duke","Great Hall","Harem","Ironworks","Masquerade","Nobles","Pawn","Scout","Upgrade"]
-		 },
-		 {
-			 "name" : "Victory Dance - 2nd Edition",
-			 "cards" : ["Baron", "Courtier","Duke","Harem","Ironworks","Masquerade","Mill","Nobles","Patrol","Replace"]
-		 },
-		 {
-			 "name" : "The Plot Thickens",
-			 "cards" : ["Conspirator", "Ironworks", "Lurker","Pawn","Mining Village","Secret Passage","Steward","Swindler","Torturer","Trading Post"]
-		 },
-		 {
-			 "name" : "Secret Schemes",
-			 "cards" : ["Conspirator","Harem","Ironworks","Pawn","Saboteur","Shanty Town","Steward","Swindler","Trading Post","Tribute"]
-		 },
-		 {
-			 "name" : "Best Wishes",
-			 "cards" : ["Coppersmith","Courtyard","Masquerade","Scout","Shanty Town","Steward","Torturer","Trading Post","Upgrade","Wishing Well"]
-		 },
-		 {
-			 "name" : "Best Wishes - 2nd Edition",
-			 "cards" : ["Baron","Conspirator","Courtyard","Diplomat","Duke","Secret Passage","Shanty Town","Torturer","Upgrade","Wishing Well"]
-		 },
-		 {
-			 "name" : "Deconstruction",
-			 "cards" : ["Bridge","Mining Village","Remodel","Saboteur","Secret Chamber","Spy","Swindler","Thief","Throne Room","Torturer"]
-		 },
-		 {
-			 "name" : "Deconstruction - 2nd Edition",
-			 "cards" : ["Bandit","Mine","Remodel","Throne Room","Village","Diplomat","Harem","Lurker","Replace","Swindler"]
-		 },
-		 {
-			 "name" : "Hand Madness",
-			 "cards" : ["Bureaucrat","Chancellor","Council Room","Courtyard","Mine","Militia","Minion","Nobles","Steward","Torturer"]
-		 },
-		 {
-			 "name" : "Underlings",
-			 "cards" : ["Baron","Cellar","Festival","Library","Masquerade","Minion","Nobles","Pawn","Steward","Witch"]
-		 },
-		 {
-			 "name" : "Underlings - 2nd Edition",
-			 "cards" : ["Cellar","Festival","Library","Sentry","Vassal","Courtier","Diplomat","Minion","Nobles","Pawn"]
-		 },
-		 {
-			 "name" : "Grand Scheme",
-			 "cards" : ["Artisan","Council Room","Market","Militia","Workshop","Bridge","Mill","Mining Village","Patrol","Shanty Town"]
-		 },
-		 {
-			 "name" : "First Game",
-			 "cards" : ["Cellar","Market","Militia","Mine","Moat","Remodel","Smithy","Village","Woodcutter","Workshop"]
-		 },
-		 {
-			 "name" : "First Game - 2nd Edition",
-			 "cards" : ["Cellar","Market","Merchant","Militia","Mine","Moat","Remodel","Smithy","Village","Workshop"]
-		 },
-		 {
-			 "name" : "Big Money",
-			 "cards" : ["Adventurer","Bureaucrat","Chancellor","Chapel","Feast","Laboratory","Market","Mine","Moneylender","Throne Room"]
-		 },
-		 {
-			 "name" : "Interaction",
-			 "cards" : ["Bureaucrat","Chancellor","Council Room","Festival","Library","Militia","Moat","Spy","Thief","Village"]
-		 },
-		 {
-			 "name" : "Size Distortion",
-			 "cards" : ["Cellar","Chapel","Feast","Gardens","Laboratory","Thief","Village","Witch","Woodcutter","Workshop"]
-		 },
-		 {
-			 "name" : "Size Distortion - 2nd Edition",
-			 "cards" : ["Artisan","Bandit","Bureaucrat","Chapel","Festival","Gardens","Sentry","Throne Room","Witch","Workshop"]
-		 },
-		 {
-			 "name" : "Deck Top",
-			 "cards" : ["Artisan","Bureaucrat","Council Room","Festival","Harbinger","Laboratory","Moneylender","Sentry","Vassal","Village"]
-		 },
-		 {
-			 "name" : "Sleight of Hand",
-			 "cards" : ["Cellar","Council Room","Festival","Gardens","Library","Harbinger","Militia","Poacher","Smithy","Throne Room"]
-		 },
-		 {
-			 "name" : "Improvements",
-			 "cards" : ["Artisan","Cellar","Market","Merchant","Mine","Moat","Moneylender","Poacher","Remodel","Witch"]
-		 },
-		 {
-			 "name" : "Silver & Gold",
-			 "cards" : ["Bandit","Bureaucrat","Chapel","Harbinger","Laboratory","Merchant","Mine","Moneylender","Throne Room","Vassal"]
-		 },
-		 {
-			 "name" : "Village Square",
-			 "cards" : ["Bureaucrat","Cellar","Festival","Library","Market","Remodel","Smithy","Throne Room","Village","Woodcutter"]
-		 },
-		 {
-			 "name" : "High Seas",
-			 "cards" : ["Bazaar","Caravan","Embargo","Explorer","Haven","Island","Lookout","Pirate Ship","Smugglers","Wharf"]
-		 },
-		 {
-			 "name" : "Buried Treasure",
-			 "cards" : ["Ambassador","Cutpurse","Fishing Village","Lighthouse","Outpost","Pearl Diver","Tactician","Treasure Map","Warehouse","Wharf"]
-		 },
-		 {
-			 "name" : "Shipwrecks",
-			 "cards" : ["Ghost Ship","Merchant Ship","Native Village","Navigator","Pearl Diver","Salvager","Sea Hag","Smugglers","Treasury","Warehouse"]
-		 },
-		 {
-			 "name" : "Reach for Tomorrow",
-			 "cards" : ["Adventurer","Cellar","Council Room","Cutpurse","Ghost Ship","Lookout","Sea Hag","Spy","Treasure Map","Village"]
-		 },
-		 {
-			 "name" : "Reach for Tomorrow - 2nd Edition",
-			 "cards" : ["Artisan","Cellar","Council Room","Vassal","Village","Cutpurse","Ghost Ship","Lookout","Sea Hag","Treasure Map"]
-		 },
-		 {
-			 "name" : "Repetition",
-			 "cards" : ["Caravan","Chancellor","Explorer","Festival","Militia","Outpost","Pearl Diver","Pirate Ship","Treasury","Workshop"]
-		 },
-		 {
-			 "name" : "Repetition - 2nd Edition",
-			 "cards" : ["Festival","Harbinger","Militia","Workshop","Caravan","Explorer","Outpost","Pearl Diver","Pirate Ship","Treasury"]
-		 },
-		 {
-			 "name" : "A Star to Steer By",
-			 "cards" : ["Secret Passage","Diplomat","Swindler","Wishing Well","Courtier","Lookout","Treasure Map","Ghost Ship","Haven","Outpost"]
-		 },
-		 {
-			 "name" : "Shore Patrol",
-			 "cards" : ["Patrol","Replace","Shanty Town","Trading Post","Pawn","Island","Wharf","Cutpurse","Lighthouse","Warehouse"]
-		 },
-		 {
-			 "name" : "Bridge Crossing",
-			 "cards" : ["Lurker","Nobles","Duke","Conspirator","Bridge","Salvager","Embargo","Smugglers","Native Village","Treasury"]
-		 },
-		 {
-			 "name" : "Give and Take",
-			 "cards" : ["Ambassador","Fishing Village","Haven","Island","Library","Market","Moneylender","Salvager","Smugglers","Witch"]
-		 },
-		 {
-			 "name" : "Grim Parade",
-			 "cards" : ["Armory", "Band of Misfits", "Catacombs", "Cultist", "Forager", "Fortress", "Knights", "Market Square", "Procession", "Hunting Grounds"]
-		 },
-		 {
-			 "name" : "Playing Chess With Death",
-			 "cards" : ["Bandit Camp", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rats", "Sage", "Scavenger", "Storeroom", "Vagrant"]
-		 },
-		 {
-			 "name" : "High and Low",
-			 "cards" : ["Hermit", "Hunting Grounds", "Mystic", "Poor House", "Wandering Minstrel", "Cellar", "Moneylender", "Throne Room", "Witch", "Workshop"]
-		 },
-		 {
-			 "name" : "Chivalry and Revelry",
-			 "cards" : ["Altar", "Knights", "Rats", "Scavenger", "Squire", "Festival", "Gardens", "Laboratory", "Library", "Remodel"]
-		 },
-		 {
-			 "name" : "Prophecy",
-			 "cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Great Hall", "Nobles", "Wishing Well"]
-		 },
-		 {
-			 "name" : "Prophecy - 2nd Edition",
-			 "cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Nobles", "Secret Passage", "Wishing Well"]
-		 },
-		 {
-			 "name" : "Invasion",
-			 "cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Harem", "Mining Village", "Swindler", "Torturer", "Upgrade"]
-		 },
-		 {
-			 "name" : "Invasion - 2nd Edition",
-			 "cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Diplomat", "Harem", "Swindler", "Torturer", "Upgrade"]
-		 },
-		 {
-			 "name" : "Royalty Factory",
-			 "cards" : ["Pilgrimage","Conspirator","Courtier","Harem","Nobles","Swindler","Bridge Troll","Duplicate","Page","Raze","Royal Carriage"]
-		 },
-		 {
-			 "name" : "Masters of Finance",
-			 "cards" : ["Ball","Borrow","Bridge","Pawn","Shanty Town","Steward","Upgrade","Artificer","Distant Lands","Gear","Transmogrify","Wine Merchant"]
-		 },
-		 {
-			 "name" : "Delicious Torture",
-			 "cards" : ["Arena","Banquet","Baron","Bridge","Harem","Ironworks","Torturer","Castles","Crown","Enchantress","Sacrifice","Settlers"]
-		 },
-		 {
-			 "name" : "Buddy System",
-			 "cards" : ["Salt the Earth","Wolf Den","Masquerade","Mining Village","Nobles","Pawn","Trading Post","Archive","Capital","Catapult","Engineer","Forum"]
-		 },
-		 {
-			 "name" : "Watery Graves",
-			 "cards" : ["Count", "Graverobber", "Hermit", "Scavenger", "Urchin", "Native Village", "Pirate Ship", "Salvager", "Treasure Map", "Treasury"]
-		 },
-		 {
-			 "name" : "Peasants",
-			 "cards" : ["Death Cart", "Feodum", "Poor House", "Urchin", "Vagrant", "Fishing Village", "Haven", "Island", "Lookout", "Warehouse"]
-		 },
-		 {
-			 "name" : "Infestations",
-			 "cards" : ["Armory", "Cultist", "Feodum", "Market Square", "Rats", "Wandering Minstrel", "Apprentice", "Scrying Pool", "Transmute", "Vineyard"]
-		 },
-		 {
-			 "name" : "Lamentations",
-			 "cards" : ["Beggar", "Catacombs", "Counterfeit", "Forager", "Ironmonger", "Pillage", "Apothecary", "Golem", "Herbalist", "University"]
-		 },
-		 {
-			 "name" : "One Man's Trash",
-			 "cards" : ["Counterfeit", "Forager", "Graverobber", "Market Square", "Rogue", "City", "Grand Market", "Monument", "Talisman", "Venture"]
-		 },
-		 {
-			 "name" : "Honor Among Thieves",
-			 "cards" : ["Bandit Camp", "Procession", "Rebuild", "Rogue", "Squire", "Forge", "Hoard", "Peddler", "Quarry", "Watchtower"]
-		 },
-		 {
-			 "name" : "Dark Carnival",
-			 "cards" : ["Band of Misfits", "Cultist", "Fortress", "Hermit", "Junk Dealer", "Knights", "Fairgrounds", "Hamlet", "Horn of Plenty", "Menagerie"]
-		 },
-		 {
-			 "name" : "To the Victor",
-			 "cards" : ["Bandit Camp", "Counterfeit", "Death Cart", "Marauder", "Pillage", "Sage", "Harvest", "Hunting Party", "Remake", "Tournament"]
-		 },
-		 {
-			 "name" : "Far From Home",
-			 "cards" : ["Beggar", "Count", "Feodum", "Marauder", "Wandering Minstrel", "Cartographer", "Develop", "Embassy", "Fool's Gold", "Haggler"]
-		 },
-		 {
-			 "name" : "Expeditions",
-			 "cards" : ["Altar", "Catacombs", "Ironmonger", "Poor House", "Storeroom", "Crossroads", "Farmland", "Highway", "Spice Merchant", "Tunnel"]
-		 }
+		{
+			"name" : "Introduction",
+			"cards" : ["Cache","Crossroads","Develop","Haggler","Jack of all Trades","Margrave","Nomad Camp","Oasis","Spice Merchant","Stables"]
+		},
+		{
+			"name" : "Fair Trades",
+			"cards" : ["Border Village","Cartographer","Develop","Duchess","Farmland","Ill-Gotten Gains","Noble Brigand","Silk Road","Stables","Trader"]
+		},
+		{
+			"name" : "Bargains",
+			"cards" : ["Border Village","Cache","Duchess","Fool's Gold","Haggler","Highway","Nomad Camp","Scheme","Spice Merchant","Trader"]
+		},
+		{
+			"name" : "Gambits",
+			"cards" : ["Cartographer","Crossroads","Embassy","Inn","Jack of all Trades","Mandarin","Nomad Camp","Oasis","Oracle","Tunnel"]
+		},
+		{
+			"name" : "Highway Robbery",
+			"cards" : ["Cellar","Library","Moneylender","Throne Room","Workshop","Highway","Inn","Margrave","Noble Brigand","Oasis"]
+		},
+		{
+			"name" : "Adventures Abroad",
+			"cards" : ["Adventurer","Chancellor","Festival","Laboratory","Remodel","Crossroads","Farmland","Fool's Gold","Oracle","Spice Merchant"]
+		},
+		{
+			"name" : "Money for Nothing",
+			"cards" : ["Coppersmith","Great Hall","Pawn","Shanty Town","Torturer","Cache","Cartographer","Jack of all Trades","Silk Road","Tunnel"]
+		},
+		{
+			"name" : "Money for Nothing - 2nd Edition",
+			"cards" : ["Replace","Patrol","Pawn","Shanty Town","Torturer","Cache","Cartographer","Jack of all Trades","Silk Road","Tunnel"]
+		},
+		{
+			"name" : "The Duke's Ball",
+			"cards" : ["Conspirator","Duke","Harem","Masquerade","Upgrade","Duchess","Haggler","Inn","Noble Brigand","Scheme"]
+		},
+		{
+			"name" : "The Duke's Ball - 2nd Edition",
+			"cards" : ["Baron","Conspirator","Nobles","Secret Passage","Wishing Well","Armory","Ironmonger","Mystic","Rebuild","Vagrant"]
+		},
+		{
+			"name" : "Travelers",
+			"cards" : ["Cutpurse","Island","Lookout","Merchant Ship","Warehouse","Cartographer","Crossroads","Farmland","Silk Road","Stables"]
+		},
+		{
+			"name" : "Diplomacy",
+			"cards" : ["Ambassador","Bazaar","Caravan","Embargo","Smugglers","Embassy","Farmland","Ill-Gotten Gains","Noble Brigand","Trader"]
+		},
+		{
+			"name" : "Schemes and Dreams",
+			"cards" : ["Apothecary","Apprentice","Herbalist","Philosopher's Stone","Transmute","Duchess","Fool's Gold","Ill-Gotten Gains","Jack of all Trades","Scheme"]
+		},
+		{
+			"name" : "Wine Country",
+			"cards" : ["Apprentice","Familiar","Golem","University","Vineyard","Crossroads","Farmland","Haggler","Highway","Nomad Camp"]
+		},
+		{
+			"name" : "Instant Gratification",
+			"cards" : ["Bishop","Expand","Hoard","Mint","Watchtower","Farmland","Haggler","Ill-Gotten Gains","Noble Brigand","Trader"]
+		},
+		{
+			"name" : "Treasure Trove",
+			"cards" : ["Bank","Monument","Royal Seal","Trade Route","Venture","Cache","Develop","Fool's Gold","Ill-Gotten Gains","Mandarin"]
+		},
+		{
+			"name" : "Blue Harvest",
+			"cards" : ["Hamlet","Horn of Plenty","Horse Traders","Jester","Tournament","Fool's Gold","Mandarin","Noble Brigand","Trader","Tunnel"]
+		},
+		{
+			"name" : "Traveling Circus",
+			"cards" : ["Fairgrounds","Farming Village","Hunting Party","Jester","Menagerie","Border Village","Embassy","Fool's Gold","Nomad Camp","Oasis"]
+		},
+		{
+			"name" : "Forbidden Arts",
+			"cards" : ["Apprentice","Familiar","Possession","University","Cellar","Council Room","Gardens","Laboratory","Thief","Throne Room"]
+		},
+		{
+			"name" : "Forbidden Arts - 2nd Edition",
+			"cards" : ["Bandit","Cellar","Council Room","Gardens","Laboratory","Throne Room","Apprentice","Familiar","Possession","University"]
+		},
+		{
+			"name" : "Potion Mixers",
+			"cards" : ["Alchemist","Apothecary","Golem","Herbalist","Transmute","Cellar","Chancellor","Festival","Militia","Smithy"]
+		},
+		{
+			"name" : "Potion Mixers - 2nd Edition",
+			"cards" : ["Cellar","Festival","Militia","Poacher","Smithy","Alchemist","Apothecary","Golem","Herbalist","Transmute"]
+		},
+		{
+			"name" : "Chemistry Lesson",
+			"cards" : ["Alchemist","Golem","Philosopher's Stone","University","Bureaucrat","Market","Moat","Remodel","Witch","Woodcutter"]
+		},
+		{
+			"name" : "Chemistry Lesson - 2nd Edition",
+			"cards" : ["Alchemist","Golem","Philosopher's Stone","University","Bureaucrat","Market","Moat","Remodel","Witch","Vassal"]
+		},
+		{
+			"name" : "Servants",
+			"cards" : ["Golem","Possession","Scrying Pool","Transmute","Vineyard","Conspirator","Great Hall","Minion","Pawn","Steward"]
+		},
+		{
+			"name" : "Servants - 2nd Edition",
+			"cards" : ["Golem","Possession","Scrying Pool","Transmute","Vineyard","Conspirator","Mill","Minion","Pawn","Steward"]
+		},
+		{
+			"name" : "Secret Research",
+			"cards" : ["Familiar","Herbalist","Philosopher's Stone","University","Bridge","Masquerade","Minion","Nobles","Shanty Town","Torturer"]
+		},
+		{
+			"name" : "Pools, Tools, and Fools",
+			"cards" : ["Apothecary","Apprentice","Golem","Scrying Pool","Baron","Coppersmith","Ironworks","Nobles","Trading Post","Wishing Well"]
+		},
+		{
+			"name" : "Pools, Tools, and Fools - 2nd Edition",
+			"cards" : ["Apothecary","Apprentice","Golem","Scrying Pool","Baron","Ironworks","Lurker","Nobles","Trading Post","Wishing Well"]
+		},
+		{
+			"name" : "Bounty of the Hunt",
+			"cards" : ["Harvest","Horn of Plenty","Hunting Party","Menagerie","Tournament","Cellar","Festival","Militia","Moneylender","Smithy"]
+		},
+		{
+			"name" : "Bad Omens",
+			"cards" : ["Fortune Teller","Hamlet","Horn of Plenty","Jester","Remake","Adventurer","Bureaucrat","Laboratory","Spy","Throne Room"]
+		},
+		{
+			"name" : "Jester's Workshop",
+			"cards" : ["Fairgrounds","Farming Village","Horse Traders","Jester","Young Witch","Feast","Laboratory","Market","Remodel","Workshop","Chancellor"]
+		},
+		{
+			"name" : "Last Laughs",
+			"cards" : ["Farming Village","Harvest","Horse Traders","Hunting Party","Jester","Minion","Nobles","Pawn","Steward","Swindler"]
+		},
+		{
+			"name" : "The Spice of Life",
+			"cards" : ["Fairgrounds","Horn of Plenty","Remake","Tournament","Young Witch","Coppersmith","Courtyard","Great Hall","Mining Village","Tribute","Wishing Well"]
+		},
+		{
+			"name" : "The Spice of Life - 2nd Edition",
+			"cards" : ["Fairgrounds","Horn of Plenty","Remake","Tournament","Young Witch","Courtier","Courtyard","Diplomat","Mining Village","Replace","Wishing Well"]
+		},
+		{
+			"name" : "Small Victories",
+			"cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Great Hall","Harem","Pawn"]
+		},
+		{
+			"name" : "Small Victories - 2nd Edition",
+			"cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Harem","Pawn","Secret Passage"]
+		},
+		{
+			"name" : "Name that Card",
+			"cards" : ["Courtyard","Harem","Nobles","Replace","Wishing Well","Baker","Doctor","Plaza","Advisor","Masterpiece"]
+		},
+		{
+			"name" : "Tricks of the Trade",
+			"cards" : ["Conspirator","Masquerade","Mill","Nobles","Secret Passage","Stonemason","Herald","Soothsayer","Journeyman","Butcher"]
+		},
+		{
+			"name" : "Decisions, Decisions",
+			"cards" : ["Bridge","Pawn","Mining Village","Upgrade","Duke","Merchant Guild","Candlestick Maker","Masterpiece","Taxman","Butcher"]
+		},
+		{
+			"name" : "Beginners",
+			"cards" : ["Bank","Counting House","Expand","Goons","Monument","Rabble","Royal Seal","Venture","Watchtower","Worker's Village"]
+		},
+		{
+			"name" : "Friendly Interactive",
+			"cards" : ["Bishop","City","Contraband","Forge","Hoard","Peddler","Royal Seal","Trade Route","Vault","Worker's Village"]
+		},
+		{
+			"name" : "Big actions",
+			"cards" : ["City","Expand","Grand Market","King's Court","Loan","Mint","Quarry","Rabble","Talisman","Vault"]
+		},
+		{
+			"name" : "Biggest Money",
+			"cards" : ["Bank","Grand Market","Mint","Royal Seal","Venture","Adventurer","Laboratory","Mine","Moneylender","Spy"]
+		},
+		{
+			"name" : "Biggest Money - 2nd Edition",
+			"cards" : ["Bank","Grand Market","Mint","Royal Seal","Venture","Artisan", "Harbinger", "Laboratory","Throne Room"]
+		},
+		{
+			"name" : "The King's Army",
+			"cards" : ["Expand","Goons","King's Court","Rabble","Vault","Bureaucrat","Council Room","Moat","Spy","Village"]
+		},
+		{
+			"name" : "The King's Army - 2nd Edition",
+			"cards" : ["Expand","Goons","King's Court","Rabble","Vault","Bureaucrat","Council Room","Moat","Merchant","Village"]
+		},
+		{
+			"name" : "The Good Life",
+			"cards" : ["Contraband","Counting House","Hoard","Monument","Mountebank","Bureaucrat","Cellar","Chancellor","Gardens","Village"]
+		},
+		{
+			"name" : "The Good Life - 2nd Edition",
+			"cards" : ["Contraband","Counting House","Hoard","Monument","Mountebank","Artisan","Bureaucrat","Cellar","Gardens","Village"]
+		},
+		{
+			"name" : "Paths to Victory",
+			"cards" : ["Bishop","Counting House","Goons","Monument","Peddler","Baron","Harem","Pawn","Shanty Town","Upgrade"]
+		},
+		{
+			"name" : "All Along the Watchtower",
+			"cards" : ["Hoard","Talisman","Trade Route","Vault","Watchtower","Bridge","Great Hall","Mining Village","Pawn","Torturer"]
+		},
+		{
+			"name" : "All Along the Watchtower - 2nd Edition",
+			"cards" : ["Hoard","Talisman","Trade Route","Vault","Watchtower","Bridge","Mill","Mining Village","Pawn","Torturer"]
+		},
+		{
+			"name" : "Lucky Seven",
+			"cards" : ["Bank","Expand","Forge","King's Court","Vault","Bridge","Coppersmith","Swindler","Tribute","Wishing Well"]
+		},
+		{
+			"name" : "Lucky Seven - 2nd Edition",
+			"cards" : ["Bank","Expand","Forge","King's Court","Vault","Bridge","Lurker","Patrol","Swindler","Wishing Well"]
+		},
+		{
+			"name" : "Victory Dance",
+			"cards" : ["Bridge","Duke","Great Hall","Harem","Ironworks","Masquerade","Nobles","Pawn","Scout","Upgrade"]
+		},
+		{
+			"name" : "Victory Dance - 2nd Edition",
+			"cards" : ["Baron", "Courtier","Duke","Harem","Ironworks","Masquerade","Mill","Nobles","Patrol","Replace"]
+		},
+		{
+			"name" : "The Plot Thickens",
+			"cards" : ["Conspirator", "Ironworks", "Lurker","Pawn","Mining Village","Secret Passage","Steward","Swindler","Torturer","Trading Post"]
+		},
+		{
+			"name" : "Secret Schemes",
+			"cards" : ["Conspirator","Harem","Ironworks","Pawn","Saboteur","Shanty Town","Steward","Swindler","Trading Post","Tribute"]
+		},
+		{
+			"name" : "Best Wishes",
+			"cards" : ["Coppersmith","Courtyard","Masquerade","Scout","Shanty Town","Steward","Torturer","Trading Post","Upgrade","Wishing Well"]
+		},
+		{
+			"name" : "Best Wishes - 2nd Edition",
+			"cards" : ["Baron","Conspirator","Courtyard","Diplomat","Duke","Secret Passage","Shanty Town","Torturer","Upgrade","Wishing Well"]
+		},
+		{
+			"name" : "Deconstruction",
+			"cards" : ["Bridge","Mining Village","Remodel","Saboteur","Secret Chamber","Spy","Swindler","Thief","Throne Room","Torturer"]
+		},
+		{
+			"name" : "Deconstruction - 2nd Edition",
+			"cards" : ["Bandit","Mine","Remodel","Throne Room","Village","Diplomat","Harem","Lurker","Replace","Swindler"]
+		},
+		{
+			"name" : "Hand Madness",
+			"cards" : ["Bureaucrat","Chancellor","Council Room","Courtyard","Mine","Militia","Minion","Nobles","Steward","Torturer"]
+		},
+		{
+			"name" : "Underlings",
+			"cards" : ["Baron","Cellar","Festival","Library","Masquerade","Minion","Nobles","Pawn","Steward","Witch"]
+		},
+		{
+			"name" : "Underlings - 2nd Edition",
+			"cards" : ["Cellar","Festival","Library","Sentry","Vassal","Courtier","Diplomat","Minion","Nobles","Pawn"]
+		},
+		{
+			"name" : "Grand Scheme",
+			"cards" : ["Artisan","Council Room","Market","Militia","Workshop","Bridge","Mill","Mining Village","Patrol","Shanty Town"]
+		},
+		{
+			"name" : "First Game",
+			"cards" : ["Cellar","Market","Militia","Mine","Moat","Remodel","Smithy","Village","Woodcutter","Workshop"]
+		},
+		{
+			"name" : "First Game - 2nd Edition",
+			"cards" : ["Cellar","Market","Merchant","Militia","Mine","Moat","Remodel","Smithy","Village","Workshop"]
+		},
+		{
+			"name" : "Big Money",
+			"cards" : ["Adventurer","Bureaucrat","Chancellor","Chapel","Feast","Laboratory","Market","Mine","Moneylender","Throne Room"]
+		},
+		{
+			"name" : "Interaction",
+			"cards" : ["Bureaucrat","Chancellor","Council Room","Festival","Library","Militia","Moat","Spy","Thief","Village"]
+		},
+		{
+			"name" : "Size Distortion",
+			"cards" : ["Cellar","Chapel","Feast","Gardens","Laboratory","Thief","Village","Witch","Woodcutter","Workshop"]
+		},
+		{
+			"name" : "Size Distortion - 2nd Edition",
+			"cards" : ["Artisan","Bandit","Bureaucrat","Chapel","Festival","Gardens","Sentry","Throne Room","Witch","Workshop"]
+		},
+		{
+			"name" : "Deck Top",
+			"cards" : ["Artisan","Bureaucrat","Council Room","Festival","Harbinger","Laboratory","Moneylender","Sentry","Vassal","Village"]
+		},
+		{
+			"name" : "Sleight of Hand",
+			"cards" : ["Cellar","Council Room","Festival","Gardens","Library","Harbinger","Militia","Poacher","Smithy","Throne Room"]
+		},
+		{
+			"name" : "Improvements",
+			"cards" : ["Artisan","Cellar","Market","Merchant","Mine","Moat","Moneylender","Poacher","Remodel","Witch"]
+		},
+		{
+			"name" : "Silver & Gold",
+			"cards" : ["Bandit","Bureaucrat","Chapel","Harbinger","Laboratory","Merchant","Mine","Moneylender","Throne Room","Vassal"]
+		},
+		{
+			"name" : "Village Square",
+			"cards" : ["Bureaucrat","Cellar","Festival","Library","Market","Remodel","Smithy","Throne Room","Village","Woodcutter"]
+		},
+		{
+			"name" : "High Seas",
+			"cards" : ["Bazaar","Caravan","Embargo","Explorer","Haven","Island","Lookout","Pirate Ship","Smugglers","Wharf"]
+		},
+		{
+			"name" : "Buried Treasure",
+			"cards" : ["Ambassador","Cutpurse","Fishing Village","Lighthouse","Outpost","Pearl Diver","Tactician","Treasure Map","Warehouse","Wharf"]
+		},
+		{
+			"name" : "Shipwrecks",
+			"cards" : ["Ghost Ship","Merchant Ship","Native Village","Navigator","Pearl Diver","Salvager","Sea Hag","Smugglers","Treasury","Warehouse"]
+		},
+		{
+			"name" : "Reach for Tomorrow",
+			"cards" : ["Adventurer","Cellar","Council Room","Cutpurse","Ghost Ship","Lookout","Sea Hag","Spy","Treasure Map","Village"]
+		},
+		{
+			"name" : "Reach for Tomorrow - 2nd Edition",
+			"cards" : ["Artisan","Cellar","Council Room","Vassal","Village","Cutpurse","Ghost Ship","Lookout","Sea Hag","Treasure Map"]
+		},
+		{
+			"name" : "Repetition",
+			"cards" : ["Caravan","Chancellor","Explorer","Festival","Militia","Outpost","Pearl Diver","Pirate Ship","Treasury","Workshop"]
+		},
+		{
+			"name" : "Repetition - 2nd Edition",
+			"cards" : ["Festival","Harbinger","Militia","Workshop","Caravan","Explorer","Outpost","Pearl Diver","Pirate Ship","Treasury"]
+		},
+		{
+			"name" : "A Star to Steer By",
+			"cards" : ["Secret Passage","Diplomat","Swindler","Wishing Well","Courtier","Lookout","Treasure Map","Ghost Ship","Haven","Outpost"]
+		},
+		{
+			"name" : "Shore Patrol",
+			"cards" : ["Patrol","Replace","Shanty Town","Trading Post","Pawn","Island","Wharf","Cutpurse","Lighthouse","Warehouse"]
+		},
+		{
+			"name" : "Bridge Crossing",
+			"cards" : ["Lurker","Nobles","Duke","Conspirator","Bridge","Salvager","Embargo","Smugglers","Native Village","Treasury"]
+		},
+		{
+			"name" : "Give and Take",
+			"cards" : ["Ambassador","Fishing Village","Haven","Island","Library","Market","Moneylender","Salvager","Smugglers","Witch"]
+		},
+		{
+			"name" : "Grim Parade",
+			"cards" : ["Armory", "Band of Misfits", "Catacombs", "Cultist", "Forager", "Fortress", "Knights", "Market Square", "Procession", "Hunting Grounds"]
+		},
+		{
+			"name" : "Playing Chess With Death",
+			"cards" : ["Bandit Camp", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rats", "Sage", "Scavenger", "Storeroom", "Vagrant"]
+		},
+		{
+			"name" : "High and Low",
+			"cards" : ["Hermit", "Hunting Grounds", "Mystic", "Poor House", "Wandering Minstrel", "Cellar", "Moneylender", "Throne Room", "Witch", "Workshop"]
+		},
+		{
+			"name" : "Chivalry and Revelry",
+			"cards" : ["Altar", "Knights", "Rats", "Scavenger", "Squire", "Festival", "Gardens", "Laboratory", "Library", "Remodel"]
+		},
+		{
+			"name" : "Prophecy",
+			"cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Great Hall", "Nobles", "Wishing Well"]
+		},
+		{
+			"name" : "Prophecy - 2nd Edition",
+			"cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Nobles", "Secret Passage", "Wishing Well"]
+		},
+		{
+			"name" : "Invasion",
+			"cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Harem", "Mining Village", "Swindler", "Torturer", "Upgrade"]
+		},
+		{
+			"name" : "Invasion - 2nd Edition",
+			"cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Diplomat", "Harem", "Swindler", "Torturer", "Upgrade"]
+		},
+		{
+			"name" : "Royalty Factory",
+			"cards" : ["Pilgrimage","Conspirator","Courtier","Harem","Nobles","Swindler","Bridge Troll","Duplicate","Page","Raze","Royal Carriage"]
+		},
+		{
+			"name" : "Masters of Finance",
+			"cards" : ["Ball","Borrow","Bridge","Pawn","Shanty Town","Steward","Upgrade","Artificer","Distant Lands","Gear","Transmogrify","Wine Merchant"]
+		},
+		{
+			"name" : "Delicious Torture",
+			"cards" : ["Arena","Banquet","Baron","Bridge","Harem","Ironworks","Torturer","Castles","Crown","Enchantress","Sacrifice","Settlers"]
+		},
+		{
+			"name" : "Buddy System",
+			"cards" : ["Salt the Earth","Wolf Den","Masquerade","Mining Village","Nobles","Pawn","Trading Post","Archive","Capital","Catapult","Engineer","Forum"]
+		},
+		{
+			"name" : "Watery Graves",
+			"cards" : ["Count", "Graverobber", "Hermit", "Scavenger", "Urchin", "Native Village", "Pirate Ship", "Salvager", "Treasure Map", "Treasury"]
+		},
+		{
+			"name" : "Peasants",
+			"cards" : ["Death Cart", "Feodum", "Poor House", "Urchin", "Vagrant", "Fishing Village", "Haven", "Island", "Lookout", "Warehouse"]
+		},
+		{
+			"name" : "Infestations",
+			"cards" : ["Armory", "Cultist", "Feodum", "Market Square", "Rats", "Wandering Minstrel", "Apprentice", "Scrying Pool", "Transmute", "Vineyard"]
+		},
+		{
+			"name" : "Lamentations",
+			"cards" : ["Beggar", "Catacombs", "Counterfeit", "Forager", "Ironmonger", "Pillage", "Apothecary", "Golem", "Herbalist", "University"]
+		},
+		{
+			"name" : "One Man's Trash",
+			"cards" : ["Counterfeit", "Forager", "Graverobber", "Market Square", "Rogue", "City", "Grand Market", "Monument", "Talisman", "Venture"]
+		},
+		{
+			"name" : "Honor Among Thieves",
+			"cards" : ["Bandit Camp", "Procession", "Rebuild", "Rogue", "Squire", "Forge", "Hoard", "Peddler", "Quarry", "Watchtower"]
+		},
+		{
+			"name" : "Dark Carnival",
+			"cards" : ["Band of Misfits", "Cultist", "Fortress", "Hermit", "Junk Dealer", "Knights", "Fairgrounds", "Hamlet", "Horn of Plenty", "Menagerie"]
+		},
+		{
+			"name" : "To the Victor",
+			"cards" : ["Bandit Camp", "Counterfeit", "Death Cart", "Marauder", "Pillage", "Sage", "Harvest", "Hunting Party", "Remake", "Tournament"]
+		},
+		{
+			"name" : "Far From Home",
+			"cards" : ["Beggar", "Count", "Feodum", "Marauder", "Wandering Minstrel", "Cartographer", "Develop", "Embassy", "Fool's Gold", "Haggler"]
+		},
+		{
+			"name" : "Expeditions",
+			"cards" : ["Altar", "Catacombs", "Ironmonger", "Poor House", "Storeroom", "Crossroads", "Farmland", "Highway", "Spice Merchant", "Tunnel"]
+		}
 	]
 }
 
