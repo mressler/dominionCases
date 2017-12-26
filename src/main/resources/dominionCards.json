@@ -37,11 +37,31 @@
 		},
 		"9" : {
 			"name" : "Dark Ages",
-			"releaseDate" : ""
+			"releaseDate" : "8/23/2017"
 		},
 		"10" : {
 			"name" : "Guilds",
-			"releaseDate" : ""
+			"releaseDate" : "2/22/2013"
+		},
+		"11" : {
+			"name" : "Basic - 2nd Edition",
+			"releaseDate" : "8/10/2016"
+		},
+		"12" : {
+			"name" : "Intrigue - 2nd Edition",
+			"releaseDate" : "8/9/2016"
+		},
+		"13" : {
+			"name" : "Empires",
+			"releaseDate" : "6/8/2016"
+		},
+		"14" : {
+			"name" : "Adventures",
+			"releaseDate" : "1/26/2017"
+		},
+		"15" : {
+			"name" : "Empires",
+			"releaseDate" : "9/8/2017"
 		}
 	},
 	"cards" : [
@@ -2782,8 +2802,16 @@
 			 "cards" : ["Coppersmith","Great Hall","Pawn","Shanty Town","Torturer","Cache","Cartographer","Jack of all Trades","Silk Road","Tunnel"]
 		 },
 		 {
+			 "name" : "Money for Nothing - 2nd Edition",
+			 "cards" : ["Replace","Patrol","Pawn","Shanty Town","Torturer","Cache","Cartographer","Jack of all Trades","Silk Road","Tunnel"]
+		 },
+		 {
 			 "name" : "The Duke's Ball",
 			 "cards" : ["Conspirator","Duke","Harem","Masquerade","Upgrade","Duchess","Haggler","Inn","Noble Brigand","Scheme"]
+		 },
+		 {
+			 "name" : "The Duke's Ball - 2nd Edition",
+			 "cards" : ["Baron","Conspirator","Nobles","Secret Passage","Wishing Well","Armory","Ironmonger","Mystic","Rebuild","Vagrant"]
 		 },
 		 {
 			 "name" : "Travelers",
@@ -2846,12 +2874,20 @@
 			 "cards" : ["Golem","Possession","Scrying Pool","Transmute","Vineyard","Conspirator","Great Hall","Minion","Pawn","Steward"]
 		 },
 		 {
+			 "name" : "Servants - 2nd Edition",
+			 "cards" : ["Golem","Possession","Scrying Pool","Transmute","Vineyard","Conspirator","Mill","Minion","Pawn","Steward"]
+		 },
+		 {
 			 "name" : "Secret Research",
 			 "cards" : ["Familiar","Herbalist","Philosopher's Stone","University","Bridge","Masquerade","Minion","Nobles","Shanty Town","Torturer"]
 		 },
 		 {
 			 "name" : "Pools, Tools, and Fools",
 			 "cards" : ["Apothecary","Apprentice","Golem","Scrying Pool","Baron","Coppersmith","Ironworks","Nobles","Trading Post","Wishing Well"]
+		 },
+		 {
+			 "name" : "Pools, Tools, and Fools - 2nd Edition",
+			 "cards" : ["Apothecary","Apprentice","Golem","Scrying Pool","Baron","Ironworks","Lurker","Nobles","Trading Post","Wishing Well"]
 		 },
 		 {
 			 "name" : "Bounty of the Hunt",
@@ -2866,7 +2902,7 @@
 			 "cards" : ["Fairgrounds","Farming Village","Horse Traders","Jester","Young Witch","Feast","Laboratory","Market","Remodel","Workshop","Chancellor"]
 		 },
 		 {
-			 "name" : "Fast Laughs",
+			 "name" : "Last Laughs",
 			 "cards" : ["Farming Village","Harvest","Horse Traders","Hunting Party","Jester","Minion","Nobles","Pawn","Steward","Swindler"]
 		 },
 		 {
@@ -2874,8 +2910,28 @@
 			 "cards" : ["Fairgrounds","Horn of Plenty","Remake","Tournament","Young Witch","Coppersmith","Courtyard","Great Hall","Mining Village","Tribute","Wishing Well"]
 		 },
 		 {
+			 "name" : "The Spice of Life - 2nd Edition",
+			 "cards" : ["Fairgrounds","Horn of Plenty","Remake","Tournament","Young Witch","Courtier","Courtyard","Diplomat","Mining Village","Replace","Wishing Well"]
+		 },
+		 {
 			 "name" : "Small Victories",
 			 "cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Great Hall","Harem","Pawn"]
+		 },
+		 {
+			 "name" : "Small Victories - 2nd Edition",
+			 "cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Harem","Pawn","Secret Passage"]
+		 },
+		 {
+			 "name" : "Name that Card",
+			 "cards" : ["Courtyard","Harem","Nobles","Replace","Wishing Well","Baker","Doctor","Plaza","Advisor","Masterpiece"]
+		 },
+		 {
+			 "name" : "Tricks of the Trade",
+			 "cards" : ["Conspirator","Masquerade","Mill","Nobles","Secret Passage","Stonemason","Herald","Soothsayer","Journeyman","Butcher"]
+		 },
+		 {
+			 "name" : "Decisions, Decisions",
+			 "cards" : ["Bridge","Pawn","Mining Village","Upgrade","Duke","Merchant Guild","Candlestick Maker","Masterpiece","Taxman","Butcher"]
 		 },
 		 {
 			 "name" : "Beginners",
@@ -2922,8 +2978,16 @@
 			 "cards" : ["Hoard","Talisman","Trade Route","Vault","Watchtower","Bridge","Great Hall","Mining Village","Pawn","Torturer"]
 		 },
 		 {
+			 "name" : "All Along the Watchtower - 2nd Edition",
+			 "cards" : ["Hoard","Talisman","Trade Route","Vault","Watchtower","Bridge","Mill","Mining Village","Pawn","Torturer"]
+		 },
+		 {
 			 "name" : "Lucky Seven",
 			 "cards" : ["Bank","Expand","Forge","King's Court","Vault","Bridge","Coppersmith","Swindler","Tribute","Wishing Well"]
+		 },
+		 {
+			 "name" : "Lucky Seven - 2nd Edition",
+			 "cards" : ["Bank","Expand","Forge","King's Court","Vault","Bridge","Lurker","Patrol","Swindler","Wishing Well"]
 		 },
 		 {
 			 "name" : "Victory Dance",
@@ -3054,6 +3118,10 @@
 			 "cards" : ["Patrol","Replace","Shanty Town","Trading Post","Pawn","Island","Wharf","Cutpurse","Lighthouse","Warehouse"]
 		 },
 		 {
+			 "name" : "Bridge Crossing",
+			 "cards" : ["Lurker","Nobles","Duke","Conspirator","Bridge","Salvager","Embargo","Smugglers","Native Village","Treasury"]
+		 },
+		 {
 			 "name" : "Give and Take",
 			 "cards" : ["Ambassador","Fishing Village","Haven","Island","Library","Market","Moneylender","Salvager","Smugglers","Witch"]
 		 },
@@ -3078,8 +3146,32 @@
 			 "cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Great Hall", "Nobles", "Wishing Well"]
 		 },
 		 {
+			 "name" : "Prophecy - 2nd Edition",
+			 "cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Nobles", "Secret Passage", "Wishing Well"]
+		 },
+		 {
 			 "name" : "Invasion",
 			 "cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Harem", "Mining Village", "Swindler", "Torturer", "Upgrade"]
+		 },
+		 {
+			 "name" : "Invasion - 2nd Edition",
+			 "cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Diplomat", "Harem", "Swindler", "Torturer", "Upgrade"]
+		 },
+		 {
+			 "name" : "Royalty Factory",
+			 "cards" : ["Pilgrimage","Conspirator","Courtier","Harem","Nobles","Swindler","Bridge Troll","Duplicate","Page","Raze","Royal Carriage"]
+		 },
+		 {
+			 "name" : "Masters of Finance",
+			 "cards" : ["Ball","Borrow","Bridge","Pawn","Shanty Town","Steward","Upgrade","Artificer","Distant Lands","Gear","Transmogrify","Wine Merchant"]
+		 },
+		 {
+			 "name" : "Delicious Torture",
+			 "cards" : ["Arena","Banquet","Baron","Bridge","Harem","Ironworks","Torturer","Castles","Crown","Enchantress","Sacrifice","Settlers"]
+		 },
+		 {
+			 "name" : "Buddy System",
+			 "cards" : ["Salt the Earth","Wolf Den","Masquerade","Mining Village","Nobles","Pawn","Trading Post","Archive","Capital","Catapult","Engineer","Forum"]
 		 },
 		 {
 			 "name" : "Watery Graves",
