@@ -60,7 +60,7 @@
 			"releaseDate" : "1/26/2017"
 		},
 		"15" : {
-			"name" : "Empires",
+			"name" : "Nocturne",
 			"releaseDate" : "9/8/2017"
 		}
 	},
@@ -2770,6 +2770,35 @@
 			"isLandmark" : true,
 			"description" : "When scoring, -3<v> per card you have exactly one copy of.",
 			"errata" : "Having no copies of a card, or two or more copies of a card, confers no penalty. Scores can go negative."
+		},
+		{
+			"name" : "",
+			"setId" : 14,
+			"isAttack" : true,
+			"isAction" : true,
+			"isVictory" : true,
+			"isTreasure" : true,
+			"isDuration" : true,
+			"isReaction" : true,
+			"isReserve" : true,
+			"isEvent" : true,
+			"isTraveler" : true,
+			"isLandmark" : true,
+			"isOverpay" : true,
+			"isLooter" : true,
+			"excludeFromSupply" : true,
+			"isPrize" : true,
+			"cost" : 0,
+			"hasPotion" : true,
+			"debt" : 0,
+			"description" : "",
+			"errata" : "",
+			"actions" : 1,
+			"coins" : 1,
+			"cards" : 1,
+			"buys" : 1,
+			"victoryPoints" : 1,
+			"standardCount" : 10,
 		}
 	],
 	"recommendedKingdoms" : [
@@ -2844,6 +2873,30 @@
 		{
 			"name" : "Traveling Circus",
 			"cards" : ["Fairgrounds","Farming Village","Hunting Party","Jester","Menagerie","Border Village","Embassy","Fool's Gold","Nomad Camp","Oasis"]
+		},
+		{
+			"name" : "Exchanges",
+			"cards" : ["Butcher","Herald","Masterpiece","Soothsayer","Stonemason","Border Village","Develop","Ill-Gotten Gains","Stables","Trader"]
+		},
+		{
+			"name" : "Road to Riches",
+			"cards" : ["Advisor","Baker","Candlestick Maker","Journeyman","Merchant Guild","Crossroads","Farmland","Highway","Spice Merchant","Tunnel"]
+		},
+		{
+			"name" : "Traders and Raiders",
+			"cards" : ["Raid","Haunted Woods","Lost City","Page","Port","Wine Merchant","Develop","Farmland","Haggler","Spice Merchant","Trader"]
+		},
+		{
+			"name" : "Journeys",
+			"cards" : ["Expedition","Inheritance","Bridge Troll","Distant Lands","Giant","Guide","Ranger","Cartographer","Crossroads","Highway","Inn","Silk Road"]
+		},
+		{
+			"name" : "Simple Plans",
+			"cards" : ["Donate","Labyrinth","Catapult","Forum","Patrician","Temple","Villa","Border Village","Develop","Haggler","Ill-Gotten Gains","Stables"]
+		},
+		{
+			"name" : "Expansion",
+			"cards" : ["Battlefield","Fountain","Castles","Charm","Encampment","Engineer","Legionary","Cache","Farmland","Highway","Spice Merchant","Tunnel"]
 		},
 		{
 			"name" : "Forbidden Arts",
@@ -2922,7 +2975,19 @@
 			"cards" : ["Fortune Teller","Hamlet","Hunting Party","Remake","Tournament","Conspirator","Duke","Harem","Pawn","Secret Passage"]
 		},
 		{
-			"name" : "Name that Card",
+			"name" : "Arts and Crafts",
+			"cards" : ["Stonemason","Advisor","Baker","Journeyman","Merchant Guild","Laboratory","Cellar","Workshop","Festival","Moneylender"]
+		},
+		{
+			"name" : "Clean Living",
+			"cards" : ["Butcher","Baker","Candlestick Maker","Doctor","Soothsayer","Militia","Thief","Moneylender","Gardens","Village"]
+		},
+		{
+			"name" : "Gilding the Lily",
+			"cards" : ["Plaza","Masterpiece","Candlestick Maker","Taxman","Herald","Library","Remodel","Adventurer","Market","Chancellor"]
+		},
+		{
+			"name" : "Name That Card",
 			"cards" : ["Courtyard","Harem","Nobles","Replace","Wishing Well","Baker","Doctor","Plaza","Advisor","Masterpiece"]
 		},
 		{
@@ -3122,6 +3187,72 @@
 			"cards" : ["Lurker","Nobles","Duke","Conspirator","Bridge","Salvager","Embargo","Smugglers","Native Village","Treasury"]
 		},
 		{
+			"name" : "Forewarned",
+			"cards" : ["Cutpurse","Embargo","Native Village","Treasure Map","Apothecary","Golem","Possession","Scrying Pool","Transmute"]
+		},
+		{
+			"name" : "Gummed Up",
+			"cards" : ["Ambassador","Haven","Sea Hag","Smugglers","Warehouse","Apprentice","Familiar","Herbalist","Philosopher's Stone","Vineyard"]
+		},
+		{
+			"name" : "Exploding Kingdom",
+			"cards" : ["Fishing Village","Lookout","Outpost","Tactician","Wharf","Bishop","City","Grand Market","King's Court","Quarry"],
+			"usePlatinum" : true
+		},
+		{
+			"name" : "Pirate Bay",
+			"cards" : ["Bazaar","Lighthouse","Pirate Ship","Smugglers","Warehouse","Expand","Hoard","Mint","Trade Route","Watchtower"],
+			"usePlatinum" : true
+		},
+		{
+			"name" : "Counting Contest",
+			"cards" : ["Bank","Counting House","Hoard","Goons","Rabble","Quarry","Philosopher's Stone","Golem","Herbalist","Apothecary"]
+		},
+		{
+			"name" : "Lower Learning",
+			"cards" : ["Talisman","Mint","Bishop","Worker's Village","Peddler","Vault","Familiar","Apprentice","University","Vineyard"]
+		},
+		{
+			"name" : "Detours",
+			"cards" : ["Rabble","Peddler","Hoard","Trade Route","Venture","Farming Village","Horn of Plenty","Jester","Remake","Tournament"]
+		},
+		{
+			"name" : "Quarrymen",
+			"cards" : ["Mountebank","City","Expand","Grand Market","Quarry","Baker","Merchant Guild","Soothsayer","Stonemason","Taxman"]
+		},
+		{
+			"name" : "Last Will and Monument",
+			"cards" : ["Inheritance","Bishop","Counting House","Monument","Rabble","Vault","Coin of the Realm","Dungeon","Messenger","Relic","Treasure Trove"]
+		},
+		{
+			"name" : "Think Big",
+			"cards" : ["Ball","Ferry","Contraband","Expand","Hoard","King's Court","Peddler","Distant Lands","Giant","Hireling","Miser","Storyteller"]
+		},
+		{
+			"name" : "Big Time",
+			"cards" : ["Dominate","Obelisk","Bank","Forge","Grand Market","Loan","Royal Seal","Capital","Gladiator","Patrician","Royal Blacksmith","Villa"]
+		},
+		{
+			"name" : "Gilded Gates",
+			"cards" : ["Basilica","Palace","Bishop","Monument","Mint","Peddler","Talisman","Chariot Race","City Quarter","Encampment","Groundskeeper","Wild Hunt"]
+		},
+		{
+			"name" : "Collector",
+			"cards" : ["Embargo","Fishing Village","Merchant Ship","Navigator","Smugglers","Fairgrounds","Farming Village","Fortune Teller","Harvest","Hunting Party"]
+		},
+		{
+			"name" : "Collider",
+			"cards" : ["Lighthouse","Salvager","Treasure Map","Treasury","Warehouse","Menagerie","Horn of Plenty","Horse Traders","Jester","Tournament"]
+		},
+		{
+			"name" : "Ghosts & Taxes",
+			"cards" : ["Cutpurse","Ghost Ship","Haven","Outpost","Smugglers","Butcher","Candlestick Maker","Herald","Soothsayer","Taxman"]
+		},
+		{
+			"name" : "Island Builder",
+			"cards" : ["Island","Native Village","Salvager","Tactician","Treasury","Baker","Doctor","Merchant Guild","Plaza","Stonemason"]
+		},
+		{
 			"name" : "Give and Take",
 			"cards" : ["Ambassador","Fishing Village","Haven","Island","Library","Market","Moneylender","Salvager","Smugglers","Witch"]
 		},
@@ -3175,11 +3306,29 @@
 		},
 		{
 			"name" : "Watery Graves",
-			"cards" : ["Count", "Graverobber", "Hermit", "Scavenger", "Urchin", "Native Village", "Pirate Ship", "Salvager", "Treasure Map", "Treasury"]
+			"cards" : ["Count", "Graverobber", "Hermit", "Scavenger", "Urchin", "Native Village", "Pirate Ship", "Salvager", "Treasure Map", "Treasury"],
+			"useShelters" : true
 		},
 		{
 			"name" : "Peasants",
-			"cards" : ["Death Cart", "Feodum", "Poor House", "Urchin", "Vagrant", "Fishing Village", "Haven", "Island", "Lookout", "Warehouse"]
+			"cards" : ["Death Cart", "Feodum", "Poor House", "Urchin", "Vagrant", "Fishing Village", "Haven", "Island", "Lookout", "Warehouse"],
+			"useShelters" : true
+		},
+		{
+			"name" : "Prince of Orange",
+			"cards" : ["Mission","Caravan","Fishing Village","Merchant Ship","Tactician","Treasure Map","Amulet","Dungeon","Haunted Woods","Page","Swamp Hag"]
+		},
+		{
+			"name" : "Gifts and Mathoms",
+			"cards" : ["Expedition","Quest","Ambassador","Embargo","Haven","Salvager","Smugglers","Bridge Troll","Caravan Guard","Hireling","Lost City","Messenger"]
+		},
+		{
+			"name" : "Boxed In",
+			"cards" : ["Wall","Tax","Salvager","Smugglers","Tactician","Warehouse","Wharf","Castles","Chariot Race","Encampment","Enchantress","Gladiator"]
+		},
+		{
+			"name" : "King of the Sea",
+			"cards" : ["Delve","Fountain","Explorer","Haven","Native Village","Pirate Ship","Sea Hag","Archive","Farmer's Market","Overlord","Temple","Wild Hunt"]
 		},
 		{
 			"name" : "Infestations",
@@ -3206,12 +3355,120 @@
 			"cards" : ["Bandit Camp", "Counterfeit", "Death Cart", "Marauder", "Pillage", "Sage", "Harvest", "Hunting Party", "Remake", "Tournament"]
 		},
 		{
+			"name" : "Stoneground",
+			"cards" : ["Hunting Grounds","Ironmonger","Procession","Marauder","Rogue","Advisor","Baker","Candlestick Maker","Plaza","Stonemason"]
+		},
+		{
+			"name" : "Class Struggle",
+			"cards" : ["Feodum","Fortress","Knights","Market Square","Poor House","Butcher","Doctor","Journeyman","Merchant Guild","Taxman"]
+		},
+		{
 			"name" : "Far From Home",
 			"cards" : ["Beggar", "Count", "Feodum", "Marauder", "Wandering Minstrel", "Cartographer", "Develop", "Embassy", "Fool's Gold", "Haggler"]
 		},
 		{
 			"name" : "Expeditions",
 			"cards" : ["Altar", "Catacombs", "Ironmonger", "Poor House", "Storeroom", "Crossroads", "Farmland", "Highway", "Spice Merchant", "Tunnel"]
+		},
+		{
+			"name" : "Cemetery Polka",
+			"cards" : ["Alms","Graverobber","Marauder","Procession","Rogue","Wandering Minstrel","Amulet","Caravan Guard","Hireling","Peasant","Relic"]
+		},
+		{
+			"name" : "Groovy Decay",
+			"cards" : ["Lost Arts","Pathfinding","Cultist","Death Cart","Fortress","Knights","Rats","Dungeon","Haunted Woods","Ratcatcher","Raze","Transmogrify"]
+		},
+		{
+			"name" : "Tomb of the Rat King",
+			"cards" : ["Advance","Tomb","Death Cart","Fortress","Pillage","Rats","Storeroom","Castles","Chariot Race","City Quarter","Legionary","Sacrifice"]
+		},
+		{
+			"name" : "Triumph of the Bandit King",
+			"cards" : ["Defiled Shrine","Triumph","Bandit Camp","Catacombs","Hunting Grounds","Market Square","Procession","Capital","Charm","Engineer","Groundskeeper","Legionary"]
+		},
+		{
+			"name" : "The Squire's Ritual",
+			"cards" : ["Museum","Ritual","Feodum","Hermit","Ironmonger","Rogue","Squire","Archive","Catapult","Crown","Patrician","Settlers"]
+		},
+		{
+			"name" : "Basic Intro",
+			"cards" : ["Tower","Wedding","Castles","Chariot Race","City Quarter","Engineer","Farmers' Market","Forum","Legionary","Patrician","Sacrifice","Villa"]
+		},
+		{
+			"name" : "Advanced Intro",
+			"cards" : ["Arena","Triumphal Arch","Archive","Capital","Catapult","Crown","Enchantress","Gladiator","Groundskeeper","Royal Blacksmith"," Settlers","Temple"]
+		},
+		{
+			"name" : "Everything in Moderation",
+			"cards" : ["Orchard","Windfall","Enchantress","Forum","Legionary","Overloard","Temple","Cellar","Library","Remodel","Village","Workshop"]
+		},
+		{
+			"name" : "Silver Bullets",
+			"cards" : ["Aqueduct","Conquest","Catapult","Charm","Farmers' Market","Groundskeeper","Patrician","Bureaucrat","Gardens","Laboratory","Market","Moneylender"]
+		},
+		{
+			"name" : "Collectors",
+			"cards" : ["Colonnade","Museum","City Quarter","Crown","Encampment","Enchantress","Farmers' Market","Apothecary","Apprentice","Herbalist","Transmute","University"]
+		},
+		{
+			"name" : "Zookeepers",
+			"cards" : ["Annex","Colonnade","Overloard","Sacrifice","Settlers","Villa","Wild Hunt","Fairgrounds","Horse Traders","Menagerie","Jester","Tournament"]
+		},
+		{
+			"name" : "Cash Flow",
+			"cards" : ["Baths","Mountain Pass","Castles","City Quarter","Engineer","Gladiator","Royal Blacksmith","Baker","Butcher","Doctor","Herald","Soothsayer"]
+		},
+		{
+			"name" : "Area Control",
+			"cards" : ["Banquet","Keep","Capital","Catapult","Charm","Crown","Farmer's Market","Coin of the Realm","Page","Relic","Treasure Trove","Wine Merchant"]
+		},
+		{
+			"name" : "No Money No Problems",
+			"cards" : ["Bandit Fort","Mission","Archive","Encampment","Royal Blacksmith","Temple","Villa","Dungeon","Duplicate","Hireling","Peasant","Transmogrify"]
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
+		},
+		{
+			"name" : "",
+			"cards" : []
 		}
 	]
 }
