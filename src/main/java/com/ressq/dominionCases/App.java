@@ -71,12 +71,35 @@ public class App {
 				.map(App::caseForCardInfo)
 				.collect(Collectors.toCollection(LinkedList<CardCase>::new));
 		
-//		do {
-//			consumeCards(masterDoc, allCases);
-//		} while (!allCases.isEmpty());
+		do {
+			consumeCards(masterDoc, allCases);
+		} while (!allCases.isEmpty());
+
+		// TODO: Debt costs
+		// TODO: groupWith property & front/back text
+		// TODO: Second page remainder text that is very short?
+		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
 		
 		// First page
-		pageForThreeCards(masterDoc, db.getCards().get(7), db.getCards().get(1), db.getCards().get(2));
+//		pageForThreeCards(masterDoc, db.getCardByName("Triumph"), db.getCards().get(1), db.getCardByName("Fortune"));
+		
+		
+		// Random Recommended set? Only unplayed?
+		// Select number of sets to choose from?
+		// Landmarks?
+		// Events?
+		// # of both? Random? 0-2?
+		// Use Shelters?
+		// Use Platinum/Colony?
+		// Always have a multi-action?
+		// Banned cards?
+		// Allow potion card? If so, how many must there be?
+		// Prefer unplayed cards
+		// Simulated shuffle and grab 10?
+		// Veto Mode
+		
+		// Played list & when
+		// With who?
 		
 		masterDoc.save("temp.pdf");
 		masterDoc.close();
@@ -148,10 +171,10 @@ public class App {
 		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
 		
 		CardCase caseOne = caseForCardInfo(cardOne);
-		//CardCase caseTwo = caseForCardInfo(cardTwo);
-		//CardCase caseThree = caseForCardInfo(cardThree);
+		CardCase caseTwo = caseForCardInfo(cardTwo);
+		CardCase caseThree = caseForCardInfo(cardThree);
 		
-		MultiCardInfo info = new MultiCardInfo(caseOne);//, caseTwo, caseThree);
+		MultiCardInfo info = new MultiCardInfo(caseOne, caseTwo, caseThree);
 		info.applyTranslation(centerX, centerY);
 
 		info.draw(drawStream);
@@ -162,7 +185,8 @@ public class App {
 	private static CardCase caseForCardInfo(CardInfo someInfo) {
 		return new CardCase(
 			someInfo.getStandardCount(),
-			someInfo.getCost(), someInfo.getName(),
+			someInfo.getCost(), someInfo.getDebt(), 
+			someInfo.getName(),
 			someInfo.getErrata(),
 			imageRepo, trajan, barbedor);
 	}
