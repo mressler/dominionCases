@@ -111,6 +111,94 @@ public class CardInfo {
 		this.reaction = reaction;
 	}
 
+	public Boolean getReserve() {
+		return reserve;
+	}
+
+	public void setReserve(Boolean reserve) {
+		this.reserve = reserve;
+	}
+
+	public Boolean getEvent() {
+		return event;
+	}
+
+	public void setEvent(Boolean event) {
+		this.event = event;
+	}
+
+	public Boolean getTraveler() {
+		return traveler;
+	}
+
+	public void setTraveler(Boolean traveler) {
+		this.traveler = traveler;
+	}
+
+	public Boolean getLandmark() {
+		return landmark;
+	}
+
+	public void setLandmark(Boolean landmark) {
+		this.landmark = landmark;
+	}
+
+	public Boolean getState() {
+		return state;
+	}
+
+	public void setState(Boolean state) {
+		this.state = state;
+	}
+
+	public Boolean getHex() {
+		return hex;
+	}
+
+	public void setHex(Boolean hex) {
+		this.hex = hex;
+	}
+
+	public Boolean getNight() {
+		return night;
+	}
+
+	public void setNight(Boolean night) {
+		this.night = night;
+	}
+
+	public Boolean getFate() {
+		return fate;
+	}
+
+	public void setFate(Boolean fate) {
+		this.fate = fate;
+	}
+
+	public Boolean getDoom() {
+		return doom;
+	}
+
+	public void setDoom(Boolean doom) {
+		this.doom = doom;
+	}
+
+	public Boolean getHeirloom() {
+		return heirloom;
+	}
+
+	public void setHeirloom(Boolean heirloom) {
+		this.heirloom = heirloom;
+	}
+
+	public Boolean getBoon() {
+		return boon;
+	}
+
+	public void setBoon(Boolean boon) {
+		this.boon = boon;
+	}
+
 	public Boolean getOverpay() {
 		return overpay;
 	}
