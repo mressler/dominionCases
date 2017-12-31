@@ -55,6 +55,8 @@ public class App {
 		ObjectReader dbReader = om.readerFor(CardDatabase.class);
 		CardDatabase db = dbReader.readValue(cardDBUrl.openStream());
 		
+		System.out.println("Read " + db.getCards().size() + " cards.");
+		
 		PDDocument masterDoc = new PDDocument();
 		
 		// Load resources
