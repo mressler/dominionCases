@@ -27,7 +27,8 @@ public class CardCase extends CompositeDrawable {
 	
 	public CardCase(
 			int cardCount,
-			Integer cardCost, String cardName, String description,
+			Integer cardCost, Integer cardDebt,
+			String cardName, String description,
 			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
 	{
 		super();
@@ -75,8 +76,9 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		TopFlap topFlap = new TopFlap(
 			SHOULDER_HEIGHT, FLAP_HEIGHT,
-			cardCost, cardName,
-			imageRepo.getCoinImage(), titleFont);
+			cardCost, cardDebt, 
+			imageRepo.getCoinImage(), imageRepo.getDebtImage(), 
+			cardName, titleFont);
 		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
 		add(topFlap);
 		
@@ -121,8 +123,9 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		TopFlap upsideDownTopFlap = new TopFlap(
 				SHOULDER_HEIGHT, FLAP_HEIGHT,
-				cardCost, cardName,
-				imageRepo.getCoinImage(), titleFont);
+				cardCost, cardDebt,
+				imageRepo.getCoinImage(), imageRepo.getDebtImage(),
+				cardName, titleFont);
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);

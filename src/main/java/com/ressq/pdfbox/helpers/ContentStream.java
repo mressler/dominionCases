@@ -1,5 +1,6 @@
 package com.ressq.pdfbox.helpers;
 
+import java.awt.Color;
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
 
@@ -113,6 +114,30 @@ public class ContentStream {
 			contentStream.setTextMatrix(Matrix.getRotateInstance(theta, tx, ty));
 		} catch (IOException e) {
 			throw new RuntimeException("Unhandled error setting text matrix", e);
+		}
+	}
+	
+	public void saveGraphicsState() {
+		try {
+			contentStream.saveGraphicsState();
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error saving graphics state", e);
+		}
+	}
+	
+	public void restoreGraphicsState() {
+		try {
+			contentStream.restoreGraphicsState();
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error restoring graphics state", e);
+		}
+	}
+
+	public void setFontColor(Color fontColor) {
+		try {
+			contentStream.setNonStrokingColor(fontColor);
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error setting font color", e);
 		}
 	}
 	

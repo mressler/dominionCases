@@ -1,5 +1,7 @@
 package com.ressq.dominionCases.shapes;
 
+import java.awt.Color;
+
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
@@ -12,8 +14,15 @@ import com.ressq.pdfbox.text.TextAlignment;
 public class ImageWithCenteredText extends Image {
 
 	private BasicText centeredText;
+	private Color fontColor;
 	
-	public ImageWithCenteredText(String text, PDImageXObject coinImage, float width, float height) {
+	public ImageWithCenteredText(
+		String text, 
+		Color fontColor,
+		PDImageXObject coinImage, 
+		float width, 
+		float height) 
+	{
 		super(coinImage, width, height);
 		
 		int fontSize = FontInfo.getFontSizeToScaleToHeight(PDType1Font.TIMES_BOLD, height / 2);
@@ -22,6 +31,8 @@ public class ImageWithCenteredText extends Image {
 		float startingX = TextAlignment.CENTER.getStartingX(width, centeredText.getWidth());
 		float startingY = TextAlignment.CENTER.getStartingX(height, centeredText.getHeight());
 		centeredText.applyTranslation(startingX, startingY);
+		
+		this.fontColor = fontColor;
 	}
 
 	@Override
@@ -42,7 +53,10 @@ public class ImageWithCenteredText extends Image {
 	public void draw(ContentStream cStream) {
 		super.draw(cStream);
 		
+		cStream.saveGraphicsState();
+		cStream.setFontColor(fontColor);
 		centeredText.draw(cStream);
+		cStream.restoreGraphicsState();
 	}
 
 }

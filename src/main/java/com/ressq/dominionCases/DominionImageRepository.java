@@ -1,5 +1,7 @@
 package com.ressq.dominionCases;
 
+import java.awt.Color;
+
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
@@ -31,28 +33,32 @@ public class DominionImageRepository implements TextElementFactory {
 	public Drawable getTextElement(String text, PDFont font, int fontSize) {
 		return new TextSubstitution(
 			text, font, fontSize,
-			"<((\\d*)|p|d|v)>", (m, height) -> {
-				String centeredText = m.group(1);
+			"<(p|d|v)*(\\d*)>", (m, height) -> {
+				String comparison = m.group(1);
+				String centeredText = m.group(2);
 				PDImageXObject image = coinImage;
-				if ("p".equalsIgnoreCase(centeredText)) {
-					centeredText = "";
+				Color fontColor = Color.BLACK;
+				if ("p".equalsIgnoreCase(comparison)) {
 					image = potionImage;
-				} else if ("d".equalsIgnoreCase(centeredText)) {
-					centeredText = "";
+				} else if ("d".equalsIgnoreCase(comparison)) {
+					fontColor = Color.WHITE;
 					image = debtImage;
-				} else if ("v".equalsIgnoreCase(centeredText)) {
-					centeredText = "";
+				} else if ("v".equalsIgnoreCase(comparison)) {
 					image = victoryImage;
 				}
 				
 				float newWidth = height * image.getWidth() / image.getHeight();
 				
-				return new ImageWithCenteredText(centeredText, image, newWidth, height);
+				return new ImageWithCenteredText(centeredText, fontColor, image, newWidth, height);
 			});
 	}
 	
 	public PDImageXObject getCoinImage() {
 		return coinImage;
+	}
+	
+	public PDImageXObject getDebtImage() {
+		return debtImage;
 	}
 
 }

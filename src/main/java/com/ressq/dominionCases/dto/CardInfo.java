@@ -13,6 +13,17 @@ public class CardInfo {
 	private Boolean treasure;
 	private Boolean duration;
 	private Boolean reaction;
+	private Boolean reserve;
+	private Boolean event;
+	private Boolean traveler;
+	private Boolean landmark;
+	private Boolean state;
+	private Boolean hex;
+	private Boolean night;
+	private Boolean fate;
+	private Boolean doom;
+	private Boolean heirloom;
+	private Boolean boon;
 	private Boolean overpay;
 	private Boolean looter;
 	private Boolean excludeFromSupply;
@@ -20,6 +31,7 @@ public class CardInfo {
 	
 	private Integer cost;
 	private Boolean hasPotion;
+	private Integer debt;
 	
 	private String description;
 	private String errata;
@@ -145,6 +157,14 @@ public class CardInfo {
 
 	public void setHasPotion(Boolean hasPotion) {
 		this.hasPotion = hasPotion;
+	}
+
+	public Integer getDebt() {
+		return debt;
+	}
+
+	public void setDebt(Integer debt) {
+		this.debt = debt;
 	}
 
 	public String getDescription() {

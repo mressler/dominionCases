@@ -46,6 +46,11 @@ public class MultiLineText extends CompositeDrawable {
 		this.height = boundingArea.getHeight();
 
 		usedFontSize = preferredFontSize; // Do I not overflow at all?
+		
+		if (text == null) {
+			return;
+		}
+		
 		if (text.indexOf("\n") == -1) { // Only do best guess if there are no \n's
 			float fillFontSize = FontInfo.getFillFontSize(
 					font, text, 
