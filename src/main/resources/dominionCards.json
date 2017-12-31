@@ -956,7 +956,6 @@
 			"name" : "Transmute",
 			"setId" : 5,
 			"isAction" : true,
-			"cost" : 0,
 			"potion" : true,
 			"description" : "Trash a card from your hand. If it is an Action card, gain a Duchy. Treasure card, gain a Transmute. Victory card, gain a Gold.",
 			"errata" : "If you have no cards left in hand to trash, you do not get anything. If you trash a Curse to this, you do not get anything – Curse is not an Action card or Victory card or Treasure card. If you trash a card with more than one type, you get each applicable thing. For example, if you trash an Action-Victory card (such as Nobles, from Dominion: Intrigue), you gain both a Duchy and a Gold. Gained cards come from the Supply and go to your discard pile. If there are no appropriate cards left to gain, you don't gain those cards."
@@ -975,7 +974,6 @@
 			"name" : "Vineyard",
 			"setId" : 5,
 			"isVictory" : true,
-			"cost" : 1,
 			"potion" : true,
 			"description" : "Worth 1 VP for every 3 Action cards in your deck (rounded down).",
 			"errata" : "This Kingdom card is a Victory card, not an Action card. It does nothing until the end of the game, when it is worth 1 victory point per 3 Action cards in your Deck (counting all of your cards - your Discard pile and hand are part of your Deck at that point). Round down; if you have 11 Action cards, Vineyard is worth 3 victory points. During set-up, put all 12 Vineyards in the Supply for a game with 3 or more players, but only 8 in the Supply for a 2-player game. Cards with multiple types, one of which is Action, are Actions and so are counted by Vineyard.",
@@ -2177,7 +2175,6 @@
 			"setId" : 11,
 			"isAction" : true,
 			"cost" : 3,
-			"hasPotion" : true,
 			"description" : "Discard the top card of your deck. If it's an Action card, you may play it.",
 			"errata" : "If the card is an Action card, you can play it, but do not have to. If you do play it, you move it into your play area and follow its instructions; this does not use up one of your Action plays for the turn.",
 			"coins" : 2
