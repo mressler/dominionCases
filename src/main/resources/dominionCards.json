@@ -2772,7 +2772,286 @@
 			"errata" : "Having no copies of a card, or two or more copies of a card, confers no penalty. Scores can go negative."
 		},
 		{
-			"name" : "",
+			"name" : "Amulet",
+			"setId" : 14,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 3,
+			"description" : "Now and at the start of your next turn, choose one: +<1>; or trash a card from your hand; or gain a Silver.",
+			"errata" : "You choose something when you play it, and again at the start of your next turn; the choices may be the same or different."
+		},
+		{
+			"name" : "Artificer",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "Discard and number of cards. You may gain a card onto your deck costing exactly <1> per card discarded.",
+			"errata" : "First you get +1 Card, +1 Action, and +<1>. Then you discard any number of cards. You may choose not to discard any cards. Then you may gain a card costing exactly <1> per card discarded. For example if you discarded two cards; you may gain a card costing <2>; if you discard no cards, you may gain a card costing <0>. The gained card comes from the Supply and is put on top of your deck. You may choose not to gain a card, even if you discard cards.",
+			"actions" : 1,
+			"coins" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Bridge Troll",
+			"setId" : 14,
+			"isAttack" : true,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 5,
+			"description" : "Each other player takes their -<1> token.\nNow and at the start of your next turn: +1 Buy.\nWhile this is in play, cards cost <1> less on your turns, but not less than <0>.",
+			"errata" : "This gives each other player their -<1> token, which will cause those players to get <1> less the next time they get <>; see the Tokens section. It also gives you +1 Buy both on the turn you play it and on your next turn. While Bridge Troll is in play, on your turns only, cards cost <1> less, but not less than <0>. This applies to all cards everywhere, including cards in the Supply, cards in hand, and cards in Decks. For example if you have Bridge Troll in play and play Raze, trashing Estate, Estate will only cost <1>, so you will only look at one card rather than two. This is cumulative; if you have two Bridge Trolls in play from last turn and play another Bridge Troll this turn, all cards will cost <3> less this turn (to a minimum of <0>)."
+		},
+		{
+			"name" : "Caravan Guard",
+			"setId" : 14,
+			"isAction" : true,
+			"isDuration" : true,
+			"isReaction" : true,
+			"cost" : 3,
+			"description" : "At the start of your next turn, +<1>.\nWhen another player plays an Attack card, you may first play this from your hand.",
+			"errata" : "This gives you +1 Card and +1 Action when you play it, and then +   at the start of your next turn after that. This card has a Reaction ability that lets you play it when another player plays an Attack card. Playing this during another player's turn is similar to playing it during your own turn - you put Caravan Guard into play, get +1 Card and +1 Action, and will get +<1> at the start of your next turn - the very next turn you take. However getting +1 Action during someone else's turn does not do anything for you; it does not let you play other Action cards during their turn. Similarly if a token gives you +<1> or +1 Buy during another player's turn, that still does not let you buy cards during their turn (although +<1> can cancel the -<1> token given out by Bridge Troll). The +1 Action (or potential other +'s) does not carry over to your next turn either. After reacting with a Caravan Guard, you can use another one, even one you just drew, and also can use other Reactions, even ones you just drew; you keep going until you have no more Reactions you wish to respond to the Attack with.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Coin of the Realm",
+			"setId" : 14,
+			"isTreasure" : true,
+			"isReserve" : true,
+			"cost" : 2,
+			"description" : "When you play this, put it on your Tavern mat.\nDirectly after you finish playing an Action card, you may call this, for +2 Actions.",
+			"errata" : "This is a Treasure worth <1>. You play it in your Buy phase, like other Treasures. When you play it, it goes on your Tavern mat. It produces <1> that turn but is no longer in play. It stays on the mat until you call it. You can call it after resolving playing an Action card, for +2 Actions (which will let you play further Action cards). Move the Coin of the Realm into play when you call it, but it does not make <1> that turn, it just gives +2 Actions. It is discarded that turn with your other cards in play.",
+			"coins" : 1
+		},
+		{
+			"name" : "Distant Lands",
+			"setId" : 14,
+			"isAction" : true,
+			"isVictory" : true,
+			"isReserve" : true,
+			"cost" : 5,
+			"description" : "Put this on your Tavern mat.\nWorth 4<v> if on your Tavern mat at the end of the game (otherwise worth 0<v>).",
+			"errata" : "This is a Victory card. Use 8 for games with 2 players, or 12 for games with 3 or more players. This is also an Action card; when you play it, you put it on your Tavern mat. It will stay there the rest of the game; there is no way to call it. At the end of the game, Distant Lands is worth 4<v> if it is on your mat, or 0<v> if it is not. It counts as part of your deck either way (for example it can contribute to how many <v> a Gardens is worth)."
+		},
+		{
+			"name" : "Dungeon",
+			"setId" : 14,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 3,
+			"description" : "Now and at the start of your next turn: +2 Cards, then discard 2 cards.",
+			"errata" : "When you play this, you get +1 Action, draw 2 cards, and discard 2 cards; then at the start of your next turn, you again draw 2 cards and discard 2 cards.",
+			"actions" : 1
+		},
+		{
+			"name" : "Duplicate",
+			"setId" : 14,
+			"isAction" : true,
+			"isReserve" : true,
+			"cost" : 4,
+			"description" : "Put this on your Tavern mat.\nWhen you gain a card costing up to <6>, you may call this, to gain a copy of that card.",
+			"errata" : "When you play this, you put it on your Tavern mat. It stays on your mat until you call it. You can call it when gaining a card costing up to <6>, and gain another copy of that card. The gained card comes from the Supply and is put into your discard pile; Duplicate cannot gain non-supply cards such as Teacher. Duplicate can be called during other players' turns when you gain cards; for example, another player might buy Messenger and choose to have each player gain an Estate, and you could Duplicate that Estate. You can call multiple Duplicates to gain multiple copies of the same card. Duplicate is discarded during the Clean-up of the turn you call it, whether or not it is your turn."
+		},
+		{
+			"name" : "Gear",
+			"setId" : 14,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 3,
+			"description" : "Set aside up to 2 cards from your hand face down (under this). At the start of your next turn, put them into your hand.",
+			"errata" : "You may set aside zero, one, or two cards from your hand. Put them face down under the Gear; you may look at them. They do not have to be cards you drew with Gear. If you set aside zero cards, Gear will be discarded the same turn you played it; if you set aside one or two cards, you put them into your hand at the start of your next turn, and Gear is discarded at the end of that turn.",
+			"cards" : 2
+		},
+		{
+			"name" : "Giant",
+			"setId" : 14,
+			"isAttack" : true,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "Turn your Journey token over (it starts face up). Then if it's face down, +<1>. If it's face up, +<5>, and each other player reveals the top card of their deck, trashes it if it costs from <3> to <6>, and otherwise discards it and gains a Curse.",
+			"errata" : "At the start of the game, your Journey token (the one with the boot) is face up. When you play this, you turn it over. Then if it is face down, you get +<1> and nothing more happens. If it is face up, you get +   and the attack part happens. The attack resolves in turn order, starting with the player to your left. The player reveals the top card of their deck, and either trashes it if it costs from <3> to <6>, or discards it and gains a Curse otherwise. Cards with <p> in the cost (from Alchemy) do not cost from <3> to <6>. Cards with an asterisk or + by the cost that cost from <3> to <6> (such as Teacher, or Masterpiece from Guilds) do get trashed. Players can respond to Giant being played with Reactions that respond to Attacks (such as Caravan Guard), even if Giant will only be producing +<1> this time."
+		},
+		{
+			"name" : "Guide",
+			"setId" : 14,
+			"isAction" : true,
+			"isReserve" : true,
+			"cost" : 3,
+			"description" : "Put this on your Tavern mat.\nAt the start of your turn, you may call this, to discard your hand and draw 5 cards.",
+			"errata" : "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Guide, it moves from the mat into play, and you discard your hand, then draw 5 cards. It is discarded that turn with your other cards in play.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Haunted Woods",
+			"setId" : 14,
+			"isAttack" : true,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 5,
+			"description" : "Until your next turn, when any other player buys a card, they put their hand onto their deck in any order. At the start of your next turn: +3 Cards.",
+			"errata" : "Playing this sets up two effects for the future: you will draw 3 cards at the start of your next turn; and until then, other players will put the rest of their hand on their deck whenever they buy a card. A player may not have any cards left in hand when buying a card; typically cards left in hand will include Victory cards, Curses, and unplayed Actions. A player may intentionally avoid playing Treasures and Actions in order to take advantage of having to put their hand on their deck. Players who do not buy any cards can discard their hand normally. Buying Events is not buying cards and so does not trigger this. If you play Haunted Woods and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will draw the 3 cards at the start of that turn and discard Haunted Woods that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Haunted Woods, you have to use it right when Haunted Woods is played."
+		},
+		{
+			"name" : "Hireling",
+			"setId" : 14,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 6,
+			"description" : "At the start of each of your turns for the rest of the game:\n+1 Card\n(This stays in play.)",
+			"errata" : "After playing this, you draw an extra card at the start of each of your turns for the rest of the game. Hireling stays in play for the rest of the game to track this. If you use Disciple (or a similar card, like Throne Room) to play Hireling twice, you will draw two extra cards each turn, and Disciple will also stay in play for the rest of the game."
+		},
+		{
+			"name" : "Lost City",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "When you gain this, each other player draws a card.",
+			"errata" : "When you gain this, each other player draws a card. This applies whether you bought it or gained it some other way.",
+			"actions" : 2,
+			"cards" : 2
+		},
+		{
+			"name" : "Magpie",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "Reveal the top card of your deck. It it's a Treasure, put it into your hand. If it's an Action or a Victory card, gain a Magpie.",
+			"errata" : "If the top card of your deck is a Treasure, it goes into your hand. If the card is not a Treasure, leave it on top of your deck. If the card is an Action card or Victory card, you gain a Magpie; once the Magpie pile is empty, revealing an Action or Victory card will not get you anything. If you reveal a Harem (from Intrigue), you both put it into your hand and gain a Magpie, since it is both a Treasure and a Victory card.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Messenger",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "You may put your deck into your discard pile.",
+			"errata" : "When you play this, you get +1 Buy, +<2>, and may optionally put your deck into your discard pile. This is not discarding cards and does not trigger Tunnel (from Hinterlands). When you buy Messenger, if it is the first thing you bought that turn (card or Event), you gain a card costing up to <4> from the Supply, putting it into your discard pile, and then each other player in turn order also gains a copy of that card. If the Supply runs out of copies of the card, further players do not get anything.",
+			"coins" : 2,
+			"buys" : 1
+		},
+		{
+			"name" : "Miser",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "Choose one: Put a Copper from your hand onto your Tavern mat; or +<1> per Copper on your Tavern mat.",
+			"errata" : "You may choose to put a Copper from your hand on your mat even if you have no Coppers in hand; nothing will happen. You may also choose to get +<1> per Copper on your mat if there are no Coppers on your mat; nothing will happen. Putting a Copper from your hand on your mat is not trashing it; Coppers on your mat are not in play, but count as part of your deck when scoring at the end."
+		},
+		{
+			"name" : "Page",
+			"setId" : 14,
+			"isAction" : true,
+			"isTraveller" : true,
+			"cost" : 2,
+			"description" : "When you discard this from play, you may exchange it for a Treasure Hunter.",
+			"errata" : "See the Card Types section on Travellers. When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Peasant",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 2,
+			"description" : "When you discard this from play, you may exchange it for a Soldier",
+			"errata" : "See the Card Types section on Travellers. When you play Peasant, you get +1 Buy and +<1>. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile.",
+			"coins" : 1,
+			"buys" : 1
+		},
+		{
+			"name" : "Port",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "When you buy this, gain another Port.",
+			"errata" : "When you buy a Port, you gain another Port. If you gain a Port some other way, you do not get an extra Port. There are 12 Ports in the pile; use all 12.",
+			"actions" : 2,
+			"cards" : 1,
+			"standardCount" : 12
+		},
+		{
+			"name" : "Ranger",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "Turn your Journey token over (it starts face up). Then if it's face up, +5 Cards.",
+			"errata" : "At the start of the game, your Journey token (the one with the boot) is face up. When you play this, you get +1 Buy, and turn it over. Then if it is face down, that is it, nothing more happens. If it is face up, you draw 5 cards. So, every other time you play one, you will draw 5 cards. It does not matter what turned over the Journey token; you could turn it face down with Giant, then face up with Ranger.",
+			"buys" : 1
+		},
+		{
+			"name" : "Ratcatcher",
+			"setId" : 14,
+			"isAction" : true,
+			"isReserve" : true,
+			"cost" : 2,
+			"description" : "Put this on your Tavern mat.\nAt the start of your turn, you may call this, to trash a card from your hand.",
+			"errata" : "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Ratcatcher, it moves from the mat into play, and you trash a card from your hand. Ratcatcher is discarded that turn with your other cards in play.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Raze",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 2,
+			"description" : "Trash this or a card from your hand. Look at one card from the top of your deck per <1> the trashed card costs. Put one of them into your hand and discard the rest.",
+			"errata" : "If you trash a card costing <0> with this, you do not get any cards. If you trash a card costing <1> or more, you look at a number of cards from the top of your deck equal to the cost in <> of the trashed card, take one into your hand, and discard the rest. For example if you trash an Estate, you look at the top two cards of your deck, put one into your hand, and discard the other one. You can trash the Raze itself; normally it costs <2>, so you would look at two cards. Costs may be affected by cards like Bridge Troll. Raze is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Raze.",
+			"actions" : 1
+		},
+		{
+			"name" : "Relic",
+			"setId" : 14,
+			"isAttack" : true,
+			"isTreasure" : true,
+			"cost" : 5,
+			"description" : "When you play this, each other player puts their -1 Card token on their deck.",
+			"errata" : "This is a Treasure worth <2>. You play it in your Buy phase, like other Treasures. When you play it, you also make each other player put their -1 Card token on their deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section. Relic is an Attack despite not being an Action; it can be blocked with Moat and responded to with Caravan Guard and so on. A player responding to Relic with Caravan Guard first plays Caravan Guard, including drawing a card, and then puts their -1 Card token on their deck.",
+			"coins" : 2
+		},
+		{
+			"name" : "Royal Carriage",
+			"setId" : 14,
+			"isAction" : true,
+			"isReserve" : true,
+			"cost" : 5,
+			"description" : "Put this on your Tavern mat.\nDirectly after you finish playing an Action card, if it's still in play, you may call this, to replay that Action.",
+			"errata" : "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, directly after resolving a played Action card that is still in play. Royal Carriage cannot respond to Actions that are no longer in play, such as a Reserve card that was put on the Tavern mat, or a card that trashed itself (like a Raze used to trash itself). When called, Royal Carriage causes you to replay the card you just played. You can call multiple Royal Carriages to replay the same Action multiple times (provided the Action is still in play). You completely resolve the Action before deciding whether or not to use Royal Carriage on it. If you use Royal Carriage to replay a Duration card, Royal Carriage will stay in play until the Duration card is discarded from play, to track the fact that the Duration card has been played twice.",
+			"actions" : 1
+		},
+		{
+			"name" : "Storyteller",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "Play up to 3 Treasures from your hand. Then pay all of your <> (including the <1> from this) and draw a card per <1> you paid.",
+			"errata" : "This lets you play Treasures in your Action phase. They go into play and produce <>, just like Treasures played in the Buy phase. Then Storyteller turns all of your <> into +Cards; for each <1> you have you lose the <1> and get +1 Card. For example if you had <4>, you lose the <4> and draw 4 cards. This makes you lose all <> you have so far that turn, including the <> you get from playing the Treasures, the +<1> Storyteller gives you directly, and any <> you made earlier in the turn. You can track that the Treasures have been \"spent\" by putting them under the Storyteller. <p>, produced by Potions from Alchemy, is not <> and so is not lost and does not get you any cards.",
+			"actions" : 1,
+			"coins" : 1
+		},
+		{
+			"name" : "Swamp Hag",
+			"setId" : 14,
+			"isAttack" : true,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 5,
+			"description" : "Until your next turn, when any other player buys a card, they gain a Curse. At the start of your next turn: +<3>",
+			"errata" : "Playing this sets up two effects for the future: you will get +<3> at the start of your next turn; and until then, other players will gain a Curse whenever they buy a Card. Players who buy multiple cards will gain a Curse per card bought; players who do not buy any cards will not get any Curses. This is cumulative; if you play two Swamp Hags, and the player after you plays one, then the player after that will get three Curses with any card bought. This does not affect cards gained other ways, only bought cards. Buying Events is not buying cards and so does not trigger this. If you play Swamp Hag and then take an extra turn immediately, such as with Mission or Outpost (from Seaside), you will get +<3> at the start of that turn and discard Swamp Hag that turn, and other players will never be affected by it. If you want to use a Reaction card like Moat against Swamp Hag, you have to use it right when Swamp Hag is played."
+		},
+		{
+			"name" : "Transmogrify",
+			"setId" : 14,
+			"isAction" : true,
+			"isReserve" : true,
+			"cost" : 4,
+			"description" : "Put this on your Tavern mat.\nAt the start of your turn, you may call this, to trash a card from your hand, and gain a card to your hand costing up to <1> more than it.",
+			"errata" : "When you play this, you get +1 Action and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Transmogrify, it moves from the mat into play, and you trash a card from your hand, then gain a card costing up to <1> more than the trashed card. The gained card comes from the Supply and is put into your hand; if you had no cards to trash, you do not gain one. Transmogrify is discarded that turn with your other cards in play. You may trash a card to gain a card costing <1> more, or the same amount, or less; you may trash a card to gain a copy of the same card.",
+			"actions" : 1
+		},
+		{
+			"name" : "Treasure Trove",
 			"setId" : 14,
 			"isAttack" : true,
 			"isAction" : true,
@@ -2782,7 +3061,7 @@
 			"isReaction" : true,
 			"isReserve" : true,
 			"isEvent" : true,
-			"isTraveler" : true,
+			"isTraveller" : true,
 			"isLandmark" : true,
 			"isOverpay" : true,
 			"isLooter" : true,
@@ -2792,13 +3071,977 @@
 			"hasPotion" : true,
 			"debt" : 0,
 			"description" : "",
-			"errata" : "",
+			"errata" : "This is a Treasure worth <2>. You play it in your Buy phase, like other Treasures. When you play it, you gain a Copper and a Gold from the Supply, putting them into your discard pile. If one of those piles is empty, you still gain the other card.",
 			"actions" : 1,
 			"coins" : 1,
 			"cards" : 1,
 			"buys" : 1,
 			"victoryPoints" : 1,
-			"standardCount" : 10,
+			"standardCount" : 10
+		},
+		{
+			"name" : "Wine Merchant",
+			"setId" : 14,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "Put this on your Tavern mat.\nAt the end of your Buy phase, if you have at least <2> unspent, you may discard this from your Tavern mat.",
+			"errata" : "When you play this, you get +1 Buy and +<4>, and put it on your Tavern mat. It stays on your mat until the end of one of your Buy phases in which you have <2> or more that you did not spend. At that point you can discard Wine Merchant from your mat. If you have multiple Wine Merchants on your mat, you do not need <2> per Wine Merchant, just <2> total.",
+			"coins" : 4,
+			"buys" : 1
+		},
+		{
+			"name" : "Alms",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 0,
+			"description" : "Once per turn: If you have no Treasures in play, gain a card costing up to <4>.",
+			"errata" : "You can only buy this once per turn. When you do, if you have no Treasures in play, you gain a card costing up to <4>. The gained card comes from the Supply and is put into your discard pile."
+		},
+		{
+			"name" : "Ball",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 5,
+			"description" : "Take your -<1> token. Gain 2 cards each costing up to <4>.",
+			"errata" : "When you buy this, you take your -<1> token, which will cause you to get <1> less the next time you get <>; see the Tokens section. Then you gain 2 cards, each costing up to <4>. They can be 2 copies of the same card, or 2 different cards."
+		},
+		{
+			"name" : "Bonfire",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 5,
+			"description" : "Trash up to 2 cards you have in play.",
+			"errata" : "This only trashes cards you have in play, not cards from your hand. You can trash zero, one, or two cards. If you trash Treasures with this, this does not remove the <> you got from playing those Treasures this turn. For example, with 5 Coppers in play and two Buys, you could pay <3> for a Bonfire to trash two of the Coppers, then spend the other on a Peasant."
+		},
+		{
+			"name" : "Borrow",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 0,
+			"description" : "Once per turn: +1 Buy. If your -1 Card token isn't on your deck, put it there and +<1>.",
+			"errata" : "You can only buy this once per turn. When you do, if your -1 Card token is not on your deck, you put it on your deck and get +<1>. The -1 Card token will cause you to draw one less card the next time you draw cards; see the Tokens section"
+		},
+		{
+			"name" : "Expedition",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 3,
+			"description" : "Draw 2 extra cards for your next hand.",
+			"errata" : "This increases the number of cards you draw in Clean-up of the same turn. It is cumulative. Normally you draw 5 cards; after an Expedition you would draw 7, after two Expeditions you would draw 9, and so on. It only applies for the turn you buy it. If you play Outpost (from Seaside), getting an extra turn with only 3 cards, and also buy Expedition, you add the 2 extra cards onto the base of 3 cards, for 5 cards total."
+		},
+		{
+			"name" : "Ferry",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 3,
+			"description" : "Move your -<2> cost token to an Action SUpply pile. (Cards from that pile cost <2> less on your turns, but not less than <0>.)",
+			"errata" : "When you buy this, you move your -<2> cost token to any Action Supply pile. This token makes cards from that pile cost <2> less, but not less than <0>, on your turns; see the Tokens section."
+		},
+		{
+			"name" : "Inheritance",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 7,
+			"description" : "Once per game: Set aside a non-Victory Action card from the Supply costing up to <4>. Move your Estate token to it. (Your Estates gain the abilities and types of that card.)",
+			"errata" : "You can only buy this once per game. When you do, set aside a non-Victory Action card from the Supply that costs up to <4>, and put your Estate token on it (the one depicting a house). This is not gaining a card, and does not count for things that care about gaining, such as Treasure Hunter; however at the end of the game, include the card in your deck when scoring. For the rest of the game, all of your Estates have the abilities and types of the set aside card. For example if you set aside a Port, then your Estates are Action - Victory cards, that can be played for +1 Card +2 Actions. This also changes Estates you buy or otherwise gain during the game; if you used Inheritance on a Port and then later bought an Estate, that Estate would come with a Port, just as buying a Port gains you a Port. This only affects your own Estates, not Estates of other players. An Estate is yours if either it started in your deck, or you gained it or bought it, or you were passed it with Masquerade (from Intrigue). An Estate stops being yours if you trash it, return it to the Supply, pass it with Masquerade, or are stopped from gaining it due to Possession (from Alchemy) or Trader (from Hinterlands). There are no limits on the set aside card other than being a non-Victory Action from the Supply costing up to <4>; it may be a Duration card, a Reaction card, and so on. It does not have to continue costing <4>, it only has to cost <4> when set aside. Your Estates are still worth 1 VP when scoring at the end of the game. Your Estates only copy abilities and types; they do not copy cost, name, or what pile they are from (thus they do not trigger tokens like +1 Action on the copied pile, and are not the Bane for Young Witch from Cornucopia even if the copied pile is the Bane). Starting Estates come from the Estates pile."
+		},
+		{
+			"name" : "Lost Arts",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 6,
+			"description" : "Move your +1 Action token to an Action Supply pile. (When you play a card from that pile, you first get +1 Action.)",
+			"errata" : "When you buy this, you move your +1 Action token to any Action Supply pile. This token gives you +1 Action whenever you play a card from that pile; see the Tokens section."
+		},
+		{
+			"name" : "Mission",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 4,
+			"description" : "Once per turn: If the previous turn wasn't yours, take another turn after this one, during which you can't buy cards.",
+			"errata" : "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travellers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours."
+		},
+		{
+			"name" : "Pathfinding",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 8,
+			"description" : "Move your +1 Card token to an Action Supply pile. (When you play a card from that pile, you first get +1 Card.)",
+			"errata" : "When you buy this, you move your +1 Card token to any Action Supply pile. This token gives you +1 Card whenever you play a card from that pile; see the Tokens section."
+		},
+		{
+			"name" : "Pilgrimage",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 4,
+			"description" : "Once puer turn: Turn your Journey token over (it starts face up); then if it's face up, choose up to 3 differently named cards you have in play and gain a copy of each.",
+			"errata" : "At the start of the game, your Journey token (the one with the boot) is face up. You can only buy this once per turn. When you do, turn your Journey token over. Then if it is face down, nothing more happens. If it is face up, choose up to 3 cards you have in play with different names and gain a copy of each. The copies you gain come from the Supply and are put into your discard pile. So, every other time you buy this, you will gain up to 3 cards. It does not matter what turned over the Journey token; you could turn it face down with Ranger, then face up with Pilgrimage."
+		},
+		{
+			"name" : "Plan",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 3,
+			"description" : "Move your Trashing token to an Action Supply pile. (When you buy a card from that pile, you may trash a card from your hand.)",
+			"errata" : "When you buy this, you move your Trashing token to any Action Supply pile. This token will let you trash a card from your hand when buying a card from that pile; see the Tokens section."
+		},
+		{
+			"name" : "Quest",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 0,
+			"description" : "You may discard an Attack, two Curses, or Six cards. If you do, gain a Gold.",
+			"errata" : "You may either discard an Attack to gain a Gold, or discard two Curses to gain a Gold, or discard any 6 cards to gain a Gold. The gained Gold is put into your discard pile. You may choose to discard 6 cards despite not having enough cards in hand; you will discard everything and not gain a Gold. You may choose to discard two Curses despite only having one; you will discard that Curse and not gain a Gold."
+		},
+		{
+			"name" : "Raid",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 5,
+			"description" : "Gain a Silver per Silver you have in play. Each other player puts their -1 Card token on their deck.",
+			"errata" : "This Event is like an Attack, but buying it is not playing an Attack, and so cannot be responded to with cards like Moat and Caravan Guard. When you buy this, you gain a Silver for each Silver you have in play; for example, with four Silvers in play, you would gain four Silvers. The Silvers go to your discard pile; if there are not enough left, just take what is left. Then each other player puts their -1 Card token on top of their deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section"
+		},
+		{
+			"name" : "Save",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 1,
+			"description" : "Once per turn: +1Buy. Set aside a card from yoiur hand, and put it into your hand at end of turn (after drawing).",
+			"errata" : "You can only buy this once per turn. When you do, you get +1 Buy (letting you buy another Event or a card afterwards), set aside a card from your hand face down (the other players do not get to see it), and put it into your hand at the end of the turn, after drawing your hand for the next turn. For example you might set aside an unplayed Copper, and then after drawing your 5 cards for next turn, add the Copper to your hand."
+		},
+		{
+			"name" : "Scouting Party",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 2,
+			"description" : "Look at the top 5 cards of your deck. Discard 3 and put the rest back in any order.",
+			"errata" : "",
+			"buys" : 1
+		},
+		{
+			"name" : "Seaway",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 5,
+			"description" : "Gain an Action card costing up to <4>. Move your +1 Buy token to its pile. (When you play a card from that pile, you first get +1 Buy.)",
+			"errata" : "When you buy this, first you gain an Action card costing up to <4>. The Action card comes from the Supply and is put into your discard pile. Then move your +1 Buy token to the pile the Action card came from. The token gives you +1 Buy when playing a card from that pile; see the Tokens section. It only matters how much the card costs that you gain; the cost is not checked later. For example you can play Bridge Troll, then use Seaway to gain a Bridge Troll (currently costing <4> due to its own effect), and the token will stay there even when Bridge Troll costs <5> later. You can use Seaway to gain Sir Martin (from Dark Ages) when he is on top of the Knights pile; then your +1 Buy token will be on the Knights pile, even though any remaining Knights will cost <5>. You cannot use Seaway on an empty pile just to move the +1 Buy token; you have to pick a card you can gain."
+		},
+		{
+			"name" : "Trade",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 0,
+			"description" : "Trash up to 2 card from your hand. Gain a Silver per card you trashed.",
+			"errata" : "You may trash zero, one, or two cards from your hand. For each card you actually trashed, you gain a Silver, putting it into your discard pile."
+		},
+		{
+			"name" : "Training",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 6,
+			"description" : "Move your +<1> token to an Action Supply pile. (When you play a card from that pile, you first get +<1>.)",
+			"errata" : "When you buy this, you move your +<1> token to any Action Supply pile. This token gives you +<1> whenever you play a card from that pile; see the Tokens section."
+		},
+		{
+			"name" : "Travelling Fair",
+			"setId" : 14,
+			"isEvent" : true,
+			"cost" : 2,
+			"description" : "When you gain a card this turn, you may put it onto your deck.",
+			"errata" : "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travellers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
+			"buys" : 2
+		},
+		{
+			"name" : "Champion",
+			"setId" : 14,
+			"isAction" : true,
+			"isDuration" : true,
+			"excludeFromSupply" : true,
+			"cost" : 6,
+			"description" : "For the rest of the game, when another player plays an Attack card, it doesn't affect you, and when you play an Action, +1 Action.",
+			"errata" : "Champion stays in play for the rest of the game once played. For the rest of the game, it provides you with an additional +1 Action each time you play an Action, which means you will always be able to play all of your Actions; and it protects you from all further Attacks played (whether you want the protection or not). Champion only protects you from Attacks played after it; for example it does not stop a previously played Swamp Hag from giving you Curses that turn.",
+			"actions" : 1
+		},
+		{
+			"name" : "Disciple",
+			"setId" : 14,
+			"isAction" : true,
+			"isTraveller" : true,
+			"excludeFromSupply" : true,
+			"cost" : 5,
+			"description" : "You may play an Action card from your hand twice. Gain a copy of it.\nWhen you discard this from play, you may exchange it for a Teacher.",
+			"errata" : "Playing an Action card from your hand is optional. If you do play one, you play it twice, then gain a copy of it if possible; gaining the copy is not optional once you have played it. The copy comes from the Supply and is put into your discard pile; if the Action is a non-Supply card, such as Fugitive, you can play it twice, but do not gain a copy of it. This does not use up any extra Actions you were allowed to play due to cards like Port - Disciple itself uses up one Action and that is it. You cannot play any other cards in between resolving the Discipled Action card multiple times, unless that Action card specifically tells you to (such as Disciple itself does). If you Disciple a card that gives you +1 Action, such as Artificer, you will end up with 2 Actions to use afterwards, rather than the one you would have left if you just played two Artificers. If you use Disciple on a Duration card, Disciple will stay in play until the Duration card is discarded."
+		},
+		{
+			"name" : "Fugitive",
+			"setId" : 14,
+			"isAction" : true,
+			"isTraveller" : true,
+			"excludeFromSupply" : true,
+			"cost" : 4,
+			"description" : "Discard a card.\nWhen you discard this from play, you may exchange it for a Disciple.",
+			"errata" : "When you play this, you draw 2 cards, get +1 Action, and then discard a card from your hand. The discarded card does not have to be one of the cards just drawn.",
+			"actions" : 1,
+			"cards" : 2
+		},
+		{
+			"name" : "Hero",
+			"setId" : 14,
+			"isAction" : true,
+			"isTraveller" : true,
+			"excludeFromSupply" : true,
+			"cost" : 5,
+			"description" : "Gain a Treasure.\nWhen you discard this from play, you may exchange it for a Champion.",
+			"errata" : "The Treasure comes from the Supply and is put into your discard pile. It can be any Treasure being used that game.",
+			"coins" : 2
+		},
+		{
+			"name" : "Soldier",
+			"setId" : 14,
+			"isAction" : true,
+			"isAttack" : true,
+			"isTraveller" : true,
+			"excludeFromSupply" : true,
+			"cost" : 3,
+			"description" : "+<1> per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.\nWhen you discard this from play, you may exchange it for a Fugitive.",
+			"errata" : "This gives +<2>, and then an additional +<1> per other Attack card you have in play. Then each other player with 4 or more cards in hand discards a card. So for example if you play Soldier, then another Soldier, and have an opponent with 5 cards in hand, you will get +<2> and that opponent will discard a card, then you will get +<2> and an extra +<2> while that opponent discards again. Soldier only cares about Attack cards in play, not Attack cards played that turn; for example using Disciple on Soldier will not produce an extra +<1>, because there is no other Attack card in play. Duration Attacks played on the previous turn are Attack cards in play and so do count for Soldier.",
+			"coins" : 2
+		},
+		{
+			"name" : "Teacher",
+			"setId" : 14,
+			"isAction" : true,
+			"isReserve" : true,
+			"excludeFromSupply" : true,
+			"cost" : 6,
+			"description" : "Put this on your Tavern mat.\nAt the start of your turn, you may call this, to move your +1 Card, +1 Action, +1 Buy, or +<1> token to an Action Supply pile you have no tokens on. (When you play a card from that pile, you must first get that bonus.)",
+			"errata" : "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Teacher, it moves from the mat into play, and you choose your +1 Action, +1 Card, +1 Buy, or +<1> token, and move it to an Action Supplypile that you have no tokens on. The token on the pile means that every time you play a card from that pile, you will get the corresponding bonus - if you put your +1 Action token on a pile, you will get an extra +1 Action when playing a card from that pile. See the Tokens section. This cannot put a token on a pile you have tokens on, including the tokens Teacher places as well as your -<2> cost token and Trashing token. This can put a token on a pile that other players have tokens on. Other things can put tokens on a pile you put a token on with Teacher; it is just Teacher itself that cannot put a token on a pile you have a token on. It is okay if the pile has a token that does not belong to you or anyone, such as an Embargo token (from Seaside) or coin token for Trade Route (from Prosperity). It is okay if you have an Estate token on a card set aside from that pile."
+		},
+		{
+			"name" : "Treasure Hunter",
+			"setId" : 14,
+			"isAction" : true,
+			"isTraveller" : true,
+			"excludeFromSupply" : true,
+			"cost" : 3,
+			"description" : "Gain a Silver per card the player to your right gained on their last turn.\nWhen you discard this from play, you may eschange it for a Warrior.",
+			"errata" : "This counts all cards gained, not just bought cards. For example if the player to your right played Amulet, gaining a Silver, then bought a Duchy, you would gain two Silvers. The gained Silvers are put into your discard pile.",
+			"actions" : 1,
+			"coins" : 1
+		},
+		{
+			"name" : "Warrior",
+			"setId" : 14,
+			"isAction" : true,
+			"isAttack" : true,
+			"isTraveller" : true,
+			"excludeFromSupply" : true,
+			"cost" : 4,
+			"description" : "Once per Traveller you have in play (including this), each other player discards the top card of their deck and trashes it if it costs <3> or <4>.\nWhen you discard this from play, you may eschange it for a Hero.",
+			"errata" : "Each player, in turn order, discards the appropriate number of cards from the top of their deck, trashing the ones costing <3> or <4>. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you for example have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly <3> or exactly <4>. Cards with <p> in the cost (from Alchemy) do not cost exactly <3> or <4>. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing <3> or <4>). Champion and Teacher are not Travellers.",
+			"cards" : 2
+		},
+		{
+			"name" : "Bard",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 4,
+			"description" : "Receive a Boon.",
+			"errata" : "You get +<2> and receive a Boon.",
+			"coins" : 2
+		},
+		{
+			"name" : "Blessed Village",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 4,
+			"description" : "When you gain this, take a Boon. Receive it now or at the start of your next turn.",
+			"errata" : "You see the Boon before deciding to resolve it immediately or at the start of your next turn. If you save it for next turn, it sits in front of you until then (or until the end of that turn if it says to keep it out until Clean-up).",
+			"actions" : 2,
+			"cards" : 1
+		},
+		{
+			"name" : "Cemetery",
+			"setId" : 15,
+			"isVictory" : true,
+			"cost" : 4,
+			"description" : "When you gain this, trash up to 4 cards from your hand.",
+			"errata" : "In games using this, replace one of your starting Coppers with a Haunted Mirror. When you gain a Cemetery, trash from zero to four cards from your hand.",
+			"victoryPoints" : 2,
+			"standardCount" : 12
+		},
+		{
+			"name" : "Changeling",
+			"setId" : 15,
+			"isNight" : true,
+			"cost" : 3,
+			"description" : "Trash this. Gain a copy of a card you have in play.\nIn games using this, when you gain a card costing <3> or more, you may exchange it for a Changeling.",
+			"errata" : "When Changeling is in the Supply, any time you gain a card costing at least <3>, you may exchange it for a Changeling from the Supply. You can only do this if you can actually return the card you gained, and there is at least one Changeling in the Supply. The Changeling goes to your discard pile, no matter where the gained card went. Things that happen due to gaining the gained card still happen. So for example you could gain Skulk, exchange it for a Changeling (returning Skulk to the Supply and putting Changeling into your discard pile), and still gain a Gold from Skulk's ability. Exchanging for a Changeling is optional. You cannot do it if the gained card costs less than <3>, even if it normally costs <3> or more, and you cannot do it if the cost is neither more or less than <3> (such as Transmute from Alchemy). When you play Changeling, you trash it and gain a copy of a card you have in play; that can be any card you have in play, including Actions, Treasures, and Night cards, and including Duration cards you played on a previous turn that are still in play."
+		},
+		{
+			"name" : "Cobbler",
+			"setId" : 15,
+			"isDuration" : true,
+			"isNight" : true,
+			"cost" : 5,
+			"description" : "At the start of your next turn, gain a card to your hand costing up to <4>.",
+			"errata" : "If you gain a Nomad Camp (from Hinterlands) with this, it goes to your hand."
+		},
+		{
+			"name" : "Conclave",
+			"setId" : 15,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "You may play an Action card from your hand that you don't have a copy of in play. If you do, +1 Action.",
+			"errata" : "When you play this, you can play an Action card from your hand, provided that you do not have a copy of that card in play. It does not matter if you played the Action card this turn, only that it is not in play when you play Conclave; you can use Conclave to play a card that you played but trashed and so do not have in play, like a Pixie you trashed, but cannot use it to play a card you did not play this turn that is still in play, such as a Secret Cave from your previous turn. Conclave normally cannot play a Conclave, as that is a card you have in play. If you do play a card with Conclave, then Conclave gives you +1 Action, which has no special limitations, and so can for example be used to play another Conclave.",
+			"coins" : 2
+		},
+		{
+			"name" : "Crypt",
+			"setId" : 15,
+			"isDuration" : true,
+			"isNight" : true,
+			"cost" : 5,
+			"description" : "Set aside any number of Treasures you have in play, face down (under this). While any remain, at the start of each of your turns, put one of them into your hand.",
+			"errata" : "For example if you set aside three Treasures, then at the start of each of your next three turns you will put one of them into your hand, and at the end of the last of those turns you will discard Crypt from play. The Treasures are face- down; you can look at them at any time, but other players may not."
+		},
+		{
+			"name" : "Cursed Village",
+			"setId" : 15,
+			"isAction" : true,
+			"isDoom" : true,
+			"cost" : 5,
+			"description" : "Draw until you have 6 cards in hand.\nWhen you gain this, receive a Hex.",
+			"errata" : "If you already have six or more cards in hand, you do not draw any cards. When you gain Cursed Village, you receive a Hex; since that will often be in your Buy phase, some of the Hexes may not do anything to you.",
+			"actions" : 2
+		},
+		{
+			"name" : "Den of Sin",
+			"setId" : 15,
+			"isDuration" : true,
+			"isNight" : true,
+			"cost" : 5,
+			"description" : "At the start of your next turn, +2 Cards.\nThis is gained to your hand (instead of your discard pile).",
+			"errata" : "Since Night is after the Buy phase, normally you can play this the turn you buy it."
+		},
+		{
+			"name" : "Devil's Workshop",
+			"setId" : 15,
+			"isNight" : true,
+			"cost" : 4,
+			"description" : "If the number of cards you've gained this turn is:\n2+, gain an Imp from its pile;\n1, gain a card costing up to <4>;\n0, gain a Gold.",
+			"errata" : "This counts all cards you have gained this turn, including cards gained at Night prior to playing it. You cannot choose a different benefit; if you have gained two or more cards, you have to gain an Imp, you cannot take a card costing up to <4> or a Gold instead. Normally, bought cards are then gained, but cards exchanged for (such as Vampire exchanging for Bat) are not gained."
+		},
+		{
+			"name" : "Druid",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 2,
+			"description" : "Receive one of the set-aside Boons (leaving it there).\nSetup: Set aside the top 3 Boons face up.",
+			"errata" : "At the start of the game, deal out three Boons face up for Druid. If there are other Fate cards in the same game, those Fate cards will not produce those Boons that game; the deck will consist of the other nine Boons. When you play Druid, you choose one of its three Boons to receive, and leave it there in the set-aside area for Druid, even if it is one of the Boons that says to keep it until Clean-up (e.g. The Field's Gift).",
+			"buys" : 1
+		},
+		{
+			"name" : "Exorcist",
+			"setId" : 15,
+			"isNight" : true,
+			"cost" : 4,
+			"description" : "Trash a card from your hand. Gain a cheaper Spirit from one of the Spirit piles.",
+			"errata" : "The Spirits are Will-o'-Wisp, Imp, and Ghost. If for example you trash a Silver, you can gain a Will-o'-Wisp or Imp, as those both cost less than Silver."
+		},
+		{
+			"name" : "Faithful Hound",
+			"setId" : 15,
+			"isAction" : true,
+			"isReaction" : true,
+			"cost" : 2,
+			"description" : "When you discard this other than during Clean-up, you may set it aside, and put it into your hand at end of turn.",
+			"errata" : "\"End of turn\" is after drawing in Clean-up. The Reaction ability can happen on your turn and on other players' turns; if for example you discard Faithful Hound to another player's Raider, you can set it aside and return it to your hand at the end of that turn. Faithful Hound does not have to be in your hand for the ability to work; for example you can set it aside when it is discarded from your deck due to Night Watchman. The ability does not work if Faithful Hound is put into your discard pile without being discarded; for example nothing special happens when you gain Faithful Hound, or put your deck into your discard pile with Scavenger (from Dark Ages). The ability does not do anything during Clean-up. Setting Faithful Hound aside is optional. You cannot choose to discard Faithful Hound without something telling you to discard.",
+			"cards" : 2
+		},
+		{
+			"name" : "Fool",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 3,
+			"description" : "If you aren't the player with Lost in the Woods, take it, take 3 Boons, and receive the Boons in any order.",
+			"errata" : "If you have Lost in the Woods, playing Fool does nothing. If you do not have Lost in the Woods, you take it - even from another player, if another player has it - and also take 3 Boons and receive them in the order you choose (discarding them when receiving them, or in Clean-up as appropriate). You do not need to pick the full order in advance - pick one to resolve, then after resolving it pick another to resolve. The player with Lost in the Woods (if any) can optionally discard a card to receive a Boon, at the start of each of their turns. In games using Fool, replace one of your starting Coppers with a Lucky Coin."
+		},
+		{
+			"name" : "Ghost Town",
+			"setId" : 15,
+			"isDuration" : true,
+			"isNight" : true,
+			"cost" : 3,
+			"description" : "At the start of your next turn, +1 Card and +1 Action.\nThis is gained to your hand (instead of your discard pile).",
+			"errata" : "Since Night is after the Buy phase, normally you can play this the turn you buy it."
+		},
+		{
+			"name" : "Guardian",
+			"setId" : 15,
+			"isDuration" : true,
+			"isNight" : true,
+			"cost" : 2,
+			"description" : "Until your next turn, when another player plays an Attack card, it doesn't affect you. At the start of your next turn, +<1>.\nThis is gained to your hand (instead of your discard pile).",
+			"errata" : "Since Night is after the Buy phase, normally you can play this the turn you buy it. When you play Guardian, you are unaffected by Attack cards other players play between then and your next turn (even if you want one to affect you). Guardian does not prevent you from using Reactions when other players play Attacks."
+		},
+		{
+			"name" : "Idol",
+			"setId" : 15,
+			"isAttack" : true,
+			"isTreasure" : true,
+			"isFate" : true,
+			"cost" : 5,
+			"description" : "When you play this, if you then have an odd number of Idols in play, receive a Boon; if an even number, each other player gains a Curse.",
+			"errata" : "Idol cares how many Idols you have in play, not how many you have played this turn; some cards can make those numbers different (e.g. Counterfeit from Dark Ages). If you have one Idol in play, you receive a Boon, if two, the other players gain a Curse, if three, you receive a Boon, and so on.",
+			"coins" : 2
+		},
+		{
+			"name" : "Leprechaun",
+			"setId" : 15,
+			"isAction" : true,
+			"isDoom" : true,
+			"cost" : 3,
+			"description" : "Gain a Gold. If you have exactly 7 cards in play, gain a Wish from its pile. Otherwise, receive a Hex.",
+			"errata" : "Cards you have in play normally include Leprechaun itself, other cards you have played this turn, and sometimes Duration cards from previous turns. Cards that were in play but no longer are - e.g. a Pixie you trashed - do not count."
+		},
+		{
+			"name" : "Monastery",
+			"setId" : 15,
+			"isNight" : true,
+			"cost" : 2,
+			"description" : "For each card you've gained this turn, you may trash a card from your hand or a Copper you have in play.",
+			"errata" : "For example if you have gained three cards, you may trash up to three cards, with each being either a card from your hand or a Copper you have in play, in any combination. Normally, bought cards are then gained, but cards exchanged for (such as Vampire exchanging for Bat) are not gained."
+		},
+		{
+			"name" : "Necromancer",
+			"setId" : 15,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "Play a face up, non-Duration Action card from the trash, leaving it there and turning it face down for the turn.\nSetup: Put the 3 Zombies into the trash.",
+			"errata" : "This plays a non-Duration Action card from the trash. Normally it can at least play one of the three Zombies, since they start the game in the trash. It can play other Action cards that make their way into the trash too. The played cards are turned over, to track that each can only be used once per turn this way; at end of turn, turn them back face up. Necromancer can play another Necromancer, though normally that will not be useful. The Action card stays in the trash; if an effect tries to move it, such as Encampment (from Empires) returning to the Supply, it will fail to move it. Necromancer can be used on a card that trashes itself when played; if the card checks to see if it was trashed (such as Pixie), it was not, but if the card does not check (such as Tragic Hero), it will function normally. Since the played card is not in play, \"while this is in play\" abilities (such as Tracker's) will not do anything."
+		},
+		{
+			"name" : "Night Watchman",
+			"setId" : 15,
+			"isNight" : true,
+			"cost" : 3,
+			"description" : "Look at the top 5 cards of your deck, discard any number, and put the rest back in any order.\nThis is gained to your hand (instead of your discard pile).",
+			"errata" : "Since Night is after the Buy phase, normally you can play this the turn you buy it."
+		},
+		{
+			"name" : "Pixie",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 2,
+			"description" : "Discard the top Boon. You may trash this to receive that Boon twice.",
+			"errata" : "If you receive a Boon that says to keep it until Clean-up, move it to in front of you, and remember that you get it twice. In games using Pixie, replace one of your starting Coppers with a Goat.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Pooka",
+			"setId" : 15,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "You may trash a Treasure other than Cursed Gold from your hand, for +4 Cards.",
+			"errata" : "In games using Pooka, replace one of your starting Coppers with a Cursed Gold."
+		},
+		{
+			"name" : "Raider",
+			"setId" : 15,
+			"isAttack" : true,
+			"isDuration" : true,
+			"isNight" : true,
+			"cost" : 6,
+			"description" : "Each other player with 5 or more cards in hand discards a copy of a card you have in play (or reveals they can't). At the start of your next turn, +<3>.",
+			"errata" : "For example if your cards in play are 3 Coppers, a Silver, and a Raider, then each other player with at least 5 cards in hand has to discard a Copper, Silver, or Raider, or reveal their hand to show that they did not have any of those cards."
+		},
+		{
+			"name" : "Sacred Grove",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 5,
+			"description" : "Receive a Boon. If it doesn't give +<1>, each other player may receive it.",
+			"errata" : "You have to receive the Boon; the other players can choose to receive it. The Field's Gift and The Forest's Gift are not shared. The River's Gift means that each player choosing to receive it draws a card at the end of your turn, at the same time as you.",
+			"coins" : 3,
+			"buys" : 1
+		},
+		{
+			"name" : "Secret Cave",
+			"setId" : 15,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 3,
+			"description" : "You may discard 3 cards. If you did, then at the start of your next turn, +<3>.",
+			"errata" : "If you do not discard three cards, Secret Cave is discarded from play at end of turn. If you do discard three cards, Secret Cave stays out until the Clean- up of your next turn, and you get +<3> at the start of that turn. You can choose to discard three cards even with fewer cards in hand, and will discard your remaining cards, but will not get the bonus. In games using Secret Cave, replace one of your starting Coppers with a Magic Lamp.",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Shepherd",
+			"setId" : 15,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "Discard any numberof Victory cards, revealing them. +2 Cards per card discarded.",
+			"errata" : "For example, you could discard three Victory cards to draw six cards. In games using Shepherd, replace one of your starting Coppers with a Pasture.",
+			"actions" : 1
+		},
+		{
+			"name" : "Skulk",
+			"setId" : 15,
+			"isAction" : true,
+			"isAttack" : true,
+			"isDoom" : true,
+			"cost" : 4,
+			"description" : "Each other player receives the next Hex.\nWhen you gain this, gain a Gold.",
+			"errata" : "You gain the Gold whether you gained Skulk due to buying it, or gained it some other way.",
+			"buys" : 1
+		},
+		{
+			"name" : "Tormentor",
+			"setId" : 15,
+			"isAction" : true,
+			"isAttack" : true,
+			"isDoom" : true,
+			"cost" : 5,
+			"description" : "If you have no other cards in play, gain an Imp from its pile. Otherwise, each other player receives the next Hex.",
+			"errata" : "Cards in play from previous turns are still cards in play; cards you played this turn but which are no longer in play (such as a Pixie you trashed) are not in play.",
+			"coins" : 2
+		},
+		{
+			"name" : "Tracker",
+			"setId" : 15,
+			"isAction" : true,
+			"isFate" : true,
+			"cost" : 2,
+			"description" : "Receive a Boon.\nWhile this is in play, when you gain a card, you may put that card onto your deck.",
+			"errata" : "If you gain multiple cards with this in play, this applies to each of them - you could put any or all of them on top of your deck. This applies both to cards gained due to being bought, and to cards gained other ways with Tracker in play. Tracker is in play when you resolve its Boon, so if the Boon causes you to gain a card, for example a Silver from The Mountain's Gift, you can put that card onto your deck. In games using Tracker, replace one of your starting Coppers with a Pouch.",
+			"coins" : 1
+		},
+		{
+			"name" : "Tragic Hero",
+			"setId" : 15,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "If you have 8 or more cards in hand (after drawing), trash this and gain a Treasure.",
+			"errata" : "First draw three cards; then, if you have eight or more cards in hand, you trash Tragic Hero and gain a Treasure. If you cannot trash Tragic Hero (for example if you play it twice with Throne Room and trashed it the first time), you still gain the Treasure.",
+			"cards" : 3,
+			"buys" : 1
+		},
+		{
+			"name" : "Vampire",
+			"setId" : 15,
+			"isAttack" : true,
+			"isDoom" : true,
+			"isNight" : true,
+			"cost" : 5,
+			"description" : "Each other player receives the next Hex.\nGain a card costing up to <5> other than a Vampire. Exchange this for a Bat.",
+			"errata" : "Follow the instructions in order. If the Bat pile is empty, you will be unable to exchange Vampire for a Bat, but will do the rest. The Bat is put into your discard pile."
+		},
+		{
+			"name" : "Werewolf",
+			"setId" : 15,
+			"isAction" : true,
+			"isAttack" : true,
+			"isDoom" : true,
+			"isNight" : true,
+			"cost" : 5,
+			"description" : "If it's your Night phase, each other player receives the next Hex. Otherwise, +3 Cards.",
+			"errata" : "Werewolf can be played in either your Action phase or Night phase. If played in your Action phase, you draw three cards; if played at Night, each other player receives the next Hex."
+		},
+		{
+			"name" : "Bat",
+			"setId" : 15,
+			"isNight" : true,
+			"excludeFromSupply" : true,
+			"cost" : 2,
+			"description" : "Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.",
+			"errata" : "The Vampire is put into your discard pile. If there are no Vampires in their pile, you cannot exchange Bat for one, but can still trash cards."
+		},
+		{
+			"name" : "Cursed Gold",
+			"setId" : 15,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 4,
+			"description" : "When you play this, gain a Curse.",
+			"errata" : "You can choose not to play Cursed Gold, and thus not gain a Curse.",
+			"coins" : 3,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Ghost",
+			"setId" : 15,
+			"isDuration" : true,
+			"isSpirit" : true,
+			"isNight" : true,
+			"excludeFromSupply" : true,
+			"cost" : 4,
+			"description" : "Reveal cards from your deck until you reveal an Action. Discard the other cards and set aside the Action. At the start of your next turn, play it twice.",
+			"errata" : "If you run out of cards before revealing an Action, shuffle your discard pile but not the revealed cards, and continue. If you still do not find an Action, just discard everything and do not do anything else. If you find an Action card, you discard the other cards, set the Action card aside, and play it twice at the start of your next turn. This is not optional. If you have multiple start-of-turn effects, you can put them in any order, but when you resolve Ghost, you play the Action twice then; you cannot resolve other effects in the middle. You play the Action card, resolving it completely, then play it a second time. Playing the card does not use up Action plays for the turn. If Ghost plays a Duration card, Ghost will stay out with the Duration card. If Ghost plays a card that trashes itself, it will play it a second time even though the card is no longer in play. If Ghost fails to play a card, it will be discarded from play that turn."
+		},
+		{
+			"name" : "Goat",
+			"setId" : 15,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 2,
+			"description" : "When you play this, you may trash a card from your hand.",
+			"errata" : "Trashing a card if optional.",
+			"coins" : 1,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Haunted Mirror",
+			"setId" : 15,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 0,
+			"description" : "When you trash this, you may discard an Action card to gain a Ghost from its pile.",
+			"errata" : "",
+			"coins" : 1,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Imp",
+			"setId" : 15,
+			"isAction" : true,
+			"isSpirit" : true,
+			"excludeFromSupply" : true,
+			"cost" : 2,
+			"description" : "You may play an Action card from your hand that you don't have a copy of in play.",
+			"errata" : "After drawing two cards, you can play an Action card from your hand, provided that you do not have a copy of that card in play. It does not matter if you played the Action card this turn, only that it is not in play when you play Imp; you can use Imp to play a card that you played but trashed and so do not have in play, like a Pixie you trashed, but cannot use it to play a card you did not play this turn that is still in play, such as a Secret Cave from your previous turn. Imp normally cannot play an Imp as that is a card you have in play.",
+			"cards" : 2
+		},
+		{
+			"name" : "Lucky Coin",
+			"setId" : 15,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 4,
+			"description" : "When you play this, gain a Silver.",
+			"errata" : "You can choose not to play Lucky Coin, and thus not gain a Silver.",
+			"coins" : 1,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Magic Lamp",
+			"setId" : 15,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 0,
+			"description" : "When you play this, if there are at least 6 cards that you have exactly 1 copy of in play, trash this. If you do, gain 3 Wishes from their pile.",
+			"errata" : "",
+			"coins" : 1,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Pasture",
+			"setId" : 15,
+			"isVictory" : true,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 2,
+			"description" : "Worth 1<v> per Estate you have.",
+			"errata" : "For example if you have three Estates, then Pasture is worth 3<v>.",
+			"coins" : 1,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Pouch",
+			"setId" : 15,
+			"isTreasure" : true,
+			"isHeirloom" : true,
+			"cost" : 2,
+			"errata" : "This simply gives you <1> and +1 Buy when you play it.",
+			"coins" : 1,
+			"buys" : 1,
+			"standardCount" : 6
+		},
+		{
+			"name" : "Will-o'-Wisp",
+			"setId" : 15,
+			"isAction" : true,
+			"isSpirit" : true,
+			"excludeFromSupply" : true,
+			"cost" : 0,
+			"description" : "Reveal the top card of your deck. If it costs <2> or less, put it into your hand.",
+			"errata" : "",
+			"actions" : 1,
+			"cards" : 1
+		},
+		{
+			"name" : "Wish",
+			"setId" : 15,
+			"isAction" : true,
+			"excludeFromSupply" : true,
+			"cost" : 0,
+			"description" : "Return this to its pile. If you did, gain a card to your hand costing up to <6>.",
+			"errata" : "You only gain a card if you actually returned Wish to its pile. A card you gain that would normally go somewhere else, like Nomad Camp (from Hinterlands), goes to your hand.",
+			"actions" : 1
+		},
+		{
+			"name" : "Zombie Apprentice",
+			"setId" : 15,
+			"isAction" : true,
+			"isZombie" : true,
+			"cost" : 3,
+			"description" : "You may trash an Action card from your hand for +3 Cards and +1 Action.",
+			"errata" : "If you trash an Action card from your hand, you draw three cards and get +1 Action.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Zombie Mason",
+			"setId" : 15,
+			"isAction" : true,
+			"isZombie" : true,
+			"cost" : 3,
+			"description" : "Trash the top card of your deck. You may gain a card costing up to <1> more than it.",
+			"errata" : "Gaining a card is optional. You can gain a card costing <1> more than the trashed card, or any amount less; for example you can gain a copy of the trashed card.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Zombie Spy",
+			"setId" : 15,
+			"isAction" : true,
+			"isZombie" : true,
+			"cost" : 3,
+			"description" : "Look at the top card of your deck. Discard it or put it pack.",
+			"errata" : "You draw a card before looking at the top card.",
+			"actions" : 1,
+			"cards" : 1,
+			"standardCount" : 1
+		},
+		{
+			"name" : "Bad Omens",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Put your deck into your discard pile. Look through it and put 2 Coppers from it onto your deck (or reveal you can't).",
+			"errata" : "Normally you will end up with a deck consisting of two Coppers, and a discard pile with the rest of your cards. Sometimes you will only have one or no Coppers; in those cases reveal your deck to demonstrate this.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Deluded",
+			"setId" : 15,
+			"isState" : true,
+			"description" : "At the start of your Buy phase, return this, and you can't buy Actions this turn.",
+			"errata" : "This prevents you from buying Action cards during one turn, starting in the Buy phase. If you get Deluded during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally it will apply to your next turn.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Delusion",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "If you don't have Deluded or Envious, take Deluded.",
+			"errata" : "Deluded / Envious is two-sided; take it with the Deluded side face up.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Envious",
+			"setId" : 15,
+			"isState" : true,
+			"description" : "At the start of your Buy phase, return this, and Silver and Gold make <1> this turn.",
+			"errata" : "This causes Silver and Gold to make <1> when you played in your Buy phase for one turn, rather than their usual <2> and <3>, starting in the Buy phase. It does not affect other Treasures, just Silver and Gold. If you get Envious during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally it will apply to your next turn.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Envy",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "If you don't have Deluded or Envious, take Envious.",
+			"errata" : "Deluded / Envious is two-sided; take it with the Envious side face up.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Famine",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Reveal the top 3 cards of your deck. Discard the Actions. Shuffle the rest into your deck.",
+			"errata" : "The revealed cards that are not Actions are shuffled back into your deck.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Fear",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "If you have at least 5 cards in hand, discard an Action or Treasure (or reveal you can't).",
+			"errata" : "You discard an Action or Treasure if you have either, and only reveal your hand if you have no Actions and no Treasures.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Locusts",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Trash the top card of your deck. If it's Copper or Estate, gain a Curse. Otherwise, gain a cheaper card that shares a type with it.",
+			"errata" : "Types are the words on the bottom banner, like Action and Attack. If there is no cheaper card that shares a type - for example if the card trashed is Curse - the player does not gain anything.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Lost in the Woods",
+			"setId" : 15,
+			"isState" : true,
+			"description" : "At the start of your turn, you may discard a card to receive a Boon.",
+			"errata" : "The two sides are the same; use either. Using the ability is optional. Lost in the Woods stays in front of you turn after turn, until another players takes it with a Fool.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Miserable",
+			"setId" : 15,
+			"isState" : true,
+			"errata" : "When scoring at the end of the game, you lose 2<v>. This does nothing until then, it just sits in front of you.",
+			"victoryPoints" : -2,
+			"standardCount" : 1
+		},
+		{
+			"name" : "Misery",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "If this is your first Misery this game, take Miserable. Otherwise, flip it over to Twice Miserable.",
+			"errata" : "If this hits you for a third time in a game, nothing will happen; you stay at Twice Miserable.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Moon's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Look through your discard pile. You may put a card from it onto your deck.",
+			"errata" : "If your discard pile is empty, this will not do anything.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The River's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "+1 Card at the end of this turn. (Keep this until Clean-up.)",
+			"errata" : "You draw the card after drawing your hand for your next turn.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Sky's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "You may discard 3 cards to gain a Gold.",
+			"errata" : "If you choose to do this with fewer than three cards in hand, you will discard the rest of your cards but not gain a Gold. Discarding three cards gets you one Gold, not three.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Twice Miserable",
+			"setId" : 15,
+			"isState" : true,
+			"errata" : "When scoring at the end of the game, you lose 4<v>. This does nothing until then, it just sits in front of you.",
+			"victoryPoints" : -4,
+			"standardCount" : 1
+		},
+		{
+			"name" : "War",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Reveal cards from your deck until revealing one costing <3> or <4>. Trash it and discard the rest.",
+			"errata" : "If you do not find a card costing <3> or <4>, your entire deck will end up in your discard pile, with nothing trashed.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Earth's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "You may discard a Treasure to gain a card costing up to <4>.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Field's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Keep this card until Clean-up.",
+			"actions" : 1,
+			"coins" : 1,
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Flame's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "You may trash a card from your hand.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Forest's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Keep this until Clean-up.",
+			"coins" : 1,
+			"buys" : 1,
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Mountain's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Gain a Silver.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Sea's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"cards" : 1,
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Sun's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Look at the top 4 cards of your deck. Discard any number of them and put the rest back in any order.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Swamp's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Gain a Will-o'-Wisp from its pile.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "The Wind's Gift",
+			"setId" : 15,
+			"isBoon" : true,
+			"description" : "Discard 2 cards.",
+			"cards" : 2,
+			"standardCount" : 1
+		},
+		{
+			"name" : "Greed",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Gain a Copper onto your deck.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Haunting",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "If you have at least 4 cards in hand, put one of them onto your deck.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Plague",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Gain a Curse to your hand.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Poverty",
+			"setId" : 15,
+			"isHex" : true,
+			"description" : "Discard down to 3 cards in hand.",
+			"standardCount" : 1
 		}
 	],
 	"recommendedKingdoms" : [
@@ -3427,48 +4670,133 @@
 			"cards" : ["Bandit Fort","Mission","Archive","Encampment","Royal Blacksmith","Temple","Villa","Dungeon","Duplicate","Hireling","Peasant","Transmogrify"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Gentle Intro",
+			"cards" : ["Scouting Party","Amulet","Distant Lands","Dungeon","Duplicate","Giant","Hireling","Port","Ranger","Ratcatcher","Treasure Trove"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Expert Intro",
+			"cards" : ["Mission","Plan","Caravan Guard","Coin of the Realm","Haunted Woods","Lost City","Magpie","Peasant","Raze","Swamp Hag","Transmogrify","Wine Merchant"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Level Up",
+			"cards" : ["Training","Dungeon","Gear","Guide","Lost City","Miser","Market","Merchant","Militia","Throne Room","Workshop"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Son of Size Distortion",
+			"cards" : ["Bonfire","Raid","Amulet","Duplicate","Giant","Messenger","Treasure Trove","Bandit","Bureaucrat","Gardens","Moneylender","Witch"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Haste Potion",
+			"cards" : ["Plan","Magpie","Messenger","Port","Royal Carriage","Treasure Trove","Apprentice","Scrying Pool","Transmute","University","Vineyard"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Cursecatchers",
+			"cards" : ["Save","Trade","Amulet","Bridge Troll","Caravan Guard","Peasant","Ratcatcher","Apothecary","Familiar","Golem","Herbalist","Philosopher's Stone"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "The Hero's Return",
+			"cards" : ["Travelling Fair","Artificer","Miser","Page","Ranger","Relic","Fairgrounds","Farming Village","Horse Traders","Jester","Menagerie"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Seacraft and Witchcraft",
+			"cards" : ["Ferry","Seaway","Peasant","Storyteller","Swamp Hag","Transmogrify","Wine Merchant","Fortune Teller","Hamlet","Horn of Plenty","Tournament","Young Witch"],
+			"baneCard" : "Guide"
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Spendthrift",
+			"cards" : ["Lost Arts","Artificer","Gear","Magpie","Miser","Storyteller","Doctor","Masterpiece","Merchant Guild","Soothsayer","Stonemason"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Queen of Tan",
+			"cards" : ["Pathfinding","Save","Coin of the Realm","Duplicate","Guide","Ratcatcher","Royal Carriage","Advisor","Butcher","Candlestick Maker","Herald","Journeyman"]
 		},
 		{
-			"name" : "",
-			"cards" : []
+			"name" : "Dusk",
+			"cards" : ["Blessed Village","Cobbler","Den of Sin","Faithful Hound","Fool","Monastery","Night Watchman","Shepherd","Tormento","Tragic Hero"]
+		},
+		{
+			"name" : "Midnight",
+			"cards" : ["Conclave","Crypt","Cursed Village","Devil's Workshop","Druid","Exorcist","Leprechaun","Pooka","Raider","Secret Cave"],
+			"boons" : ["The Swamp's Gift","The Flame's Gift","The Wind's Gift"]
+		},
+		{
+			"name" : "Night Shift",
+			"cards" : ["Druid","Exorcist","Ghost Town","Idol","Night Watchman","Bandit","Gardens","Mine","Poacher","Smithy"],
+			"boons" : ["The Earth's Gift","The Flame's Gift","The Forest's Gift"]
+		},
+		{
+			"name" : "Idle Hands",
+			"cards" : ["Bard","Conclave","Cursed Village","Devil's Workshop","Tragic Hero","Cellar","Harbinger","Market","Merchant","Moneylender"]
+		},
+		{
+			"name" : "Shadowy Figures",
+			"cards" : ["Cobbler","Conclave","Faithful Hound","Shepherd","Tragic Hero","Bridge","Conspirator","Conspirator","Mill","Nobles","Secret Passage"]
+		},
+		{
+			"name" : "Impending Doom",
+			"cards" : ["Leprechaun","Monastery","Necromancer","Tormentor","Werewolf","Courtier","Lurker","Mining Village","Swindler","Upgrade"]
+		},
+		{
+			"name" : "The New Black",
+			"cards" : ["Cobbler","Den of Sin","Ghost Town","Raider","Secret Cave","Caravan","Haven","Merchant Ship","Outpost","Tactician"]
+		},
+		{
+			"name" : "Forbidden Isle",
+			"cards" : ["Blessed Village","Cemetery","Idol","Tracker","Tragic Hero","Fishing Village","Ghost Ship","Lookout","Salvager","Treasure Map"]
+		},
+		{
+			"name" : "Nightmare Fuel",
+			"cards" : ["Bard","Blessed Village","Cemetery","Sacred Grove","Skulk","Tracker","Alchemist","Apprentice","Transmute","Vineyard"]
+		},
+		{
+			"name" : "Treasures of the Night",
+			"cards" : ["Crypt","Guardians","Night Watchman","Raider","Vampire","Bank","Contraband","Loan","Royal Seal","Venture"]
+		},
+		{
+			"name" : "Day at the Races",
+			"cards" : ["Blessed Village","Cemetery","Druid","Tormentor","Tragic Hero","Bishop","Peddler","Talisman","Trade Route","Watchtower"],
+			"boons" : ["The Swamp's Gift","The River's Gift","The Forest's Gift"]
+		},
+		{
+			"name" : "The Endless Fair",
+			"cards" : ["Devil's Workshop","Exorcist","Monastery","Pixie","Shepherd","Baker","Fairgrounds","Farming Village","Fotune Teller","Merchant Guild"]
+		},
+		{
+			"name" : "Happy Chaos",
+			"cards" : ["Blessed Village","Changeling","Fool","Faithful Hound","Sacred Grove","Doctor","Harvest","Herald","Jester","Masterpiece"]
+		},
+		{
+			"name" : "Search Party",
+			"cards" : ["Cobbler","Conclave","Druid","Faithful Hound","Werewolf","Cartographer","Highway","Inn","Oasis","Scheme"],
+			"boons" : ["The Mountain's Gift","The Sky's Gift","The Sun's Gift"]
+		},
+		{
+			"name" : "Counting Sheep",
+			"cards" : ["Bard","Crypt","Leprechaun","Pooka","Shepherd","Crossroads","Farmland","Haggler","Noble Brigand","Tunnel"]
+		},
+		{
+			"name" : "Grave Matters",
+			"cards" : ["Cemetery","Cursed Village","Necromancer","Skulk","Tormentor","Armory","Forager","Graverobber","Market Square","Squire"]
+		},
+		{
+			"name" : "Rats and Bats",
+			"cards" : ["Changeling","Devil's Workshop","Sacred Grove","Tracker","Vampire","Catacombs","Count","Fortress","Hermit","Rats"]
+		},
+		{
+			"name" : "Monster Mash",
+			"cards" : ["Conclave","Guardian","Pixie","Vampire","Werewolf","Bridge Troll","Giant","Messenger","Ratcatcher","Storyteller","Quest"]
+		},
+		{
+			"name" : "Lost in the Woods",
+			"cards" : ["Blessed Village","Druid","Fool","Sacred Grove","Tracker","Caravan Guard","Guide","Haunted Wood","Hireling","Ranger","Pilgrimage"]
+		},
+		{
+			"name" : "Luftschloss",
+			"cards" : ["Cemetery","Changeling","Exorcist","Fool","Shepherd","Archive","Castles","Catapult","Engineer","Temple","Tomb"]
+		},
+		{
+			"name" : "Pooka Pranks",
+			"cards" : ["Faithful Hound","Ghost Town","Pixie","Pooka","Skulk","Chariot Race","Forum","Groundskeeper","Sacrifice","Settlers","Banquet"]
 		}
 	]
 }
