@@ -5,6 +5,7 @@ import static com.ressq.dominionCases.shapes.Card.*;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.dominionCases.DominionImageRepository;
+import com.ressq.dominionCases.dto.CardInfo;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.shapes.Rectangle;
 import com.ressq.pdfbox.text.MultiLineText;
@@ -26,14 +27,12 @@ public class CardCase extends CompositeDrawable {
 	private float thickness;
 	
 	public CardCase(
-			int cardCount,
-			Integer cardCost, Integer cardDebt,
-			String cardName, String description,
+			CardInfo cardInfo, 
 			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
 	{
 		super();
 		
-		thickness = getThicknessFor(cardCount);
+		thickness = getThicknessFor(cardInfo.getStandardCount());
 		/////////
 		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		bottomFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
@@ -49,7 +48,7 @@ public class CardCase extends CompositeDrawable {
 
 		/////////
 		MultiLineText mainText = new MultiLineText(
-			description, contentFont, 14, 7, 
+			cardInfo.getDescription(), contentFont, 14, 7, 
 			mainCardBody, imageRepo);
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
@@ -64,10 +63,10 @@ public class CardCase extends CompositeDrawable {
 
 		/////////
 		ScalableText topText = new ScalableText(
-			cardName, titleFont,
+			cardInfo.getName(), titleFont,
 			top.getWidth() - TEXT_PADDING * 2, 
 			getThicknessFor(10) - TEXT_PADDING * 2, top.getHeight() - TEXT_PADDING * 2,
-			TextAlignment.CENTER);
+			TextAlignment.CENTER, TextAlignment.CENTER);
 		topText.applyTranslation(
 			TEXT_PADDING, 
 			bottom.getHeight() + mainCardBody.getHeight() + TEXT_PADDING);
@@ -76,9 +75,7 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		TopFlap topFlap = new TopFlap(
 			SHOULDER_HEIGHT, FLAP_HEIGHT,
-			cardCost, cardDebt, 
-			imageRepo.getCoinImage(), imageRepo.getDebtImage(), 
-			cardName, titleFont);
+			cardInfo, imageRepo, titleFont);
 		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
 		add(topFlap);
 		
@@ -107,7 +104,7 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
 		MultiLineText secondaryText = new MultiLineText(
-			mainText.getRemainingText() != null ? mainText.getRemainingText() : description, 
+			mainText.getRemainingText() != null ? mainText.getRemainingText() : cardInfo.getDescription(), 
 			contentFont, mainText.getUsedFontSize(), 7, 
 			workableArea2, imageRepo);
 		secondaryText.applyRotation(Math.PI);
@@ -123,9 +120,7 @@ public class CardCase extends CompositeDrawable {
 		/////////
 		TopFlap upsideDownTopFlap = new TopFlap(
 				SHOULDER_HEIGHT, FLAP_HEIGHT,
-				cardCost, cardDebt,
-				imageRepo.getCoinImage(), imageRepo.getDebtImage(),
-				cardName, titleFont);
+				cardInfo, imageRepo, titleFont);
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);

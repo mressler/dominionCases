@@ -61,4 +61,8 @@ public class DominionImageRepository implements TextElementFactory {
 		return debtImage;
 	}
 
+	public PDImageXObject getPotionImage() {
+		return potionImage;
+	}
+
 }

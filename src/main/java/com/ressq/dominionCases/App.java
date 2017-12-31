@@ -183,11 +183,6 @@ public class App {
 	}
 	
 	private static CardCase caseForCardInfo(CardInfo someInfo) {
-		return new CardCase(
-			someInfo.getStandardCount(),
-			someInfo.getCost(), someInfo.getDebt(), 
-			someInfo.getName(),
-			someInfo.getErrata(),
-			imageRepo, trajan, barbedor);
+		return new CardCase(someInfo, imageRepo, trajan, barbedor);
 	}
 }

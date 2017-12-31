@@ -30,7 +30,7 @@ public class CardInfo {
 	private Boolean prize;
 	
 	private Integer cost;
-	private Boolean hasPotion;
+	private Boolean potion;
 	private Integer debt;
 	
 	private String description;
@@ -151,12 +151,12 @@ public class CardInfo {
 		this.cost = cost;
 	}
 
-	public Boolean getHasPotion() {
-		return hasPotion;
+	public Boolean getPotion() {
+		return potion;
 	}
 
-	public void setHasPotion(Boolean hasPotion) {
-		this.hasPotion = hasPotion;
+	public void setPotion(Boolean potion) {
+		this.potion = potion;
 	}
 
 	public Integer getDebt() {

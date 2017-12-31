@@ -9,7 +9,7 @@ public class ScalableText extends BasicText {
 	public ScalableText(
 		String text, PDFont font, 
 		float maxWidth, float maxHeight, float centerInHeight,
-		TextAlignment alignment) 
+		TextAlignment alignment, TextAlignment verticalAlignment) 
 	{
 		super(text, font, 12);
 		
@@ -21,7 +21,7 @@ public class ScalableText extends BasicText {
 		float height = getHeightForFontSize(font, fontSize);
 		
 		float xAlignment = alignment.getStartingX(maxWidth, getWidthForFontSize(font, text, fontSize));
-		float yAlignment = alignment.getStartingX(centerInHeight, height);
+		float yAlignment = verticalAlignment.getStartingX(centerInHeight, height);
 		
 		bottomLeft.applyTranslation(xAlignment, yAlignment);
 	}
