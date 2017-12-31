@@ -11,6 +11,9 @@ import com.ressq.pdfbox.primitives.Drawable;
 
 public class TextSubstitution extends CompositeDrawable {
 
+	private float height;
+	private float width;
+	
 	@FunctionalInterface
 	public static interface ReplacementDrawable {
 		public Drawable getReplacement(Matcher matcher, float height);
@@ -20,7 +23,7 @@ public class TextSubstitution extends CompositeDrawable {
 		String text, PDFont font, int fontSize,
 		String replaceRegexp, ReplacementDrawable replacer) 
 	{
-		float height = FontInfo.getHeightForFontSize(font, fontSize);
+		height = FontInfo.getHeightForFontSize(font, fontSize);
 		
 		Pattern p = Pattern.compile(replaceRegexp);
 		Matcher m = p.matcher(text);
@@ -41,7 +44,10 @@ public class TextSubstitution extends CompositeDrawable {
 			lastMatchIndex = m.end();
 		}
 		
-		add(textAtOffset(text.substring(lastMatchIndex), font, fontSize, lastBottomLeftX));
+		BasicText remaining = textAtOffset(text.substring(lastMatchIndex), font, fontSize, lastBottomLeftX);
+		add(remaining);
+		
+		width = remaining.getWidth() + lastBottomLeftX;
 	}
 	
 	private BasicText textAtOffset(String text, PDFont font, int fontSize, float atOffset) {
@@ -52,14 +58,12 @@ public class TextSubstitution extends CompositeDrawable {
 	
 	@Override
 	public float getHeight() {
-		// TODO Auto-generated method stub
-		return 0;
+		return height;
 	}
 
 	@Override
 	public float getWidth() {
-		// TODO Auto-generated method stub
-		return 0;
+		return width;
 	}
 
 }
