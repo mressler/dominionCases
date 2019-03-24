@@ -69,6 +69,14 @@ public class ContentStream {
 		}
 	}
 
+	public void closeAndFillAndStroke() {
+		try {
+			contentStream.closeAndFillAndStroke();
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error closing line", e);
+		}
+	}
+
 	public void beginText() {
 		try {
 			contentStream.beginText();

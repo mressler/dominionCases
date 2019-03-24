@@ -5,12 +5,12 @@ import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 
-public class MultiCardInfo extends CompositeDrawable {
+public class MultiCardLayout extends CompositeDrawable {
 
 	public float totalWidth;
 	public float totalHeight;
 	
-	public MultiCardInfo(CardCase cardOne) {
+	public MultiCardLayout(CardCase cardOne) {
 		PDRectangle sizeOf = getSizeFor(cardOne, true);
 		totalHeight = sizeOf.getHeight();
 		totalWidth = sizeOf.getWidth();
@@ -31,7 +31,7 @@ public class MultiCardInfo extends CompositeDrawable {
 		return new PDRectangle(totalWidth, totalHeight);
 	}
 	
-	public MultiCardInfo(CardCase cardOne, CardCase cardTwo) {
+	public MultiCardLayout(CardCase cardOne, CardCase cardTwo) {
 		PDRectangle sizeOf = getSizeFor(cardOne, cardTwo, true);
 		totalHeight = sizeOf.getHeight();
 		totalWidth = sizeOf.getWidth();
@@ -59,7 +59,7 @@ public class MultiCardInfo extends CompositeDrawable {
 		return new PDRectangle(totalWidth, totalHeight);
 	}
 	
-	public MultiCardInfo(CardCase cardOne, CardCase cardTwo, CardCase cardThree) {
+	public MultiCardLayout(CardCase cardOne, CardCase cardTwo, CardCase cardThree) {
 		PDRectangle sizeOf = getSizeFor(cardOne, cardTwo, cardThree, true);
 		totalHeight = sizeOf.getHeight();
 		totalWidth = sizeOf.getWidth();

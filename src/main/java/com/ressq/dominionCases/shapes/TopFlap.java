@@ -8,7 +8,7 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.dominionCases.DominionImageRepository;
-import com.ressq.dominionCases.dto.CardInfo;
+import com.ressq.dominionCases.dto.DisplayableCardInfo;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.primitives.Image;
 import com.ressq.pdfbox.primitives.MultiPointObject;
@@ -23,7 +23,7 @@ public class TopFlap extends CompositeDrawable {
 	
 	public TopFlap(
 		float width, float height, 
-		CardInfo cardInfo, 
+		DisplayableCardInfo cardInfo, 
 		DominionImageRepository imageRepo, 
 		PDFont titleFont) 
 	{

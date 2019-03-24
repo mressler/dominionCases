@@ -1,37 +1,67 @@
 package com.ressq.dominionCases.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class CardInfo {
+public class CardInfo implements DisplayableCardInfo {
 
 	private String name;
+	
 	private Integer setId;
+	@JsonProperty("isAttack")
 	private Boolean attack;
+	@JsonProperty("isAction")
 	private Boolean action;
+	@JsonProperty("isVictory")
 	private Boolean victory;
+	@JsonProperty("isTreasure")
 	private Boolean treasure;
+	@JsonProperty("isDuration")
 	private Boolean duration;
+	@JsonProperty("isReaction")
 	private Boolean reaction;
+	@JsonProperty("isReserve")
 	private Boolean reserve;
+	@JsonProperty("isEvent")
 	private Boolean event;
+	@JsonProperty("isTraveller")
 	private Boolean traveler;
+	@JsonProperty("isLandmark")
 	private Boolean landmark;
+	@JsonProperty("isState")
 	private Boolean state;
+	@JsonProperty("isHex")
 	private Boolean hex;
+	@JsonProperty("isNight")
 	private Boolean night;
+	@JsonProperty("isSpirit")
+	private Boolean spirit;
+	@JsonProperty("isZombie")
+	private Boolean zombie;
+	@JsonProperty("isFate")
 	private Boolean fate;
+	@JsonProperty("isDoom")
 	private Boolean doom;
+	@JsonProperty("isHeirloom")
 	private Boolean heirloom;
+	@JsonProperty("isBoon")
 	private Boolean boon;
+	@JsonProperty("isOverpay")
 	private Boolean overpay;
+	@JsonProperty("isLooter")
 	private Boolean looter;
 	private Boolean excludeFromSupply;
+	@JsonProperty("isPrize")
 	private Boolean prize;
+	@JsonProperty("isArtifact")
+	private Boolean artifact;
+	@JsonProperty("isProject")
+	private Boolean project;
 	
 	private Integer cost;
 	private Boolean potion;
 	private Integer debt;
+	private Integer villagers;
+	private Integer coffers;
 	
 	private String description;
 	private String errata;
@@ -42,6 +72,12 @@ public class CardInfo {
 	private Integer victoryPoints;
 	
 	private Integer standardCount;
+	
+	public CardInfo() {}
+	public CardInfo(String name, int count) {
+		setName(name);
+		setStandardCount(count);
+	}
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//                                          Getters and Setters
@@ -63,7 +99,7 @@ public class CardInfo {
 		this.setId = setId;
 	}
 
-	public Boolean getAttack() {
+	public Boolean isAttack() {
 		return attack;
 	}
 
@@ -71,7 +107,7 @@ public class CardInfo {
 		this.attack = attack;
 	}
 
-	public Boolean getAction() {
+	public Boolean isAction() {
 		return action;
 	}
 
@@ -79,7 +115,7 @@ public class CardInfo {
 		this.action = action;
 	}
 
-	public Boolean getVictory() {
+	public Boolean isVictory() {
 		return victory;
 	}
 
@@ -87,7 +123,7 @@ public class CardInfo {
 		this.victory = victory;
 	}
 
-	public Boolean getTreasure() {
+	public Boolean isTreasure() {
 		return treasure;
 	}
 
@@ -95,7 +131,7 @@ public class CardInfo {
 		this.treasure = treasure;
 	}
 
-	public Boolean getDuration() {
+	public Boolean isDuration() {
 		return duration;
 	}
 
@@ -103,7 +139,7 @@ public class CardInfo {
 		this.duration = duration;
 	}
 
-	public Boolean getReaction() {
+	public Boolean isReaction() {
 		return reaction;
 	}
 
@@ -111,7 +147,7 @@ public class CardInfo {
 		this.reaction = reaction;
 	}
 
-	public Boolean getReserve() {
+	public Boolean isReserve() {
 		return reserve;
 	}
 
@@ -119,7 +155,7 @@ public class CardInfo {
 		this.reserve = reserve;
 	}
 
-	public Boolean getEvent() {
+	public Boolean isEvent() {
 		return event;
 	}
 
@@ -127,7 +163,7 @@ public class CardInfo {
 		this.event = event;
 	}
 
-	public Boolean getTraveler() {
+	public Boolean isTraveler() {
 		return traveler;
 	}
 
@@ -135,7 +171,7 @@ public class CardInfo {
 		this.traveler = traveler;
 	}
 
-	public Boolean getLandmark() {
+	public Boolean isLandmark() {
 		return landmark;
 	}
 
@@ -143,7 +179,7 @@ public class CardInfo {
 		this.landmark = landmark;
 	}
 
-	public Boolean getState() {
+	public Boolean isState() {
 		return state;
 	}
 
@@ -151,7 +187,7 @@ public class CardInfo {
 		this.state = state;
 	}
 
-	public Boolean getHex() {
+	public Boolean isHex() {
 		return hex;
 	}
 
@@ -159,7 +195,7 @@ public class CardInfo {
 		this.hex = hex;
 	}
 
-	public Boolean getNight() {
+	public Boolean isNight() {
 		return night;
 	}
 
@@ -167,7 +203,23 @@ public class CardInfo {
 		this.night = night;
 	}
 
-	public Boolean getFate() {
+	public Boolean isSpirit() {
+		return spirit;
+	}
+	
+	public void setSpirit(Boolean spirit) {
+		this.spirit = spirit;
+	}
+	
+	public Boolean isZombie() {
+		return zombie;
+	}
+	
+	public void setZombie(Boolean zombie) {
+		this.zombie = zombie;
+	}
+	
+	public Boolean isFate() {
 		return fate;
 	}
 
@@ -175,7 +227,7 @@ public class CardInfo {
 		this.fate = fate;
 	}
 
-	public Boolean getDoom() {
+	public Boolean isDoom() {
 		return doom;
 	}
 
@@ -183,7 +235,7 @@ public class CardInfo {
 		this.doom = doom;
 	}
 
-	public Boolean getHeirloom() {
+	public Boolean isHeirloom() {
 		return heirloom;
 	}
 
@@ -191,7 +243,7 @@ public class CardInfo {
 		this.heirloom = heirloom;
 	}
 
-	public Boolean getBoon() {
+	public Boolean isBoon() {
 		return boon;
 	}
 
@@ -199,7 +251,7 @@ public class CardInfo {
 		this.boon = boon;
 	}
 
-	public Boolean getOverpay() {
+	public Boolean isOverpay() {
 		return overpay;
 	}
 
@@ -207,7 +259,7 @@ public class CardInfo {
 		this.overpay = overpay;
 	}
 
-	public Boolean getLooter() {
+	public Boolean isLooter() {
 		return looter;
 	}
 
@@ -215,7 +267,7 @@ public class CardInfo {
 		this.looter = looter;
 	}
 
-	public Boolean getExcludeFromSupply() {
+	public Boolean isExcludeFromSupply() {
 		return excludeFromSupply;
 	}
 
@@ -223,7 +275,7 @@ public class CardInfo {
 		this.excludeFromSupply = excludeFromSupply;
 	}
 
-	public Boolean getPrize() {
+	public Boolean isPrize() {
 		return prize;
 	}
 
@@ -231,6 +283,22 @@ public class CardInfo {
 		this.prize = prize;
 	}
 
+	public Boolean isArtifact() {
+		return artifact;
+	}
+	
+	public void setArtifact(Boolean artifact) {
+		this.artifact = artifact;
+	}
+	
+	public Boolean getProject() {
+		return project;
+	}
+	
+	public void setProject(Boolean project) {
+		this.project = project;
+	}
+	
 	public Integer getCost() {
 		return cost;
 	}
@@ -255,6 +323,22 @@ public class CardInfo {
 		this.debt = debt;
 	}
 
+	public Integer getVillagers() {
+		return villagers;
+	}
+	
+	public void setVillagers(Integer villagers) {
+		this.villagers = villagers;
+	}
+	
+	public Integer getCoffers() {
+		return coffers;
+	}
+	
+	public void setCoffers(Integer coffers) {
+		this.coffers = coffers;
+	}
+	
 	public String getDescription() {
 		return description;
 	}

@@ -5,7 +5,7 @@ import static com.ressq.dominionCases.shapes.Card.*;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.dominionCases.DominionImageRepository;
-import com.ressq.dominionCases.dto.CardInfo;
+import com.ressq.dominionCases.dto.DisplayableCardInfo;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.shapes.Rectangle;
 import com.ressq.pdfbox.text.MultiLineText;
@@ -27,7 +27,7 @@ public class CardCase extends CompositeDrawable {
 	private float thickness;
 	
 	public CardCase(
-			CardInfo cardInfo, 
+			DisplayableCardInfo cardInfo, 
 			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
 	{
 		super();

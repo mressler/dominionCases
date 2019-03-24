@@ -49,6 +49,18 @@ public class MultiPointObject implements Drawable {
 		cStream.closeAndStroke();
 	}
 	
+	public void fill(ContentStream cStream) {
+		Stream<Point> allPoints = corners.stream();
+		
+		Point first = corners.get(0);
+		cStream.moveTo(first);
+		
+		allPoints = allPoints.skip(1);
+		allPoints.forEach(cStream::lineTo);
+		
+		cStream.closeAndFillAndStroke();
+	}
+	
 	public float getHeight() {
 		return corners.stream()
 					.map(Point::getY)
