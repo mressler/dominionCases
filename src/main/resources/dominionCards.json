@@ -62,6 +62,10 @@
 		"15" : {
 			"name" : "Nocturne",
 			"releaseDate" : "9/8/2017"
+		},
+		"16" : {
+			"name" : "Renaissance",
+			"releaseDate" : "11/5/2018"
 		}
 	},
 	"cards" : [
@@ -1218,7 +1222,7 @@
 			"cost" : 0,
 			"actions" : 1,
 			"excludeFromSupply" : true,
-			"prize" : true,
+			"isPrize" : true,
 			"description" : "Gain a Gold, putting it on top of your deck.",
 			"errata" : "The Gold you gain comes from the Supply and is put on top of your deck. If your deck has no cards in it, it becomes the only card in your deck. If there are no Golds left in the Supply, you do not gain one. This is a Prize; see the Additional Rules."
 		},
@@ -1227,10 +1231,10 @@
 			"setId" : 7,
 			"cost" : 0,
 			"cards" : 1,
-			"coin" : 2,
-			"treasure" : true,
+			"coins" : 2,
+			"isTreasure" : true,
 			"excludeFromSupply" : true,
-			"prize" : true,
+			"isPrize" : true,
 			"description" : "When you play this, +<1> per unused Action you have (Action, not Action card).",
 			"errata" : "This is a Treasure worth <2>, like Silver. You play it in your Buy phase, like other Treasures. When you play it, you get an extra +<1> per unused Action you have. This means Actions, not Action cards. So for example if you play Farming Village (which gives you +2 Actions), then Diadem, Diadem will give you an extra +<2>, for <4> total. If you play no Action cards at all on your turn, you will have one unused Action, so you will get <3> total from Diadem. This is a Prize; see the Additional Rules."
 		},
@@ -1259,7 +1263,7 @@
 			"cost" : 0,
 			"cards" : 2,
 			"excludeFromSupply" : true,
-			"prize" : true,
+			"isPrize" : true,
 			"description" : "Gain an Estate. Each other player gains a Curse and discards down to 3 cards in hand.",
 			"errata" : "Do the things in the order listed. You draw 2 cards; then you gain an Estate from the Supply, putting it into your discard pile; then each other player gains a Curse from the Supply, putting it into his discard pile; then each other player discards down to 3 cards in hand. A player with 3 or fewer cards in hand does not discard any cards. If there are no Estates left, you do not gain one. If there are not enough Curses left, deal out the remaining Curses in turn order. This is a Prize; see the Additional Rules."
 		},
@@ -1344,9 +1348,9 @@
 			"setId" : 7,
 			"isAction" : true,
 			"cost" : 0,
-			"buy" : 1,
+			"buys" : 1,
 			"excludeFromSupply" : true,
-			"prize" : true,
+			"isPrize" : true,
 			"description" : "When this is in play, cards cost <2> less, but not less than <0>.",
 			"errata" : "This makes all cards cheaper (to a minimum of <0>) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in decks. For example if you played Princess, then Remake, trashing a Copper, you could gain a Silver, as Silver would cost <1> while Copper would still cost <0>. Using Throne Room (from Dominion) on Princess will not make cards cost <4> less, as there is still only one copy of Princess in play. This is a Prize; see the Additional Rules."
 		},
@@ -1373,7 +1377,7 @@
 			"isAction" : true,
 			"cost" : 0,
 			"excludeFromSupply" : true,
-			"prize" : true,
+			"isPrize" : true,
 			"description" : "Choose two: +2 Cards; +2 Actions; +<2>; gain 4 Silvers and put your deck into your discard pile. (The choices must be different.)",
 			"errata" : "This makes all cards cheaper (to a minimum of <0>) as long as it is in play. When it leaves play, it stops making cards cheaper. This applies to cards everywhere - cards in the Supply, cards in hand, cards in decks. For example if you played Princess, then Remake, trashing a Copper, you could gain a Silver, as Silver would cost <1> while Copper would still cost <0>. Using Throne Room (from Dominion) on Princess will not make cards cost <4> less, as there is still only one copy of Princess in play. This is a Prize; see the Additional Rules."
 		},
@@ -2031,7 +2035,7 @@
 			"setId" : 10,
 			"isAction" : true,
 			"cost" : 3,
-			"overpay" : true,
+			"isOverpay" : true,
 			"description" : "[Action]: name a card. Reveal the top 3 cards of your deck. Trash the matches. Put the rest back on top in any order. [Overpay]: When you buy this, you may overpay for it. For each $1 you overpaid, look at the top card of your deck; trash it, discard it, or put it back.",
 			"errata" : "When you play this, you name a card, reveal the top three cards of your deck, trash each of those cards that has that name, and put the other cards back on your deck in any order. You do not have to name a card being used this game. If there are fewer than three cards left in your deck, reveal the remaining cards, and shuffle your discard pile (which does not include those cards) to get the remainder needed to reveal. If there are still not enough cards, just reveal as many as you can. When you buy this, for each extra <1> you pay over the cost, you look at the top card of your deck, and either trash it, discard it, or put it back on top. If there are no cards left in your deck, shuffle your discard pile into your deck (including any cards already discarded to this overpay ability this turn), and if there still are no cards in it, you do not look at one. If you overpay more than <1>, you may do different things for each card you look at, and you will look at the same card again if you put it back on top. For example if you bought Doctor for <7>, you would look at the top card four times; you might end up first trashing a Copper, then discarding a Province, then putting a Silver back on top, then putting that Silver back on top again."
 		},
@@ -2040,7 +2044,7 @@
 			"setId" : 10,
 			"isAction" : true,
 			"cost" : 4,
-			"overpay" : true,
+			"isOverpay" : true,
 			"cards" : 1,
 			"actions" : 1,
 			"description" : "[Action]: Reveal the top card of your deck. If it is an Action, play it. [Overpay]: When you buy this, you may overpay for it. For each $1 you overpaid, look through your discard pile and put a card from it on top of your deck.",
@@ -2059,7 +2063,7 @@
 			"setId" : 10,
 			"isTreasure" : true,
 			"cost" : 3,
-			"overpay" : true,
+			"isOverpay" : true,
 			"coins" : 1,
 			"description" : "When you buy this, you may overpay for it. If you do, gain a Silver per $1 you overpaid.",
 			"errata" : "This is a Treasure worth <1>, like Copper. When you buy it, you gain a Silver for each extra <1> you pay over the cost. For example, if you buy a Masterpiece for <6>, you gain three Silvers."
@@ -2098,7 +2102,7 @@
 			"setId" : 10,
 			"isAction" : true,
 			"cost" : 2,
-			"overpay" : true,
+			"isOverpay" : true,
 			"description" : "[Action]: Trash a card from your hand. Gain 2 cards each costing less than it. [Overpay]: When you buy this, you may overpay for it. If you do, gain 2 Action cards each costing the amount you overpaid.",
 			"errata" : "When you play this, trash a card from your hand, and gain two cards, each costing less than the card you trashed. Trashing a card is not optional. If you do not have any cards left in your hand to trash, you do not gain any cards. The two cards you gain can be different or the same. For example you could trash a Gold to gain a Duchy and a Silver. Gaining cards is not optional if you trashed a card. The gained cards come from the Supply and are put into your discard pile; if there are no cheaper cards in the Supply (for example if you trash a Copper), you do not gain any. If there is only one card in the Supply cheaper than the trashed card, you gain that one. The cards you gain are gained one at a time; this may matter with cards that do something when gained, such as Inn from Dominion: Hinterlands. When you buy this, you may choose to overpay for it. If you do, you gain two Action cards each costing exactly the amount you overpaid. The Action cards can be different or the same. For example, if you buy Stonemason for <6>, you could gain two Heralds. The Action cards come from the Supply and are put into your discard pile. If there are no cards with the appropriate cost in the Supply, you do not gain one. Overpaying with a Potion (from Dominion: Alchemy) will let you gain cards with Potion in the cost. Cards with multiple types, one of which is Action (such as Great Hall from Dominion: Intrigue), are Action cards. If you choose not to overpay, you will not gain any cards from that ability; it is not possible to use it to gain Action cards costing <0>."
 		},
@@ -2386,7 +2390,8 @@
 			"debt" : 8,
 			"description" : "When you play this, double your <> if you haven't yet this turn.\nWhen you gain this, gain a Gold per Gladiator you have in play.",
 			"errata" : "You only double your <> the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
-			"buys" : 1
+			"buys" : 1,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Forum",
@@ -2405,7 +2410,8 @@
 			"cost" : 3,
 			"description" : "Reveal a card from your hand. The player to your left may reveal a copy from their hand. If they do not, +<1> and trash a Gladiator from the Supply.",
 			"errata" : "If there are no Gladiators in the Supply, you cannot trash one, but that does not stop you from getting the +<1>. If you have no cards in hand, the player to your left cannot reveal a copy of the card you revealed, so you will get the +<1> and trash a Gladiator.",
-			"coins" : 2
+			"coins" : 2,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Groundskeeper",
@@ -4020,6 +4026,479 @@
 			"isHex" : true,
 			"description" : "Discard down to 3 cards in hand.",
 			"standardCount" : 1
+		},
+		{
+			"name" : "Acting Troupe",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 3,
+			"villagers" : 4,
+			"description" : "Trash this.",
+			"errata" : "If you do not manage to trash this (for example if you play it twice via Throne Room), you still get the +4 Villagers."
+		},
+		{
+			"name" : "Border Guard",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 2,
+			"actions" : 1,
+			"description" : "Reveal the top 2 cards of your deck. Put one into your hand and discard the other. If both were Actions, take the Lantern or Horn.",
+			"errata" : "When you play a Border Guard and do not have the Lantern, you reveal the top 2 cards of your deck, choose one and put it into your hand, and discard the other; then if they were both Action cards, you take the Lantern or the Horn. When you play a Border Guard and have the Lantern, you reveal the top 3 cards of your deck, choose one and put it into your hand, and discard the rest; then if all three were Action cards, you may take the Horn. If you reveal fewer than 2 cards, or fewer than 3 cards when you have the Lantern, you don't take an Artifact. Both the Horn and the Lantern function the turn you get them."
+		},
+		{
+			"name" : "Horn",
+			"setId" : 16,
+			"isArtifact" : true,
+			"description" : "Once per turn, when you discard a Border Guard from play, you may put it onto your deck.",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Lantern",
+			"setId" : 16,
+			"isArtifact" : true,
+			"description" : "Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
+			"standardCount" : 1
+		},
+		{
+			"name" : "Cargo Ship",
+			"setId" : 16,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 3,
+			"description" : "Once this turn, when you gain a card, you may set it aside face up (on this). At the start of your next turn, put it into your hand.",
+			"errata" : "The card you set aside doesn't have to be the next card you gain; you could gain multiple cards and then gain one where you decided to set it aside. If you don't set a card aside at all, Cargo Ship is discarded that turn."
+		},
+		{
+			"name" : "Ducat",
+			"setId" : 16,
+			"isTreasure" : true,
+			"cost" : 2,
+			"coffers" : 1,
+			"buys" : 1,
+			"description" : "When you gain this, you may trash a Copper from your hand.",
+			"errata" : "When you play this, you get no <>, but get +1 Coffers and +1 Buy. When you gain this, you may trash a Copper from your hand; this is optional."
+		},
+		{
+			"name" : "Experiment",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 3,
+			"cards" : 2,
+			"actions" : 1,
+			"description" : "Return this to the Supply. When you gain this, gain another Experiment (that doesn’t come with another).",
+			"errata" : "When you play this, you get +2 Cards and +1 Action, and return it to its Supply pile. When you gain it, you gain another one; this applies whether you gain it via buying it or some other way. If you gain one to a place other than your discard pile, the 2nd copy goes to your discard pile. For example if you use Sculptor to gain Experiment, you get one in your hand, and one in your discard pile. If you play Band of Misfits (from Dark Ages) or Overlord (from Empires) as Experiment, you will return the card to its own pile, not to the Experiment pile. If Experiment somehow is not in play (for example if played from the trash via Necromancer, from Nocturne), it fails to return to its pile."
+		},
+		{
+			"name" : "Flag Bearer",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"coins" : 2,
+			"description" : "When you gain or trash this, take the Flag.",
+			"errata" : "When you gain or trash a Flag Bearer, you take the Flag. The Flag causes you to draw an extra card when drawing your hand in Clean-up. This is true even if your hand would normally be some amount other than 5 cards - for example if you played Outpost (from Seaside), instead of drawing 3 cards for your Outpost turn, you would draw 4. If Flag Bearer is trashed, the player trashing it takes the Flag, regardless of whose turn it is."
+		},
+		{
+			"name" : "Flag",
+			"setId" : 16,
+			"isArtifact" : true,
+			"description" : "When drawing your hand, +1 Card."
+		},
+		{
+			"name" : "Hideout",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"cards" : 1,
+			"actions" : 2,
+			"description" : "Trash a card from your hand. If it’s a Victory card, gain a Curse.",
+			"errata" : "Trashing is not optional. Curses are not Victory cards."
+		},
+		{
+			"name" : "Improve",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"coins" : 2,
+			"description" : "At the start of Clean-up, you may trash an Action card you would discard from play this turn, to gain a card costing exactly <1> more than it.",
+			"errata" : "You can only trash an Action card that would be discarded this turn; you cannot trash a non-Action like Silver, or a Duration card that will stay out (but you can trash a Duration card that will be discarded). You can trash the Improve itself. The card you gain does not have to be an Action, it just has to cost exactly <1> more than the trashed Action. Using this ability is optional, but if you trash a card then you have to gain one if you can."
+		},
+		{
+			"name" : "Inventor",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"description" : "Gain a card costing up to <4>, then cards cost <1> less this turn (but not less than <0>).",
+			"errata" : "First you gain a card costing up to <4>; then, after that happens, prices are lowered for the rest of the turn. The cost lowering applies to all cards everywhere, including cards in the Supply, in hands, and in Decks. It's cumulative; for example if you play two Inventors, the cost reduction from the first applies to playing the second (for example it could gain a Duchy, which would then cost <4>), and afterwards cards cost <2> less for the rest of the turn."
+		},
+		{
+			"name" : "Lackeys",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 2,
+			"cards" : 2,
+			"description" : "When you gain this, +2 Villagers.",
+			"errata" : "Playing this gives +2 Cards; gaining it gives +2 Villagers."
+		},
+		{
+			"name" : "Mountain Village",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"actions" : 2,
+			"description" : "Look through your discard pile and put a card from it into your hand; if you can’t, +1 Card.",
+			"errata" : "If your discard pile has any cards in it, you have to take one of them, you cannot choose to draw a card instead. You get to look through your discard pile to pick the card to take. It does not matter what order you leave your discard pile in."
+		},
+		{
+			"name" : "Old Witch",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"cards" : 3,
+			"description" : "Each other player gains a Curse and may trash a Curse from their hand.",
+			"errata" : "After the Curse pile is empty, playing this still lets each other player trash a Curse from their hand. A player who is unaffected by Old Witch, such as due to Moat, neither gains a Curse nor may trash one."
+		},
+		{
+			"name" : "Patron",
+			"setId" : 16,
+			"isAction" : true,
+			"isReaction" : true,
+			"cost" : 4,
+			"villagers" : 1,
+			"coins" : 2,
+			"description" : "When something causes you to reveal this (using the word 'reveal'), +1 Coffers.",
+			"errata" : "Anything that causes you to reveal a Patron, and specifically uses the word 'reveal,' causes you to get +1 Coffers. For example if you play a Border Guard and reveal two Patrons, you will get +2 Coffers. Other players seeing a card, without the word 'reveal' being used, is not enough; for example if another player plays a Villain and you discard a Patron, you do not get +1 Coffers."
+		},
+		{
+			"name" : "Priest",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"coins" : 2,
+			"description" : "Trash a card from your hand. For the rest of this turn, when you trash a card, +<2>.",
+			"errata" : "When you play this, you get +<2>, trash a card from your hand (mandatory), and then for the rest of the turn, trashing a card from your hand will give you +<2>. This is cumulative, even if the same Priest is played multiple times (such as with Scepter). For example if you play two Priests and trash two Coppers, you will get +<6> total: +<2> from each play of Priest, and +<2> that the first Priest gives you for the second Priest trashing a card. The bonus works even if the card was not trashed from your hand; for example you will get +<2> for trashing an Acting Troupe due to playing it, or for trashing a card from the Supply with Lurker (from Intrigue)."
+		},
+		{
+			"name" : "Recruiter",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"cards" : 2,
+			"description" : "Trash a card from your hand. +1 Villager per <1> it costs.",
+			"errata" : "First you draw 2 cards, then you trash a card from your hand. Trashing is not optional. For each <1> the trashed card costs, you get +1 Villager; for example if you trash a Silver, you get +3 Villagers. You do not get anything for <p> or <d> amounts, just for <>."
+		},
+		{
+			"name" : "Research",
+			"setId" : 16,
+			"isAction" : true,
+			"isDuration" : true,
+			"cost" : 4,
+			"actions" : 1,
+			"description" : "Trash a card from your hand. Per <1> it costs, set aside a card from your deck face down (on this). At the start of your next turn, put those cards into your hand.",
+			"errata" : "For each <1> the trashed card costs, you set aside the top card of your deck for next turn; for example if you trash a Silver, you set aside the top 3 cards for next turn. If there are not enough cards, just set aside as many as you can. The cards are set aside face down; you can look at them and other players cannot."
+		},
+		{
+			"name" : "Scepter",
+			"setId" : 16,
+			"isTreasure" : true,
+			"cost" : 5,
+			"description" : "When you play this, choose one: +<2>; or replay an Action card you played this turn that’s still in play.",
+			"errata" : "This cannot replay a Duration card you played on a previous turn, but can replay one played the same turn (in which case Scepter will stay in play until the Duration card leaves play). This can cause you to get +Actions in your Buy phase, but that does not let you play Action cards in your Buy phase (though Scepter itself replays one). If this causes you to draw cards and some of them are Treasures, you can still play those Treasures."
+		},
+		{
+			"name" : "Scholar",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"cards" : 7,
+			"description" : "Discard your hand.",
+			"errata" : "If drawing causes you to shuffle, you will shuffle in the discarded cards."
+		},
+		{
+			"name" : "Sculptor",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"description" : "Gain a card to your hand costing up to <4>. If it’s a Treasure, +1 Villager.",
+			"errata" : "The card is gained to your hand; that is not optional. If you gain a Nomad Camp (from Hinterlands) with this, it goes to your hand."
+		},
+		{
+			"name" : "Seer",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"cards" : 1,
+			"actions" : 1,
+			"description" : "Reveal the top 3 cards of your deck. Put the ones costing from <2> to <4> into your hand. Put the rest back in any order.",
+			"errata" : "Cards with <p> (from Alchemy) or <d> (from Empires) in their cost do not cost from <2> to <4>."
+		},
+		{
+			"name" : "Silk Merchant",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 4,
+			"cards" : 2,
+			"buys" : 1,
+			"description" : "When you gain or trash this, +1 Coffers and +1 Villager.",
+			"errata" : "When you play this, you get +2 Cards and +1 Buy; when you trash it or gain it, you get +1 Coffers and +1 Villager. If Silk Merchant is trashed, the player trashing it takes the +1 Coffers and +1 Villager, regardless of whose turn it is."
+		},
+		{
+			"name" : "Spices",
+			"setId" : 16,
+			"isTreasure" : true,
+			"cost" : 5,
+			"coins" : 2,
+			"buys" : 1,
+			"description" : "When you gain this, +2 Coffers.",
+			"errata" : "This is a Treasure that makes <2> and +1 Buy when played; when gaining it, you get +2 Coffers."
+		},
+		{
+			"name" : "Swashbuckler",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"cards" : 3,
+			"description" : "If your discard pile has any cards in it: +1 Coffers, then if you have at least 4 Coffers tokens, take the Treasure Chest.",
+			"errata" : "First you draw 3 cards, then you check to see if your discard pile has any cards in it; if drawing those cards caused you to shuffle, your discard pile would be empty. If your discard pile has at least one card, you get +1 Coffers, and if you then have 4 or more tokens on your Coffers, you take the Treasure Chest. You cannot get the Treasure Chest unless your discard pile had at least one card. Treasure Chest simply causes you to gain a Gold at the start of your Buy phase each turn, including the turn you take it; this is not optional."
+		},
+		{
+			"name" : "Treasure Chest",
+			"setId" : 16,
+			"isArtifact" : true,
+			"description" : "At the start of your Buy phase, gain a Gold."
+		},
+		{
+			"name" : "Treasurer",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"coins" : 3,
+			"description" : "Choose one: Trash a Treasure from your hand; or gain a Treasure from the trash to your hand; or take the Key.",
+			"errata" : "The Key does not help you the turn you take it; it gives +<1> at the start of your turn, which has already happened. When you use a Treasurer to gain a Treasure from the trash, that can trigger abilities like the ones on Ducat and Spices. You can choose to take the Key even if you already have it."
+		},
+		{
+			"name" : "Key",
+			"setId" : 16,
+			"isArtifact" : true,
+			"description" : "At the start of your turn, +<1>."
+		},
+		{
+			"name" : "Villain",
+			"setId" : 16,
+			"isAction" : true,
+			"cost" : 5,
+			"coffers" : 2,
+			"description" : "Each other player with 5 or more cards in hand discards one costing <2> or more (or reveals they can’t).",
+			"errata" : "For example a player could discard an Estate, which costs <2>."
+		},
+		{
+			"name" : "Academy",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 5,
+			"description" : "When you gain an Action card, +1 Villager.",
+			"errata" : "This happens whether you gain an Action card due to buying it, or some other way."
+		},
+		{
+			"name" : "Barracks",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 6,
+			"description" : "At the start of your turn, +1 Action.",
+			"errata" : "You simply have +1 Action on each of your turns."
+		},
+		{
+			"name" : "Canal",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 7,
+			"description" : "During your turns, cards cost <1> less, but not less than <0>.",
+			"errata" : "During your turns, all cards, including cards in the Supply, in hands, and in Decks, cost <1> less, but not less than <0>. For example if you have Canal and play Villain, other players discard a card costing at least <2>, which could not be Estate, as Estate only costs <1> on your turns."
+		},
+		{
+			"name" : "Capitalism",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 5,
+			"description" : "During your turns, Actions with +<> amounts in their text are also Treasures.",
+			"errata" : "To be affected, a card must have a +<> amount in its text, not just a <> amount - for example, Capitalism turns Improve into a Treasure, but does not affect Inventor. Having Capitalism means you can play any number of Action cards with +<> amounts in your Buy phase (without using up Action plays). It also means that things that interact with Treasure cards also interact with those cards; for example, if you have Capitalism, you can use Treasurer to gain an Improve from the trash, since Improve is a Treasure on your turns. Any time you play an Action - Treasure card, it is both an Action and a Treasure, regardless of which phase it is. Getting +1 Action in your Buy phase does not let you play other Action cards then. Capitalism works on your turn, but affects cards everywhere; for example if you have Capitalism and play Bandit, you could trash another player's Improve, and it is not relevant if that player has Capitalism or not."
+		},
+		{
+			"name" : "Cathedral",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 3,
+			"description" : "At the start of your turn, trash a card from your hand.",
+			"errata" : "Once you have claimed this ability, it is not optional. There is no way to remove your cube"
+		},
+		{
+			"name" : "Citadel",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 8,
+			"description" : "The first time you play an Action card during each of your turns, play it again afterwards.",
+			"errata" : "Once you've claimed this ability, it is not optional. This can affect an Action card played outside of the Action phase, if it is your first Action card played that turn; for example if you also had Capitalism, you could opt to play a Flag Bearer in your Buy phase as your first play of the turn, and it would still be played twice. Citadel can cause a Duration card to be played twice; you will have to remember that on your next turn."
+		},
+		{
+			"name" : "City Gate",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 3,
+			"description" : "At the start of your turn, +1 Card, then put a card from your hand onto your deck.",
+			"errata" : "First you draw a card; then you put any card from your hand onto your deck."
+		},
+		{
+			"name" : "Crop Rotation",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 6,
+			"description" : "At the start of your turn, you may discard a Victory card for +2 Cards.",
+			"errata" : "If drawing causes you to shuffle, you will shuffle in the discarded Victory card."
+		},
+		{
+			"name" : "Exploration",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 4,
+			"description" : "At the end of your Buy phase, if you didn’t buy any cards, +1 Coffers and +1 Villager.",
+			"errata" : "This only cares if you bought a card in your Buy phase; it does not care if you gained cards other ways, or if you bought an Event (from Adventures and Empires) or Project. For example if all you buy on your turn is Exploration, you will get +1 Coffers and +1 Villager that turn."
+		},
+		{
+			"name" : "Fair",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 4,
+			"description" : "At the start of your turn, +1 Buy.",
+			"errata" : "You simply have +1 Buy on each of your turns."
+		},
+		{
+			"name" : "Fleet",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 5,
+			"description" : "After the game ends, there’s an extra round of turns just for players with this.",
+			"errata" : "The extra turns go in order starting with the next player after the one that just took a turn. Other extra turns, such as from Outpost (in Seaside) can happen in-between those turns; however after the last extra turn due to Fleet, no other extra turns can happen (since e.g. Outpost does not keep the game going after it ends). Players do not sort through their cards and add up their scores until all of the Fleet turns are done, even the players without Fleet. If the game end conditions are no longer met after Fleet turns, the game is still over."
+		},
+		{
+			"name" : "Guildhall",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 5,
+			"description" : "When you gain a Treasure, +1 Coffers.",
+			"errata" : "This happens whether you gain a Treasure due to buying it, or some other way."
+		},
+		{
+			"name" : "Innovation",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 6,
+			"description" : "The first time you gain an Action card in each of your turns, you may set it aside. If you do, play it.",
+			"errata" : "This is optional, but only applies to your first Action card gained each turn; whether or not you use Innovation then, you will not be able to use it on subsequent gains that turn. This applies to cards gained due to being bought, or gained other ways. If the first Action card you gain in a turn is in your Buy phase, that means you can play that card even though it is your Buy phase. If it gives you +Actions, that will not let you play more Action cards in your Buy phase; if it draws you Treasures, you can only play them if you have not bought anything yet."
+		},
+		{
+			"name" : "Pageant",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 3,
+			"description" : "At the end of your Buy phase, you may pay <1> for +1 Coffers.",
+			"errata" : "If you have at least <1> that you did not spend, you can spend <1> for +1 Coffers. This only works once per turn."
+		},
+		{
+			"name" : "Piazza",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 5,
+			"description" : "At the start of your turn, reveal the top card of your deck. If it’s an Action, play it.",
+			"errata" : "Once you have claimed this ability, it is not optional. If the revealed card is not an Action, return it to the top of your deck."
+		},
+		{
+			"name" : "Road Network",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 5,
+			"description" : "When another player gains a Victory card, +1 Card.",
+			"errata" : "This happens every time another player gains a Victory card, whether bought or gained another way, and even if it is your turn."
+		},
+		{
+			"name" : "Sewers",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 3,
+			"description" : "When you trash a card other than with this, you may trash a card from your hand.",
+			"errata" : "This works however you trash the card. For example it works when trashing a card to Priest, when trashing a Curse to Old Witch, when trashing Acting Troupe when playing it, and when trashing a card from the Supply with Lurker (from Intrigue). The card you trash with Sewers must be from your hand, and can be any card in your hand, even if the thing that triggered Sewers could only trash certain cards."
+		},
+		{
+			"name" : "Silos",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 4,
+			"description" : "At the start of your turn, discard any number of Coppers, revealed, and draw that many cards.",
+			"errata" : "First you discard the Coppers, then you draw. So if drawing causes you to shuffle, you will shuffle in the Coppers."
+		},
+		{
+			"name" : "Sinister Plot",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 4,
+			"description" : "At the start of your turn, add a token here, or remove your tokens here for +1 Card each.",
+			"errata" : "Each player has a separate pile of coin tokens on Sinister Plot; keep yours by your cube. Each turn you either add a token (an unused one, not one from a mat), or remove all of your tokens to draw as many cards."
+		},
+		{
+			"name" : "Star Chart",
+			"setId" : 16,
+			"isProject" : true,
+			"cost" : 3,
+			"description" : "When you shuffle, you may pick one of the cards to go on top.",
+			"errata" : "Each time you shuffle, you can look through the cards and pick one to go on top. Shuffle the other cards."
+		}
+	],
+	"groupAs" : [
+		{
+			"name" : "Events",
+			"errata" : "Some description for events.",
+			"cards" : [
+				"Alms",
+				"Ball",
+				"Bonfire",
+				"Borrow",
+				"Expedition",
+				"Ferry", 
+				"Inheritance", 
+				"Lost Arts", 
+				"Mission",
+				"Pathfinding",
+				"Pilgrimage",
+				"Plan",
+				"Quest",
+				"Raid",
+				"Save",
+				"Scouting Party",
+				"Seaway",
+				"Trade",
+				"Training",
+				"Travelling Fair"
+			]
+		},
+		{
+			"name" : "Page",
+			"errata" : "Some description for Page.",
+			"cards" : [
+				"Page",
+				"Treasure Hunter",
+				"Warrior",
+				"Hero",
+				"Champion"
+			]
+		},
+		{
+			"name" : "Peasant",
+			"errata" : "Some description for Peasant.",
+			"cards" : [
+				"Peasant",
+				"Soldier",
+				"Fugitive",
+				"Disciple",
+				"Teacher"
+			]
 		}
 	],
 	"recommendedKingdoms" : [
@@ -4105,19 +4584,24 @@
 		},
 		{
 			"name" : "Traders and Raiders",
-			"cards" : ["Raid","Haunted Woods","Lost City","Page","Port","Wine Merchant","Develop","Farmland","Haggler","Spice Merchant","Trader"]
+			"cards" : ["Haunted Woods","Lost City","Page","Port","Wine Merchant","Develop","Farmland","Haggler","Spice Merchant","Trader"],
+			"events" : ["Raid"]
 		},
 		{
 			"name" : "Journeys",
-			"cards" : ["Expedition","Inheritance","Bridge Troll","Distant Lands","Giant","Guide","Ranger","Cartographer","Crossroads","Highway","Inn","Silk Road"]
+			"cards" : ["Bridge Troll","Distant Lands","Giant","Guide","Ranger","Cartographer","Crossroads","Highway","Inn","Silk Road"],
+			"events" : ["Expedition","Inheritance"]
 		},
 		{
 			"name" : "Simple Plans",
-			"cards" : ["Donate","Labyrinth","Catapult","Forum","Patrician","Temple","Villa","Border Village","Develop","Haggler","Ill-Gotten Gains","Stables"]
+			"cards" : ["Catapult","Forum","Patrician","Temple","Villa","Border Village","Develop","Haggler","Ill-Gotten Gains","Stables"],
+			"events" : ["Donate"],
+			"landmarks" : ["Labyrinth"]
 		},
 		{
 			"name" : "Expansion",
-			"cards" : ["Battlefield","Fountain","Castles","Charm","Encampment","Engineer","Legionary","Cache","Farmland","Highway","Spice Merchant","Tunnel"]
+			"cards" : ["Castles","Charm","Encampment","Engineer","Legionary","Cache","Farmland","Highway","Spice Merchant","Tunnel"],
+			"landmarks" : ["Battlefield","Fountain"]
 		},
 		{
 			"name" : "Forbidden Arts",
@@ -4443,250 +4927,348 @@
 		},
 		{
 			"name" : "Last Will and Monument",
-			"cards" : ["Inheritance","Bishop","Counting House","Monument","Rabble","Vault","Coin of the Realm","Dungeon","Messenger","Relic","Treasure Trove"]
+			"cards" : ["Bishop","Counting House","Monument","Rabble","Vault","Coin of the Realm","Dungeon","Messenger","Relic","Treasure Trove"],
+			"events" : ["Inheritance"]
 		},
 		{
 			"name" : "Think Big",
-			"cards" : ["Ball","Ferry","Contraband","Expand","Hoard","King's Court","Peddler","Distant Lands","Giant","Hireling","Miser","Storyteller"]
+			"cards" : ["Contraband","Expand","Hoard","King's Court","Peddler","Distant Lands","Giant","Hireling","Miser","Storyteller"],
+			"events" : ["Ball","Ferry"]
 		},
 		{
 			"name" : "Big Time",
-			"cards" : ["Dominate","Obelisk","Bank","Forge","Grand Market","Loan","Royal Seal","Capital","Gladiator","Patrician","Royal Blacksmith","Villa"]
+			"cards" : ["Bank","Forge","Grand Market","Loan","Royal Seal","Capital","Gladiator","Patrician","Royal Blacksmith","Villa"],
+			"events" : ["Dominate"],
+			"landmarks" : ["Obelisk"]
 		},
 		{
 			"name" : "Gilded Gates",
-			"cards" : ["Basilica","Palace","Bishop","Monument","Mint","Peddler","Talisman","Chariot Race","City Quarter","Encampment","Groundskeeper","Wild Hunt"]
+			"cards" : ["Bishop","Monument","Mint","Peddler","Talisman","Chariot Race","City Quarter","Encampment","Groundskeeper","Wild Hunt"],
+			"landmarks" : ["Basilica","Palace"]
 		},
 		{
 			"name" : "Collector",
-			"cards" : ["Embargo","Fishing Village","Merchant Ship","Navigator","Smugglers","Fairgrounds","Farming Village","Fortune Teller","Harvest","Hunting Party"]
+			"cards" : ["Embargo","Fishing Village","Merchant Ship","Navigator","Smugglers","Fairgrounds","Farming Village","Fortune Teller","Harvest","Hunting Party"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Collider",
-			"cards" : ["Lighthouse","Salvager","Treasure Map","Treasury","Warehouse","Menagerie","Horn of Plenty","Horse Traders","Jester","Tournament"]
+			"cards" : ["Lighthouse","Salvager","Treasure Map","Treasury","Warehouse","Menagerie","Horn of Plenty","Horse Traders","Jester","Tournament"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Ghosts & Taxes",
-			"cards" : ["Cutpurse","Ghost Ship","Haven","Outpost","Smugglers","Butcher","Candlestick Maker","Herald","Soothsayer","Taxman"]
+			"cards" : ["Cutpurse","Ghost Ship","Haven","Outpost","Smugglers","Butcher","Candlestick Maker","Herald","Soothsayer","Taxman"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Island Builder",
-			"cards" : ["Island","Native Village","Salvager","Tactician","Treasury","Baker","Doctor","Merchant Guild","Plaza","Stonemason"]
+			"cards" : ["Island","Native Village","Salvager","Tactician","Treasury","Baker","Doctor","Merchant Guild","Plaza","Stonemason"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Give and Take",
-			"cards" : ["Ambassador","Fishing Village","Haven","Island","Library","Market","Moneylender","Salvager","Smugglers","Witch"]
+			"cards" : ["Ambassador","Fishing Village","Haven","Island","Library","Market","Moneylender","Salvager","Smugglers","Witch"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Grim Parade",
-			"cards" : ["Armory", "Band of Misfits", "Catacombs", "Cultist", "Forager", "Fortress", "Knights", "Market Square", "Procession", "Hunting Grounds"]
+			"cards" : ["Armory", "Band of Misfits", "Catacombs", "Cultist", "Forager", "Fortress", "Knights", "Market Square", "Procession", "Hunting Grounds"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Playing Chess With Death",
-			"cards" : ["Bandit Camp", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rats", "Sage", "Scavenger", "Storeroom", "Vagrant"]
+			"cards" : ["Bandit Camp", "Graverobber", "Junk Dealer", "Mystic", "Pillage", "Rats", "Sage", "Scavenger", "Storeroom", "Vagrant"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "High and Low",
-			"cards" : ["Hermit", "Hunting Grounds", "Mystic", "Poor House", "Wandering Minstrel", "Cellar", "Moneylender", "Throne Room", "Witch", "Workshop"]
+			"cards" : ["Hermit", "Hunting Grounds", "Mystic", "Poor House", "Wandering Minstrel", "Cellar", "Moneylender", "Throne Room", "Witch", "Workshop"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Chivalry and Revelry",
-			"cards" : ["Altar", "Knights", "Rats", "Scavenger", "Squire", "Festival", "Gardens", "Laboratory", "Library", "Remodel"]
+			"cards" : ["Altar", "Knights", "Rats", "Scavenger", "Squire", "Festival", "Gardens", "Laboratory", "Library", "Remodel"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Prophecy",
-			"cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Great Hall", "Nobles", "Wishing Well"]
+			"cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Great Hall", "Nobles", "Wishing Well"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Prophecy - 2nd Edition",
-			"cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Nobles", "Secret Passage", "Wishing Well"]
+			"cards" : ["Armory", "Ironmonger", "Mystic", "Rebuild", "Vagrant", "Baron", "Conspirator", "Nobles", "Secret Passage", "Wishing Well"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Invasion",
-			"cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Harem", "Mining Village", "Swindler", "Torturer", "Upgrade"]
+			"cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Harem", "Mining Village", "Swindler", "Torturer", "Upgrade"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Invasion - 2nd Edition",
-			"cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Diplomat", "Harem", "Swindler", "Torturer", "Upgrade"]
+			"cards" : ["Beggar", "Marauder", "Rogue", "Squire", "Urchin", "Diplomat", "Harem", "Swindler", "Torturer", "Upgrade"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Royalty Factory",
-			"cards" : ["Pilgrimage","Conspirator","Courtier","Harem","Nobles","Swindler","Bridge Troll","Duplicate","Page","Raze","Royal Carriage"]
+			"cards" : ["Conspirator","Courtier","Harem","Nobles","Swindler","Bridge Troll","Duplicate","Page","Raze","Royal Carriage"],
+			"events" : ["Pilgimage"]
 		},
 		{
 			"name" : "Masters of Finance",
-			"cards" : ["Ball","Borrow","Bridge","Pawn","Shanty Town","Steward","Upgrade","Artificer","Distant Lands","Gear","Transmogrify","Wine Merchant"]
+			"cards" : ["Bridge","Pawn","Shanty Town","Steward","Upgrade","Artificer","Distant Lands","Gear","Transmogrify","Wine Merchant"],
+			"events" : ["Ball","Borrow"]
 		},
 		{
 			"name" : "Delicious Torture",
-			"cards" : ["Arena","Banquet","Baron","Bridge","Harem","Ironworks","Torturer","Castles","Crown","Enchantress","Sacrifice","Settlers"]
+			"cards" : ["Baron","Bridge","Harem","Ironworks","Torturer","Castles","Crown","Enchantress","Sacrifice","Settlers"],
+			"events" : ["Banquet"],
+			"landmarks" : ["Arena"]
 		},
 		{
 			"name" : "Buddy System",
-			"cards" : ["Salt the Earth","Wolf Den","Masquerade","Mining Village","Nobles","Pawn","Trading Post","Archive","Capital","Catapult","Engineer","Forum"]
+			"cards" : ["Masquerade","Mining Village","Nobles","Pawn","Trading Post","Archive","Capital","Catapult","Engineer","Forum"],
+			"events" : ["Salt the Earth"],
+			"landmarks" : ["Wolf Den"]
 		},
 		{
 			"name" : "Watery Graves",
 			"cards" : ["Count", "Graverobber", "Hermit", "Scavenger", "Urchin", "Native Village", "Pirate Ship", "Salvager", "Treasure Map", "Treasury"],
-			"useShelters" : true
+			"useShelters" : true,
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Peasants",
 			"cards" : ["Death Cart", "Feodum", "Poor House", "Urchin", "Vagrant", "Fishing Village", "Haven", "Island", "Lookout", "Warehouse"],
-			"useShelters" : true
+			"useShelters" : true,
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Prince of Orange",
-			"cards" : ["Mission","Caravan","Fishing Village","Merchant Ship","Tactician","Treasure Map","Amulet","Dungeon","Haunted Woods","Page","Swamp Hag"]
+			"cards" : ["Caravan","Fishing Village","Merchant Ship","Tactician","Treasure Map","Amulet","Dungeon","Haunted Woods","Page","Swamp Hag"],
+			"events" : ["Mission"]
 		},
 		{
 			"name" : "Gifts and Mathoms",
-			"cards" : ["Expedition","Quest","Ambassador","Embargo","Haven","Salvager","Smugglers","Bridge Troll","Caravan Guard","Hireling","Lost City","Messenger"]
+			"cards" : ["Ambassador","Embargo","Haven","Salvager","Smugglers","Bridge Troll","Caravan Guard","Hireling","Lost City","Messenger"],
+			"events" : ["Expedition","Quest"]
 		},
 		{
 			"name" : "Boxed In",
-			"cards" : ["Wall","Tax","Salvager","Smugglers","Tactician","Warehouse","Wharf","Castles","Chariot Race","Encampment","Enchantress","Gladiator"]
+			"cards" : ["Salvager","Smugglers","Tactician","Warehouse","Wharf","Castles","Chariot Race","Encampment","Enchantress","Gladiator"],
+			"events" : ["Tax"],
+			"landmarks" : ["Wall"]
 		},
 		{
 			"name" : "King of the Sea",
-			"cards" : ["Delve","Fountain","Explorer","Haven","Native Village","Pirate Ship","Sea Hag","Archive","Farmer's Market","Overlord","Temple","Wild Hunt"]
+			"cards" : ["Explorer","Haven","Native Village","Pirate Ship","Sea Hag","Archive","Farmer's Market","Overlord","Temple","Wild Hunt"],
+			"events" : ["Delve"],
+			"landmarks" : ["Fountain"]
 		},
 		{
 			"name" : "Infestations",
-			"cards" : ["Armory", "Cultist", "Feodum", "Market Square", "Rats", "Wandering Minstrel", "Apprentice", "Scrying Pool", "Transmute", "Vineyard"]
+			"cards" : ["Armory", "Cultist", "Feodum", "Market Square", "Rats", "Wandering Minstrel", "Apprentice", "Scrying Pool", "Transmute", "Vineyard"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Lamentations",
-			"cards" : ["Beggar", "Catacombs", "Counterfeit", "Forager", "Ironmonger", "Pillage", "Apothecary", "Golem", "Herbalist", "University"]
+			"cards" : ["Beggar", "Catacombs", "Counterfeit", "Forager", "Ironmonger", "Pillage", "Apothecary", "Golem", "Herbalist", "University"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "One Man's Trash",
-			"cards" : ["Counterfeit", "Forager", "Graverobber", "Market Square", "Rogue", "City", "Grand Market", "Monument", "Talisman", "Venture"]
+			"cards" : ["Counterfeit", "Forager", "Graverobber", "Market Square", "Rogue", "City", "Grand Market", "Monument", "Talisman", "Venture"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Honor Among Thieves",
-			"cards" : ["Bandit Camp", "Procession", "Rebuild", "Rogue", "Squire", "Forge", "Hoard", "Peddler", "Quarry", "Watchtower"]
+			"cards" : ["Bandit Camp", "Procession", "Rebuild", "Rogue", "Squire", "Forge", "Hoard", "Peddler", "Quarry", "Watchtower"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Dark Carnival",
-			"cards" : ["Band of Misfits", "Cultist", "Fortress", "Hermit", "Junk Dealer", "Knights", "Fairgrounds", "Hamlet", "Horn of Plenty", "Menagerie"]
+			"cards" : ["Band of Misfits", "Cultist", "Fortress", "Hermit", "Junk Dealer", "Knights", "Fairgrounds", "Hamlet", "Horn of Plenty", "Menagerie"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "To the Victor",
-			"cards" : ["Bandit Camp", "Counterfeit", "Death Cart", "Marauder", "Pillage", "Sage", "Harvest", "Hunting Party", "Remake", "Tournament"]
+			"cards" : ["Bandit Camp", "Counterfeit", "Death Cart", "Marauder", "Pillage", "Sage", "Harvest", "Hunting Party", "Remake", "Tournament"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Stoneground",
-			"cards" : ["Hunting Grounds","Ironmonger","Procession","Marauder","Rogue","Advisor","Baker","Candlestick Maker","Plaza","Stonemason"]
+			"cards" : ["Hunting Grounds","Ironmonger","Procession","Marauder","Rogue","Advisor","Baker","Candlestick Maker","Plaza","Stonemason"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Class Struggle",
-			"cards" : ["Feodum","Fortress","Knights","Market Square","Poor House","Butcher","Doctor","Journeyman","Merchant Guild","Taxman"]
+			"cards" : ["Feodum","Fortress","Knights","Market Square","Poor House","Butcher","Doctor","Journeyman","Merchant Guild","Taxman"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Far From Home",
-			"cards" : ["Beggar", "Count", "Feodum", "Marauder", "Wandering Minstrel", "Cartographer", "Develop", "Embassy", "Fool's Gold", "Haggler"]
+			"cards" : ["Beggar", "Count", "Feodum", "Marauder", "Wandering Minstrel", "Cartographer", "Develop", "Embassy", "Fool's Gold", "Haggler"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Expeditions",
-			"cards" : ["Altar", "Catacombs", "Ironmonger", "Poor House", "Storeroom", "Crossroads", "Farmland", "Highway", "Spice Merchant", "Tunnel"]
+			"cards" : ["Altar", "Catacombs", "Ironmonger", "Poor House", "Storeroom", "Crossroads", "Farmland", "Highway", "Spice Merchant", "Tunnel"],
+			"events" : [],
+			"landmarks" : []
 		},
 		{
 			"name" : "Cemetery Polka",
-			"cards" : ["Alms","Graverobber","Marauder","Procession","Rogue","Wandering Minstrel","Amulet","Caravan Guard","Hireling","Peasant","Relic"]
+			"cards" : ["Graverobber","Marauder","Procession","Rogue","Wandering Minstrel","Amulet","Caravan Guard","Hireling","Peasant","Relic"],
+			"events" : ["Alms"]
 		},
 		{
 			"name" : "Groovy Decay",
-			"cards" : ["Lost Arts","Pathfinding","Cultist","Death Cart","Fortress","Knights","Rats","Dungeon","Haunted Woods","Ratcatcher","Raze","Transmogrify"]
+			"cards" : ["Cultist","Death Cart","Fortress","Knights","Rats","Dungeon","Haunted Woods","Ratcatcher","Raze","Transmogrify"],
+			"events" : ["Lost Arts","Pathfinding"]
 		},
 		{
 			"name" : "Tomb of the Rat King",
-			"cards" : ["Advance","Tomb","Death Cart","Fortress","Pillage","Rats","Storeroom","Castles","Chariot Race","City Quarter","Legionary","Sacrifice"]
+			"cards" : ["Death Cart","Fortress","Pillage","Rats","Storeroom","Castles","Chariot Race","City Quarter","Legionary","Sacrifice"],
+			"events" : ["Advance"],
+			"landmarks" : ["Tomb"]
 		},
 		{
 			"name" : "Triumph of the Bandit King",
-			"cards" : ["Defiled Shrine","Triumph","Bandit Camp","Catacombs","Hunting Grounds","Market Square","Procession","Capital","Charm","Engineer","Groundskeeper","Legionary"]
+			"cards" : ["Bandit Camp","Catacombs","Hunting Grounds","Market Square","Procession","Capital","Charm","Engineer","Groundskeeper","Legionary"],
+			"events" : ["Triumph"],
+			"landmarks" : ["Defiled Shrine"]
 		},
 		{
 			"name" : "The Squire's Ritual",
-			"cards" : ["Museum","Ritual","Feodum","Hermit","Ironmonger","Rogue","Squire","Archive","Catapult","Crown","Patrician","Settlers"]
+			"cards" : ["Feodum","Hermit","Ironmonger","Rogue","Squire","Archive","Catapult","Crown","Patrician","Settlers"],
+			"events" : ["Ritual"],
+			"landmarks" : ["Museum"]
 		},
 		{
 			"name" : "Basic Intro",
-			"cards" : ["Tower","Wedding","Castles","Chariot Race","City Quarter","Engineer","Farmers' Market","Forum","Legionary","Patrician","Sacrifice","Villa"]
+			"cards" : ["Castles","Chariot Race","City Quarter","Engineer","Farmers' Market","Forum","Legionary","Patrician","Sacrifice","Villa"],
+			"events" : ["Wedding"],
+			"landmarks" : ["Tower"]
 		},
 		{
 			"name" : "Advanced Intro",
-			"cards" : ["Arena","Triumphal Arch","Archive","Capital","Catapult","Crown","Enchantress","Gladiator","Groundskeeper","Royal Blacksmith"," Settlers","Temple"]
+			"cards" : ["Archive","Capital","Catapult","Crown","Enchantress","Gladiator","Groundskeeper","Royal Blacksmith"," Settlers","Temple"],
+			"landmarks" : ["Arena","Triumphal Arch"]
 		},
 		{
 			"name" : "Everything in Moderation",
-			"cards" : ["Orchard","Windfall","Enchantress","Forum","Legionary","Overloard","Temple","Cellar","Library","Remodel","Village","Workshop"]
+			"cards" : ["Enchantress","Forum","Legionary","Overloard","Temple","Cellar","Library","Remodel","Village","Workshop"],
+			"events" : ["Windfall"],
+			"landmarks" : ["Orchard"]
 		},
 		{
 			"name" : "Silver Bullets",
-			"cards" : ["Aqueduct","Conquest","Catapult","Charm","Farmers' Market","Groundskeeper","Patrician","Bureaucrat","Gardens","Laboratory","Market","Moneylender"]
+			"cards" : ["Catapult","Charm","Farmers' Market","Groundskeeper","Patrician","Bureaucrat","Gardens","Laboratory","Market","Moneylender"],
+			"events" : ["Conquest"],
+			"landmarks" : ["Aqueduct"]
 		},
 		{
 			"name" : "Collectors",
-			"cards" : ["Colonnade","Museum","City Quarter","Crown","Encampment","Enchantress","Farmers' Market","Apothecary","Apprentice","Herbalist","Transmute","University"]
+			"cards" : ["City Quarter","Crown","Encampment","Enchantress","Farmers' Market","Apothecary","Apprentice","Herbalist","Transmute","University"],
+			"landmarks" : ["Colonnade","Museum"]
 		},
 		{
 			"name" : "Zookeepers",
-			"cards" : ["Annex","Colonnade","Overloard","Sacrifice","Settlers","Villa","Wild Hunt","Fairgrounds","Horse Traders","Menagerie","Jester","Tournament"]
+			"cards" : ["Overloard","Sacrifice","Settlers","Villa","Wild Hunt","Fairgrounds","Horse Traders","Menagerie","Jester","Tournament"],
+			"events" : ["Annex"],
+			"landmarks" : ["Colonnade"]
 		},
 		{
 			"name" : "Cash Flow",
-			"cards" : ["Baths","Mountain Pass","Castles","City Quarter","Engineer","Gladiator","Royal Blacksmith","Baker","Butcher","Doctor","Herald","Soothsayer"]
+			"cards" : ["Castles","City Quarter","Engineer","Gladiator","Royal Blacksmith","Baker","Butcher","Doctor","Herald","Soothsayer"],
+			"landmarks" : ["Baths","Mountain Pass"]
 		},
 		{
 			"name" : "Area Control",
-			"cards" : ["Banquet","Keep","Capital","Catapult","Charm","Crown","Farmer's Market","Coin of the Realm","Page","Relic","Treasure Trove","Wine Merchant"]
+			"cards" : ["Capital","Catapult","Charm","Crown","Farmer's Market","Coin of the Realm","Page","Relic","Treasure Trove","Wine Merchant"],
+			"events" : ["Banquet","Keep"]
 		},
 		{
 			"name" : "No Money No Problems",
-			"cards" : ["Bandit Fort","Mission","Archive","Encampment","Royal Blacksmith","Temple","Villa","Dungeon","Duplicate","Hireling","Peasant","Transmogrify"]
+			"cards" : ["Archive","Encampment","Royal Blacksmith","Temple","Villa","Dungeon","Duplicate","Hireling","Peasant","Transmogrify"],
+			"events" : ["Bandit Fort","Mission"]
 		},
 		{
 			"name" : "Gentle Intro",
-			"cards" : ["Scouting Party","Amulet","Distant Lands","Dungeon","Duplicate","Giant","Hireling","Port","Ranger","Ratcatcher","Treasure Trove"]
+			"cards" : ["Amulet","Distant Lands","Dungeon","Duplicate","Giant","Hireling","Port","Ranger","Ratcatcher","Treasure Trove"],
+			"events" : ["Scouting Party"]
 		},
 		{
 			"name" : "Expert Intro",
-			"cards" : ["Mission","Plan","Caravan Guard","Coin of the Realm","Haunted Woods","Lost City","Magpie","Peasant","Raze","Swamp Hag","Transmogrify","Wine Merchant"]
+			"cards" : ["Caravan Guard","Coin of the Realm","Haunted Woods","Lost City","Magpie","Peasant","Raze","Swamp Hag","Transmogrify","Wine Merchant"],
+			"events" : ["Mission","Plan"]
 		},
 		{
 			"name" : "Level Up",
-			"cards" : ["Training","Dungeon","Gear","Guide","Lost City","Miser","Market","Merchant","Militia","Throne Room","Workshop"]
+			"cards" : ["Dungeon","Gear","Guide","Lost City","Miser","Market","Merchant","Militia","Throne Room","Workshop"],
+			"events" : ["Training"]
 		},
 		{
 			"name" : "Son of Size Distortion",
-			"cards" : ["Bonfire","Raid","Amulet","Duplicate","Giant","Messenger","Treasure Trove","Bandit","Bureaucrat","Gardens","Moneylender","Witch"]
+			"cards" : ["Amulet","Duplicate","Giant","Messenger","Treasure Trove","Bandit","Bureaucrat","Gardens","Moneylender","Witch"],
+			"events" : ["Bonfire","Raid"]
 		},
 		{
 			"name" : "Haste Potion",
-			"cards" : ["Plan","Magpie","Messenger","Port","Royal Carriage","Treasure Trove","Apprentice","Scrying Pool","Transmute","University","Vineyard"]
+			"cards" : ["Magpie","Messenger","Port","Royal Carriage","Treasure Trove","Apprentice","Scrying Pool","Transmute","University","Vineyard"],
+			"events" : ["Plan"]
 		},
 		{
 			"name" : "Cursecatchers",
-			"cards" : ["Save","Trade","Amulet","Bridge Troll","Caravan Guard","Peasant","Ratcatcher","Apothecary","Familiar","Golem","Herbalist","Philosopher's Stone"]
+			"cards" : ["Amulet","Bridge Troll","Caravan Guard","Peasant","Ratcatcher","Apothecary","Familiar","Golem","Herbalist","Philosopher's Stone"],
+			"events" : ["Save","Trade"]
 		},
 		{
 			"name" : "The Hero's Return",
-			"cards" : ["Travelling Fair","Artificer","Miser","Page","Ranger","Relic","Fairgrounds","Farming Village","Horse Traders","Jester","Menagerie"]
+			"cards" : ["Artificer","Miser","Page","Ranger","Relic","Fairgrounds","Farming Village","Horse Traders","Jester","Menagerie"],
+			"events" : ["Travelling Fair"]
 		},
 		{
 			"name" : "Seacraft and Witchcraft",
-			"cards" : ["Ferry","Seaway","Peasant","Storyteller","Swamp Hag","Transmogrify","Wine Merchant","Fortune Teller","Hamlet","Horn of Plenty","Tournament","Young Witch"],
-			"baneCard" : "Guide"
+			"cards" : ["Peasant","Storyteller","Swamp Hag","Transmogrify","Wine Merchant","Fortune Teller","Hamlet","Horn of Plenty","Tournament","Young Witch"],
+			"baneCard" : "Guide",
+			"events" : ["Ferry","Seaway"]
 		},
 		{
 			"name" : "Spendthrift",
-			"cards" : ["Lost Arts","Artificer","Gear","Magpie","Miser","Storyteller","Doctor","Masterpiece","Merchant Guild","Soothsayer","Stonemason"]
+			"cards" : ["Artificer","Gear","Magpie","Miser","Storyteller","Doctor","Masterpiece","Merchant Guild","Soothsayer","Stonemason"],
+			"events" : ["Lost Arts"]
 		},
 		{
 			"name" : "Queen of Tan",
-			"cards" : ["Pathfinding","Save","Coin of the Realm","Duplicate","Guide","Ratcatcher","Royal Carriage","Advisor","Butcher","Candlestick Maker","Herald","Journeyman"]
+			"cards" : ["Coin of the Realm","Duplicate","Guide","Ratcatcher","Royal Carriage","Advisor","Butcher","Candlestick Maker","Herald","Journeyman"],
+			"events" : ["Pathfinding","Save"]
 		},
 		{
 			"name" : "Dusk",
@@ -4775,6 +5357,122 @@
 		{
 			"name" : "Pooka Pranks",
 			"cards" : ["Faithful Hound","Ghost Town","Pixie","Pooka","Skulk","Chariot Race","Forum","Groundskeeper","Sacrifice","Settlers","Banquet"]
+		},
+		{
+			"name" : "Overture",
+			"cards" : ["Acting Troupe", "Experiment", "Flag Bearer", "Hideout", "Improve", "Inventor", "Lackeys", "Old Witch", "Seer", "Treasurer"],
+			"projects" : ["Fair"]
+		},
+		{
+			"name" : "It Takes a Villager",
+			"cards" : ["Acting Troupe", "Cargo Ship", "Recruiter", "Seer", "Treasurer", "Market", "Merchant", "Mine", "Smithy", "Vassal"],
+			"projects" : ["Road Network"]
+		},
+		{
+			"name" : "Capture the Flag",
+			"cards" : ["Flag Bearer", "Lackeys", "Scholar", "Swashbuckler", "Villain", "Cellar", "Festival", "Harbinger", "Remodel", "Workshop"],
+			"projects" : ["Barracks", "Pageant"]
+		},
+		{
+			"name" : "Memento Mori",
+			"cards" : ["Experiment", "Flag Bearer", "Patron", "Recruiter", "Silk Merchant", "Ironworks", "Lurker", "Patrol", "Swindler", "Upgrade"],
+			"projects" : ["Citadel"]
+		},
+		{
+			"name" : "Clockwork Court",
+			"cards" : ["Acting Troupe", "Inventor", "Research", "Scepter", "Scholar", "Courtier", "Mining Village", "Nobles", "Replace", "Steward"],
+			"projects" : ["Fleet", "Sinister Plot"]
+		},
+		{
+			"name" : "Free Shipping",
+			"cards" : ["Acting Troupe", "Cargo Ship", "Lackeys", "Research", "Spices", "Embargo", "Island", "Outpost", "Smugglers", "Wharf"],
+			"projects" : ["Innovation"]
+		},
+		{
+			"name" : "Digging for Treasure",
+			"cards" : ["Border Guard", "Flag Bearer", "Inventor", "Sculptor", "Swashbuckler", "Caravan", "Native Village", "Salvager", "Tactician", "Treasure Map"],
+			"projects" : ["Crop Rotation", "Silos"]
+		},
+		{
+			"name" : "Peek-a-boo",
+			"cards" : ["Cargo Ship", "Improve", "Lackeys", "Patron", "Sculptor", "Silk Merchant", "Alchemist", "Apothecary", "Golem", "Scrying Pool"],
+			"projects" : ["Cathedral"]
+		},
+		{
+			"name" : "Dreamers of Dreams",
+			"cards" : ["Cargo Ship", "Old Witch", "Priest", "Scepter", "Scholar", "Expand", "Monument", "Vault", "Watchtower", "Worker's Village"],
+			"projects" : ["Academy"]
+		},
+		{
+			"name" : "Movers and Shakers",
+			"cards" : ["Hideout", "Patron", "Research", "Treasurer", "Villain", "Bank", "City", "Grand Market", "Loan", "Rabble"],
+			"projects" : ["Capitalism", "Citadel"]
+		},
+		{
+			"name" : "Sweetened Deals",
+			"cards" : ["Flag Bearer", "Lackeys", "Mountain Village", "Silk Merchant", "Spices", "Cartographer", "Develop", "Farmland", "Haggler", "Spice Merchant"],
+			"projects" : ["Silos"]
+		},
+		{
+			"name" : "A Penny Saved",
+			"cards" : ["Ducat", "Patron", "Scepter", "Seer", "Swashbuckler", "Cache", "Crossroads", "Noble Brigand", "Oasis", "Trader"],
+			"projects" : ["Barracks", "Guildhall"]
+		},
+		{
+			"name" : "Stargazing",
+			"cards" : ["Border Guard", "Patron", "Seer", "Silk Merchant", "Swashbuckler", "Hermit", "Mystic", "Procession", "Sage", "Wandering Minstrel"],
+			"projects" : ["Star Chart"],
+			"useShelters" : true
+		},
+		{
+			"name" : "Sewer Rats",
+			"cards" : ["Flag Bearer", "Improve", "Lackeys", "Mountain Village", "Research", "Count", "Counterfeit", "Cultist", "Graverobber", "Rats"],
+			"projects" : ["Crop Rotation", "Sewers"],
+			"useShelters" : true
+		},
+		{
+			"name" : "Combo Corner",
+			"cards" : ["Ducat", "Experiment", "Sculptor", "Hideout", "Seer", "Herald", "Horn of Plenty", "Horse Traders", "Jester", "Stonemason"],
+			"projects" : ["Canal"]
+		},
+		{
+			"name" : "Filling the Coffers",
+			"cards" : ["Priest", "Recruiter", "Spices", "Swashbuckler", "Baker", "Butcher", "Menagerie", "Merchant Guild", "Treasurer", "Plaza"],
+			"projects" : ["City Gate", "Star Chart"]
+		},
+		{
+			"name" : "Progress",
+			"cards" : ["Experiment", "Improve", "Recruiter", "Seer", "Silk Merchant", "Hireling", "Ranger", "Raze", "Swamp Hag", "Transmogrify"],
+			"projects" : ["Piazza"],
+			"events" : ["Training"]
+		},
+		{
+			"name" : "Once Upon a Time",
+			"cards" : ["Acting Troupe", "Lackeys", "Priest", "Sculptor", "Spices", "Distant Lands", "Duplicate", "Haunted Woods", "Royal Carriage", "Storyteller"],
+			"projects" : ["Innovation"],
+			"events" : ["Ferry"]
+		},
+		{
+			"name" : "Exploring the City",
+			"cards" : ["Cargo Ship", "Experiment", "Mountain Village", "Priest", "Sculptor", "City Quarter", "Farmers' Market", "Groundskeeper", "Sacrifice", "Wild Hunt"],
+			"projects" : ["Exploration"],
+			"landmarks" : ["Battlefield"]
+		},
+		{
+			"name" : "Navigating the Sewers",
+			"cards" : ["Acting Troupe", "Flag Bearer", "Improve", "Old Witch", "Scepter", "Chariot Race", "Enchantress", "Gladiator", "Patrician", "Villa"],
+			"projects" : ["Sewers"],
+			"events" : ["Ritual"]
+		},
+		{
+			"name" : "Becoming a Monster",
+			"cards" : ["Experiment", "Mountain Village", "Old Witch", "Research", "Spices", "Devil's Workshop", "Monastery", "Shepherd", "Skulk", "Tragic Hero"],
+			"projects" : ["Exploration"]
+		},
+		{
+			"name" : "True Believers",
+			"cards" : ["Border Guard", "Cargo Ship", "Scholar", "Sculptor", "Villain", "Blessed Village", "Crypt", "Faithful Hound", "Sacred Grove", "Secret Cave"],
+			"projects" : ["Cathedral", "Piazza"]
 		}
 	]
 }
