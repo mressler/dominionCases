@@ -61,6 +61,19 @@ public class MultiPointObject implements Drawable {
 		cStream.closeAndFillAndStroke();
 	}
 	
+	public Tuple<Point, Point> getBoundingBox() {
+		MinMaxHolder<Float> xBounds = corners.stream()
+			.map(Point::getX)
+			.collect(MinMaxHolder.collect());
+		MinMaxHolder<Float> yBounds = corners.stream()
+				.map(Point::getY)
+				.collect(MinMaxHolder.collect());
+		
+		return new Tuple<>(
+			new Point(xBounds.getMin(), yBounds.getMin()), 
+			new Point(xBounds.getMax(), yBounds.getMax()));
+	}
+	
 	public float getHeight() {
 		return corners.stream()
 					.map(Point::getY)

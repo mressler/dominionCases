@@ -1,5 +1,7 @@
 package com.ressq.dominionCases;
 
+import java.util.List;
+
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 
 import com.ressq.dominionCases.shapes.CardCase;
@@ -10,12 +12,27 @@ public class MultiCardLayout extends CompositeDrawable {
 	public float totalWidth;
 	public float totalHeight;
 	
-	public MultiCardLayout(CardCase cardOne) {
-		PDRectangle sizeOf = getSizeFor(cardOne, true);
-		totalHeight = sizeOf.getHeight();
-		totalWidth = sizeOf.getWidth();
-		
-		add(cardOne);
+	public MultiCardLayout(List<CardCase> cards) {
+		switch (cards.size()) {
+		case 1:
+			getSizeFor(cards.get(0), true);
+			add(cards.get(0));
+			break;
+		case 2:
+			getSizeFor(cards.get(0), cards.get(1), true);
+			add(cards.get(0));
+			add(cards.get(1));
+			break;
+		case 3:
+			getSizeFor(cards.get(0), cards.get(1), cards.get(2), true);
+			add(cards.get(0));
+			add(cards.get(1));
+			add(cards.get(2));
+			break;
+		default:
+			throw new IllegalArgumentException("Invalid number of cards passed to MultiCardLayout: " + cards.size() + " expecting 1, 2, or 3.");
+			
+		}
 	}
 	
 	public static PDRectangle getSizeFor(CardCase cardOne, boolean applyRotations) {
@@ -29,15 +46,6 @@ public class MultiCardLayout extends CompositeDrawable {
 		}
 		
 		return new PDRectangle(totalWidth, totalHeight);
-	}
-	
-	public MultiCardLayout(CardCase cardOne, CardCase cardTwo) {
-		PDRectangle sizeOf = getSizeFor(cardOne, cardTwo, true);
-		totalHeight = sizeOf.getHeight();
-		totalWidth = sizeOf.getWidth();
-		
-		add(cardOne);
-		add(cardTwo);
 	}
 	
 	public static PDRectangle getSizeFor(CardCase cardOne, CardCase cardTwo, boolean applyRotations) {
@@ -57,16 +65,6 @@ public class MultiCardLayout extends CompositeDrawable {
 		}
 		
 		return new PDRectangle(totalWidth, totalHeight);
-	}
-	
-	public MultiCardLayout(CardCase cardOne, CardCase cardTwo, CardCase cardThree) {
-		PDRectangle sizeOf = getSizeFor(cardOne, cardTwo, cardThree, true);
-		totalHeight = sizeOf.getHeight();
-		totalWidth = sizeOf.getWidth();
-		
-		add(cardOne);
-		add(cardTwo);
-		add(cardThree);
 	}
 	
 	public static PDRectangle getSizeFor(CardCase cardOne, CardCase cardTwo, CardCase cardThree, boolean applyRotations) {
@@ -95,16 +93,6 @@ public class MultiCardLayout extends CompositeDrawable {
 		}
 		
 		return new PDRectangle(totalWidth, totalHeight);
-	}
-
-	@Override
-	public float getHeight() {
-		return totalWidth;
-	}
-
-	@Override
-	public float getWidth() {
-		return totalHeight;
 	}
 	
 }

@@ -1,7 +1,8 @@
 package com.ressq.dominionCases.dto;
 
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,9 +15,9 @@ public class CardGrouping implements DisplayableCardInfo {
 	private Set<String> cardNames;
 	private Set<CardInfo> allCardInfo;
 
-	public void postConstruct(Function<String, CardInfo> mapToInfo) {
+	public void postConstruct(Map<String, CardInfo> mapToInfo) {
 		allCardInfo = cardNames.stream()
-				.map(mapToInfo)
+				.map(cName -> Optional.ofNullable(mapToInfo.get(cName)).orElseThrow(() -> new IllegalArgumentException("No card named " + cName)))
 				.collect(Collectors.toSet());
 	}
 	

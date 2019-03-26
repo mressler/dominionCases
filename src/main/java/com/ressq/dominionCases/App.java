@@ -1,21 +1,21 @@
 package com.ressq.dominionCases;
 
-import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
-import org.apache.pdfbox.pdmodel.common.PDStream;
-import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
@@ -73,6 +73,8 @@ public class App {
 			System.out.println(entry.getKey() + ": " + entry.getValue());
 		});
 		
+		db.postConstruct();
+		
 		PDDocument masterDoc = new PDDocument();
 		
 		// Load resources
@@ -85,22 +87,26 @@ public class App {
 			loadImageResource(masterDoc, "debt.png"),
 			loadImageResource(masterDoc, "victory.png"));
 		
-		LinkedList<CardCase> allCases = db.getCards().stream()
-				.map(App::caseForCardInfo)
-				.collect(Collectors.toCollection(LinkedList<CardCase>::new));
+		LinkedList<CardInfo> allCardInfos = db.getCards().stream()
+				.collect(Collectors.toCollection(LinkedList<CardInfo>::new));
 		
-//		do {
-//			consumeCards(masterDoc, allCases);
-//		} while (!allCases.isEmpty());
+		do {
+			consumeCards(masterDoc, allCardInfos);
+		} while (!allCardInfos.isEmpty());
 
 		// TODO: groupWith property & front/back text
 		// TODO: Second page remainder text that is very short?
 		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
 		
 		// First page
-		//pageForThreeCards(masterDoc, db.getCardByName("Village"), db.getCardByName("Moat"), db.getCardByName("Militia"));
-		readRegistrationMarks();
-		registrationMarks(masterDoc);
+//		pageForCards(
+//			masterDoc,
+//			db.getCardByName("Village"), 
+//			db.getCardByName("Moat"), 
+//			db.getCardByName("Militia")
+//		);
+		
+		//readRegistrationMarks();
 		
 		// Random Recommended set? Only unplayed?
 		// Select number of sets to choose from?
@@ -123,6 +129,7 @@ public class App {
 		masterDoc.close();
 	}
 	
+	@SuppressWarnings("unused")
 	private static void readRegistrationMarks() throws IOException {
 		try (PDDocument regsDoc = PDDocument.load(new File("regMarks.pdf"))) {
 			int pageNum = 0;
@@ -134,96 +141,110 @@ public class App {
 		}
 	}
 
-	private static void registrationMarks(PDDocument masterDoc) throws IOException {
-		PDPage helloPage = new PDPage();
-		masterDoc.addPage(helloPage);
-		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
-		ContentStream drawStream = new ContentStream(cStream);
-		
+	private static void addRegistrationMarksToPage(PDPage somePage, ContentStream drawStream) throws IOException {
 		Rectangle upperLeft = new Rectangle(Card.inchesToPixels(0.20), Card.inchesToPixels(0.20));
-		upperLeft.applyTranslation(Card.inchesToPixels(0.5), helloPage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperLeft.getHeight());
+		upperLeft.applyTranslation(
+				Card.inchesToPixels(0.5), 
+				somePage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperLeft.getHeight());
 		upperLeft.fill(drawStream);
 		
-		cStream.close();
+		Rectangle upperRightH = new Rectangle(Card.inchesToPixels(0.50), 1);
+		upperRightH.applyTranslation(
+				somePage.getTrimBox().getWidth() - Card.inchesToPixels(0.5) - upperRightH.getWidth(), 
+				somePage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperRightH.getHeight());
+		upperRightH.fill(drawStream);
+		
+		Rectangle upperRightV = new Rectangle(1, Card.inchesToPixels(0.50));
+		upperRightV.applyTranslation(
+				somePage.getTrimBox().getWidth() - Card.inchesToPixels(0.5) - upperRightV.getWidth(), 
+				somePage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperRightV.getHeight());
+		upperRightV.fill(drawStream);
+		
+		Rectangle lowerLeftH = new Rectangle(Card.inchesToPixels(0.50), 1);
+		lowerLeftH.applyTranslation(
+				Card.inchesToPixels(0.5), 
+				Card.inchesToPixels(0.5));
+		lowerLeftH.fill(drawStream);
+		
+		Rectangle lowerLeftV = new Rectangle(1, Card.inchesToPixels(0.50));
+		lowerLeftV.applyTranslation(
+				Card.inchesToPixels(0.5), 
+				Card.inchesToPixels(0.5));
+		lowerLeftV.fill(drawStream);
+	}
+	
+	@SuppressWarnings("unused")
+	private static void pageForCards(PDDocument masterDoc, CardInfo... allCards) throws IOException {
+		consumeCards(masterDoc, 
+			Arrays.asList(allCards).stream()
+				.collect(Collector.of(
+					LinkedList::new, 
+					List::add,
+					(left, right) -> { left.addAll(right); return left; }
+				)
+			)
+		);
 	}
 
-	private static void consumeCards(PDDocument masterDoc, LinkedList<CardCase> allCases) throws IOException {
+	private static void consumeCards(PDDocument masterDoc, LinkedList<CardInfo> allCases) throws IOException {
 		PDPage helloPage = new PDPage();
+		PDRectangle trimBox = helloPage.getTrimBox();
+		
+		Optional<MultiCardLayout> layoutOpt = layoutForCards(trimBox, allCases, allCases.pop());
+		MultiCardLayout info = layoutOpt.orElseThrow(() -> new IllegalArgumentException("No way to layout"));
+		
 		masterDoc.addPage(helloPage);
 		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
 		ContentStream drawStream = new ContentStream(cStream);
 		
-		PDRectangle trimBox = helloPage.getTrimBox();
+		addRegistrationMarksToPage(helloPage, drawStream);
+		
 		float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
 		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
 		
-		CardCase cards[] = new CardCase[3];
-		cards[0] = allCases.pop();
-		PDRectangle candidateSize = MultiCardLayout.getSizeFor(cards[0], false);
-		MultiCardLayout info;
-		if ((candidateSize.getHeight() < trimBox.getHeight()) && 
-			(candidateSize.getWidth() < trimBox.getWidth()) &&
-			!allCases.isEmpty()) 
-		{
-			cards[1] = allCases.pop();
-			candidateSize = MultiCardLayout.getSizeFor(cards[0], cards[1], false);
-			if ((candidateSize.getHeight() < trimBox.getHeight()) && 
-				(candidateSize.getWidth() < trimBox.getWidth()) && 
-				!allCases.isEmpty()) 
-			{
-				cards[2] = allCases.pop();
-				candidateSize = MultiCardLayout.getSizeFor(cards[0], cards[1], cards[2], false);
-				if ((candidateSize.getHeight() < trimBox.getHeight()) && 
-					(candidateSize.getWidth() < trimBox.getWidth()) && 
-					!allCases.isEmpty()) 
-				{
-					info = new MultiCardLayout(cards[0], cards[1], cards[2]);
-				} else {
-					allCases.push(cards[2]);
-					info = new MultiCardLayout(cards[0], cards[1]);
-				}
-			} else {
-				allCases.push(cards[1]);
-				info = new MultiCardLayout(cards[0]);
-			}
-		} else {
-			if (allCases.isEmpty()) {
-				info = new MultiCardLayout(cards[0]);
-			} else {
-				throw new IllegalArgumentException("Single card stack does not fit!");
+		info.applyTranslation(centerX, centerY);
+		info.draw(drawStream);
+		
+		cStream.close();
+	}
+	
+	private static Optional<MultiCardLayout> layoutForCards(
+			PDRectangle trimBox, 
+			LinkedList<CardInfo> allCases, 
+			CardInfo... cardsInLayout) 
+	{
+		Optional<MultiCardLayout> foundLayout = Optional.empty();
+		// Can I take another? If so, take one and lay out additional cards
+		if ((cardsInLayout.length < 3) && !allCases.isEmpty()) {
+			CardInfo nextCard = allCases.pop();
+			
+			foundLayout = layoutForCards(trimBox, allCases, 
+					Stream.concat(Stream.of(cardsInLayout), Stream.of(nextCard)).toArray(CardInfo[]::new)); // Admittedly a bit verbose to append ONE element to an array
+			
+			if (!foundLayout.isPresent()) {
+				allCases.push(nextCard);
 			}
 		}
 		
-		info.applyTranslation(centerX, centerY);
-		info.draw(drawStream);
+		// Lay out the current number of cards
+		if (!foundLayout.isPresent()) {
+			// Attempt to layout with the current number of cards.
+			MultiCardLayout maxCardLayout = new MultiCardLayout(
+				Arrays.asList(cardsInLayout).stream()
+					.map(App::caseForCardInfo)
+					.collect(Collectors.toList()));
+			
+			if ((maxCardLayout.getWidth() < trimBox.getWidth()) && 
+				(maxCardLayout.getHeight() < trimBox.getHeight())) 
+			{
+				return Optional.of(maxCardLayout);
+			} else {
+				return Optional.empty();
+			}
+		}
 		
-		cStream.close();
-	}
-
-	private static void pageForThreeCards(PDDocument masterDoc, CardInfo cardOne, CardInfo cardTwo, CardInfo cardThree) throws IOException {
-		System.out.println("Total card count: " + (cardOne.getStandardCount() + cardTwo.getStandardCount() + cardThree.getStandardCount()));
-		
-		PDPage helloPage = new PDPage();
-		masterDoc.addPage(helloPage);
-		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
-		cStream.setLineWidth(1f);
-		cStream.setStrokingColor(Color.BLACK);
-		ContentStream drawStream = new ContentStream(cStream);
-		
-		PDRectangle trimBox = helloPage.getTrimBox();
-		float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
-		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
-		
-		CardCase caseOne = caseForCardInfo(cardOne);
-		CardCase caseTwo = caseForCardInfo(cardTwo);
-		CardCase caseThree = caseForCardInfo(cardThree);
-		
-		MultiCardLayout info = new MultiCardLayout(caseOne);//, caseTwo, caseThree);
-		info.applyTranslation(centerX, centerY);
-
-		info.draw(drawStream);
-		
-		cStream.close();
+		// Ultimately report what we found
+		return foundLayout;
 	}
 	
 	private static CardCase caseForCardInfo(CardInfo someInfo) {

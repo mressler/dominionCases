@@ -1,6 +1,8 @@
 package com.ressq.pdfbox.primitives;
 
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.Tuple;
+import com.ressq.pdfbox.shapes.Rectangle;
 
 public abstract class BottomLeftAware implements Drawable {
 
@@ -22,6 +24,14 @@ public abstract class BottomLeftAware implements Drawable {
 	public void applyTranslation(float deltaX, float deltaY) {
 		bottomLeft.applyTranslation(deltaX, deltaY);
 
+	}
+	
+	public Tuple<Point, Point> getBoundingBox() {
+		Rectangle boundingBox = new Rectangle(this.getWidth(), this.getHeight());
+		boundingBox.applyRotation(theta);
+		boundingBox.applyTranslation(bottomLeft.getX(), bottomLeft.getY());
+		
+		return boundingBox.getBoundingBox();
 	}
 
 	@Override

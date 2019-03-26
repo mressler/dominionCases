@@ -37,6 +37,14 @@ public class MinMaxHolder<T extends Comparable<T>> {
 		return max;
 	}
 	
+	public static <T extends Comparable<T>> 
+	Collector<T, MinMaxHolder<T>, MinMaxHolder<T>> collect() {
+		return Collector.of(
+				MinMaxHolder::new,
+				MinMaxHolder::accept, 
+				MinMaxHolder::merge);
+	}
+	
 	public static <T extends Comparable<T>, U> 
 	Collector<T, MinMaxHolder<T>, U> collectThen(Function<MinMaxHolder<T>, U> collect) {
 		return Collector.of(

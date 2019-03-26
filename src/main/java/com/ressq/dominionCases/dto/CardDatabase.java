@@ -52,13 +52,21 @@ public class CardDatabase {
 	public void setGroupAs(List<CardGrouping> groupAs) {
 		this.groupAs = groupAs;
 	}
+	
+	public void postConstruct() {
+		groupAs.stream().forEach(ga -> ga.postConstruct(getMapToInfo()));
+	}
 
 	private Map<String, CardInfo> mapToInfo;
-	public CardInfo getCardByName(String name) {
+	private Map<String, CardInfo> getMapToInfo() {
 		if (mapToInfo == null) {
 			mapToInfo = cards.stream().collect(Collectors.toMap(CardInfo::getName, Function.identity()));
 		}
-		return Optional.ofNullable(mapToInfo.get(name))
+		return mapToInfo;
+	}
+	
+	public CardInfo getCardByName(String name) {
+		return Optional.ofNullable(getMapToInfo().get(name))
 				.orElseThrow(() -> new IllegalArgumentException("No card named " + name));
 	}
 }
