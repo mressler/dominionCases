@@ -2269,7 +2269,9 @@
 			"description" : "Look through your discard pile. You may reveal a Settlers from it and put it into your hand.",
 			"errata" : "You can look through your discard pile even if you know there are no Settlers in it.",
 			"actions" : 3,
-			"cards" : 1
+			"cards" : 1,
+			"standardCount" : 5,
+			"groupWith" : "Settlers"
 		},
 		{
 			"name" : "Capital",
@@ -2297,7 +2299,8 @@
 			"cost" : 3,
 			"description" : "Trash a card from your hand. If it costs <3> or more, each other player gains a Curse. If it's a Treasure, each other player discards down to 3 cards in hand.",
 			"errata" : "If the card you trash is a treasure, each other player discards down to 3 cards in hand; if the card you trash costs <3> or more, each other player gains a Curse; if it is both (e.g. Silver), both things happen; if it is neither, neither thing happens. If you have no cards in hand left to trash, neither thing happens.",
-			"coins" : 1
+			"coins" : 1,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Chariot Race",
@@ -2343,7 +2346,9 @@
 			"errata" : "This counts Action cards in play, including Action cards played this turn, Duration cards in play from previous turns, and Reserve cards (from Dominion: Adventures) called into play this turn.",
 			"actions" : 1,
 			"coins" : 1,
-			"cards" : 1
+			"cards" : 1,
+			"standardCount" : 5,
+			"groupWith" : "Patrician"
 		},
 		{
 			"name" : "Encampment",
@@ -2353,7 +2358,8 @@
 			"description" : "You may reveal a Gold or Plunder from your hand. If you do not, set this aside, and return it to the Supply at the start of Clean-up",
 			"errata" : "Revealing a Plunder or Gold is optional. When you return Encampment to the Supply, it goes on top of its pile, potentially covering up a Plunder.",
 			"actions" : 2,
-			"cards" : 2
+			"cards" : 2,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Enchantress",
@@ -2391,7 +2397,8 @@
 			"description" : "When you play this, double your <> if you haven't yet this turn.\nWhen you gain this, gain a Gold per Gladiator you have in play.",
 			"errata" : "You only double your <> the first time you play a Fortune in a turn; any further times only get you +1 Buy.",
 			"buys" : 1,
-			"standardCount" : 5
+			"standardCount" : 5,
+			"groupWith" : "Gladiator"
 		},
 		{
 			"name" : "Forum",
@@ -2456,9 +2463,10 @@
 			"isAction" : true,
 			"cost" : 2,
 			"description" : "Reveal the top card of your deck. If it costs <5> or more, put it into your hand.",
-			"errata" : "Cards costing <d> do not cost <5> or more unless they also have a <> cost of <5> or more. So Fortune does but City Quarter does not",
+			"errata" : "Cards costing <d> do not cost <5> or more unless they also have a <> cost of <5> or more. So Fortune does but City Quarter does not.",
 			"actions" : 1,
-			"cards" : 1
+			"cards" : 1,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Plunder",
@@ -2467,7 +2475,9 @@
 			"cost" : 5,
 			"description" : "+1<v>",
 			"errata" : "This gives you a <v> token every time you play it.",
-			"coins" : 2
+			"coins" : 2,
+			"standardCount" : 5,
+			"groupWith" : "Encampment"
 		},
 		{
 			"name" : "Rocks",
@@ -2476,7 +2486,9 @@
 			"cost" : 4,
 			"description" : "When you gain or trash this, gain a Silver; if it is your Buy phase, put the Silver on your deck, otherwise put it into your hand.",
 			"errata" : "If it is another player's turn, then it is not your Buy phase, so the Silver goes to your hand.",
-			"coins" : 1
+			"coins" : 1,
+			"standardCount" : 5,
+			"groupWith" : "Catapult"
 		},
 		{
 			"name" : "Sacrifice",
@@ -2494,7 +2506,8 @@
 			"description" : "Look through your discard pile. You may reveal a Copper from it and put it into your hand.",
 			"errata" : "You can look through your discard pile even if you know there is no Copper in it.",
 			"actions" : 1,
-			"cards" : 1
+			"cards" : 1,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Temple",
@@ -2527,6 +2540,7 @@
 			"name" : "Advance",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 0,
 			"description" : "You may trash an Action card from your hand. If you do, gain an Action card costing up to <6>.",
 			"errata" : "If you do not trash an Action, nothing else happens."
@@ -2535,6 +2549,7 @@
 			"name" : "Annex",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"debt" : 8,
 			"description" : "Look through your discard pile. Shuffle all but up to 5 cards from it into your deck. Gain a Duchy.",
 			"errata" : "You can do this even if the Duchy pile is empty. The chosen cards stay in your discard pile when the other cards are shuffled into your deck."
@@ -2543,6 +2558,7 @@
 			"name" : "Banquet",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "Gain 2 Coppers and a non-Victory card costing up to <5>.",
 			"errata" : "You can do this even if the Copper pile is empty."
@@ -2551,6 +2567,7 @@
 			"name" : "Conquest",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 6,
 			"description" : "Gain 2 Silvers.\n+1<v> per Silver you've gained this turn.",
 			"errata" : "This counts the two Silvers it gives you (provided that there were Silvers left to gain). For example, with <12> and 2 Buys and having gained no Silvers earlier in the turn, you could buy Conquest twice, getting two Silvers, then +2<v>, then two more Silvers, then +4<v>."
@@ -2559,6 +2576,7 @@
 			"name" : "Delve",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 2,
 			"description" : "+1 Buy\nGain a Silver.",
 			"errata" : "Each purchase of Delve gives you back the Buy you used on it. For example, if you have <7>, you can Delve, then Delve, then buy a card for <3>."
@@ -2567,6 +2585,7 @@
 			"name" : "Dominate",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"description" : "Gain a Province. If you do, +9<v>.",
 			"errata" : "This does nothing once the Province pile is empty."
 		},
@@ -2574,6 +2593,7 @@
 			"name" : "Donate",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"debt" : 8,
 			"description" : "After this turn, put all cards from your deck and discard pile into your hand, trash any number, shuffle your hand into your deck, then draw 5 cards.",
 			"errata" : "Effects that happen due to trashing cards (such as Rock's) will happen before you shuffle. This happens between turns, and so Possession (from Dominion: Alchemy) will no longer be doing anything."
@@ -2582,6 +2602,7 @@
 			"name" : "Ritual",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "Gain a Curse. If you do, trash a card from your hand. +1<v> per <1> it cost.",
 			"errata" : "This does nothing once the Curse pile is empty. This only gives you +1<v> per <1> the trashed card cost; it does not give anything for <d> or <p> in costs."
@@ -2590,6 +2611,7 @@
 			"name" : "Salt the Earth",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "+1<v>\nTrash a Victory card from the Supply.",
 			"errata" : "If the trashed card does something when trashed (such as Crumbling Castle), you do that thing."
@@ -2598,6 +2620,7 @@
 			"name" : "Tax",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 2,
 			"description" : "Add <d2> to a Supply pile.\nSetup: Add <d1> to each Supply pile. When a player buys a card, they take the <d> from its pile.",
 			"errata" : "Every Supply pile starts with <1>, including Kingdom cards and basic cards like Silver. The Event itself, when bought, adds <d2> to a single pile, whether or not that pile has any <d> on it already. The <d> is taken by the next player to buy a card from that pile; gaining a card without buying it leaves the <d> on the pile."
@@ -2606,6 +2629,7 @@
 			"name" : "Triumph",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"debt" : 5,
 			"description" : "Gain an Estate.\nIf you did, +1<v> per card you've gained this turn.",
 			"errata" : "You get +1<v> per card you have gained, including the Estate, and any other cards bought or gained other ways; you do not get <v> for Events bought. Once the Estate pile is empty, this does nothing."
@@ -2614,6 +2638,7 @@
 			"name" : "Wedding",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"debt" : 3,
 			"description" : "+1<v>\nGain a Gold.",
@@ -2623,6 +2648,7 @@
 			"name" : "Windfall",
 			"setId" : 13,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "If your deck and discard pile are empty, gain 3 Golds.",
 			"errata" : "If there are fewer than 3 Golds in the pile, just gain the remaining Golds."
@@ -2631,6 +2657,7 @@
 			"name" : "Aqueduct",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you gain a Treasure, move 1<v> from its pile to this.\nWhen you gain a Victory card, take the <v> from this.\nSetup: Put 8<v> on the Silver and Gold piles.",
 			"errata" : "If you gain a card that is both a Treasure and a Victory card, such as Humble Castle, you can resolve the abilities in either order."
 		},
@@ -2638,6 +2665,7 @@
 			"name" : "Arena",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "At the start of your Buy phase, you may discard an Action card. If you do, take 2<v> from here.\nSetup: Put 6<v> here per player.",
 			"errata" : "With Villa it is possible for your Buy phase to start twice or more in a turn; you can make use of Arena each time."
 		},
@@ -2645,6 +2673,7 @@
 			"name" : "Bandit Fort",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, -2<v> for each Silver and each Gold you have.",
 			"errata" : "For example with 3 Silvers and 1 Gold, you would get -8<v>. Scores can go negative."
 		},
@@ -2652,6 +2681,7 @@
 			"name" : "Basilica",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you buy a card, if you have <2> or more left, take 2<v> from here.\nSetup: Put 6<v> here per player.",
 			"errata" : "This happens each time you buy a card. For example with <4> and 3 Buys, you could buy Copper, then Copper, then Silver, taking 2<v>, then 2<v>, then none."
 		},
@@ -2659,6 +2689,7 @@
 			"name" : "Baths",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you end your turn without having gained a card, take 2<v> from here.\nSetup: Put 6<v> here per player.",
 			"errata" : "Any way you gain a card will stop you from getting <v> from this that turn."
 		},
@@ -2666,6 +2697,7 @@
 			"name" : "Battlefield",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you gain a Victory card, take 2<v> from here.\nSetup: Put 6<v> here per player.",
 			"errata" : "You take the <v> whether you bought the Victory card or gained it another way."
 		},
@@ -2673,6 +2705,7 @@
 			"name" : "Colonnade",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you buy an Action card, if you have a copy of it in play, take 2<v> from here.\nSetup: Put 6<v> here per player.",
 			"errata" : "For example with Settlers in play, buying another Settlers gets you 2<v> from here. Cards from the same pile are not necessarily copies of each other; for example Bustling Village is not a copy of Settlers."
 		},
@@ -2680,6 +2713,7 @@
 			"name" : "Defiled Shrine",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you gain an Action, move 1<v> from its pile to this.\nWhen you buy a Curse, take the <v> from this.\nSetup: Put 2<v> on each non-Gathering Action Supply pile.",
 			"errata" : "Note that this triggers on gaining an Action, whether bought or otherwise gained, but only on buying Curse, not on gaining Curse other ways. <v> tokens will go on Ruins (from Dominion: Dark Ages) when used, but not on Farmers' Market, Temple, or Wild Hunt (the three Action - Gathering cards)."
 		},
@@ -2687,6 +2721,7 @@
 			"name" : "Fountain",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 15<v> if you have at least 10 Coppers.",
 			"errata" : "You either get 15<v> or 0<v>; there is no extra bonus for having 20 Coppers."
 		},
@@ -2694,6 +2729,7 @@
 			"name" : "Keep",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 5<v> per differently named Treasure you have, that you have more copies of than each other player, or tied for most.",
 			"errata" : "This applies to each different Treasure being used in the game. If all players have the same number of copies of a Treasure, they all get the 5<v> for that Treasure."
 		},
@@ -2701,6 +2737,7 @@
 			"name" : "Labyrinth",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you gain a 2nd card in one of your turns, take 2<v> from here.\nSetup: Put 6<v> here per player.",
 			"errata" : "This can only happen once per turn per player. For example if you gain 4 cards in the same turn, only the second one will come with 2<v>."
 		},
@@ -2708,6 +2745,7 @@
 			"name" : "Mountain Pass",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you are the first player to gain a Province, after that turn, each player bids once, up to <d40>, ending with you.\nHigh bidder gets +8<v> and takes the <d> they bid.",
 			"errata" : "This only happens the first time a player gains a Province; it does not matter if the Province was bought or not, or if Provinces have left the pile earlier due to Salt the Earth. This happens between turns; Possession (from Dominion: Alchemy) will not be in effect. The player to the left of the player who got the Province bids first, then the player to their left and so on, ending with the player who got the Province. Each bid can be a pass, or a higher bid than the previous bid. Bids are in amounts of <d>, from <d1> to <d40>; a bid of <d40> cannot be beaten. The player who bid the highest (if any) gets +8<v> and takes the amount of <d> of their bid."
 		},
@@ -2715,6 +2753,7 @@
 			"name" : "Museum",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 2<v> per differently named card you have.",
 			"errata" : "Multiple cards from the same pile can score for this as long as they have different names."
 		},
@@ -2722,6 +2761,7 @@
 			"name" : "Obelisk",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 2<v> per card you have from the chosen pile.\nSetup: Choose a random Action Supply pile.",
 			"errata" : "All cards from the chosen pile count, even if they have different names (such as when it is a split pile). Ruins (from Dominion: Dark Ages), when used, can be the pile."
 		},
@@ -2729,6 +2769,7 @@
 			"name" : "Orchard",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 4<v> per differently named Action card you have 3 or more copies of.",
 			"errata" : "Having 6 or more copies of a card confers no additional bonus."
 		},
@@ -2736,6 +2777,7 @@
 			"name" : "Palace",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 3<v> per set you have of Copper - Silver - Gold.",
 			"errata" : "For example, if you had 7 Coppers, 5 Silvers, and 2 Golds, that would be two sets of Copper - Silver - Gold, for 6<v> total."
 		},
@@ -2743,6 +2785,7 @@
 			"name" : "Tomb",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When you trash a card, +1<v>",
 			"errata" : "This works even when it is not your turn, such as when you trash a card to Swindler (from Dominion: Intrigue), and works when told to trash a card that is not yours, such as with Salt the Earth."
 		},
@@ -2750,6 +2793,7 @@
 			"name" : "Tower",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 1<v> per non-Victory card you have from an empty Supply pile.",
 			"errata" : "A Supply pile is only empty if it has no cards in it; a split pile with half of the cards gone is not empty. Victory cards do not count, but Curses do."
 		},
@@ -2757,6 +2801,7 @@
 			"name" : "Triumphal Arch",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, 3<v> per copy you have of the 2nd most common Action card among your cards (if it's a tie, count either).",
 			"errata" : "For example, if you had 7 copies of Villa and 4 copies of Wild Hunt, you would score 12<v>."
 		},
@@ -2764,6 +2809,7 @@
 			"name" : "Wall",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, -1<v> per card you have after the first 15.",
 			"errata" : "For example, if you had 27 cards in your deck, you would score -12<v> for Wall. Scores can go negative."
 		},
@@ -2771,6 +2817,7 @@
 			"name" : "Wolf Den",
 			"setId" : 13,
 			"isLandmark" : true,
+			"standardCount" : 1,
 			"description" : "When scoring, -3<v> per card you have exactly one copy of.",
 			"errata" : "Having no copies of a card, or two or more copies of a card, confers no penalty. Scores can go negative."
 		},
@@ -3077,6 +3124,7 @@
 			"name" : "Alms",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 0,
 			"description" : "Once per turn: If you have no Treasures in play, gain a card costing up to <4>.",
 			"errata" : "You can only buy this once per turn. When you do, if you have no Treasures in play, you gain a card costing up to <4>. The gained card comes from the Supply and is put into your discard pile."
@@ -3085,6 +3133,7 @@
 			"name" : "Ball",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "Take your -<1> token. Gain 2 cards each costing up to <4>.",
 			"errata" : "When you buy this, you take your -<1> token, which will cause you to get <1> less the next time you get <>; see the Tokens section. Then you gain 2 cards, each costing up to <4>. They can be 2 copies of the same card, or 2 different cards."
@@ -3093,6 +3142,7 @@
 			"name" : "Bonfire",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "Trash up to 2 cards you have in play.",
 			"errata" : "This only trashes cards you have in play, not cards from your hand. You can trash zero, one, or two cards. If you trash Treasures with this, this does not remove the <> you got from playing those Treasures this turn. For example, with 5 Coppers in play and two Buys, you could pay <3> for a Bonfire to trash two of the Coppers, then spend the other on a Peasant."
@@ -3101,6 +3151,7 @@
 			"name" : "Borrow",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 0,
 			"description" : "Once per turn: +1 Buy. If your -1 Card token isn't on your deck, put it there and +<1>.",
 			"errata" : "You can only buy this once per turn. When you do, if your -1 Card token is not on your deck, you put it on your deck and get +<1>. The -1 Card token will cause you to draw one less card the next time you draw cards; see the Tokens section"
@@ -3109,6 +3160,7 @@
 			"name" : "Expedition",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "Draw 2 extra cards for your next hand.",
 			"errata" : "This increases the number of cards you draw in Clean-up of the same turn. It is cumulative. Normally you draw 5 cards; after an Expedition you would draw 7, after two Expeditions you would draw 9, and so on. It only applies for the turn you buy it. If you play Outpost (from Seaside), getting an extra turn with only 3 cards, and also buy Expedition, you add the 2 extra cards onto the base of 3 cards, for 5 cards total."
@@ -3117,6 +3169,7 @@
 			"name" : "Ferry",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "Move your -<2> cost token to an Action SUpply pile. (Cards from that pile cost <2> less on your turns, but not less than <0>.)",
 			"errata" : "When you buy this, you move your -<2> cost token to any Action Supply pile. This token makes cards from that pile cost <2> less, but not less than <0>, on your turns; see the Tokens section."
@@ -3125,6 +3178,7 @@
 			"name" : "Inheritance",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 7,
 			"description" : "Once per game: Set aside a non-Victory Action card from the Supply costing up to <4>. Move your Estate token to it. (Your Estates gain the abilities and types of that card.)",
 			"errata" : "You can only buy this once per game. When you do, set aside a non-Victory Action card from the Supply that costs up to <4>, and put your Estate token on it (the one depicting a house). This is not gaining a card, and does not count for things that care about gaining, such as Treasure Hunter; however at the end of the game, include the card in your deck when scoring. For the rest of the game, all of your Estates have the abilities and types of the set aside card. For example if you set aside a Port, then your Estates are Action - Victory cards, that can be played for +1 Card +2 Actions. This also changes Estates you buy or otherwise gain during the game; if you used Inheritance on a Port and then later bought an Estate, that Estate would come with a Port, just as buying a Port gains you a Port. This only affects your own Estates, not Estates of other players. An Estate is yours if either it started in your deck, or you gained it or bought it, or you were passed it with Masquerade (from Intrigue). An Estate stops being yours if you trash it, return it to the Supply, pass it with Masquerade, or are stopped from gaining it due to Possession (from Alchemy) or Trader (from Hinterlands). There are no limits on the set aside card other than being a non-Victory Action from the Supply costing up to <4>; it may be a Duration card, a Reaction card, and so on. It does not have to continue costing <4>, it only has to cost <4> when set aside. Your Estates are still worth 1 VP when scoring at the end of the game. Your Estates only copy abilities and types; they do not copy cost, name, or what pile they are from (thus they do not trigger tokens like +1 Action on the copied pile, and are not the Bane for Young Witch from Cornucopia even if the copied pile is the Bane). Starting Estates come from the Estates pile."
@@ -3133,6 +3187,7 @@
 			"name" : "Lost Arts",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 6,
 			"description" : "Move your +1 Action token to an Action Supply pile. (When you play a card from that pile, you first get +1 Action.)",
 			"errata" : "When you buy this, you move your +1 Action token to any Action Supply pile. This token gives you +1 Action whenever you play a card from that pile; see the Tokens section."
@@ -3141,6 +3196,7 @@
 			"name" : "Mission",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "Once per turn: If the previous turn wasn't yours, take another turn after this one, during which you can't buy cards.",
 			"errata" : "You can only buy this once per turn. When you do, if the previous turn was not yours - if it was another player's turn before this turn - you take another turn after this turn ends. The extra turn is completely normal except that you cannot buy cards during it. You can still buy Events, and play cards, and gain cards in ways other than buying them (such as gaining a Silver from Amulet), and exchange Travellers. Buying Mission during a turn granted by Mission will not give you another turn, because the previous turn was yours."
@@ -3149,6 +3205,7 @@
 			"name" : "Pathfinding",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 8,
 			"description" : "Move your +1 Card token to an Action Supply pile. (When you play a card from that pile, you first get +1 Card.)",
 			"errata" : "When you buy this, you move your +1 Card token to any Action Supply pile. This token gives you +1 Card whenever you play a card from that pile; see the Tokens section."
@@ -3157,6 +3214,7 @@
 			"name" : "Pilgrimage",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "Once puer turn: Turn your Journey token over (it starts face up); then if it's face up, choose up to 3 differently named cards you have in play and gain a copy of each.",
 			"errata" : "At the start of the game, your Journey token (the one with the boot) is face up. You can only buy this once per turn. When you do, turn your Journey token over. Then if it is face down, nothing more happens. If it is face up, choose up to 3 cards you have in play with different names and gain a copy of each. The copies you gain come from the Supply and are put into your discard pile. So, every other time you buy this, you will gain up to 3 cards. It does not matter what turned over the Journey token; you could turn it face down with Ranger, then face up with Pilgrimage."
@@ -3165,6 +3223,7 @@
 			"name" : "Plan",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "Move your Trashing token to an Action Supply pile. (When you buy a card from that pile, you may trash a card from your hand.)",
 			"errata" : "When you buy this, you move your Trashing token to any Action Supply pile. This token will let you trash a card from your hand when buying a card from that pile; see the Tokens section."
@@ -3173,6 +3232,7 @@
 			"name" : "Quest",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 0,
 			"description" : "You may discard an Attack, two Curses, or Six cards. If you do, gain a Gold.",
 			"errata" : "You may either discard an Attack to gain a Gold, or discard two Curses to gain a Gold, or discard any 6 cards to gain a Gold. The gained Gold is put into your discard pile. You may choose to discard 6 cards despite not having enough cards in hand; you will discard everything and not gain a Gold. You may choose to discard two Curses despite only having one; you will discard that Curse and not gain a Gold."
@@ -3181,6 +3241,7 @@
 			"name" : "Raid",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "Gain a Silver per Silver you have in play. Each other player puts their -1 Card token on their deck.",
 			"errata" : "This Event is like an Attack, but buying it is not playing an Attack, and so cannot be responded to with cards like Moat and Caravan Guard. When you buy this, you gain a Silver for each Silver you have in play; for example, with four Silvers in play, you would gain four Silvers. The Silvers go to your discard pile; if there are not enough left, just take what is left. Then each other player puts their -1 Card token on top of their deck, which will cause those players to draw one less card the next time they draw cards; see the Tokens section"
@@ -3189,6 +3250,7 @@
 			"name" : "Save",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 1,
 			"description" : "Once per turn: +1Buy. Set aside a card from yoiur hand, and put it into your hand at end of turn (after drawing).",
 			"errata" : "You can only buy this once per turn. When you do, you get +1 Buy (letting you buy another Event or a card afterwards), set aside a card from your hand face down (the other players do not get to see it), and put it into your hand at the end of the turn, after drawing your hand for the next turn. For example you might set aside an unplayed Copper, and then after drawing your 5 cards for next turn, add the Copper to your hand."
@@ -3197,6 +3259,7 @@
 			"name" : "Scouting Party",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 2,
 			"description" : "Look at the top 5 cards of your deck. Discard 3 and put the rest back in any order.",
 			"errata" : "",
@@ -3206,6 +3269,7 @@
 			"name" : "Seaway",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "Gain an Action card costing up to <4>. Move your +1 Buy token to its pile. (When you play a card from that pile, you first get +1 Buy.)",
 			"errata" : "When you buy this, first you gain an Action card costing up to <4>. The Action card comes from the Supply and is put into your discard pile. Then move your +1 Buy token to the pile the Action card came from. The token gives you +1 Buy when playing a card from that pile; see the Tokens section. It only matters how much the card costs that you gain; the cost is not checked later. For example you can play Bridge Troll, then use Seaway to gain a Bridge Troll (currently costing <4> due to its own effect), and the token will stay there even when Bridge Troll costs <5> later. You can use Seaway to gain Sir Martin (from Dark Ages) when he is on top of the Knights pile; then your +1 Buy token will be on the Knights pile, even though any remaining Knights will cost <5>. You cannot use Seaway on an empty pile just to move the +1 Buy token; you have to pick a card you can gain."
@@ -3214,6 +3278,7 @@
 			"name" : "Trade",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 0,
 			"description" : "Trash up to 2 card from your hand. Gain a Silver per card you trashed.",
 			"errata" : "You may trash zero, one, or two cards from your hand. For each card you actually trashed, you gain a Silver, putting it into your discard pile."
@@ -3222,6 +3287,7 @@
 			"name" : "Training",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 6,
 			"description" : "Move your +<1> token to an Action Supply pile. (When you play a card from that pile, you first get +<1>.)",
 			"errata" : "When you buy this, you move your +<1> token to any Action Supply pile. This token gives you +<1> whenever you play a card from that pile; see the Tokens section."
@@ -3230,6 +3296,7 @@
 			"name" : "Travelling Fair",
 			"setId" : 14,
 			"isEvent" : true,
+			"standardCount" : 1,
 			"cost" : 2,
 			"description" : "When you gain a card this turn, you may put it onto your deck.",
 			"errata" : "When you buy this, you get +2 Buys (letting you buy more Events or cards afterwards). Then for the rest of the turn, whenever you gain a card, you may put it on your deck. This works on cards you buy, as well as cards gained other ways, such as gaining cards with Ball. It does not work on Travellers exchanged for other cards; exchanging is not gaining. Putting the card on your deck is optional each time you gain a card that turn; you could put some on top and let the others go to your discard pile.",
@@ -4454,7 +4521,7 @@
 	"groupAs" : [
 		{
 			"name" : "Events",
-			"errata" : "Some description for events.",
+			"errata" : "Events are not Kingdom cards. In a player’s Buy phase, when a player can buy a card, they can buy an Event instead. Buying an Event means paying the cost indicated on the Event and then doing the effect of the Event. The Event just stays on the table, the player does not take it; there is no way for players to gain one or end up with one in their decks. Buying an Event uses up a Buy; normally a player can either buy a card, or buy an Event. A player with two Buys, such as after playing Villa, could buy two cards, or buy two Events, or buy a card and an Event (in either order). The same Event can be bought multiple times in a turn if the player has the Buys and <> available to do it. Players cannot play further Treasures that turn after buying an Event. Buying an Event is not buying a card and so does not trigger cards like Charm. Costs of Events are not affected by cards like Bridge (from Dominion: Intrigue).",
 			"cards" : [
 				"Alms",
 				"Ball",
@@ -4475,7 +4542,47 @@
 				"Seaway",
 				"Trade",
 				"Training",
-				"Travelling Fair"
+				"Travelling Fair",
+				"Advance",
+				"Annex",
+				"Banquet",
+				"Conquest",
+				"Delve",
+				"Dominate",
+				"Donate",
+				"Ritual",
+				"Salt the Earth",
+				"Tax",
+				"Triumph",
+				"Wedding",
+				"Windfall"
+			]
+		},
+		{
+			"name" : "Landmarks",
+			"errata" : "Landmarks provide new ways for players to score. Like Events, they are not Kingdom Cards.\nPlayers may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom Cards; or they may use any method they like. Whatever method is used, Landmarks in use are visible to all from the start of the game. We recommend using no more than two per game.\nMany Landmarks only apply when scoring at the end of the game. In addition to counting up their regular points, players add some bonus based on the Landmark. A few are penalties instead - players subtract points from their score.\nSome Landmarks start with 6<v> tokens on them per player in the game. So, 12<v> in a 2-player game, up to 36<v> in a 6-player game. These Landmarks then provide a way for players to get the tokens from the Landmark. When the <v> tokens on the Landmark run out, players cannot earn further points in that way.",
+			"cards" : [
+				"Aqueduct",
+				"Arena",
+				"Bandit Fort",
+				"Basilica",
+				"Baths",
+				"Battlefield",
+				"Colonnade",
+				"Defiled Shrine",
+				"Fountain",
+				"Keep",
+				"Labyrinth",
+				"Mountain Pass",
+				"Museum",
+				"Obelisk",
+				"Orchard",
+				"Palace",
+				"Tomb",
+				"Tower",
+				"Triumphal Arch",
+				"Wall",
+				"Wolf Den"
 			]
 		},
 		{

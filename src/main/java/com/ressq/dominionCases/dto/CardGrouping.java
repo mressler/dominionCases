@@ -39,6 +39,10 @@ public class CardGrouping implements DisplayableCardInfo {
 		this.errata = errata;
 	}
 	
+	public Set<String> getCardNames() {
+		return cardNames;
+	}
+	
 	@Override
 	public Integer getStandardCount() {
 		if (allCardInfo == null) {

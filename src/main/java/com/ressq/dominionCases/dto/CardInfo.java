@@ -1,5 +1,7 @@
 package com.ressq.dominionCases.dto;
 
+import java.util.Optional;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CardInfo implements DisplayableCardInfo {
@@ -7,55 +9,30 @@ public class CardInfo implements DisplayableCardInfo {
 	private String name;
 	
 	private Integer setId;
-	@JsonProperty("isAttack")
-	private Boolean attack;
-	@JsonProperty("isAction")
-	private Boolean action;
-	@JsonProperty("isVictory")
-	private Boolean victory;
-	@JsonProperty("isTreasure")
-	private Boolean treasure;
-	@JsonProperty("isDuration")
-	private Boolean duration;
-	@JsonProperty("isReaction")
-	private Boolean reaction;
-	@JsonProperty("isReserve")
-	private Boolean reserve;
-	@JsonProperty("isEvent")
-	private Boolean event;
-	@JsonProperty("isTraveller")
-	private Boolean traveler;
-	@JsonProperty("isLandmark")
-	private Boolean landmark;
-	@JsonProperty("isState")
-	private Boolean state;
-	@JsonProperty("isHex")
-	private Boolean hex;
-	@JsonProperty("isNight")
-	private Boolean night;
-	@JsonProperty("isSpirit")
-	private Boolean spirit;
-	@JsonProperty("isZombie")
-	private Boolean zombie;
-	@JsonProperty("isFate")
-	private Boolean fate;
-	@JsonProperty("isDoom")
-	private Boolean doom;
-	@JsonProperty("isHeirloom")
-	private Boolean heirloom;
-	@JsonProperty("isBoon")
-	private Boolean boon;
-	@JsonProperty("isOverpay")
-	private Boolean overpay;
-	@JsonProperty("isLooter")
-	private Boolean looter;
-	private Boolean excludeFromSupply;
-	@JsonProperty("isPrize")
-	private Boolean prize;
-	@JsonProperty("isArtifact")
-	private Boolean artifact;
-	@JsonProperty("isProject")
-	private Boolean project;
+	@JsonProperty("isAttack")    private Boolean attack;
+	@JsonProperty("isAction")    private Boolean action;
+	@JsonProperty("isVictory")   private Boolean victory;
+	@JsonProperty("isTreasure")  private Boolean treasure;
+	@JsonProperty("isDuration")  private Boolean duration;
+	@JsonProperty("isReaction")  private Boolean reaction;
+	@JsonProperty("isReserve")   private Boolean reserve;
+	@JsonProperty("isEvent")     private Boolean event;
+	@JsonProperty("isTraveller") private Boolean traveler;
+	@JsonProperty("isLandmark")  private Boolean landmark;
+	@JsonProperty("isState")     private Boolean state;
+	@JsonProperty("isHex")       private Boolean hex;
+	@JsonProperty("isNight")     private Boolean night;
+	@JsonProperty("isSpirit")    private Boolean spirit;
+	@JsonProperty("isZombie")    private Boolean zombie;
+	@JsonProperty("isFate")      private Boolean fate;
+	@JsonProperty("isDoom")      private Boolean doom;
+	@JsonProperty("isHeirloom")  private Boolean heirloom;
+	@JsonProperty("isBoon")      private Boolean boon;
+	@JsonProperty("isOverpay")   private Boolean overpay;
+	@JsonProperty("isLooter")    private Boolean looter;
+	@JsonProperty("isPrize")     private Boolean prize;
+	@JsonProperty("isArtifact")  private Boolean artifact;
+	@JsonProperty("isProject")   private Boolean project;
 	
 	private Integer cost;
 	private Boolean potion;
@@ -72,6 +49,8 @@ public class CardInfo implements DisplayableCardInfo {
 	private Integer victoryPoints;
 	
 	private Integer standardCount;
+	private Boolean excludeFromSupply;
+	private String groupWith;
 	
 	public CardInfo() {}
 	public CardInfo(String name, int count) {
@@ -406,6 +385,14 @@ public class CardInfo implements DisplayableCardInfo {
 
 	public void setStandardCount(Integer standardCount) {
 		this.standardCount = standardCount;
+	}
+	
+	public Optional<String> getGroupWith() {
+		return Optional.ofNullable(groupWith);
+	}
+	
+	public void setGroupWith(String groupWith) {
+		this.groupWith = groupWith;
 	}
 	
 }

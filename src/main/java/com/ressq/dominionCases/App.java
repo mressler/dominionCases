@@ -25,6 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.ressq.dominionCases.dto.CardDatabase;
 import com.ressq.dominionCases.dto.CardInfo;
+import com.ressq.dominionCases.dto.DisplayableCardInfo;
 import com.ressq.dominionCases.shapes.Card;
 import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
@@ -32,8 +33,7 @@ import com.ressq.pdfbox.helpers.PDFStreamLogger;
 import com.ressq.pdfbox.shapes.Rectangle;
 
 /**
- * Hello world!
- *
+ * 
  */
 public class App {
 	
@@ -41,6 +41,59 @@ public class App {
 	private static PDFont trajan;
 	private static PDFont barbedor;
 	
+	public static void main(String[] args) throws IOException 
+	{
+		CardDatabase db = readDatabase();
+		PDDocument masterDoc = new PDDocument();
+		loadResources(masterDoc);
+		
+		LinkedList<DisplayableCardInfo> allCardInfos = db.getCardsForDisplay(true, ci -> ci.getSetId() == 13)
+				.sorted((ci1, ci2) -> ci1.getStandardCount() - ci2.getStandardCount())
+				.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
+		
+//		allCardInfos = Arrays.asList(
+//				db.getCardByName("Village"), 
+//				db.getCardByName("Moat"), 
+//				db.getCardByName("Militia"))
+//			.stream()
+//			.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
+		
+		do {
+			consumeCards(masterDoc, allCardInfos);
+		} while (!allCardInfos.isEmpty());
+
+		// TODO: front/back text
+		// TODO: Second page remainder text that is very short?
+		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
+		
+		masterDoc.save("temp.pdf");
+		masterDoc.close();
+	}
+	
+
+	// THOUGHTS ON RANDOMINION IMPL
+	// Random Recommended set? Only unplayed?
+	// Select number of sets to choose from?
+	// Landmarks?
+	// Events?
+	// # of both? Random? 0-2?
+	// Use Shelters?
+	// Use Platinum/Colony?
+	// Always have a multi-action?
+	// Banned cards?
+	// Allow potion card? If so, how many must there be?
+	// Prefer unplayed cards
+	// Simulated shuffle and grab 10?
+	// Veto Mode
+	// Pick which cards you WANT to have in, randomize the rest
+	// Never want to have in
+	
+	// Played list & when
+	// With who?
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//                                       Helper Methods
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	private static URL getResource(String res) {
 		return App.class.getClassLoader().getResource(res);
 	}
@@ -55,8 +108,7 @@ public class App {
 		return PDImageXObject.createFromFile(coinUrl.getFile(), masterDoc);
 	}
 	
-	public static void main(String[] args) throws IOException 
-	{
+	private static CardDatabase readDatabase() throws IOException {
 		URL cardDBUrl = getResource("dominionCards.json");
 		
 		ObjectMapper om = new ObjectMapper();
@@ -75,9 +127,13 @@ public class App {
 		
 		db.postConstruct();
 		
-		PDDocument masterDoc = new PDDocument();
+		db.getCompoundCards().stream()
+			.forEach(System.out::println);
 		
-		// Load resources
+		return db;
+	}
+	
+	private static void loadResources(PDDocument masterDoc) throws IOException {
 		trajan = loadFontResource(masterDoc, "Trajan Pro Regular.ttf");
 		barbedor = loadFontResource(masterDoc, "Barbedor Regular.ttf");
 		
@@ -86,49 +142,8 @@ public class App {
 			loadImageResource(masterDoc, "potion.png"),
 			loadImageResource(masterDoc, "debt.png"),
 			loadImageResource(masterDoc, "victory.png"));
-		
-		LinkedList<CardInfo> allCardInfos = db.getCards().stream()
-				.collect(Collectors.toCollection(LinkedList<CardInfo>::new));
-		
-		do {
-			consumeCards(masterDoc, allCardInfos);
-		} while (!allCardInfos.isEmpty());
-
-		// TODO: groupWith property & front/back text
-		// TODO: Second page remainder text that is very short?
-		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
-		
-		// First page
-//		pageForCards(
-//			masterDoc,
-//			db.getCardByName("Village"), 
-//			db.getCardByName("Moat"), 
-//			db.getCardByName("Militia")
-//		);
-		
-		//readRegistrationMarks();
-		
-		// Random Recommended set? Only unplayed?
-		// Select number of sets to choose from?
-		// Landmarks?
-		// Events?
-		// # of both? Random? 0-2?
-		// Use Shelters?
-		// Use Platinum/Colony?
-		// Always have a multi-action?
-		// Banned cards?
-		// Allow potion card? If so, how many must there be?
-		// Prefer unplayed cards
-		// Simulated shuffle and grab 10?
-		// Veto Mode
-		
-		// Played list & when
-		// With who?
-		
-		masterDoc.save("temp.pdf");
-		masterDoc.close();
 	}
-	
+
 	@SuppressWarnings("unused")
 	private static void readRegistrationMarks() throws IOException {
 		try (PDDocument regsDoc = PDDocument.load(new File("regMarks.pdf"))) {
@@ -186,12 +201,13 @@ public class App {
 		);
 	}
 
-	private static void consumeCards(PDDocument masterDoc, LinkedList<CardInfo> allCases) throws IOException {
+	private static void consumeCards(PDDocument masterDoc, LinkedList<DisplayableCardInfo> allCases) throws IOException {
 		PDPage helloPage = new PDPage();
 		PDRectangle trimBox = helloPage.getTrimBox();
 		
-		Optional<MultiCardLayout> layoutOpt = layoutForCards(trimBox, allCases, allCases.pop());
-		MultiCardLayout info = layoutOpt.orElseThrow(() -> new IllegalArgumentException("No way to layout"));
+		DisplayableCardInfo thisCase = allCases.pop();
+		Optional<MultiCardLayout> layoutOpt = layoutForCards(trimBox, allCases, thisCase);
+		MultiCardLayout info = layoutOpt.orElseThrow(() -> new IllegalArgumentException("No way to layout. Attempted " + thisCase.getName()));
 		
 		masterDoc.addPage(helloPage);
 		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
@@ -210,17 +226,18 @@ public class App {
 	
 	private static Optional<MultiCardLayout> layoutForCards(
 			PDRectangle trimBox, 
-			LinkedList<CardInfo> allCases, 
-			CardInfo... cardsInLayout) 
+			LinkedList<DisplayableCardInfo> allCases, 
+			DisplayableCardInfo... cardsInLayout) 
 	{
 		Optional<MultiCardLayout> foundLayout = Optional.empty();
 		// Can I take another? If so, take one and lay out additional cards
 		if ((cardsInLayout.length < 3) && !allCases.isEmpty()) {
-			CardInfo nextCard = allCases.pop();
+			DisplayableCardInfo nextCard = allCases.pop();
 			
 			foundLayout = layoutForCards(trimBox, allCases, 
-					Stream.concat(Stream.of(cardsInLayout), Stream.of(nextCard)).toArray(CardInfo[]::new)); // Admittedly a bit verbose to append ONE element to an array
+					Stream.concat(Stream.of(cardsInLayout), Stream.of(nextCard)).toArray(DisplayableCardInfo[]::new)); // Admittedly a bit verbose to append ONE element to an array
 			
+			// If this wasn't successful, then put that card back to be layed out by a later operation
 			if (!foundLayout.isPresent()) {
 				allCases.push(nextCard);
 			}
@@ -247,7 +264,7 @@ public class App {
 		return foundLayout;
 	}
 	
-	private static CardCase caseForCardInfo(CardInfo someInfo) {
+	private static CardCase caseForCardInfo(DisplayableCardInfo someInfo) {
 		return new CardCase(someInfo, imageRepo, trajan, barbedor);
 	}
 }
