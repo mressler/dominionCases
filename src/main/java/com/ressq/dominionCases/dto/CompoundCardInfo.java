@@ -58,38 +58,23 @@ public class CompoundCardInfo implements DisplayableCardInfo {
 	}
 	
 	@Override
-	public Optional<String> getSecondaryErrata() {
-		return getSecondary(CardInfo::getErrata);
+	public Optional<CardInfo> getSecondaryCardInfo() {
+		return getSecondary(Function.identity());
 	}
 
 	@Override
 	public String getName() {
 		return primary.getName();
 	}
-	
-	@Override
-	public Optional<String> getSecondaryName() {
-		return getSecondary(CardInfo::getName);
-	}
 
 	@Override
 	public Integer getCost() {
 		return primary.getCost();
 	}
-	
-	@Override
-	public Optional<Integer> getSecondaryCost() {
-		return getSecondary(CardInfo::getCost);
-	}
 
 	@Override
 	public Integer getDebt() {
 		return primary.getDebt();
-	}
-	
-	@Override
-	public Optional<Integer> getSecondaryDebt() {
-		return getSecondary(CardInfo::getDebt);
 	}
 
 	@Override

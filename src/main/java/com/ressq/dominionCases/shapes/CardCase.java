@@ -5,6 +5,7 @@ import static com.ressq.dominionCases.shapes.Card.*;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.dominionCases.DominionImageRepository;
+import com.ressq.dominionCases.dto.CardInfo;
 import com.ressq.dominionCases.dto.DisplayableCardInfo;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.shapes.Rectangle;
@@ -33,6 +34,8 @@ public class CardCase extends CompositeDrawable {
 		super();
 		
 		thickness = getThicknessFor(cardInfo.getStandardCount());
+		float glueWidth = Math.max(EXTERNAL_GLUE_WIDTH, FOLD_UNDER_WIDTH - thickness);
+		
 		/////////
 		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		bottomFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
@@ -53,6 +56,23 @@ public class CardCase extends CompositeDrawable {
 		mainText.applyTranslation(0, bottom.getHeight());
 		add(mainText);
 		
+		/////////
+		String backText = mainText.getRemainingText();
+		if (backText == null) {
+			backText = cardInfo.getSecondaryCardInfo()
+					.map(CardInfo::getErrata)
+					.orElseGet(cardInfo::getErrata);
+		}
+		
+		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
+		MultiLineText secondaryText = new MultiLineText(
+			backText, 
+			contentFont, mainText.getUsedFontSize(), 7, 
+			workableArea2, imageRepo);
+		secondaryText.applyRotation(Math.PI);
+		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
+		add(secondaryText);
+		
 		// Now apply the CardBody translation since we had used it for the MultiLineText
 		mainCardBody.applyTranslation(0, bottom.getHeight());
 		
@@ -62,8 +82,13 @@ public class CardCase extends CompositeDrawable {
 		add(top);
 
 		/////////
+		String topTextName = cardInfo.getName();
+		if (cardInfo.getSecondaryCardInfo().isPresent()) {
+			topTextName += " / " + cardInfo.getSecondaryCardInfo().get().getName();
+		}
+		
 		ScalableText topText = new ScalableText(
-			cardInfo.getName(), titleFont,
+			topTextName, titleFont,
 			top.getWidth() - TEXT_PADDING * 2, 
 			getThicknessFor(10) - TEXT_PADDING * 2, top.getHeight() - TEXT_PADDING * 2,
 			TextAlignment.CENTER, TextAlignment.CENTER);
@@ -90,7 +115,6 @@ public class CardCase extends CompositeDrawable {
 		add(back);
 		
 		/////////
-		float glueWidth = Math.max(EXTERNAL_GLUE_WIDTH, FOLD_UNDER_WIDTH - thickness);
 		Rectangle externalGlueArea = new Rectangle(glueWidth, WIDTH);
 		externalGlueArea.applyTranslation(-1 * back.getWidth() - externalGlueArea.getWidth(), bottom.getHeight());
 		add(externalGlueArea);
@@ -101,15 +125,6 @@ public class CardCase extends CompositeDrawable {
 		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		add(upsideDownCardBody);
 		
-		/////////
-		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
-		MultiLineText secondaryText = new MultiLineText(
-			mainText.getRemainingText() != null ? mainText.getRemainingText() : cardInfo.getErrata(), 
-			contentFont, mainText.getUsedFontSize(), 7, 
-			workableArea2, imageRepo);
-		secondaryText.applyRotation(Math.PI);
-		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
-		add(secondaryText);
 		
 		// Now apply the CardBody translation since we are finished with it
 		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
@@ -118,9 +133,16 @@ public class CardCase extends CompositeDrawable {
 //		add(workableArea2);
 		
 		/////////
+		DisplayableCardInfo backTopFlapCard;
+		if (cardInfo.getSecondaryCardInfo().isPresent()) {
+			backTopFlapCard = cardInfo.getSecondaryCardInfo().get();
+		} else {
+			backTopFlapCard = cardInfo;
+		}
+		
 		TopFlap upsideDownTopFlap = new TopFlap(
 				SHOULDER_HEIGHT, FLAP_HEIGHT,
-				cardInfo, imageRepo, titleFont);
+				backTopFlapCard, imageRepo, titleFont);
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);

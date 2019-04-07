@@ -62,7 +62,6 @@ public class App {
 			consumeCards(masterDoc, allCardInfos);
 		} while (!allCardInfos.isEmpty());
 
-		// TODO: front/back text
 		// TODO: Second page remainder text that is very short?
 		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
 		

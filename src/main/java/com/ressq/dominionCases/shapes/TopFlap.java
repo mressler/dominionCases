@@ -22,7 +22,7 @@ public class TopFlap extends CompositeDrawable {
 	private MultiPointObject outline;
 	
 	public TopFlap(
-		float width, float height, 
+		float width, float height,
 		DisplayableCardInfo cardInfo, 
 		DominionImageRepository imageRepo, 
 		PDFont titleFont) 
@@ -39,41 +39,45 @@ public class TopFlap extends CompositeDrawable {
 		outline.addPoint(width, 0);
 		add(outline);
 		
+		float usedImageWidth = 0;
+		
 		float coinWidth = height - IMAGE_PADDING * 2;
 		float coinHeight = coinWidth;
-		float debtWidth = 0;
-		float potionWidth = 0;
 		
 		if (cardCost != null) {
 			Image coin = new ImageWithCenteredText(cardCost.toString(), Color.BLACK, imageRepo.getCoinImage(), coinWidth, coinHeight);
 			coin.applyTranslation(height,  (height - coinHeight) / 2);
 			add(coin);
-		} else {
-			coinWidth = 0;
+			
+			usedImageWidth += coinWidth;
 		}
 		
 		if ((cardInfo.getPotion() != null) && cardInfo.getPotion()) {
 			PDImageXObject potion = imageRepo.getPotionImage();
-			potionWidth = coinHeight * potion.getWidth() / potion.getHeight();
+			float potionWidth = coinHeight * potion.getWidth() / potion.getHeight();
 			Image potionImg = new Image(potion, potionWidth, coinHeight);
-			potionImg.applyTranslation(height + coinWidth, (height - coinHeight) / 2);
+			potionImg.applyTranslation(height + usedImageWidth, (height - coinHeight) / 2);
 			add(potionImg);
+			
+			usedImageWidth += potionWidth;
 		}
 		
 		if (cardDebt != null) {
-			debtWidth = coinHeight;
+			float debtWidth = coinHeight;
 			Image debt = new ImageWithCenteredText(cardDebt.toString(), Color.WHITE, imageRepo.getDebtImage(), debtWidth, coinHeight);
-			debt.applyTranslation(height + coinWidth + potionWidth, (height - coinHeight) / 2);
+			debt.applyTranslation(height + usedImageWidth, (height - coinHeight) / 2);
 			add(debt);
+			
+			usedImageWidth += debtWidth;
 		}
 		
 		ScalableText title = new ScalableText(
 				cardInfo.getName(), titleFont, 
-				width - 2 * height - coinWidth - potionWidth - debtWidth - TEXT_PADDING, // Only 1x TEXT_PADDING because the last part is on a slant. Fine to creep in a bit
+				width - 2 * height - usedImageWidth - TEXT_PADDING, // Only 1x TEXT_PADDING because the last part is on a slant. Fine to creep in a bit
 				height - 2 * TEXT_PADDING, height - 2 * TEXT_PADDING,
 				TextAlignment.LEFT, TextAlignment.CENTER);
 		title.applyTranslation(
-				height + coinWidth + potionWidth + debtWidth + TEXT_PADDING, 
+				height + usedImageWidth + TEXT_PADDING, 
 				TEXT_PADDING);
 		add(title);
 	}

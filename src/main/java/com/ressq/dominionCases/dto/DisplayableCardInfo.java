@@ -11,19 +11,7 @@ public interface DisplayableCardInfo {
 	Integer getDebt();
 	Boolean getPotion();
 	
-	default Optional<String> getSecondaryErrata() {
-		return Optional.empty();
-	}
-	
-	default Optional<String> getSecondaryName() {
-		return Optional.empty();
-	}
-	
-	default Optional<Integer> getSecondaryCost() {
-		return Optional.empty();
-	}
-	
-	default Optional<Integer> getSecondaryDebt() {
+	default Optional<CardInfo> getSecondaryCardInfo() {
 		return Optional.empty();
 	}
 	
