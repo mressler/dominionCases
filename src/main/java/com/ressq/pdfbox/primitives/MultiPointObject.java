@@ -1,6 +1,7 @@
 package com.ressq.pdfbox.primitives;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Stream;
 import java.util.stream.Stream.Builder;
@@ -8,14 +9,27 @@ import java.util.stream.Stream.Builder;
 import com.ressq.helpers.BisectClosest;
 import com.ressq.helpers.MinMaxHolder;
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.Tuple;
 
 public class MultiPointObject implements Drawable {
 
+	public static enum DrawMethod {
+		PATH,
+		LINES,
+		NONE;
+	}
+	
 	protected List<Point> corners;
+	protected DrawMethod method;
 	
 	public MultiPointObject(int initialCapacity) {
+		this(initialCapacity, DrawOptions.defaults());
+	}
+	
+	public MultiPointObject(int initialCapacity, EnumSet<DrawOptions> drawOptions) {
 		corners = new ArrayList<Point>(initialCapacity);
+		method = drawOptions.contains(DrawOptions.LINES_NOT_PATHS) ? DrawMethod.LINES : DrawMethod.PATH;
 	}
 	
 	public void add(Point somePoint) {
@@ -38,6 +52,11 @@ public class MultiPointObject implements Drawable {
 
 	@Override
 	public void draw(ContentStream cStream) {
+		if (DrawMethod.LINES.equals(method)) {
+			drawLines(cStream);
+			return;
+		}
+		
 		Stream<Point> allPoints = corners.stream();
 		
 		Point first = corners.get(0);
@@ -47,6 +66,20 @@ public class MultiPointObject implements Drawable {
 		allPoints.forEach(cStream::lineTo);
 		
 		cStream.closeAndStroke();
+	}
+	
+	private void drawLines(ContentStream cStream) {
+		Point begin = corners.get(0);
+		// WTB Streams? How though?
+		for (int i = 1; i <= corners.size(); i++) {
+			Point current = corners.get(i % corners.size());
+			
+			cStream.moveTo(begin);
+			cStream.lineTo(current);
+			cStream.stroke();
+			
+			begin = current;
+		}
 	}
 	
 	public void fill(ContentStream cStream) {

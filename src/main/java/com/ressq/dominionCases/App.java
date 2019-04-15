@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +30,7 @@ import com.ressq.dominionCases.dto.DisplayableCardInfo;
 import com.ressq.dominionCases.shapes.Card;
 import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.PDFStreamLogger;
 import com.ressq.pdfbox.shapes.Rectangle;
 
@@ -264,6 +266,6 @@ public class App {
 	}
 	
 	private static CardCase caseForCardInfo(DisplayableCardInfo someInfo) {
-		return new CardCase(someInfo, imageRepo, trajan, barbedor);
+		return new CardCase(someInfo, imageRepo, trajan, barbedor, EnumSet.of(DrawOptions.LINES_NOT_PATHS, DrawOptions.OUTLINE));
 	}
 }

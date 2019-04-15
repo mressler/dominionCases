@@ -27,6 +27,14 @@ public class ContentStream {
 		}
 	}
 	
+	public void stroke() {
+		try {
+			contentStream.stroke();
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error in stroke.", e);
+		}
+	}
+	
 	public void lineTo(Point somePoint) {
 		try {
 			contentStream.lineTo(somePoint.getX(), somePoint.getY());
