@@ -30,6 +30,9 @@ public class MultiPointObject implements Drawable {
 	public MultiPointObject(int initialCapacity, EnumSet<DrawOptions> drawOptions) {
 		corners = new ArrayList<Point>(initialCapacity);
 		method = drawOptions.contains(DrawOptions.LINES_NOT_PATHS) ? DrawMethod.LINES : DrawMethod.PATH;
+		if (drawOptions.contains(DrawOptions.TEXT_ONLY)) {
+			method = DrawMethod.NONE;
+		}
 	}
 	
 	public void add(Point somePoint) {
@@ -52,6 +55,9 @@ public class MultiPointObject implements Drawable {
 
 	@Override
 	public void draw(ContentStream cStream) {
+		if (DrawMethod.NONE.equals(method)) {
+			return;
+		}
 		if (DrawMethod.LINES.equals(method)) {
 			drawLines(cStream);
 			return;

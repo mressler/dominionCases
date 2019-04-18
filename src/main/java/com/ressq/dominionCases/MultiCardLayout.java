@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 
+import com.ressq.dominionCases.shapes.Card;
 import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 
@@ -56,12 +57,12 @@ public class MultiCardLayout extends CompositeDrawable {
 		
 		if (applyRotations) {
 			cardOne.applyTranslation(
-				- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth,
-				totalHeight / 2 - cardOne.getHeightAboveOrigin());
+				- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth + Card.getThicknessFor(10) / 2,
+				totalHeight / 2 - cardOne.getHeightAboveOrigin() + Card.getThicknessFor(10) / 2);
 			cardTwo.applyRotation(Math.PI);
 			cardTwo.applyTranslation(
-				- totalWidth / 2 + cardTwo.getWidthRightOfOrigin(), 
-				totalHeight / 2 - cardOne.getHeightAboveOrigin());
+				- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() - Card.getThicknessFor(10) / 2, 
+				totalHeight / 2 - cardOne.getHeightAboveOrigin() - Card.getThicknessFor(10) / 2);
 		}
 		
 		return new PDRectangle(totalWidth, totalHeight);
@@ -80,16 +81,16 @@ public class MultiCardLayout extends CompositeDrawable {
 		
 		if (applyRotations) {
 			cardOne.applyTranslation(
-					- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth, 
-					totalHeight / 2 - cardOne.getHeightAboveOrigin());
+					- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth + Card.getThicknessFor(10) / 2, 
+					totalHeight / 2 - cardOne.getHeightAboveOrigin() + Card.getThicknessFor(10));
 			cardTwo.applyRotation(Math.PI);
 			cardTwo.applyTranslation(
-					- totalWidth / 2 + cardTwo.getWidthRightOfOrigin(),
+					- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() - Card.getThicknessFor(10) / 2,
 					totalHeight / 2 - cardOne.getHeightAboveOrigin());
 			cardThree.applyRotation(3 * Math.PI / 2);
 			cardThree.applyTranslation(
-					- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth,
-					totalHeight / 2 - cardOne.getHeightAboveOrigin() - caseThreeTop);
+					- totalWidth / 2 + cardTwo.getWidthRightOfOrigin() + maxFoldWidth + Card.getThicknessFor(10) / 2,
+					totalHeight / 2 - cardOne.getHeightAboveOrigin() - caseThreeTop - Card.getThicknessFor(10) / 2);
 		}
 		
 		return new PDRectangle(totalWidth, totalHeight);
