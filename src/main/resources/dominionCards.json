@@ -2289,7 +2289,8 @@
 			"isVictory" : true,
 			"cost" : 3,
 			"description" : "Sort the Castle pile by cost, putting the more expensive Castles on the bottom. For a 2-players game, use only one of each Castle. Only the top card of the pile can be gained or bought.",
-			"errata" : "Humble Castle and King's Castle count themselves. Small Castle gains you the top Castle, whichever one that is. Haunted Castle works whether you buy it or gain it some other way, provided that it is your turn. You can pick either option on Sprawling Castle regardless of how many Duchies and Estates are left in the piles. Grand Castle counts both Victory cards in play - such as an Opulent Castle - and Victory cards in your hand."
+			"errata" : "Humble Castle and King's Castle count themselves. Small Castle gains you the top Castle, whichever one that is. Haunted Castle works whether you buy it or gain it some other way, provided that it is your turn. You can pick either option on Sprawling Castle regardless of how many Duchies and Estates are left in the piles. Grand Castle counts both Victory cards in play - such as an Opulent Castle - and Victory cards in your hand.",
+			"standardCount" : 12
 		},
 		{
 			"name" : "Catapult",
@@ -2881,7 +2882,8 @@
 			"isReserve" : true,
 			"cost" : 5,
 			"description" : "Put this on your Tavern mat.\nWorth 4<v> if on your Tavern mat at the end of the game (otherwise worth 0<v>).",
-			"errata" : "This is a Victory card. Use 8 for games with 2 players, or 12 for games with 3 or more players. This is also an Action card; when you play it, you put it on your Tavern mat. It will stay there the rest of the game; there is no way to call it. At the end of the game, Distant Lands is worth 4<v> if it is on your mat, or 0<v> if it is not. It counts as part of your deck either way (for example it can contribute to how many <v> a Gardens is worth)."
+			"errata" : "This is a Victory card. Use 8 for games with 2 players, or 12 for games with 3 or more players. This is also an Action card; when you play it, you put it on your Tavern mat. It will stay there the rest of the game; there is no way to call it. At the end of the game, Distant Lands is worth 4<v> if it is on your mat, or 0<v> if it is not. It counts as part of your deck either way (for example it can contribute to how many <v> a Gardens is worth).",
+			"standardCount" : 12
 		},
 		{
 			"name" : "Dungeon",
@@ -3311,7 +3313,8 @@
 			"cost" : 6,
 			"description" : "For the rest of the game, when another player plays an Attack card, it doesn't affect you, and when you play an Action, +1 Action.",
 			"errata" : "Champion stays in play for the rest of the game once played. For the rest of the game, it provides you with an additional +1 Action each time you play an Action, which means you will always be able to play all of your Actions; and it protects you from all further Attacks played (whether you want the protection or not). Champion only protects you from Attacks played after it; for example it does not stop a previously played Swamp Hag from giving you Curses that turn.",
-			"actions" : 1
+			"actions" : 1,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Disciple",
@@ -3321,7 +3324,8 @@
 			"excludeFromSupply" : true,
 			"cost" : 5,
 			"description" : "You may play an Action card from your hand twice. Gain a copy of it.\nWhen you discard this from play, you may exchange it for a Teacher.",
-			"errata" : "Playing an Action card from your hand is optional. If you do play one, you play it twice, then gain a copy of it if possible; gaining the copy is not optional once you have played it. The copy comes from the Supply and is put into your discard pile; if the Action is a non-Supply card, such as Fugitive, you can play it twice, but do not gain a copy of it. This does not use up any extra Actions you were allowed to play due to cards like Port - Disciple itself uses up one Action and that is it. You cannot play any other cards in between resolving the Discipled Action card multiple times, unless that Action card specifically tells you to (such as Disciple itself does). If you Disciple a card that gives you +1 Action, such as Artificer, you will end up with 2 Actions to use afterwards, rather than the one you would have left if you just played two Artificers. If you use Disciple on a Duration card, Disciple will stay in play until the Duration card is discarded."
+			"errata" : "Playing an Action card from your hand is optional. If you do play one, you play it twice, then gain a copy of it if possible; gaining the copy is not optional once you have played it. The copy comes from the Supply and is put into your discard pile; if the Action is a non-Supply card, such as Fugitive, you can play it twice, but do not gain a copy of it. This does not use up any extra Actions you were allowed to play due to cards like Port - Disciple itself uses up one Action and that is it. You cannot play any other cards in between resolving the Discipled Action card multiple times, unless that Action card specifically tells you to (such as Disciple itself does). If you Disciple a card that gives you +1 Action, such as Artificer, you will end up with 2 Actions to use afterwards, rather than the one you would have left if you just played two Artificers. If you use Disciple on a Duration card, Disciple will stay in play until the Duration card is discarded.",
+			"standardCount" : 5
 		},
 		{
 			"name" : "Fugitive",
@@ -3333,7 +3337,8 @@
 			"description" : "Discard a card.\nWhen you discard this from play, you may exchange it for a Disciple.",
 			"errata" : "When you play this, you draw 2 cards, get +1 Action, and then discard a card from your hand. The discarded card does not have to be one of the cards just drawn.",
 			"actions" : 1,
-			"cards" : 2
+			"cards" : 2,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Hero",
@@ -3344,7 +3349,8 @@
 			"cost" : 5,
 			"description" : "Gain a Treasure.\nWhen you discard this from play, you may exchange it for a Champion.",
 			"errata" : "The Treasure comes from the Supply and is put into your discard pile. It can be any Treasure being used that game.",
-			"coins" : 2
+			"coins" : 2,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Soldier",
@@ -3356,7 +3362,8 @@
 			"cost" : 3,
 			"description" : "+<1> per other Attack you have in play. Each other player with 4 or more cards in hand discards a card.\nWhen you discard this from play, you may exchange it for a Fugitive.",
 			"errata" : "This gives +<2>, and then an additional +<1> per other Attack card you have in play. Then each other player with 4 or more cards in hand discards a card. So for example if you play Soldier, then another Soldier, and have an opponent with 5 cards in hand, you will get +<2> and that opponent will discard a card, then you will get +<2> and an extra +<2> while that opponent discards again. Soldier only cares about Attack cards in play, not Attack cards played that turn; for example using Disciple on Soldier will not produce an extra +<1>, because there is no other Attack card in play. Duration Attacks played on the previous turn are Attack cards in play and so do count for Soldier.",
-			"coins" : 2
+			"coins" : 2,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Teacher",
@@ -3366,7 +3373,8 @@
 			"excludeFromSupply" : true,
 			"cost" : 6,
 			"description" : "Put this on your Tavern mat.\nAt the start of your turn, you may call this, to move your +1 Card, +1 Action, +1 Buy, or +<1> token to an Action Supply pile you have no tokens on. (When you play a card from that pile, you must first get that bonus.)",
-			"errata" : "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Teacher, it moves from the mat into play, and you choose your +1 Action, +1 Card, +1 Buy, or +<1> token, and move it to an Action Supplypile that you have no tokens on. The token on the pile means that every time you play a card from that pile, you will get the corresponding bonus - if you put your +1 Action token on a pile, you will get an extra +1 Action when playing a card from that pile. See the Tokens section. This cannot put a token on a pile you have tokens on, including the tokens Teacher places as well as your -<2> cost token and Trashing token. This can put a token on a pile that other players have tokens on. Other things can put tokens on a pile you put a token on with Teacher; it is just Teacher itself that cannot put a token on a pile you have a token on. It is okay if the pile has a token that does not belong to you or anyone, such as an Embargo token (from Seaside) or coin token for Trade Route (from Prosperity). It is okay if you have an Estate token on a card set aside from that pile."
+			"errata" : "When you play this, you get +1 Card and +1 Action, and put it on your Tavern mat. It stays on your mat until you call it, at the start of one of your turns. If multiple things can happen at the start of your turn, you can do them in any order. When you call Teacher, it moves from the mat into play, and you choose your +1 Action, +1 Card, +1 Buy, or +<1> token, and move it to an Action Supplypile that you have no tokens on. The token on the pile means that every time you play a card from that pile, you will get the corresponding bonus - if you put your +1 Action token on a pile, you will get an extra +1 Action when playing a card from that pile. See the Tokens section. This cannot put a token on a pile you have tokens on, including the tokens Teacher places as well as your -<2> cost token and Trashing token. This can put a token on a pile that other players have tokens on. Other things can put tokens on a pile you put a token on with Teacher; it is just Teacher itself that cannot put a token on a pile you have a token on. It is okay if the pile has a token that does not belong to you or anyone, such as an Embargo token (from Seaside) or coin token for Trade Route (from Prosperity). It is okay if you have an Estate token on a card set aside from that pile.",
+			"standardCount" : 5
 		},
 		{
 			"name" : "Treasure Hunter",
@@ -3378,7 +3386,8 @@
 			"description" : "Gain a Silver per card the player to your right gained on their last turn.\nWhen you discard this from play, you may eschange it for a Warrior.",
 			"errata" : "This counts all cards gained, not just bought cards. For example if the player to your right played Amulet, gaining a Silver, then bought a Duchy, you would gain two Silvers. The gained Silvers are put into your discard pile.",
 			"actions" : 1,
-			"coins" : 1
+			"coins" : 1,
+			"standardCount" : 5
 		},
 		{
 			"name" : "Warrior",
@@ -3390,7 +3399,8 @@
 			"cost" : 4,
 			"description" : "Once per Traveller you have in play (including this), each other player discards the top card of their deck and trashes it if it costs <3> or <4>.\nWhen you discard this from play, you may eschange it for a Hero.",
 			"errata" : "Each player, in turn order, discards the appropriate number of cards from the top of their deck, trashing the ones costing <3> or <4>. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you for example have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly <3> or exactly <4>. Cards with <p> in the cost (from Alchemy) do not cost exactly <3> or <4>. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing <3> or <4>). Champion and Teacher are not Travellers.",
-			"cards" : 2
+			"cards" : 2,
+			"standardCount" : 12
 		},
 		{
 			"name" : "Bard",
@@ -3714,7 +3724,8 @@
 			"excludeFromSupply" : true,
 			"cost" : 2,
 			"description" : "Trash up to 2 cards from your hand. If you trashed at least one, exchange this for a Vampire.",
-			"errata" : "The Vampire is put into your discard pile. If there are no Vampires in their pile, you cannot exchange Bat for one, but can still trash cards."
+			"errata" : "The Vampire is put into your discard pile. If there are no Vampires in their pile, you cannot exchange Bat for one, but can still trash cards.",
+			"groupWith" : "Vampire"
 		},
 		{
 			"name" : "Cursed Gold",
@@ -3725,7 +3736,8 @@
 			"description" : "When you play this, gain a Curse.",
 			"errata" : "You can choose not to play Cursed Gold, and thus not gain a Curse.",
 			"coins" : 3,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Pooka"
 		},
 		{
 			"name" : "Ghost",
@@ -3736,7 +3748,8 @@
 			"excludeFromSupply" : true,
 			"cost" : 4,
 			"description" : "Reveal cards from your deck until you reveal an Action. Discard the other cards and set aside the Action. At the start of your next turn, play it twice.",
-			"errata" : "If you run out of cards before revealing an Action, shuffle your discard pile but not the revealed cards, and continue. If you still do not find an Action, just discard everything and do not do anything else. If you find an Action card, you discard the other cards, set the Action card aside, and play it twice at the start of your next turn. This is not optional. If you have multiple start-of-turn effects, you can put them in any order, but when you resolve Ghost, you play the Action twice then; you cannot resolve other effects in the middle. You play the Action card, resolving it completely, then play it a second time. Playing the card does not use up Action plays for the turn. If Ghost plays a Duration card, Ghost will stay out with the Duration card. If Ghost plays a card that trashes itself, it will play it a second time even though the card is no longer in play. If Ghost fails to play a card, it will be discarded from play that turn."
+			"errata" : "If you run out of cards before revealing an Action, shuffle your discard pile but not the revealed cards, and continue. If you still do not find an Action, just discard everything and do not do anything else. If you find an Action card, you discard the other cards, set the Action card aside, and play it twice at the start of your next turn. This is not optional. If you have multiple start-of-turn effects, you can put them in any order, but when you resolve Ghost, you play the Action twice then; you cannot resolve other effects in the middle. You play the Action card, resolving it completely, then play it a second time. Playing the card does not use up Action plays for the turn. If Ghost plays a Duration card, Ghost will stay out with the Duration card. If Ghost plays a card that trashes itself, it will play it a second time even though the card is no longer in play. If Ghost fails to play a card, it will be discarded from play that turn.",
+			"standardCount" : 6
 		},
 		{
 			"name" : "Goat",
@@ -3747,7 +3760,8 @@
 			"description" : "When you play this, you may trash a card from your hand.",
 			"errata" : "Trashing a card if optional.",
 			"coins" : 1,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Pixie"
 		},
 		{
 			"name" : "Haunted Mirror",
@@ -3758,7 +3772,8 @@
 			"description" : "When you trash this, you may discard an Action card to gain a Ghost from its pile.",
 			"errata" : "",
 			"coins" : 1,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Cemetery"
 		},
 		{
 			"name" : "Imp",
@@ -3769,7 +3784,9 @@
 			"cost" : 2,
 			"description" : "You may play an Action card from your hand that you don't have a copy of in play.",
 			"errata" : "After drawing two cards, you can play an Action card from your hand, provided that you do not have a copy of that card in play. It does not matter if you played the Action card this turn, only that it is not in play when you play Imp; you can use Imp to play a card that you played but trashed and so do not have in play, like a Pixie you trashed, but cannot use it to play a card you did not play this turn that is still in play, such as a Secret Cave from your previous turn. Imp normally cannot play an Imp as that is a card you have in play.",
-			"cards" : 2
+			"cards" : 2,
+			"standardCount" : 13,
+			"groupWith" : "Ghost"
 		},
 		{
 			"name" : "Lucky Coin",
@@ -3780,7 +3797,8 @@
 			"description" : "When you play this, gain a Silver.",
 			"errata" : "You can choose not to play Lucky Coin, and thus not gain a Silver.",
 			"coins" : 1,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Fool"
 		},
 		{
 			"name" : "Magic Lamp",
@@ -3791,7 +3809,8 @@
 			"description" : "When you play this, if there are at least 6 cards that you have exactly 1 copy of in play, trash this. If you do, gain 3 Wishes from their pile.",
 			"errata" : "",
 			"coins" : 1,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Secret Cave"
 		},
 		{
 			"name" : "Pasture",
@@ -3803,7 +3822,8 @@
 			"description" : "Worth 1<v> per Estate you have.",
 			"errata" : "For example if you have three Estates, then Pasture is worth 3<v>.",
 			"coins" : 1,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Shepherd"
 		},
 		{
 			"name" : "Pouch",
@@ -3814,7 +3834,8 @@
 			"errata" : "This simply gives you <1> and +1 Buy when you play it.",
 			"coins" : 1,
 			"buys" : 1,
-			"standardCount" : 6
+			"standardCount" : 6,
+			"groupWith" : "Tracker"
 		},
 		{
 			"name" : "Will-o'-Wisp",
@@ -3826,7 +3847,9 @@
 			"description" : "Reveal the top card of your deck. If it costs <2> or less, put it into your hand.",
 			"errata" : "",
 			"actions" : 1,
-			"cards" : 1
+			"cards" : 1,
+			"standardCount" : 12,
+			"groupWith" : "Ghost"
 		},
 		{
 			"name" : "Wish",
@@ -3836,7 +3859,8 @@
 			"cost" : 0,
 			"description" : "Return this to its pile. If you did, gain a card to your hand costing up to <6>.",
 			"errata" : "You only gain a card if you actually returned Wish to its pile. A card you gain that would normally go somewhere else, like Nomad Camp (from Hinterlands), goes to your hand.",
-			"actions" : 1
+			"actions" : 1,
+			"standardCount" : 12
 		},
 		{
 			"name" : "Zombie Apprentice",
@@ -3846,7 +3870,8 @@
 			"cost" : 3,
 			"description" : "You may trash an Action card from your hand for +3 Cards and +1 Action.",
 			"errata" : "If you trash an Action card from your hand, you draw three cards and get +1 Action.",
-			"standardCount" : 1
+			"standardCount" : 1,
+			"groupWith" : "Necromancer"
 		},
 		{
 			"name" : "Zombie Mason",
@@ -3856,7 +3881,8 @@
 			"cost" : 3,
 			"description" : "Trash the top card of your deck. You may gain a card costing up to <1> more than it.",
 			"errata" : "Gaining a card is optional. You can gain a card costing <1> more than the trashed card, or any amount less; for example you can gain a copy of the trashed card.",
-			"standardCount" : 1
+			"standardCount" : 1,
+			"groupWith" : "Necromancer"
 		},
 		{
 			"name" : "Zombie Spy",
@@ -3868,7 +3894,8 @@
 			"errata" : "You draw a card before looking at the top card.",
 			"actions" : 1,
 			"cards" : 1,
-			"standardCount" : 1
+			"standardCount" : 1,
+			"groupWith" : "Necromancer"
 		},
 		{
 			"name" : "Bad Omens",
@@ -3884,7 +3911,7 @@
 			"isState" : true,
 			"description" : "At the start of your Buy phase, return this, and you can't buy Actions this turn.",
 			"errata" : "This prevents you from buying Action cards during one turn, starting in the Buy phase. If you get Deluded during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally it will apply to your next turn.",
-			"standardCount" : 1
+			"standardCount" : 6
 		},
 		{
 			"name" : "Delusion",
@@ -3900,7 +3927,7 @@
 			"isState" : true,
 			"description" : "At the start of your Buy phase, return this, and Silver and Gold make <1> this turn.",
 			"errata" : "This causes Silver and Gold to make <1> when you played in your Buy phase for one turn, rather than their usual <2> and <3>, starting in the Buy phase. It does not affect other Treasures, just Silver and Gold. If you get Envious during your turn before the Buy phase (such as with Leprechaun), it will apply that turn; normally it will apply to your next turn.",
-			"standardCount" : 1
+			"standardCount" : 0
 		},
 		{
 			"name" : "Envy",
@@ -3940,7 +3967,8 @@
 			"isState" : true,
 			"description" : "At the start of your turn, you may discard a card to receive a Boon.",
 			"errata" : "The two sides are the same; use either. Using the ability is optional. Lost in the Woods stays in front of you turn after turn, until another players takes it with a Fool.",
-			"standardCount" : 1
+			"standardCount" : 1,
+			"groupWith" : "Fool"
 		},
 		{
 			"name" : "Miserable",
@@ -3948,7 +3976,7 @@
 			"isState" : true,
 			"errata" : "When scoring at the end of the game, you lose 2<v>. This does nothing until then, it just sits in front of you.",
 			"victoryPoints" : -2,
-			"standardCount" : 1
+			"standardCount" : 6
 		},
 		{
 			"name" : "Misery",
@@ -3988,7 +4016,7 @@
 			"isState" : true,
 			"errata" : "When scoring at the end of the game, you lose 4<v>. This does nothing until then, it just sits in front of you.",
 			"victoryPoints" : -4,
-			"standardCount" : 1
+			"standardCount" : 0
 		},
 		{
 			"name" : "War",
@@ -4117,14 +4145,16 @@
 			"setId" : 16,
 			"isArtifact" : true,
 			"description" : "Once per turn, when you discard a Border Guard from play, you may put it onto your deck.",
-			"standardCount" : 1
+			"standardCount" : 1,
+			"groupWith" : "Border Guard"
 		},
 		{
 			"name" : "Lantern",
 			"setId" : 16,
 			"isArtifact" : true,
 			"description" : "Your Border Guards reveal 3 cards and discard 2. (It takes all 3 being Actions to take the Horn.)",
-			"standardCount" : 1
+			"standardCount" : 1,
+			"groupWith" : "Border Guard"
 		},
 		{
 			"name" : "Cargo Ship",
@@ -4168,7 +4198,9 @@
 			"name" : "Flag",
 			"setId" : 16,
 			"isArtifact" : true,
-			"description" : "When drawing your hand, +1 Card."
+			"description" : "When drawing your hand, +1 Card.",
+			"groupWith" : "Flag Bearer",
+			"standardCount" : 1
 		},
 		{
 			"name" : "Hideout",
@@ -4331,7 +4363,9 @@
 			"name" : "Treasure Chest",
 			"setId" : 16,
 			"isArtifact" : true,
-			"description" : "At the start of your Buy phase, gain a Gold."
+			"description" : "At the start of your Buy phase, gain a Gold.",
+			"groupWith" : "Swashbuckler",
+			"standardCount" : 1
 		},
 		{
 			"name" : "Treasurer",
@@ -4346,7 +4380,9 @@
 			"name" : "Key",
 			"setId" : 16,
 			"isArtifact" : true,
-			"description" : "At the start of your turn, +<1>."
+			"description" : "At the start of your turn, +<1>.",
+			"groupWith" : "Treasurer",
+			"standardCount" : 1
 		},
 		{
 			"name" : "Villain",
@@ -4361,6 +4397,7 @@
 			"name" : "Academy",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "When you gain an Action card, +1 Villager.",
 			"errata" : "This happens whether you gain an Action card due to buying it, or some other way."
@@ -4369,6 +4406,7 @@
 			"name" : "Barracks",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 6,
 			"description" : "At the start of your turn, +1 Action.",
 			"errata" : "You simply have +1 Action on each of your turns."
@@ -4377,6 +4415,7 @@
 			"name" : "Canal",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 7,
 			"description" : "During your turns, cards cost <1> less, but not less than <0>.",
 			"errata" : "During your turns, all cards, including cards in the Supply, in hands, and in Decks, cost <1> less, but not less than <0>. For example if you have Canal and play Villain, other players discard a card costing at least <2>, which could not be Estate, as Estate only costs <1> on your turns."
@@ -4385,6 +4424,7 @@
 			"name" : "Capitalism",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "During your turns, Actions with +<> amounts in their text are also Treasures.",
 			"errata" : "To be affected, a card must have a +<> amount in its text, not just a <> amount - for example, Capitalism turns Improve into a Treasure, but does not affect Inventor. Having Capitalism means you can play any number of Action cards with +<> amounts in your Buy phase (without using up Action plays). It also means that things that interact with Treasure cards also interact with those cards; for example, if you have Capitalism, you can use Treasurer to gain an Improve from the trash, since Improve is a Treasure on your turns. Any time you play an Action - Treasure card, it is both an Action and a Treasure, regardless of which phase it is. Getting +1 Action in your Buy phase does not let you play other Action cards then. Capitalism works on your turn, but affects cards everywhere; for example if you have Capitalism and play Bandit, you could trash another player's Improve, and it is not relevant if that player has Capitalism or not."
@@ -4393,6 +4433,7 @@
 			"name" : "Cathedral",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "At the start of your turn, trash a card from your hand.",
 			"errata" : "Once you have claimed this ability, it is not optional. There is no way to remove your cube"
@@ -4401,6 +4442,7 @@
 			"name" : "Citadel",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 8,
 			"description" : "The first time you play an Action card during each of your turns, play it again afterwards.",
 			"errata" : "Once you've claimed this ability, it is not optional. This can affect an Action card played outside of the Action phase, if it is your first Action card played that turn; for example if you also had Capitalism, you could opt to play a Flag Bearer in your Buy phase as your first play of the turn, and it would still be played twice. Citadel can cause a Duration card to be played twice; you will have to remember that on your next turn."
@@ -4409,6 +4451,7 @@
 			"name" : "City Gate",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "At the start of your turn, +1 Card, then put a card from your hand onto your deck.",
 			"errata" : "First you draw a card; then you put any card from your hand onto your deck."
@@ -4417,6 +4460,7 @@
 			"name" : "Crop Rotation",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 6,
 			"description" : "At the start of your turn, you may discard a Victory card for +2 Cards.",
 			"errata" : "If drawing causes you to shuffle, you will shuffle in the discarded Victory card."
@@ -4425,6 +4469,7 @@
 			"name" : "Exploration",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "At the end of your Buy phase, if you didn’t buy any cards, +1 Coffers and +1 Villager.",
 			"errata" : "This only cares if you bought a card in your Buy phase; it does not care if you gained cards other ways, or if you bought an Event (from Adventures and Empires) or Project. For example if all you buy on your turn is Exploration, you will get +1 Coffers and +1 Villager that turn."
@@ -4433,6 +4478,7 @@
 			"name" : "Fair",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "At the start of your turn, +1 Buy.",
 			"errata" : "You simply have +1 Buy on each of your turns."
@@ -4441,6 +4487,7 @@
 			"name" : "Fleet",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "After the game ends, there’s an extra round of turns just for players with this.",
 			"errata" : "The extra turns go in order starting with the next player after the one that just took a turn. Other extra turns, such as from Outpost (in Seaside) can happen in-between those turns; however after the last extra turn due to Fleet, no other extra turns can happen (since e.g. Outpost does not keep the game going after it ends). Players do not sort through their cards and add up their scores until all of the Fleet turns are done, even the players without Fleet. If the game end conditions are no longer met after Fleet turns, the game is still over."
@@ -4449,6 +4496,7 @@
 			"name" : "Guildhall",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "When you gain a Treasure, +1 Coffers.",
 			"errata" : "This happens whether you gain a Treasure due to buying it, or some other way."
@@ -4457,6 +4505,7 @@
 			"name" : "Innovation",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 6,
 			"description" : "The first time you gain an Action card in each of your turns, you may set it aside. If you do, play it.",
 			"errata" : "This is optional, but only applies to your first Action card gained each turn; whether or not you use Innovation then, you will not be able to use it on subsequent gains that turn. This applies to cards gained due to being bought, or gained other ways. If the first Action card you gain in a turn is in your Buy phase, that means you can play that card even though it is your Buy phase. If it gives you +Actions, that will not let you play more Action cards in your Buy phase; if it draws you Treasures, you can only play them if you have not bought anything yet."
@@ -4465,6 +4514,7 @@
 			"name" : "Pageant",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "At the end of your Buy phase, you may pay <1> for +1 Coffers.",
 			"errata" : "If you have at least <1> that you did not spend, you can spend <1> for +1 Coffers. This only works once per turn."
@@ -4473,6 +4523,7 @@
 			"name" : "Piazza",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "At the start of your turn, reveal the top card of your deck. If it’s an Action, play it.",
 			"errata" : "Once you have claimed this ability, it is not optional. If the revealed card is not an Action, return it to the top of your deck."
@@ -4481,6 +4532,7 @@
 			"name" : "Road Network",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 5,
 			"description" : "When another player gains a Victory card, +1 Card.",
 			"errata" : "This happens every time another player gains a Victory card, whether bought or gained another way, and even if it is your turn."
@@ -4489,6 +4541,7 @@
 			"name" : "Sewers",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "When you trash a card other than with this, you may trash a card from your hand.",
 			"errata" : "This works however you trash the card. For example it works when trashing a card to Priest, when trashing a Curse to Old Witch, when trashing Acting Troupe when playing it, and when trashing a card from the Supply with Lurker (from Intrigue). The card you trash with Sewers must be from your hand, and can be any card in your hand, even if the thing that triggered Sewers could only trash certain cards."
@@ -4497,6 +4550,7 @@
 			"name" : "Silos",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "At the start of your turn, discard any number of Coppers, revealed, and draw that many cards.",
 			"errata" : "First you discard the Coppers, then you draw. So if drawing causes you to shuffle, you will shuffle in the Coppers."
@@ -4505,6 +4559,7 @@
 			"name" : "Sinister Plot",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 4,
 			"description" : "At the start of your turn, add a token here, or remove your tokens here for +1 Card each.",
 			"errata" : "Each player has a separate pile of coin tokens on Sinister Plot; keep yours by your cube. Each turn you either add a token (an unused one, not one from a mat), or remove all of your tokens to draw as many cards."
@@ -4513,6 +4568,7 @@
 			"name" : "Star Chart",
 			"setId" : 16,
 			"isProject" : true,
+			"standardCount" : 1,
 			"cost" : 3,
 			"description" : "When you shuffle, you may pick one of the cards to go on top.",
 			"errata" : "Each time you shuffle, you can look through the cards and pick one to go on top. Shuffle the other cards."
@@ -4587,7 +4643,7 @@
 		},
 		{
 			"name" : "Page",
-			"errata" : "Some description for Page.",
+			"errata" : "When you play Page, you get +1 Card and +1 Action. When you discard it from play, you may return it to its pile and take a Treasure Hunter, putting it into your discard pile. These cards have an arrow over the text box to remind players of their ability to upgrade into another card. When a player discards a Traveller from play, they may exchange it for the card indicated; they return the card being exchanged to its pile, take the card they are exchanging it for, and put that card into their discard pile. For example when exchanging Peasant for Soldier, they put Peasant back into its pile and take a Soldier and put it into their discard pile. Exchanging is not trashing or gaining, and so does not trigger abilities like Travelling Fair's. It is optional. It only happens when the card is discarded from play; discarding it from hand, such as due to not playing it, will not trigger it. It only happens if the card being exchanged for has any copies available; if there are no Soldiers in the pile, Peasant cannot be exchanged at that time. If multiple cards do something when discarded from play, the player picks the order; for example, with no Soldiers left in the pile, a player with Peasant and Soldier in play could first exchange Soldier for Fugitive, then exchange Peasant for that Soldier. Page and Peasant are Kingdom cards that are Travelers.",
 			"cards" : [
 				"Page",
 				"Treasure Hunter",
@@ -4598,13 +4654,83 @@
 		},
 		{
 			"name" : "Peasant",
-			"errata" : "Some description for Peasant.",
+			"errata" : "When you play Peasant, you get +1 Buy and +<1>. When you discard it from play, you may return it to its pile and take a Soldier, putting it into your discard pile. These cards have an arrow over the text box to remind players of their ability to upgrade into another card. When a player discards a Traveller from play, they may exchange it for the card indicated; they return the card being exchanged to its pile, take the card they are exchanging it for, and put that card into their discard pile. For example when exchanging Peasant for Soldier, they put Peasant back into its pile and take a Soldier and put it into their discard pile. Exchanging is not trashing or gaining, and so does not trigger abilities like Travelling Fair's. It is optional. It only happens when the card is discarded from play; discarding it from hand, such as due to not playing it, will not trigger it. It only happens if the card being exchanged for has any copies available; if there are no Soldiers in the pile, Peasant cannot be exchanged at that time. If multiple cards do something when discarded from play, the player picks the order; for example, with no Soldiers left in the pile, a player with Peasant and Soldier in play could first exchange Soldier for Fugitive, then exchange Peasant for that Soldier. Page and Peasant are Kingdom cards that are Travelers.",
 			"cards" : [
 				"Peasant",
 				"Soldier",
 				"Fugitive",
 				"Disciple",
 				"Teacher"
+			]
+		},
+		{
+			"name" : "Boons",
+			"errata" : "Nocturne has Fate cards and Boons. Fate cards can somehow give players Boons; all the Fate type means is that the Boons are shuffled at the start of the game. Boons are a face-down deck of cards that are revealed as needed. The phrase 'receive a Boon' means, turn over the top Boon, and follow the instructions on it. If the Boons deck is empty, first shuffle the discarded Boons to reform the deck; you may also do this any time all Boons are in their discard pile. Received Boons normally go to the Boons discard pile, but three (The Field's Gift, The Forest's Gift, and The River's Gift) go in front of a player until that turn's Clean-up.",
+			"cards" : [
+				"The Earth's Gift",
+				"The Field's Gift",
+				"The Flame's Gift",
+				"The Forest's Gift",
+				"The Moon's Gift",
+				"The Mountain's Gift",
+				"The River's Gift",
+				"The Sea's Gift",
+				"The Sky's Gift",
+				"The Swamp's Gift",
+				"The Sun's Gift",
+				"The Wind's Gift"
+			]
+		},
+		{
+			"name" : "Hexes",
+			"errata" : "Nocturne also has Doom cards and Hexes. Doom cards can somehow give players Hexes; all the Doom type means is that the Hexes are shuffled at the start of the game. Hexes are a face-down deck of cards that are revealed as needed. The phrase 'receive a Hex' means, turn over the top Hex, and follow the instructions on it. 'Each other player receives the next Hex' means, turn over just one Hex, and the other players all follow the instructions on that same Hex. If all Hexes have been used, shuffle the discards to reform the deck; do this whenever the deck is empty. Received Hexes always go to the Hexes discard pile.",
+			"cards" : [
+				"Bad Omens",
+				"Delusion",
+				"Envy",
+				"Famine",
+				"Fear",
+				"Greed",
+				"Haunting",
+				"Locusts",
+				"Misery",
+				"Plague",
+				"Poverty",
+				"War"
+			]
+		},
+		{
+			"name" : "States",
+			"errata" : "Three Hexes and one Kingdom card give players a State; this is a card that goes in front of a player and applies a rule. Deluded and Envious affect a single turn, and then are returned; Miserable and Twice Miserable affect scoring at the end of the game; Lost in the Woods affects one player's turns until another player takes it. Deluded and Envious are on the same card; have the relevant side face-up. Similarly Miserable and Twice Miserable are on the same card. A State only applies while a player has it.",
+			"cards" : [
+				"Deluded",
+				"Miserable"
+			]
+		},
+		{
+			"name" : "Projects",
+			"errata" : "Projects can be shuffled into the randomizer deck (despite having a different back). They are not part of the 10 Kingdom cards used in a game; when a Project is turned over, put it on the table but keep turning over cards until you get 10 Kingdom cards. For normal play we recommend using at most two Projects per game. When using Dominion: Adventures or Dominion: Empires, we recommend using no more than two total from Projects, Events, and Landmarks. Skip any further Project cards turned over. Also skip Projects when using a randomizer card to determine whether or not to use Platinum/Colony (from Prosperity), or Shelters (from Dark Ages) in a game. Projects cannot be Young Witch's bane (from Cornucopia). Another approach some people may prefer is to shuffle Projects (and Events and Landmarks) separately into their own deck, and always play with one or two of them. In games using Projects, each player takes two cubes of one color at the start of the game.",
+			"cards" : [
+				"Academy",
+				"Barracks", 
+				"Canal",
+				"Capitalism",
+				"Cathedral",
+				"Citadel",
+				"City Gate",
+				"Crop Rotation",
+				"Exploration",
+				"Fair",
+				"Fleet",
+				"Guildhall",
+				"Innovation",
+				"Pageant",
+				"Piazza",
+				"Road Network",
+				"Sewers",
+				"Silos",
+				"Sinister Plot",
+				"Star Chart"
 			]
 		}
 	],
