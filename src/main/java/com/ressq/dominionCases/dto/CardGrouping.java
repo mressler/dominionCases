@@ -54,6 +54,13 @@ public class CardGrouping implements DisplayableCardInfo {
 				.reduce(Integer::sum)
 				.orElseThrow(() -> new IllegalArgumentException(""));
 	}
+	
+	@Override
+	public String toString() {
+		return cardNames.stream()
+			.collect(Collectors.joining(" | ", " | ", "")) +
+			" (" + getStandardCount() + ")";
+	}
 
 	@Override
 	public Integer getCost() {

@@ -34,8 +34,6 @@ import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
 import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.PDFStreamLogger;
-import com.ressq.pdfbox.helpers.Tuple;
-import com.ressq.pdfbox.primitives.Point;
 import com.ressq.pdfbox.shapes.Rectangle;
 
 /**
