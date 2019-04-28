@@ -34,6 +34,8 @@ import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
 import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.PDFStreamLogger;
+import com.ressq.pdfbox.helpers.Tuple;
+import com.ressq.pdfbox.primitives.Point;
 import com.ressq.pdfbox.shapes.Rectangle;
 
 /**
@@ -44,6 +46,7 @@ public class App {
 	private static DominionImageRepository imageRepo;
 	private static PDFont trajan;
 	private static PDFont barbedor;
+	private static final double REGISTRATION_INSET = 0.4;
 	
 	public static void main(String[] args) throws IOException 
 	{
@@ -52,7 +55,7 @@ public class App {
 		loadResources(masterDoc);
 		
 		Set<Integer> setIds = new HashSet<>(Arrays.asList(11, 12, 13, 14, 15, 16));
-		Set<String> cardNames = new HashSet<>(Arrays.asList("Peasant", "Landmarks", "Ghost"));
+		Set<String> cardNames = new HashSet<>(Arrays.asList("Tracker", "Pixie", "Shepherd"));
 		
 		LinkedList<DisplayableCardInfo> allCardInfos = db.getCardsForDisplay(true, ci -> setIds.contains(ci.getSetId()) )
 				.filter(dci -> cardNames.contains(dci.getName()))
@@ -157,34 +160,38 @@ public class App {
 	}
 
 	private static void addRegistrationMarksToPage(PDPage somePage, ContentStream drawStream) throws IOException {
-		Rectangle upperLeft = new Rectangle(Card.inchesToPixels(0.20), Card.inchesToPixels(0.20));
+		double squareWidth = 0.2;
+		double regLength = 0.5;
+		double inset = REGISTRATION_INSET;
+		
+		Rectangle upperLeft = new Rectangle(Card.inchesToPixels(squareWidth), Card.inchesToPixels(squareWidth));
 		upperLeft.applyTranslation(
-				Card.inchesToPixels(0.5), 
-				somePage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperLeft.getHeight());
+				Card.inchesToPixels(inset), 
+				somePage.getTrimBox().getHeight() - Card.inchesToPixels(inset) - upperLeft.getHeight());
 		upperLeft.fill(drawStream);
 		
-		Rectangle upperRightH = new Rectangle(Card.inchesToPixels(0.50), 1);
+		Rectangle upperRightH = new Rectangle(Card.inchesToPixels(regLength), 1);
 		upperRightH.applyTranslation(
-				somePage.getTrimBox().getWidth() - Card.inchesToPixels(0.5) - upperRightH.getWidth(), 
-				somePage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperRightH.getHeight());
+				somePage.getTrimBox().getWidth() - Card.inchesToPixels(inset) - upperRightH.getWidth(), 
+				somePage.getTrimBox().getHeight() - Card.inchesToPixels(inset) - upperRightH.getHeight());
 		upperRightH.fill(drawStream);
 		
-		Rectangle upperRightV = new Rectangle(1, Card.inchesToPixels(0.50));
+		Rectangle upperRightV = new Rectangle(1, Card.inchesToPixels(regLength));
 		upperRightV.applyTranslation(
-				somePage.getTrimBox().getWidth() - Card.inchesToPixels(0.5) - upperRightV.getWidth(), 
-				somePage.getTrimBox().getHeight() - Card.inchesToPixels(0.5) - upperRightV.getHeight());
+				somePage.getTrimBox().getWidth() - Card.inchesToPixels(inset) - upperRightV.getWidth(), 
+				somePage.getTrimBox().getHeight() - Card.inchesToPixels(inset) - upperRightV.getHeight());
 		upperRightV.fill(drawStream);
 		
-		Rectangle lowerLeftH = new Rectangle(Card.inchesToPixels(0.50), 1);
+		Rectangle lowerLeftH = new Rectangle(Card.inchesToPixels(regLength), 1);
 		lowerLeftH.applyTranslation(
-				Card.inchesToPixels(0.5), 
-				Card.inchesToPixels(0.5));
+				Card.inchesToPixels(inset), 
+				Card.inchesToPixels(inset));
 		lowerLeftH.fill(drawStream);
 		
-		Rectangle lowerLeftV = new Rectangle(1, Card.inchesToPixels(0.50));
+		Rectangle lowerLeftV = new Rectangle(1, Card.inchesToPixels(regLength));
 		lowerLeftV.applyTranslation(
-				Card.inchesToPixels(0.5), 
-				Card.inchesToPixels(0.5));
+				Card.inchesToPixels(inset), 
+				Card.inchesToPixels(inset));
 		lowerLeftV.fill(drawStream);
 	}
 	
@@ -217,6 +224,13 @@ public class App {
 		
 		float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
 		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
+		
+		Tuple<Point, Point> objectSize = info.getBoundingBox();
+		float objectCenterX = (objectSize.y.getX() + objectSize.x.getX()) / 2;
+		float objectCenterY = (objectSize.y.getY() + objectSize.x.getY()) / 2;
+		
+		centerX -= objectCenterX;
+		centerY -= objectCenterY;
 		
 		info.applyTranslation(centerX, centerY);
 		info.draw(drawStream);
@@ -251,8 +265,8 @@ public class App {
 					.map(App::caseForCardInfo)
 					.collect(Collectors.toList()));
 			
-			if ((maxCardLayout.getWidth() < trimBox.getWidth()) && 
-				(maxCardLayout.getHeight() < trimBox.getHeight())) 
+			if ((maxCardLayout.getWidth() < trimBox.getWidth() - Card.inchesToPixels(REGISTRATION_INSET) * 2) && 
+				(maxCardLayout.getHeight() < trimBox.getHeight() - Card.inchesToPixels(REGISTRATION_INSET) * 2)) 
 			{
 				return Optional.of(maxCardLayout);
 			} else {
