@@ -10,6 +10,11 @@ public class Point implements Transformable {
 		this.y = y;
 	}
 	
+	@Override
+	public String toString() {
+		return "[" + x + ", " + y + "]";
+	}
+	
 	public void applyRotation(double theta) {
 		Double xPrime = x * Math.cos(theta) - y * Math.sin(theta);
 		Double yPrime = y * Math.cos(theta) + x * Math.sin(theta);
