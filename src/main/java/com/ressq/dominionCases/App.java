@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.EnumSet;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -32,6 +34,8 @@ import com.ressq.dominionCases.shapes.CardCase;
 import com.ressq.pdfbox.helpers.ContentStream;
 import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.PDFStreamLogger;
+import com.ressq.pdfbox.helpers.Tuple;
+import com.ressq.pdfbox.primitives.Point;
 import com.ressq.pdfbox.shapes.Rectangle;
 
 /**
@@ -49,16 +53,13 @@ public class App {
 		PDDocument masterDoc = new PDDocument();
 		loadResources(masterDoc);
 		
-		LinkedList<DisplayableCardInfo> allCardInfos = db.getCardsForDisplay(true, ci -> ci.getSetId() == 13)
+		Set<Integer> setIds = new HashSet<>(Arrays.asList(11, 12, 13, 14, 15, 16));
+		Set<String> cardNames = new HashSet<>(Arrays.asList("Peasant", "Landmarks", "Ghost"));
+		
+		LinkedList<DisplayableCardInfo> allCardInfos = db.getCardsForDisplay(true, ci -> setIds.contains(ci.getSetId()) )
+				.filter(dci -> cardNames.contains(dci.getName()))
 				.sorted((ci1, ci2) -> ci1.getStandardCount() - ci2.getStandardCount())
 				.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
-		
-//		allCardInfos = Arrays.asList(
-//				db.getCardByName("Village"), 
-//				db.getCardByName("Moat"), 
-//				db.getCardByName("Militia"))
-//			.stream()
-//			.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
 		
 		do {
 			consumeCards(masterDoc, allCardInfos);
@@ -266,6 +267,6 @@ public class App {
 	}
 	
 	private static CardCase caseForCardInfo(DisplayableCardInfo someInfo) {
-		return new CardCase(someInfo, imageRepo, trajan, barbedor, EnumSet.of(DrawOptions.LINES_NOT_PATHS, DrawOptions.OUTLINE));
+		return new CardCase(someInfo, imageRepo, trajan, barbedor, EnumSet.noneOf(DrawOptions.class)); //EnumSet.of(DrawOptions.LINES_NOT_PATHS, DrawOptions.OUTLINE)); //EnumSet.of(DrawOptions.TEXT_ONLY)); //
 	}
 }
