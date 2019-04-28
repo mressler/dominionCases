@@ -3264,7 +3264,7 @@
 			"standardCount" : 1,
 			"cost" : 2,
 			"description" : "Look at the top 5 cards of your deck. Discard 3 and put the rest back in any order.",
-			"errata" : "",
+			"errata" : "When you buy this you get +1 Buy (letting you buy another Event or a card afterwards). Then look at the top 5 cards of your deck, discarding 3 and putting the rest on top of your deck in any order. If there are fewer than 5 cards, you still discard 3; if there are 3 or fewer cards, they are all discarded. Scouting Party is unaffected by the -1 Card token; if it is on top of your deck, replace it after resolving Scouting Party.",
 			"buys" : 1
 		},
 		{
@@ -3770,7 +3770,7 @@
 			"isHeirloom" : true,
 			"cost" : 0,
 			"description" : "When you trash this, you may discard an Action card to gain a Ghost from its pile.",
-			"errata" : "",
+			"errata" : "Haunted Mirror does not give you a way to trash it, but does something if you find a way to.",
 			"coins" : 1,
 			"standardCount" : 6,
 			"groupWith" : "Cemetery"
@@ -3807,7 +3807,7 @@
 			"isHeirloom" : true,
 			"cost" : 0,
 			"description" : "When you play this, if there are at least 6 cards that you have exactly 1 copy of in play, trash this. If you do, gain 3 Wishes from their pile.",
-			"errata" : "",
+			"errata" : "Magic Lamp itself counts as one of the six cards. A card you have two or more copies of in play does not count; you have to have exactly one copy in play to count a card. You can play more Treasures after trashing Magic Lamp, and still got <1> from it for that turn.",
 			"coins" : 1,
 			"standardCount" : 6,
 			"groupWith" : "Secret Cave"
@@ -3845,7 +3845,7 @@
 			"excludeFromSupply" : true,
 			"cost" : 0,
 			"description" : "Reveal the top card of your deck. If it costs <2> or less, put it into your hand.",
-			"errata" : "",
+			"errata" : "If the revealed card does not cost <2> or less, leave it on your deck. Cards with <p> or <d> in the cost (from Alchemy and Empires) do not cost <2> or less.",
 			"actions" : 1,
 			"cards" : 1,
 			"standardCount" : 12,
@@ -4704,7 +4704,9 @@
 			"errata" : "Three Hexes and one Kingdom card give players a State; this is a card that goes in front of a player and applies a rule. Deluded and Envious affect a single turn, and then are returned; Miserable and Twice Miserable affect scoring at the end of the game; Lost in the Woods affects one player's turns until another player takes it. Deluded and Envious are on the same card; have the relevant side face-up. Similarly Miserable and Twice Miserable are on the same card. A State only applies while a player has it.",
 			"cards" : [
 				"Deluded",
-				"Miserable"
+				"Envious",
+				"Miserable",
+				"Twice Miserable"
 			]
 		},
 		{
