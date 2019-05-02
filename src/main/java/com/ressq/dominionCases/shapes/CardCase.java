@@ -1,15 +1,15 @@
 package com.ressq.dominionCases.shapes;
 
-import static com.ressq.dominionCases.shapes.Card.*;
-
-import java.util.EnumSet;
+import static com.ressq.dominionCases.shapes.Card.HEIGHT;
+import static com.ressq.dominionCases.shapes.Card.WIDTH;
+import static com.ressq.dominionCases.shapes.Card.getThicknessFor;
+import static com.ressq.dominionCases.shapes.Card.inchesToPixels;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.dominionCases.DominionImageRepository;
 import com.ressq.dominionCases.dto.CardInfo;
 import com.ressq.dominionCases.dto.DisplayableCardInfo;
-import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.primitives.CompositeDrawable;
 import com.ressq.pdfbox.shapes.Rectangle;
 import com.ressq.pdfbox.text.MultiLineText;
@@ -29,118 +29,113 @@ public class CardCase extends CompositeDrawable {
 	private CardBody mainCardBody;
 	private float foldWidth;
 	private float thickness;
+	private Integer cardCount;
 	
 	public CardCase(
 			DisplayableCardInfo cardInfo, 
-			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont,
-			EnumSet<DrawOptions> options) 
+			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
 	{
 		super();
 		
-		thickness = getThicknessFor(cardInfo.getStandardCount());
+		cardCount = cardInfo.getStandardCount();
+		thickness = getThicknessFor(cardCount);
 		float glueWidth = Math.max(EXTERNAL_GLUE_WIDTH, FOLD_UNDER_WIDTH - thickness);
 		
 		/////////
-		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness, options);
+		Rectangle bottomFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		bottomFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, 0);
 		add(bottomFoldUnder);
 		
 		/////////
-		Rectangle bottom = new Rectangle(SHOULDER_HEIGHT, thickness, options);
+		Rectangle bottom = new Rectangle(SHOULDER_HEIGHT, thickness);
 		add(bottom);
 		
 		/////////
-		mainCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT, options);
+		mainCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		add(mainCardBody);
 
 		///////// Front & Back Text
-		if (!options.contains(DrawOptions.OUTLINE)) {
-			MultiLineText mainText = new MultiLineText(
-				cardInfo.getErrata(), contentFont, 14, 7, 
-				mainCardBody, imageRepo);
-			mainText.applyTranslation(0, bottom.getHeight());
-			add(mainText);
-			
-			/////////
-			String backText = mainText.getRemainingText();
-			if (backText == null) {
-				backText = cardInfo.getSecondaryCardInfo()
-						.map(CardInfo::getErrata)
-						.orElseGet(cardInfo::getErrata);
-			}
-			
-			Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
-			MultiLineText secondaryText = new MultiLineText(
-				backText, 
-				contentFont, mainText.getUsedFontSize(), 7, 
-				workableArea2, imageRepo);
-			secondaryText.applyRotation(Math.PI);
-			secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
-			add(secondaryText);
+		MultiLineText mainText = new MultiLineText(
+			cardInfo.getErrata(), contentFont, 14, 7, 
+			mainCardBody, imageRepo);
+		mainText.applyTranslation(0, bottom.getHeight());
+		add(mainText);
+		
+		/////////
+		String backText = mainText.getRemainingText();
+		if (backText == null) {
+			backText = cardInfo.getSecondaryCardInfo()
+					.map(CardInfo::getErrata)
+					.orElseGet(cardInfo::getErrata);
 		}
+		
+		Rectangle workableArea2 = new Rectangle(SHOULDER_HEIGHT - glueWidth, mainCardBody.getHeight());
+		MultiLineText secondaryText = new MultiLineText(
+			backText, 
+			contentFont, mainText.getUsedFontSize(), 7, 
+			workableArea2, imageRepo);
+		secondaryText.applyRotation(Math.PI);
+		secondaryText.applyTranslation(secondaryText.getWidth() + glueWidth, 0);
+		add(secondaryText);
 		
 		// Now apply the CardBody translation since we had used it for the MultiLineText
 		mainCardBody.applyTranslation(0, bottom.getHeight());
 		
 		/////////
-		Rectangle top = new Rectangle(SHOULDER_HEIGHT, thickness, options);
+		Rectangle top = new Rectangle(SHOULDER_HEIGHT, thickness);
 		top.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight());
 		add(top);
 
 		/////////
-		if (!options.contains(DrawOptions.OUTLINE)) {
-			String topTextName = cardInfo.getName();
-			if (cardInfo.getSecondaryCardInfo().isPresent()) {
-				topTextName += " / " + cardInfo.getSecondaryCardInfo().get().getName();
-			}
-			
-			ScalableText topText = new ScalableText(
-				topTextName, titleFont,
-				top.getWidth() - TEXT_PADDING * 2, 
-				getThicknessFor(10) - TEXT_PADDING * 2, top.getHeight() - TEXT_PADDING * 2,
-				TextAlignment.CENTER, TextAlignment.CENTER);
-			topText.applyTranslation(
-				TEXT_PADDING, 
-				bottom.getHeight() + mainCardBody.getHeight() + TEXT_PADDING);
-			add(topText);
+		String topTextName = cardInfo.getName();
+		if (cardInfo.getSecondaryCardInfo().isPresent()) {
+			topTextName += " / " + cardInfo.getSecondaryCardInfo().get().getName();
 		}
+		
+		ScalableText topText = new ScalableText(
+			topTextName, titleFont,
+			top.getWidth() - TEXT_PADDING * 2, 
+			getThicknessFor(10) - TEXT_PADDING * 2, top.getHeight() - TEXT_PADDING * 2,
+			TextAlignment.CENTER, TextAlignment.CENTER);
+		topText.applyTranslation(
+			TEXT_PADDING, 
+			bottom.getHeight() + mainCardBody.getHeight() + TEXT_PADDING);
+		add(topText);
 		
 		/////////
 		TopFlap topFlap = new TopFlap(
 			SHOULDER_HEIGHT, FLAP_HEIGHT,
-			cardInfo, imageRepo, titleFont,
-			options);
+			cardInfo, imageRepo, titleFont);
 		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
 		add(topFlap);
 		
 		/////////
-		Rectangle topFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness, options);
+		Rectangle topFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		topFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, bottom.getHeight() + mainCardBody.getHeight());
 		add(topFoldUnder);
 		
 		/////////
-		Rectangle back = new Rectangle(thickness, WIDTH, options);
+		Rectangle back = new Rectangle(thickness, WIDTH);
 		back.applyTranslation(-1 * thickness, bottom.getHeight());
 		add(back);
 		
-		if (!options.contains(DrawOptions.OUTLINE)) {
-			ScalableText cardCount = new ScalableText(
-					cardInfo.getStandardCount().toString(), titleFont, 
-					WIDTH, thickness - TEXT_PADDING * 2, thickness, TextAlignment.CENTER, TextAlignment.CENTER);
-			cardCount.applyRotation(Math.PI / 2);
-			cardCount.applyTranslation(0, bottom.getHeight());
-			add(cardCount);
-		}
+		ScalableText cardCount = new ScalableText(
+				cardInfo.getStandardCount().toString(), titleFont, 
+				WIDTH, thickness - TEXT_PADDING * 2, thickness, TextAlignment.CENTER, TextAlignment.CENTER);
+		cardCount.disregardDrawOptions();
+		cardCount.applyRotation(Math.PI / 2);
+		cardCount.applyTranslation(0, bottom.getHeight());
+		add(cardCount);
 		
 		/////////
-		Rectangle externalGlueArea = new Rectangle(glueWidth, WIDTH, options);
+		Rectangle externalGlueArea = new Rectangle(glueWidth, WIDTH);
 		externalGlueArea.applyTranslation(-1 * back.getWidth() - externalGlueArea.getWidth(), bottom.getHeight());
 		add(externalGlueArea);
 		
 		foldWidth = glueWidth + thickness;
 		
 		/////////
-		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT, options);
+		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		add(upsideDownCardBody);
 		
 		
@@ -160,8 +155,7 @@ public class CardCase extends CompositeDrawable {
 		
 		TopFlap upsideDownTopFlap = new TopFlap(
 				SHOULDER_HEIGHT, FLAP_HEIGHT,
-				backTopFlapCard, imageRepo, titleFont,
-				options);
+				backTopFlapCard, imageRepo, titleFont);
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);
@@ -191,6 +185,10 @@ public class CardCase extends CompositeDrawable {
 	
 	public float getWidthRightOfOrigin() {
 		return mainCardBody.getWidth();
+	}
+	
+	public Integer getCardCount() {
+		return cardCount;
 	}
 	
 }

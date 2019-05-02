@@ -13,26 +13,11 @@ import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.Tuple;
 
 public class MultiPointObject implements Drawable {
-
-	public static enum DrawMethod {
-		PATH,
-		LINES,
-		NONE;
-	}
 	
 	protected List<Point> corners;
-	protected DrawMethod method;
 	
 	public MultiPointObject(int initialCapacity) {
-		this(initialCapacity, DrawOptions.defaults());
-	}
-	
-	public MultiPointObject(int initialCapacity, EnumSet<DrawOptions> drawOptions) {
 		corners = new ArrayList<Point>(initialCapacity);
-		method = drawOptions.contains(DrawOptions.LINES_NOT_PATHS) ? DrawMethod.LINES : DrawMethod.PATH;
-		if (drawOptions.contains(DrawOptions.TEXT_ONLY)) {
-			method = DrawMethod.NONE;
-		}
 	}
 	
 	public void add(Point somePoint) {
@@ -54,11 +39,11 @@ public class MultiPointObject implements Drawable {
 	}
 
 	@Override
-	public void draw(ContentStream cStream) {
-		if (DrawMethod.NONE.equals(method)) {
+	public void draw(ContentStream cStream, EnumSet<DrawOptions> drawOptions) {
+		if (drawOptions.contains(DrawOptions.TEXT_ONLY)) {
 			return;
 		}
-		if (DrawMethod.LINES.equals(method)) {
+		if (drawOptions.contains(DrawOptions.LINES_NOT_PATHS)) {
 			drawLines(cStream);
 			return;
 		}

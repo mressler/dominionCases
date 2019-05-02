@@ -1,6 +1,7 @@
 package com.ressq.dominionCases;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 
@@ -12,8 +13,13 @@ public class MultiCardLayout extends CompositeDrawable {
 
 	public float totalWidth;
 	public float totalHeight;
+	private List<Integer> cardAmounts;
 	
 	public MultiCardLayout(List<CardCase> cards) {
+		cardAmounts = cards.stream()
+			.map(CardCase::getCardCount)
+			.collect(Collectors.toList());
+		
 		switch (cards.size()) {
 		case 1:
 			getSizeFor(cards.get(0), true);
@@ -94,6 +100,20 @@ public class MultiCardLayout extends CompositeDrawable {
 		}
 		
 		return new PDRectangle(totalWidth, totalHeight);
+	}
+	
+	@Override
+	public int hashCode() {
+		return cardAmounts.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof MultiCardLayout) {
+			MultiCardLayout rhs = (MultiCardLayout) obj;
+			return cardAmounts.equals(rhs.cardAmounts);
+		}
+		return false;
 	}
 	
 }

@@ -1,6 +1,5 @@
 package com.ressq.pdfbox.primitives;
 
-import com.ressq.pdfbox.helpers.ContentStream;
 import com.ressq.pdfbox.helpers.Tuple;
 import com.ressq.pdfbox.shapes.Rectangle;
 
@@ -33,8 +32,5 @@ public abstract class BottomLeftAware implements Drawable {
 		
 		return boundingBox.getBoundingBox();
 	}
-
-	@Override
-	public abstract void draw(ContentStream cStream);
 
 }

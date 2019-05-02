@@ -1,11 +1,13 @@
 package com.ressq.pdfbox.primitives;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Stream;
 
 import com.ressq.helpers.MinMaxHolder;
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.Tuple;
 
 public abstract class CompositeDrawable implements Drawable {
@@ -31,8 +33,8 @@ public abstract class CompositeDrawable implements Drawable {
 	}
 
 	@Override
-	public void draw(ContentStream cStream) {
-		components.stream().forEach(p -> p.draw(cStream));
+	public void draw(ContentStream cStream, EnumSet<DrawOptions> drawOptions) {
+		components.stream().forEach(p -> p.draw(cStream, drawOptions));
 	}
 	
 	@Override

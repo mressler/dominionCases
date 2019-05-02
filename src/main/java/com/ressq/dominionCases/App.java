@@ -11,13 +11,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
@@ -58,13 +56,42 @@ public class App {
 		Set<String> cardNames = new HashSet<>(Arrays.asList("Tracker", "Pixie", "Shepherd"));
 		
 		LinkedList<DisplayableCardInfo> allCardInfos = db.getCardsForDisplay(true, ci -> setIds.contains(ci.getSetId()) )
-				.filter(dci -> cardNames.contains(dci.getName()))
+				//.filter(dci -> cardNames.contains(dci.getName()))
 				.sorted((ci1, ci2) -> ci1.getStandardCount() - ci2.getStandardCount())
 				.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
-		
+
+		// Layout the cards
+		PDPage helloPage = new PDPage();
+		PDRectangle trimBox = helloPage.getTrimBox();
+		List<MultiCardLayout> allLayouts = new LinkedList<MultiCardLayout>();
 		do {
-			consumeCards(masterDoc, allCardInfos);
+			DisplayableCardInfo thisCase = allCardInfos.pop();
+			Optional<MultiCardLayout> layoutOpt = layoutForCards(trimBox, allCardInfos, thisCase);
+			MultiCardLayout info = layoutOpt.orElseThrow(() -> new IllegalArgumentException("No way to layout. Attempted " + thisCase.getName()));
+			allLayouts.add(info);
 		} while (!allCardInfos.isEmpty());
+		
+		// Print the cards
+		allLayouts.stream().forEach(mcl -> {
+			printLayout(
+				masterDoc, 
+				EnumSet.noneOf(DrawOptions.class),
+				mcl);
+		});
+		allLayouts.stream().forEach(mcl -> {
+			printLayout(
+				masterDoc, 
+				EnumSet.of(DrawOptions.TEXT_ONLY),
+				mcl);
+		});
+		allLayouts.stream()
+			.distinct()
+			.forEach(mcl -> {
+			printLayout(
+				masterDoc, 
+				EnumSet.of(DrawOptions.LINES_NOT_PATHS, DrawOptions.OUTLINE),
+				mcl);
+		});
 
 		// TODO: Second page remainder text that is very short?
 		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
@@ -159,7 +186,7 @@ public class App {
 		}
 	}
 
-	private static void addRegistrationMarksToPage(PDPage somePage, ContentStream drawStream) throws IOException {
+	private static void addRegistrationMarksToPage(PDPage somePage, ContentStream drawStream) {
 		double squareWidth = 0.2;
 		double regLength = 0.5;
 		double inset = REGISTRATION_INSET;
@@ -194,48 +221,32 @@ public class App {
 				Card.inchesToPixels(inset));
 		lowerLeftV.fill(drawStream);
 	}
-	
-	@SuppressWarnings("unused")
-	private static void pageForCards(PDDocument masterDoc, CardInfo... allCards) throws IOException {
-		consumeCards(masterDoc, 
-			Arrays.asList(allCards).stream()
-				.collect(Collector.of(
-					LinkedList::new, 
-					List::add,
-					(left, right) -> { left.addAll(right); return left; }
-				)
-			)
-		);
-	}
 
-	private static void consumeCards(PDDocument masterDoc, LinkedList<DisplayableCardInfo> allCases) throws IOException {
+	private static void printLayout(
+			PDDocument masterDoc, 
+			EnumSet<DrawOptions> drawOptions, 
+			MultiCardLayout layout)
+	{
 		PDPage helloPage = new PDPage();
 		PDRectangle trimBox = helloPage.getTrimBox();
 		
-		DisplayableCardInfo thisCase = allCases.pop();
-		Optional<MultiCardLayout> layoutOpt = layoutForCards(trimBox, allCases, thisCase);
-		MultiCardLayout info = layoutOpt.orElseThrow(() -> new IllegalArgumentException("No way to layout. Attempted " + thisCase.getName()));
-		
 		masterDoc.addPage(helloPage);
-		PDPageContentStream cStream = new PDPageContentStream(masterDoc, helloPage);
-		ContentStream drawStream = new ContentStream(cStream);
-		
-		addRegistrationMarksToPage(helloPage, drawStream);
-		
-		float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
-		float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
-		
-		Tuple<Point, Point> objectSize = info.getBoundingBox();
-		float objectCenterX = (objectSize.y.getX() + objectSize.x.getX()) / 2;
-		float objectCenterY = (objectSize.y.getY() + objectSize.x.getY()) / 2;
-		
-		centerX -= objectCenterX;
-		centerY -= objectCenterY;
-		
-		info.applyTranslation(centerX, centerY);
-		info.draw(drawStream);
-		
-		cStream.close();
+		try (ContentStream drawStream = new ContentStream(masterDoc, helloPage)) {
+			addRegistrationMarksToPage(helloPage, drawStream);
+			
+			float centerX = trimBox.getWidth() / 2 + trimBox.getLowerLeftX();
+			float centerY = trimBox.getHeight() / 2 + trimBox.getLowerLeftY();
+			
+			Tuple<Point, Point> objectSize = layout.getBoundingBox();
+			float objectCenterX = (objectSize.y.getX() + objectSize.x.getX()) / 2;
+			float objectCenterY = (objectSize.y.getY() + objectSize.x.getY()) / 2;
+			
+			centerX -= objectCenterX;
+			centerY -= objectCenterY;
+			
+			layout.applyTranslation(centerX, centerY);
+			layout.draw(drawStream, drawOptions);
+		}
 	}
 	
 	private static Optional<MultiCardLayout> layoutForCards(
@@ -279,6 +290,6 @@ public class App {
 	}
 	
 	private static CardCase caseForCardInfo(DisplayableCardInfo someInfo) {
-		return new CardCase(someInfo, imageRepo, trajan, barbedor, EnumSet.noneOf(DrawOptions.class)); //EnumSet.of(DrawOptions.LINES_NOT_PATHS, DrawOptions.OUTLINE)); //EnumSet.of(DrawOptions.TEXT_ONLY)); //
+		return new CardCase(someInfo, imageRepo, trajan, barbedor);
 	}
 }

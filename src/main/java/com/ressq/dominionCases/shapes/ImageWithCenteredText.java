@@ -1,11 +1,13 @@
 package com.ressq.dominionCases.shapes;
 
 import java.awt.Color;
+import java.util.EnumSet;
 
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.helpers.FontInfo;
 import com.ressq.pdfbox.primitives.Image;
 import com.ressq.pdfbox.text.BasicText;
@@ -50,12 +52,12 @@ public class ImageWithCenteredText extends Image {
 	}
 	
 	@Override
-	public void draw(ContentStream cStream) {
-		super.draw(cStream);
+	public void draw(ContentStream cStream, EnumSet<DrawOptions> drawOptions) {
+		super.draw(cStream, drawOptions);
 		
 		cStream.saveGraphicsState();
 		cStream.setFontColor(fontColor);
-		centeredText.draw(cStream);
+		centeredText.draw(cStream, drawOptions);
 		cStream.restoreGraphicsState();
 	}
 

@@ -1,8 +1,11 @@
 package com.ressq.pdfbox.primitives;
 
+import java.util.EnumSet;
+
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.DrawOptions;
 
 public class Image extends BottomLeftAware {
 	
@@ -18,7 +21,11 @@ public class Image extends BottomLeftAware {
 	}
 
 	@Override
-	public void draw(ContentStream cStream) {
+	public void draw(ContentStream cStream, EnumSet<DrawOptions> drawOptions) {
+		if (drawOptions.contains(DrawOptions.OUTLINE)) {
+			return;
+		}
+		
 		cStream.drawImage(coinImage, theta, bottomLeft.getX(), bottomLeft.getY(), width, height);
 	}
 

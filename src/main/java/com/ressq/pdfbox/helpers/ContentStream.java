@@ -2,8 +2,11 @@ package com.ressq.pdfbox.helpers;
 
 import java.awt.Color;
 import java.awt.geom.AffineTransform;
+import java.io.Closeable;
 import java.io.IOException;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
@@ -11,9 +14,17 @@ import org.apache.pdfbox.util.Matrix;
 
 import com.ressq.pdfbox.primitives.Point;
 
-public class ContentStream {
+public class ContentStream implements Closeable {
 
 	private PDPageContentStream contentStream;
+	
+	public ContentStream(PDDocument masterDoc, PDPage helloPage) {
+		try {
+			this.contentStream = new PDPageContentStream(masterDoc, helloPage);
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled Error on content stream creation", e);
+		}
+	}
 	
 	public ContentStream(PDPageContentStream contentStream) {
 		this.contentStream = contentStream;
@@ -154,6 +165,15 @@ public class ContentStream {
 			contentStream.setNonStrokingColor(fontColor);
 		} catch (IOException e) {
 			throw new RuntimeException("Unhandled error setting font color", e);
+		}
+	}
+
+	@Override
+	public void close() {
+		try {
+			contentStream.close();
+		} catch (IOException e) {
+			throw new RuntimeException("Unhandled error on close", e);
 		}
 	}
 	

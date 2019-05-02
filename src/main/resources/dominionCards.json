@@ -1731,7 +1731,7 @@
 			"isVictory" : true,
 			"cost" : 4,
 			"description" : "[Action]: Worth 1 VP for every 3 Silvers in your deck. [Trash]: When you trash this, gain 3 Silvers.",
-			"errata" : "This is a Victory card, so use eight copies for games with two players, or 12 for games with three or more players. At the end of the game, each Feodum is worth 1 <v> for every three Silvers in your deck, rounded down. For example if you have 11 Silvers, your Feodums are worth 3 <v> each. If Feodum is trashed, you gain three Silvers. If there are not enough Silvers left, gain as many as you can.",
+			"errata" : "This is a Victory card, so use eight copies for games with two players, or 12 for games with three or more players. At the end of the game, each Feodum is worth 1<v> for every three Silvers in your deck, rounded down. For example if you have 11 Silvers, your Feodums are worth 3 <v> each. If Feodum is trashed, you gain three Silvers. If there are not enough Silvers left, gain as many as you can.",
 			"standardCount" : 12
 		},
 		{
@@ -3400,7 +3400,7 @@
 			"description" : "Once per Traveller you have in play (including this), each other player discards the top card of their deck and trashes it if it costs <3> or <4>.\nWhen you discard this from play, you may eschange it for a Hero.",
 			"errata" : "Each player, in turn order, discards the appropriate number of cards from the top of their deck, trashing the ones costing <3> or <4>. If Warrior is your only Traveller in play, each other player will only discard and potentially trash one card. If you for example have a Peasant, a Fugitive, and the Warrior in play, each other player would discard and potentially trash three cards. Cards are only trashed if they cost exactly <3> or exactly <4>. Cards with <p> in the cost (from Alchemy) do not cost exactly <3> or <4>. Cards with an asterisk in the cost (such as Warrior) or + in the cost (such as Masterpiece from Guilds) may be trashed by Warrior (if costing <3> or <4>). Champion and Teacher are not Travellers.",
 			"cards" : 2,
-			"standardCount" : 12
+			"standardCount" : 5
 		},
 		{
 			"name" : "Bard",
