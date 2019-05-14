@@ -104,7 +104,7 @@ public class CardDatabase {
 		
 		Stream<? extends DisplayableCardInfo> returnableStream = Stream.concat(remainingCards, compoundCardStream);
 		if (includeGroupAs) {
-			returnableStream = Stream.concat(returnableStream, groupAs.stream());
+			returnableStream = Stream.concat(returnableStream, groupAs.stream().filter(cg -> cg.matches(predicate)));
 		}
 		
 		return returnableStream;
