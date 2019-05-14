@@ -5,12 +5,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.EnumSet;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -49,14 +47,18 @@ public class App {
 	public static void main(String[] args) throws IOException 
 	{
 		CardDatabase db = readDatabase();
+		
+		db.getSetsById().entrySet().forEach(e -> {
+			generatePDF(e.getValue().getName() + ".pdf", db.getCardsForDisplay(true, ci -> ci.getSetId().equals(e.getKey()) ));
+		});
+	}
+	
+	private static void generatePDF(String fileName, Stream<? extends DisplayableCardInfo> toPrint) {
 		PDDocument masterDoc = new PDDocument();
 		loadResources(masterDoc);
 		
-		Set<Integer> setIds = new HashSet<>(Arrays.asList(11, 12, 13, 14, 15, 16));
-		Set<String> cardNames = new HashSet<>(Arrays.asList("Tracker", "Pixie", "Shepherd"));
-		
-		LinkedList<DisplayableCardInfo> allCardInfos = db.getCardsForDisplay(true, ci -> setIds.contains(ci.getSetId()) )
-				//.filter(dci -> cardNames.contains(dci.getName()))
+		LinkedList<DisplayableCardInfo> allCardInfos = 
+				toPrint
 				.sorted((ci1, ci2) -> ci1.getStandardCount() - ci2.getStandardCount())
 				.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
 
@@ -71,19 +73,21 @@ public class App {
 			allLayouts.add(info);
 		} while (!allCardInfos.isEmpty());
 		
-		// Print the cards
+		// Print the cards - For hand cutting
 		allLayouts.stream().forEach(mcl -> {
 			printLayout(
 				masterDoc, 
 				EnumSet.noneOf(DrawOptions.class),
 				mcl);
 		});
+		// Text only for cutter
 		allLayouts.stream().forEach(mcl -> {
 			printLayout(
 				masterDoc, 
 				EnumSet.of(DrawOptions.TEXT_ONLY),
 				mcl);
 		});
+		// Layouts for cutter
 		allLayouts.stream()
 			.distinct()
 			.forEach(mcl -> {
@@ -96,8 +100,12 @@ public class App {
 		// TODO: Second page remainder text that is very short?
 		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
 		
-		masterDoc.save("temp.pdf");
-		masterDoc.close();
+		try {
+			masterDoc.save(fileName);
+			masterDoc.close();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 
@@ -163,15 +171,19 @@ public class App {
 		return db;
 	}
 	
-	private static void loadResources(PDDocument masterDoc) throws IOException {
-		trajan = loadFontResource(masterDoc, "Trajan Pro Regular.ttf");
-		barbedor = loadFontResource(masterDoc, "Barbedor Regular.ttf");
-		
-		imageRepo = new DominionImageRepository(
-			loadImageResource(masterDoc, "coin.png"),
-			loadImageResource(masterDoc, "potion.png"),
-			loadImageResource(masterDoc, "debt.png"),
-			loadImageResource(masterDoc, "victory.png"));
+	private static void loadResources(PDDocument masterDoc) {
+		try {
+			trajan = loadFontResource(masterDoc, "Trajan Pro Regular.ttf");
+			barbedor = loadFontResource(masterDoc, "Barbedor Regular.ttf");
+			
+			imageRepo = new DominionImageRepository(
+				loadImageResource(masterDoc, "coin.png"),
+				loadImageResource(masterDoc, "potion.png"),
+				loadImageResource(masterDoc, "debt.png"),
+				loadImageResource(masterDoc, "victory.png"));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@SuppressWarnings("unused")
