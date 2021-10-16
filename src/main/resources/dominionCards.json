@@ -66,6 +66,10 @@
 		"16" : {
 			"name" : "Renaissance",
 			"releaseDate" : "11/5/2018"
+		},
+		"17" : {
+			"name" : "Menagerie",
+			"releaseDate" : "3/14/2020"
 		}
 	},
 	"cards" : [
@@ -4572,6 +4576,670 @@
 			"cost" : 3,
 			"description" : "When you shuffle, you may pick one of the cards to go on top.",
 			"errata" : "Each time you shuffle, you can look through the cards and pick one to go on top. Shuffle the other cards."
+		},
+		{
+			"name" : "Animal Fair",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 7,
+			"coin" : 4,
+			"isAction": true,
+			"description" : "+1 Buy per empty supply pile. Instead of paying this card's cost, you may trash an Action card from your hand.",
+			"errata" : "This only checks how many piles are empty when you play it; how many +Buys you got does not change if a pile becomes empty later in the turn (or non-empty, such as due to Ambassador from Seaside). This only counts Supply piles, not non-Supply piles like Horse. When buying this card, you can trash an Action card from your hand instead of paying <7>. You can only do this if you have an Action card in hand to trash. You can do this even if you do not have <7>. When buying Animal Fair this way, you spend no <>, but still use up a Buy. Animal Fair still has a cost of <7>, regardless of how you pay for it."
+		},
+		{
+			"name" : "Barge",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isDuration" : true,
+			"isAction": true,
+			"description" : "Either now or at the start of your next turn, +3 Cards and +1 Buy.",
+			"errata" : "When playing Barge, choose whether to take +3 Cards and +1 Buy immediately, or at the start of your next turn. If you choose \"immediately,\" Barge will be discarded in the same turn's Clean-up; if you choose \"next turn,\" Barge will be discarded that turn. If you play a Barge multiple times, such as with Mastermind, you choose each time whether to take +3 Cards and +1 Buy immediately or next turn, and the Barge only stays in play until next turn if at least one of the plays was for next turn (in which case the Mastermind also stays in play)."
+		},
+		{
+			"name" : "Black Cat",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 2,
+			"isAttack" : true,
+			"isReaction": true,
+			"isAction": true,
+			"cards" : 2,
+			"description" : "If it isn't your turn, each other player gains a Curse.\nWhen another player gains a Victory card, you may play this from your hand.",
+			"errata" : "When you play this on your turn, you draw 2 cards. When you play it on another player's turn - normally only possible via its reaction - you draw 2 cards, and then everyone else gains a Curse, in turn order starting with the player whose turn it is. When anyone else gains a Victory card - whether or not it is your turn - you may play this from your hand. See the Reactions section."
+		},
+		{
+			"name" : "Bounty Hunter",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 4,
+			"actions" : 1,
+			"isAction": true,
+			"description" : "Exile a card from your hand.\nIf you didn't have a copy of it in Exile, +<3>",
+			"errata" : " First you get +1 Action and Exile a card from your hand; this is not optional. Then if that is the only copy of that card that you have in Exile, you get +<3>>. If you can't Exile a card, you don't get +<3>>."
+		},
+		{
+			"name" : "Camel Train",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 3,
+			"isAction": true,
+			"description" : "Exile a non-Victory card from the Supply.\nWhen you gain this, Exile a Gold from the Supply.",
+			"errata" : "When you play this, you Exile a non-Victory card from the Supply; when you gain this, you Exile a Gold from the Supply."
+		},
+		{
+			"name" : "Cardinal",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 4,
+			"coins" : 2,
+			"isAttack": true,
+			"isAction": true,
+			"description" : "Each other player reveals the top 2 cards of their deck. Exiles one coting from <3> to <6>, and discards the rest.",
+			"errata" : "If an attacked player reveals two cards each costing from <3> to <6>, that player chooses which card they Exile."
+		},
+		{
+			"name" : "Cavalry",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 4,
+			"isAction": true,
+			"description" : "Gain 2 Horses.\nWhen you gain this, +2 Cards, +1 Buy, and if it's your Buy phase return to your Action phase.",
+			"errata" : "When you gain Cavalry in your Buy phase, you get +2 Cards, +1 Buy, and return to your Action phase. When you gain Cavalry in a different phase or during another player's turn, you get +2 Cards and +1 Buy. +1 Buy is not useful if it is not your turn. This ability of Cavalry is not playing the Cavalry, and does not put Cavalry into play. Returning to your Action phase does not cause \"start of turn\" abilities to repeat; however when your Buy phase happens again after that, \"start of your Buy phase\" abilities can repeat. Returning to your Action phase does not give you any +Actions; you have left however many you already had left."
+		},
+		{
+			"name" : "Coven",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"actions" : 1,
+			"coins" : 2,
+			"isAttack": true,
+			"isAction": true,
+			"description" : "Each other player Exiles a Curse from the Supply. If they can't, they discard their Exiled Curses.",
+			"errata" : "Curses are Exiled in turn order; it may be that one player Exiles a Curse while another discards the Curses from their mat."
+		},
+		{
+			"name" : "Destrier",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 6,
+			"cards" : 2,
+			"actions": 1,
+			"isAction": true,
+			"description" : "During your turns, this costs <1> less per card you've gained this turn.",
+			"errata" : "Destrier costs <1> less per card the player whose turn it is has gained that turn. For example, you could play a Sleigh to gain two Horses, then use Workshop to gain a Destrier, as it would cost <4>. Destrier only cares about cards gained by the player whose turn it is; for example, playing Witch to give other players Curses will not lower its cost. See the Unusual Costs section."
+		},
+		{
+			"name" : "Displace",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"description" : "Exile a card from your hand. Gain a differently named card costing up to <2> more than it.",
+			"errata" : "The card you gain does not have to cost more than the card you Exiled. For example, you could Exile a Province and gain a Gold."
+		},
+		{
+			"name" : "Falconer",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isReaction": true,
+			"isAction": true,
+			"description" : "Gain a card to your hand costing less than this.\nWhen any player gains a card with 2 or more types (Action, Attack, etc.), you may play this from your hand.",
+			"errata" : "This can only gain cards from the Supply. You can react with this to any gained card with 2 or more types; it can be a card that was bought, or a card gained some other way, such as via a Falconer. You can do this regardless of who gained the card - you or anyone else - and regardless of whose turn it is. The types are the words on the bottom line – including Action, Attack, Curse, Duration, Reaction, Treasure, and Victory (with more in other expansions). If you gain a Falconer to your hand - such as via Artisan - you can react to that gain and play it, since it has two types. See the Reactions section."
+		},
+		{
+			"name" : "Fisherman",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"cards": 1,
+			"actions": 1,
+			"coins": 1,
+			"isAction": true,
+			"description" : "During your turns, if your discard pile is empty, this costs <3> less.",
+			"errata" : "This costs <5> normally, but <2> whenever the player whose turn it is has an empty discard pile. If you have <4> and two Buys with an empty discard pile, you can buy Fisherman for <2>, but then you will no longer have an empty discard pile, so you cannot buy a second for <2>. See the Unusual Costs section."
+		},
+		{
+			"name" : "Gatekeeper",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"isDuration": true,
+			"isAttack": true,
+			"description" : "At the start of your next turn, +<3>. Until then, when another player gains an Action or Treasure card they don't have an Exiled copy of, they Exile it.",
+			"errata" : "While under this attack, whenever you gain an Action or Treasure that you do not have a copy of on your Exile mat, you Exile the gained card. Gaining a card that you do have a copy of on your Exile mat is unaffected, and lets you discard copies from your Exile mat if you want to as usual. Other abilities that happen when you gain a card happen at the same time, and you can only put the card on your mat if it has not moved anywhere since gaining it; so you can, for example, use a Sleigh to put a gained card into your hand, then fail to put it on your Exile mat. Gatekeeper only Exiles Actions and Treasures, it does not Exile, for example, Province. It only cares about cards in Exile, it does not care how they got there."
+		},
+		{
+			"name" : "Goatherd",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 3,
+			"isAction": true,
+			"actions": 1,
+			"description" : "You may trash a card from your hand.\n+1 Card per card the player to your right trashed on their last turn.",
+			"errata" : "You draw cards even if you did not trash a card. One way to keep count of the number of cards trashed is to put them on the trash sideways."
+		},
+		{
+			"name" : "Groom",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 4,
+			"isAction": true,
+			"description" : "Gain a card costing up to <4>. If it's an...\nAction card, gain a Horse;\nTreasure card, gain Silver;Victory card, +1 Card and +1 Action.",
+			"errata" : "First gain a card, then apply the bonuses in the order listed. A card can give you multiple bonuses; for example, if you gain a Mill (from Intrigue), you gain a Horse and then get +1 Card and +1 Action."
+		},
+		{
+			"name" : "Horses",
+			"setId" : 17,
+			"standardCount" : 30,
+			"cost" : 3,
+			"excludeFromSupply" : true,
+			"isAction": true,
+			"cards": 2,
+			"actions": 1,
+			"description" : "Return this to its pile.",
+			"errata" : "Menagerie adds the Horse pile, and ways to get Horses. When you play a Horse, you get +2 Cards, +1 Action, and return the Horse to the Horse pile.\n• 'Gain a Horse' causes you to gain a Horse from the pile.\n• This is a non-Supply pile; you can only gain a Horse from it when a card tells you to gain a Horse, not with cards like Falconer or Displace.\n• If told to gain a Horse with none left in the pile, you fail to gain one.\n• If you use a card like Mastermind to play a Horse multiple times, you get +2 Cards and +1 Action for each play, even though you can only return the Horse once."
+		},
+		{
+			"name" : "Hostelry",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 4,
+			"isAction": true,
+			"cards": 1,
+			"actions": 2,
+			"description" : "When you gain this, you may discard any number of Treasures, revealed, to gain that many Horses.",
+			"errata" : "When you gain this, you may discard any number of Treasure cards from your hand, to gain that many Horses from their pile. Reveal the discarded Treasure cards. You do not have to discard anything, and cannot discard anything but Treasures."
+		},
+		{
+			"name" : "Hunting Lodge",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"cards" : 1,
+			"actions" : 2,
+			"description" : "You may discard your hand for +5 Cards.",
+			"errata" : "When you play this, first draw a card and get +2 Actions; then decide if you want to discard your hand (which will include the card you just drew). If you do discard your hand, draw 5 cards (which may cause you to shuffle in the discarded cards)."
+		},
+		{
+			"name" : "Kiln",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"coins" : 2,
+			"description" : "The next time you play a card this turn, you may first gain a copy of it.",
+			"errata" : "Kiln can gain any type of card, as long as the card is played directly after Kiln. It can only gain cards from the Supply. You (optionally) gain a copy of the card before following the instructions on the card. If the card is an Attack and other players want to use cards like Moat, you gain the card before they choose to use Moat or not. If you Throne Room a Kiln, you will play Kiln, play Kiln again, first gaining a Kiln (optionally), and then can still gain a copy of the next card you play after that. If the next card you play is an Action and you use a Way for it, that has no special interaction with Kiln; you still may optionally gain a copy of that card."
+		},
+		{
+			"name" : "Livery",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"coins" : 3,
+			"description" : "This turn, when you gain a card costing <4> or more, gain a Horse.",
+			"errata" : "This is cumulative; for example, if you use Mastermind to play a Livery three times, then each card you gain that turn costing <4> or more will come with three Horses. Livery works on cards gained via buying them, and cards gained other ways."
+		},
+		{
+			"name" : "Mastermind",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"isDuration" : true,
+			"description" : "At the start of your next turn, you may play an Action card from your hand three times.",
+			"errata" : "Playing an Action card via this is optional. If you do play one, you resolve the card completely, then play it a second time, then play it a third time, without playing other cards in-between (unless told to by a card). Playing these Actions does not use up Action plays. For example, if you Mastermind a Bounty Hunter, you will get +3 Actions total, and be able to play 4 Action cards after that - your normal one, plus 3 more for the +3 Actions. If a Mastermind plays a Duration card, the Mastermind stays in play as long as the Duration card does. If a Mastermind plays another Mastermind, both will stay in play, and the turn after that you can play three different Action cards from your hand three times each. If you Mastermind a Horse, you will get +2 Cards and +1 Action, return the Horse to its pile, get +2 Cards and +1 Action, fail to return the Horse since you already did, and get +2 Cards and +1 Action a third time and fail to return the Horse again."
+		},
+		{
+			"name" : "Paddock",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"coins" : 2,
+			"description" : "Gain 2 Horses.\n+1 Action per empty Supply pile.",
+			"errata" : "This only checks how many piles are empty when you play it; how many +Actions you got does not change if a pile becomes empty later in the turn (or non-empty, such as due to Ambassador from Seaside). This only counts Supply piles, not non-Supply piles like Horse."
+		},
+		{
+			"name" : "Sanctuary",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 5,
+			"isAction": true,
+			"cards" : 1,
+			"actions" : 1,
+			"buy" : 1,
+			"description" : "You may Exile a card from your hand.",
+			"errata" : "Exiling a card is optional."
+		},
+		{
+			"name" : "Scrap",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 3,
+			"isAction": true,
+			"description" : "Trash a card from your hand. Choose a different thing per <1> it costs: +1 Card; +1 Action; +1 Buy; +<1>; gain a Silver; gain a Horse.",
+			"errata" : "First trash a card, then choose a different bonus per <1> the card cost, then do them in the order listed. So you might trash an Estate, choose +1 Card and 'gain a Horse,' then draw a card and then gain the Horse."
+		},
+		{
+			"name" : "Sheepdog",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 3,
+			"isAction": true,
+			"isReaction" : true,
+			"cards" : 2,
+			"description" : "When you gain a card, you may play this from your hand.",
+			"errata" : "You can use this when gaining a card due to buying it, when gaining a card some other way such as due to Falconer, and even when gaining a card on another player's turn, such as due to Black Cat. Remember that when you buy a card, you can no longer play Treasures in that Buy phase. If you gain a Sheepdog to your hand - such as via Falconer - you can react to that gain and play the Sheepdog. See the Reactions section."
+		},
+		{
+			"name" : "Sleigh",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 2,
+			"isAction": true,
+			"isReaction" : true,
+			"description" : "Gain 2 Horses.\nWhen you gain a card, you may discard this, to put that card into your hand or onto your deck.",
+			"errata" : "You can move the gained card from your discard pile even though you discarded Sleigh on top of it. If a gained card goes directly to somewhere other than your discard pile (for example, the Silver gained from Bureaucrat), Sleigh can still move it to your hand or the top of your deck. If something else has moved the card since it was gained, Sleigh cannot move it."
+		},
+		{
+			"name" : "Snowy Village",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 3,
+			"isAction": true,
+			"cards" : 1,
+			"actions" : 4,
+			"buys" : 1,
+			"description" : "Ignore any further +Actions you get this turn.",
+			"errata" : "Any extra Actions you already had before playing this do not go away; for example, if you play Village and then Snowy Village, you can play 5 more Actions after that. Any further +Actions you would get that turn, you do not, including from playing another Snowy Village or converting Villagers (from Renaissance). This does not stop you from playing more cards via cards that tell you to play cards, such as Throne Room."
+		},
+		{
+			"name" : "Stockpile",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 3,
+			"isTreasure": true,
+			"coins" : 3,
+			"buys" : 1,
+			"description" : "When you play this, Exile it.",
+			"errata" : "This is a Treasure worth <3>, like Gold; you play it in your Buy phase. When you play this, you also get +1 Buy, and put this on your Exile mat. If you play this twice with a card like Crown (from Empires), you will get +<6> and +2 Buys total, even though you could only Exile it once."
+		},
+		{
+			"name" : "Supplies",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 2,
+			"isTreasure": true,
+			"coins" : 1,
+			"description" : "When you play this, gain a Horse onto your deck.",
+			"errata" : "This is a Treasure worth <1>, like Copper; you play it in your Buy phase. When you play this, gain a Horse, putting it directly onto your deck."
+		},
+		{
+			"name" : "Village Green",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 4,
+			"isAction": true,
+			"isDuration" : true,
+			"isReaction" : true,
+			"description" : "Either now or at the start of your next turn, +1 Card and +2 Actions.\nWhen you discard this other than during Clean-up, you may play it.",
+			"errata" : "When playing Village Green, choose whether to take +1 Card and +2 Actions immediately, or at the start of your next turn. If you choose 'immediately,' Village Green will be discarded in the same turn's Clean-up; if you choose 'next turn,' Village Green will be discarded that turn. If you play a Village Green multiple times, such as with Mastermind, you choose each time whether to take +1 Card and +2 Actions immediately or next turn, and the Village Green only stays in play until next turn if at least one of the plays was for next turn (in which case the Mastermind also stays in play). Village Green also lets you play it when you discard it, other than in Clean-up. You can only discard Village Green if something causes you to or lets you, and discarding it only lets you play it once (each time you discard it). This works whether it is your turn or another player's, and whether you discard it from your hand, or deck (such as with Cardinal), or from being set aside, or from Exile. This ability does not function if Village Green is put into your discard pile without being discarded, such as when bought, or due to Scavenger (from Dark Ages). The key thing to look for is a card telling you to \"discard\" cards. If you play Village Green when it is not your turn, and choose to take the +1 Card and +2 Actions immediately, the +2 Actions will not be useful. See the Reactions section."
+		},
+		{
+			"name" : "Wayfarer",
+			"setId" : 17,
+			"standardCount" : 10,
+			"cost" : 6,
+			"isAction": true,
+			"cards" : 3,
+			"description" : "You may gain a Silver.\nThis has the same cost as the last other card gained this turn, if any.",
+			"errata" : "Normally Wayfarer costs <6>. When anyone gains a card other than a Wayfarer, Wayfarer's cost changes to that card's cost for the rest of the turn (or until another card is gained). For example, if you play a Wayfarer and choose to gain a Silver, Wayfarer then costs <3>, the same as Silver; if you play Witch, each other player gains a Curse, and then Wayfarer costs <0>, the same as Curse. Cards that lower costs, like Bridge from Intrigue, only apply to the other card, not to Wayfarer too (though they apply to Wayfarer when no cards have been gained yet). For example, if you play Bridge, Wayfarer costs <5>; if you then buy a Silver, at that point Wayfarer costs <2>, the same as Silver. Wayfarer can have a cost with <p> (from Alchemy) or <d> (from Empires) in it. Buying Animal Fair via trashing an Action card changes the cost of Wayfarer to <7>, Animal Fair's cost, not to trashing an Action card. See the Unusual Costs section."
+		},
+		{
+			"name" : "Alliance",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 1,
+			"isEvent" : true,
+			"description" : "Gain a Province, a Duchy, an Estate, a Gold, a Silver, and a Copper.",
+			"errata" : "You gain each of those cards that is present in the Supply; you cannot choose not to gain one. You gain them in the order listed."
+		},
+		{
+			"name" : "Banish",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 4,
+			"isEvent" : true,
+			"description" : "Exile any number of cards with the same name from your hand.",
+			"errata" : "For example, you could Exile three Estates from your hand."
+		},
+		{
+			"name" : "Bargain",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 4,
+			"isEvent" : true,
+			"description" : "Gain a non-Victory card costing up to <5>. Each other player gains a Horse.",
+			"errata" : "The other players gain their Horses in turn order. They cannot decline to gain one."
+		},
+		{
+			"name" : "Commerce",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 5,
+			"isEvent" : true,
+			"description" : "Gain a Gold per differently named card you've gained this turn.",
+			"errata" : "First count how many differently named cards you have gained this turn, then gain that many Golds. For example, if you have gained two Provinces, a Silver, and a Horse, you would gain three Golds."
+		},
+		{
+			"name" : "Delay",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 0,
+			"isEvent" : true,
+			"description" : "You may set aside an Action card from your hand. At the start of your next turn, play it.",
+			"errata" : "Once you set aside the Action card, you have to play it at the start of your next turn. If you do multiple things at the start of your turn, you can order them. Playing the Action card at the start of your next turn does not use up an Action."
+		},
+		{
+			"name" : "Demand",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 5,
+			"isEvent" : true,
+			"description" : "Gain a Horse and a card costing up to <4>, both onto your deck.",
+			"errata" : "The Horse goes on top first, then the card costing up <4> to does."
+		},
+		{
+			"name" : "Desperation",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 0,
+			"isEvent" : true,
+			"description" : "Once per turn: You may gain a Curse. If you do, +1 Buy and +<2>.",
+			"errata" : "If the Curse pile is empty, you fail to gain one and do not get +1 Buy and +<2>."
+		},
+		{
+			"name" : "Enclave",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 8,
+			"isEvent" : true,
+			"description" : "Gain a Gold. Exile a Duchy from the Supply.",
+			"errata" : "The Duchy goes directly from the Duchy pile to your Exile mat."
+		},
+		{
+			"name" : "Enhance",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 3,
+			"isEvent" : true,
+			"description" : "You may trash a non-Victory card from your hand, to gain a card costing up to <2> more than it.",
+			"errata" : "If you trash a card, you must gain a card costing up to <2> more than it."
+		},
+		{
+			"name" : "Gamble",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 2,
+			"isEvent" : true,
+			"description" : "+1 Buy\nReveal the top card of your deck. If it's a Treasure or Action, you may play it. Otherwise, discard it.",
+			"errata" : "Playing the card is optional and does not use up an Action. If you do not play the card - whether or not it is an Action or Treasure - discard it."
+		},
+		{
+			"name" : "Invest",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 4,
+			"isEvent" : true,
+			"description" : "Exile an Action card from the Supply. While it's in Exile, when another player gains or Invests in a copy of it, +2 Cards.",
+			"errata" : "It only matters if the card you Exile is an Action, not if the whole pile is. While the card is Exiled, you draw 2 cards each time another player gains a copy of it, or uses Invest to Exile a copy of it. This is not optional. This is cumulative; if you Invest twice in the same card, you will get +4 Cards each time someone else gains a copy or Invests in it. If the game has another way to Exile cards, keep the Invested ones separate from the other ones; for example, you can put them half under the mat. Those other Exiled cards were not Invested and do not draw you cards. Cards Exiled with Invest can be discarded from the mat in the normal way, by gaining another copy of the card; then you will no longer draw cards for players gaining/Investing in them."
+		},
+		{
+			"name" : "March",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 3,
+			"isEvent" : true,
+			"description" : "Look through your discard pile. You may play an Action card from it.",
+			"errata" : "Normally you cannot look through your discard pile, so you cannot look to see if you want to buy March or not. Once you buy March, you look through your discard pile, and then have the option of playing an Action card from it. This does not use up an Action."
+		},
+		{
+			"name" : "Populate",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 10,
+			"isEvent" : true,
+			"description" : "Gain one card from each Action Supply pile.",
+			"errata" : "You gain the top card from each Action pile in the Supply; you do not gain non-Supply cards like Horse, or non-Action cards like Stockpile. If there are different cards in an Action pile, like the Knights (from Dark Ages), you just get the top one. If a pile is empty, you do not gain one of those. You choose the order to gain the cards, which sometimes matters; normally you can pick up a card from each pile and then choose what order to gain them in. For piles with different cards, the pile is an Action pile if the randomizer is an Action; so, Castles (from Empires) are not one. If you gain Cavalry or Villa (from Empires) with Populate, you return to your Action phase right then, but still finish gaining cards from Populate before doing more things."
+		},
+		{
+			"name" : "Pursue",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 2,
+			"isEvent" : true,
+			"description" : "+1 Buy\nName a card. Reveal the top 4 cards from your deck. Put the matches back and discard the rest.",
+			"errata" : "You can name a card that is not in the game; all four cards will be discarded."
+		},
+		{
+			"name" : "Reap",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 7,
+			"isEvent" : true,
+			"description" : "Gain a Gold. Set it aside. If you do, at the start of your next turn, play it.",
+			"errata" : "This means you will start your next turn with a Gold in play and +<3> from it. You discard the Gold that turn as normal. If multiple things happen at the start of your turn, you can order them. This does not skip your Action phase."
+		},
+		{
+			"name" : "Ride",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 2,
+			"isEvent" : true,
+			"description" : "Gain a Horse.",
+			"errata" : "You simply gain a Horse."
+		},
+		{
+			"name" : "Seize the Day",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 4,
+			"isEvent" : true,
+			"description" : "Once per game:\nTake an extra turn after this one.",
+			"errata" : "The extra turn is like a normal turn, except that it does not count for the tiebreaker."
+		},
+		{
+			"name" : "Stampede",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 5,
+			"isEvent" : true,
+			"description" : "If you have 5 or fewer cards in play, gain 5 Horses onto your deck.",
+			"errata" : "It does not matter how many cards you played that turn, only how many you have in play when buying Stampede. If there are fewer than 5 Horses left in the pile, just gain as many as you can."
+		},
+		{
+			"name" : "Toil",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 2,
+			"isEvent" : true,
+			"description" : "+1 Buy\nYou may play an Action card from your hand.",
+			"errata" : "Playing an Action card this way does not use up an Action."
+		},
+		{
+			"name" : "Transport",
+			"setId" : 17,
+			"standardCount" : 1,
+			"cost" : 3,
+			"isEvent" : true,
+			"description" : "Choose one: Exile an Action card from the Supply; or put an Action card you have in Exile onto your deck.",
+			"errata" : "It only matters if the card is an Action, not if the whole pile is. This can take Action cards from your Exile mat that were put there by other cards."
+		},
+		{
+			"name" : "Way of the Butterfly",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "You may return this to its pile to gain a card costing exactly <1> more than it.",
+			"errata" : "You only gain a card if you manage to return the card to its pile. A non-Supply card (like Horse) can return to its pile; a card with no pile, such as Necropolis (from Dark Ages), fails to return to its pile. The card you gain comes from the Supply, and can be any type; if there is no card in the Supply costing exactly <1> more than the returned card, you do not gain one."
+		},
+		{
+			"name" : "Way of the Camel",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Exile a Gold from the Supply."
+		},
+		{
+			"name" : "Way of the Chameleon",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Follow this card's instructions; each time that would give you +Cards this turn, you get +<> instead, and vice-versa.",
+			"errata" : "For example, if you play Sheepdog and use Way of the Chameleon, you will get +<2> instead of +2 Cards. If you play a Duration card using Way of the Chameleon, only the +<> and +Cards you get that turn are affected; for example, if you play Merchant Ship (from Seaside) and use Way of the Chameleon, you will get +2 Cards this turn, but the normal +<2> next turn. This turns '+Cards' into '+<>' and vice-versa, but does not change other ways to draw cards, for example, 'draw until you have 6 cards in hand.' If the card that uses Way of the Chameleon plays another card, that card just does what it normally does (unless you use Way of the Chameleon on it as well)."
+		},
+		{
+			"name" : "Way of the Frog",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"actions" : 1,
+			"description" : "When you discard this from play this turn, put it onto your deck."
+		},
+		{
+			"name" : "Way of the Goat",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Trash a card from your hand."
+		},
+		{
+			"name" : "Way of the Horse",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"cards" : 2,
+			"actions" : 1,
+			"description" : "Return this to its pile.",
+			"errata" : "The card returns to its pile, even if that is a non-Supply pile. A card with no pile, such as Necropolis (from Dark Ages), fails to return to its pile."
+		},
+		{
+			"name" : "Way of the Mole",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"actions" : 1,
+			"description" : "Discard your hand. +3 Cards.",
+			"errata" : "You draw 3 cards even if you did not have any cards left to discard."
+		},
+		{
+			"name" : "Way of the Monkey",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"buys" : 1,
+			"coins" : 1
+		},
+		{
+			"name" : "Way of the Mouse",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Play the set-aside card, leaving it there.\nSetup: Set aside an unused Action costing <2> or <3>.",
+			"errata" : "Set aside any unused Action kingdom card costing <2> or <3> at the start of the game. Do any setup that that card requires. When using Way of the Mouse, you play the set-aside card, leaving it set-aside. For example, if you set aside Sleigh, then any Action card could be used to gain 2 Horses. The set-aside card cannot move itself when played, since it is not in play; for example, if the card is Embargo (from Seaside), it cannot be trashed. Text below a dividing line (other that setup) will not do anything."
+		},
+		{
+			"name" : "Way of the Mule",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"actions" : 1,
+			"coins" : 1
+		},
+		{
+			"name" : "Way of the Otter",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"cards" : 2
+		},
+		{
+			"name" : "Way of the Owl",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Draw until you have 6 cards in hand.",
+			"errata" : "If you already have 6 or more cards in hand, you do not draw any cards."
+		},
+		{
+			"name" : "Way of the Ox",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"actions" : 2
+		},
+		{
+			"name" : "Way of the Pig",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"cards" : 1,
+			"actions" : 1,
+			"description" : ""
+		},
+		{
+			"name" : "Way of the Rat",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "You may discard a Treasure to gain a copy of this.",
+			"errata" : "This can only gain cards from the Supply."
+		},
+		{
+			"name" : "Way of the Seal",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"coins" : 1,
+			"description" : "This turn, when you gain a card, you may put it onto your deck.",
+			"errata" : "This applies to all gained cards, whether bought or otherwise gained. The card first is gained to wherever it normally would be, then you can move it onto your deck. If it moves somewhere else in-between (for example, trashing it using Watchtower from Prosperity), you cannot move it."
+		},
+		{
+			"name" : "Way of the Sheep",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"coins" : 2
+		},
+		{
+			"name" : "Way of the Squirrel",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "+2 Cards at the end of this turn.",
+			"errata" : "Normally you get the two cards after drawing your hand in Clean-up. If you use this when it is not your turn (such as via Black Cat), you still draw two cards at the end of the turn."
+		},
+		{
+			"name" : "Way of the Turtle",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Set this aside. If you did, play it at the start of your next turn.",
+			"errata" : "When you play the card at the start of your next turn, you can again use Way of the Turtle, delaying it another turn. You can keep doing this. Playing the card next turn does not use up an Action then. If you use a card like Throne Room to play a card twice, and then use Way of the Turtle, this does not cause the Throne Room to be set aside, or to stay in play as with Duration cards."
+		},
+		{
+			"name" : "Way of the Worm",
+			"setId" : 17,
+			"standardCount" : 1,
+			"isWay" : true,
+			"description" : "Exile an Estate from the Supply."
 		}
 	],
 	"groupAs" : [
@@ -4611,12 +5279,58 @@
 				"Tax",
 				"Triumph",
 				"Wedding",
-				"Windfall"
+				"Windfall",
+				"Alliance",
+				"Banish",
+				"Bargain",
+				"Commerce",
+				"Delay",
+				"Demand",
+				"Desperation",
+				"Enclave",
+				"Enhance",
+				"Gamble",
+				"Invest",
+				"March",
+				"Populate",
+				"Pursue",
+				"Reap",
+				"Ride",
+				"Seize the Day",
+				"Stampede",
+				"Toil",
+				"Transport"
+			]
+		},
+		{
+			"name" : "Ways",
+			"errata" : "Menagerie has Ways. Each Way gives Action cards an additional option: you can play the Action for what it normally does, or play it to do what the Way says to do. Playing an Action card for a Way ability means not doing anything the Action card said to do when played. For example, if you have Way of the Sheep in a game, which says '+<2>,' then you could play a Horse and choose to get +<2>>; if you did so, you would not get +2 Cards and +1 Action, and would not return the Horse to its pile.",
+			"cards" : [
+				"Way of the Butterfly",
+				"Way of the Camel",
+				"Way of the Chameleon",
+				"Way of the Frog",
+				"Way of the Goat",
+				"Way of the Horse",
+				"Way of the Mole",
+				"Way of the Monkey",
+				"Way of the Mouse",
+				"Way of the Mule",
+				"Way of the Otter",
+				"Way of the Owl",
+				"Way of the Ox",
+				"Way of the Pig",
+				"Way of the Rat",
+				"Way of the Seal",
+				"Way of the Sheep",
+				"Way of the Squirrel",
+				"Way of the Turtle",
+				"Way of the Worm"
 			]
 		},
 		{
 			"name" : "Landmarks",
-			"errata" : "Landmarks provide new ways for players to score. Like Events, they are not Kingdom Cards.\nPlayers may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom Cards; or they may use any method they like. Whatever method is used, Landmarks in use are visible to all from the start of the game. We recommend using no more than two per game.\nMany Landmarks only apply when scoring at the end of the game. In addition to counting up their regular points, players add some bonus based on the Landmark. A few are penalties instead - players subtract points from their score.\nSome Landmarks start with 6<v> tokens on them per player in the game. So, 12<v> in a 2-player game, up to 36<v> in a 6-player game. These Landmarks then provide a way for players to get the tokens from the Landmark. When the <v> tokens on the Landmark run out, players cannot earn further points in that way.",
+			"errata" : "Landmarks provide new ways for players to score. Like Events, they are not Kingdom Cards. Players may choose how to determine what Landmarks to play with. They may shuffle them with Events and deal out 2 cards from that pile every game; they may shuffle them into the Randomizer deck and use 0-2 depending on how many come up before finding 10 Kingdom Cards; or they may use any method they like. Whatever method is used, Landmarks in use are visible to all from the start of the game. We recommend using no more than two per game. Many Landmarks only apply when scoring at the end of the game. In addition to counting up their regular points, players add some bonus based on the Landmark. A few are penalties instead - players subtract points from their score. Some Landmarks start with 6<v> tokens on them per player in the game. So, 12<v> in a 2-player game, up to 36<v> in a 6-player game. These Landmarks then provide a way for players to get the tokens from the Landmark. When the <v> tokens on the Landmark run out, players cannot earn further points in that way.",
 			"cards" : [
 				"Aqueduct",
 				"Arena",
