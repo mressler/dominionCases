@@ -3,12 +3,7 @@ package com.ressq.dominionCases;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -59,7 +54,7 @@ public class App {
 		
 		LinkedList<DisplayableCardInfo> allCardInfos = 
 				toPrint
-				.sorted((ci1, ci2) -> ci1.getStandardCount() - ci2.getStandardCount())
+				.sorted(Comparator.comparingInt(DisplayableCardInfo::getStandardCount))
 				.collect(Collectors.toCollection(LinkedList<DisplayableCardInfo>::new));
 
 		// Layout the cards
