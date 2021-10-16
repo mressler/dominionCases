@@ -33,6 +33,7 @@ public class CardInfo implements DisplayableCardInfo {
 	@JsonProperty("isPrize")     private Boolean prize;
 	@JsonProperty("isArtifact")  private Boolean artifact;
 	@JsonProperty("isProject")   private Boolean project;
+	@JsonProperty("isWay")       private Boolean way;
 	
 	private Integer cost;
 	private Boolean potion;

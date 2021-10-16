@@ -132,8 +132,8 @@ public class App {
 	}
 	
 	private static PDFont loadFontResource(PDDocument masterDoc, String res) throws IOException {
-		URL trajanUrl = getResource(res);
-		return PDType0Font.load(masterDoc, trajanUrl.openStream());
+		URL fontUrl = getResource(res);
+		return PDType0Font.load(masterDoc, fontUrl.openStream());
 	}
 	
 	private static PDImageXObject loadImageResource(PDDocument masterDoc, String res) throws IOException {

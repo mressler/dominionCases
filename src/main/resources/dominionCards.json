@@ -4582,7 +4582,7 @@
 			"setId" : 17,
 			"standardCount" : 10,
 			"cost" : 7,
-			"coin" : 4,
+			"coins" : 4,
 			"isAction": true,
 			"description" : "+1 Buy per empty supply pile. Instead of paying this card's cost, you may trash an Action card from your hand.",
 			"errata" : "This only checks how many piles are empty when you play it; how many +Buys you got does not change if a pile becomes empty later in the turn (or non-empty, such as due to Ambassador from Seaside). This only counts Supply piles, not non-Supply piles like Horse. When buying this card, you can trash an Action card from your hand instead of paying <7>. You can only do this if you have an Action card in hand to trash. You can do this even if you do not have <7>. When buying Animal Fair this way, you spend no <>, but still use up a Buy. Animal Fair still has a cost of <7>, regardless of how you pay for it."
@@ -4617,7 +4617,7 @@
 			"actions" : 1,
 			"isAction": true,
 			"description" : "Exile a card from your hand.\nIf you didn't have a copy of it in Exile, +<3>",
-			"errata" : " First you get +1 Action and Exile a card from your hand; this is not optional. Then if that is the only copy of that card that you have in Exile, you get +<3>>. If you can't Exile a card, you don't get +<3>>."
+			"errata" : " First you get +1 Action and Exile a card from your hand; this is not optional. Then if that is the only copy of that card that you have in Exile, you get +<3>. If you can't Exile a card, you don't get +<3>."
 		},
 		{
 			"name" : "Camel Train",
@@ -4814,7 +4814,7 @@
 			"isAction": true,
 			"cards" : 1,
 			"actions" : 1,
-			"buy" : 1,
+			"buys" : 1,
 			"description" : "You may Exile a card from your hand.",
 			"errata" : "Exiling a card is optional."
 		},
@@ -5304,7 +5304,7 @@
 		},
 		{
 			"name" : "Ways",
-			"errata" : "Menagerie has Ways. Each Way gives Action cards an additional option: you can play the Action for what it normally does, or play it to do what the Way says to do. Playing an Action card for a Way ability means not doing anything the Action card said to do when played. For example, if you have Way of the Sheep in a game, which says '+<2>,' then you could play a Horse and choose to get +<2>>; if you did so, you would not get +2 Cards and +1 Action, and would not return the Horse to its pile.",
+			"errata" : "Menagerie has Ways. Each Way gives Action cards an additional option: you can play the Action for what it normally does, or play it to do what the Way says to do. Playing an Action card for a Way ability means not doing anything the Action card said to do when played. For example, if you have Way of the Sheep in a game, which says '+<2>,' then you could play a Horse and choose to get +<2>; if you did so, you would not get +2 Cards and +1 Action, and would not return the Horse to its pile.",
 			"cards" : [
 				"Way of the Butterfly",
 				"Way of the Camel",
