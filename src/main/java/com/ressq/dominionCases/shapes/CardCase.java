@@ -130,7 +130,7 @@ public class  CardCase extends CompositeDrawable {
 		cardCountText = new ScalableText(
 				cardInfo.getStandardCount().toString(), titleFont,
 				WIDTH,
-				thickness - TEXT_PADDING * 2 - (this.cardCount / 20.0f), // Bigger text needs more padding
+				thickness - TEXT_PADDING * 2 - (this.cardCount / 10.0f), // Bigger text needs more padding
 				thickness, TextAlignment.CENTER, TextAlignment.CENTER);
 		cardCountText.disregardDrawOptions();
 		cardCountText.applyRotation(Math.PI / 2);
