@@ -5,6 +5,10 @@ import static com.ressq.dominionCases.shapes.Card.WIDTH;
 import static com.ressq.dominionCases.shapes.Card.getThicknessFor;
 import static com.ressq.dominionCases.shapes.Card.inchesToPixels;
 
+import com.ressq.pdfbox.helpers.ContentStream;
+import com.ressq.pdfbox.helpers.DrawOptions;
+import com.ressq.pdfbox.primitives.Drawable;
+import com.ressq.pdfbox.primitives.Line;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 import com.ressq.dominionCases.DominionImageRepository;
@@ -16,7 +20,10 @@ import com.ressq.pdfbox.text.MultiLineText;
 import com.ressq.pdfbox.text.ScalableText;
 import com.ressq.pdfbox.text.TextAlignment;
 
-public class CardCase extends CompositeDrawable {
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class  CardCase extends CompositeDrawable {
 
 	public static final float PEEK_HEIGHT = HEIGHT;
 	public static final float SHOULDER_SIZE = inchesToPixels(0.4);
@@ -30,7 +37,8 @@ public class CardCase extends CompositeDrawable {
 	private float foldWidth;
 	private float thickness;
 	private Integer cardCount;
-	
+	private ScalableText cardCountText;
+
 	public CardCase(
 			DisplayableCardInfo cardInfo, 
 			DominionImageRepository imageRepo, PDFont titleFont, PDFont contentFont) 
@@ -108,7 +116,7 @@ public class CardCase extends CompositeDrawable {
 			cardInfo, imageRepo, titleFont);
 		topFlap.applyTranslation(0, bottom.getHeight() + mainCardBody.getHeight() + top.getHeight());
 		add(topFlap);
-		
+
 		/////////
 		Rectangle topFoldUnder = new Rectangle(FOLD_UNDER_WIDTH, thickness);
 		topFoldUnder.applyTranslation(-1 * FOLD_UNDER_WIDTH, bottom.getHeight() + mainCardBody.getHeight());
@@ -119,32 +127,30 @@ public class CardCase extends CompositeDrawable {
 		back.applyTranslation(-1 * thickness, bottom.getHeight());
 		add(back);
 		
-		ScalableText cardCount = new ScalableText(
-				cardInfo.getStandardCount().toString(), titleFont, 
-				WIDTH, thickness - TEXT_PADDING * 2, thickness, TextAlignment.CENTER, TextAlignment.CENTER);
-		cardCount.disregardDrawOptions();
-		cardCount.applyRotation(Math.PI / 2);
-		cardCount.applyTranslation(0, bottom.getHeight());
-		add(cardCount);
-		
+		cardCountText = new ScalableText(
+				cardInfo.getStandardCount().toString(), titleFont,
+				WIDTH,
+				thickness - TEXT_PADDING * 2 - (this.cardCount / 20.0f), // Bigger text needs more padding
+				thickness, TextAlignment.CENTER, TextAlignment.CENTER);
+		cardCountText.disregardDrawOptions();
+		cardCountText.applyRotation(Math.PI / 2);
+		cardCountText.applyTranslation(0, bottom.getHeight());
+		add(cardCountText);
+
 		/////////
 		Rectangle externalGlueArea = new Rectangle(glueWidth, WIDTH);
 		externalGlueArea.applyTranslation(-1 * back.getWidth() - externalGlueArea.getWidth(), bottom.getHeight());
 		add(externalGlueArea);
 		
 		foldWidth = glueWidth + thickness;
-		
+
 		/////////
 		CardBody upsideDownCardBody = new CardBody(WIDTH, SHOULDER_SIZE, PEEK_HEIGHT);
 		add(upsideDownCardBody);
-		
-		
+
 		// Now apply the CardBody translation since we are finished with it
 		upsideDownCardBody.applyTranslation(0, -1 * upsideDownCardBody.getHeight());
-//		workableArea2.applyRotation(Math.PI);
-//		workableArea2.applyTranslation(workableArea2.getWidth() + glueWidth, 0);
-//		add(workableArea2);
-		
+
 		/////////
 		DisplayableCardInfo backTopFlapCard;
 		if (cardInfo.getSecondaryCardInfo().isPresent()) {
@@ -159,6 +165,28 @@ public class CardCase extends CompositeDrawable {
 		upsideDownTopFlap.applyRotation(Math.PI);
 		upsideDownTopFlap.applyTranslation(upsideDownTopFlap.getWidth(), -1 * upsideDownCardBody.getHeight());
 		add(upsideDownTopFlap);
+	}
+
+	@Override
+	public void draw(ContentStream cStream, EnumSet<DrawOptions> drawOptions) {
+		if (!drawOptions.contains(DrawOptions.LINES_NOT_PATHS)) {
+			super.draw(cStream, drawOptions);
+		}
+
+		cardCountText.draw(cStream, drawOptions);
+
+		// Find the minimum number of lines from all child objects.
+		List<Line> allLines = components.stream()
+				.flatMap(Drawable::getLines)
+				.sorted(Comparator.comparingDouble(Line::getLength).reversed())
+				.collect(Collectors.toList());
+		Set<Line> drawnLines = new HashSet<>();
+		for (Line someLine : allLines) {
+			if (drawnLines.stream().noneMatch(l -> l.contains(someLine))) {
+				someLine.draw(cStream, drawOptions);
+				drawnLines.add(someLine);
+			}
+		}
 	}
 
 	@Override

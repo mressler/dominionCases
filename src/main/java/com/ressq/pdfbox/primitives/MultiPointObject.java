@@ -1,8 +1,6 @@
 package com.ressq.pdfbox.primitives;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Stream;
 import java.util.stream.Stream.Builder;
 
@@ -97,7 +95,8 @@ public class MultiPointObject implements Drawable {
 			new Point(xBounds.getMin(), yBounds.getMin()), 
 			new Point(xBounds.getMax(), yBounds.getMax()));
 	}
-	
+
+	@Override
 	public float getHeight() {
 		return corners.stream()
 					.map(Point::getY)
@@ -105,7 +104,8 @@ public class MultiPointObject implements Drawable {
 							MinMaxHolder.collectThen(mmh -> mmh.getMax() - mmh.getMin())
 					);
 	}
-	
+
+	@Override
 	public float getWidth() {
 		return corners.stream()
 					.map(Point::getX)
@@ -113,12 +113,13 @@ public class MultiPointObject implements Drawable {
 							MinMaxHolder.collectThen(mmh -> mmh.getMax() - mmh.getMin())
 					);
 	}
-	
+
+	@Override
 	public Stream<Line> getLines() {
 		Point from = corners.get(0);
 		Builder<Line> streamBuilder = Stream.builder();
-		for (int i = 1; i < corners.size(); i++) {
-			Point to = corners.get(i);
+		for (int i = 1; i <= corners.size(); i++) {
+			Point to = corners.get(i % corners.size());
 			streamBuilder.add(new Line(from, to));
 			from = to;
 		}

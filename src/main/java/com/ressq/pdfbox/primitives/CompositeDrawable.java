@@ -67,4 +67,8 @@ public abstract class CompositeDrawable implements Drawable {
 		return bbox.y.getY() - bbox.x.getY();
 	}
 
+	@Override
+	public Stream<Line> getLines() {
+		return components.stream().flatMap(Drawable::getLines);
+	}
 }

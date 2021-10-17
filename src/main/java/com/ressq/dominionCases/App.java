@@ -96,6 +96,7 @@ public class App {
 		// TODO: Possession text cuts on the second page. What to do about text that cuts on the second and not the first?
 		
 		try {
+			System.out.println(fileName);
 			masterDoc.save(fileName);
 			masterDoc.close();
 		} catch (IOException e) {
