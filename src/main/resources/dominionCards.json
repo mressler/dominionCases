@@ -1,10 +1,12 @@
 { 
 	"sets" : {
 		"0" : {
-			"name" : "Setup"
+			"name" : "Setup",
+			"imageName" : "Dominion"
 		},
 		"1" : {
 			"name" : "Basic",
+			"imageName" : "Dominion",
 			"releaseDate" : "10/2008"
 		},
 		"2" : {
@@ -37,6 +39,7 @@
 		},
 		"9" : {
 			"name" : "Dark Ages",
+			"imageName" : "Dark_Ages",
 			"releaseDate" : "8/23/2017"
 		},
 		"10" : {
@@ -45,10 +48,12 @@
 		},
 		"11" : {
 			"name" : "Basic - 2nd Edition",
+			"imageName" : "Dominion",
 			"releaseDate" : "8/10/2016"
 		},
 		"12" : {
 			"name" : "Intrigue - 2nd Edition",
+			"imageName" : "Intrigue",
 			"releaseDate" : "8/9/2016"
 		},
 		"13" : {

@@ -177,20 +177,29 @@ public class App {
 				loadImageResource(masterDoc, "potion.png"),
 				loadImageResource(masterDoc, "debt.png"),
 				loadImageResource(masterDoc, "victory.png"));
+
+			for (String s : Arrays.asList(
+					"Adventures",
+					"Alchemy",
+					"Cornucopia",
+					"Dark_Ages",
+					"Dominion",
+					"Empires",
+					"Guilds",
+					"Hinterlands",
+					"Intrigue",
+					"Menagerie",
+					"Nocturne",
+					"Promo",
+					"Prosperity",
+					"Renaissance",
+					"Seaside"
+			)) {
+				System.out.println(s);
+				imageRepo.registerExpansion(s, loadImageResource(masterDoc, "expansions/" + s + ".png"));
+			}
 		} catch (IOException e) {
 			throw new RuntimeException(e);
-		}
-	}
-
-	@SuppressWarnings("unused")
-	private static void readRegistrationMarks() throws IOException {
-		try (PDDocument regsDoc = PDDocument.load(new File("regMarks.pdf"))) {
-			int pageNum = 0;
-			PDFStreamLogger pdfLogger = new PDFStreamLogger();
-			for(PDPage page : regsDoc.getPages()) {
-				System.out.println("Processing page " + pageNum);
-				pdfLogger.processPage(page);
-			}
 		}
 	}
 

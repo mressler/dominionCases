@@ -65,6 +65,8 @@ public class CardDatabase {
 	}
 	
 	public void postConstruct() {
+		cards.stream().forEach(c -> c.postConstruct(setsById));
+
 		groupAs.stream().forEach(ga -> ga.postConstruct(getMapToInfo()));
 		
 		cards.stream()

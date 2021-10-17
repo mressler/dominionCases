@@ -1,6 +1,8 @@
 package com.ressq.dominionCases;
 
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
@@ -16,6 +18,7 @@ public class DominionImageRepository implements TextElementFactory {
 	private PDImageXObject potionImage;
 	private PDImageXObject debtImage;
 	private PDImageXObject victoryImage;
+	private Map<String, PDImageXObject> expansions;
 	
 	public DominionImageRepository(
 		PDImageXObject coinImage, 
@@ -27,6 +30,16 @@ public class DominionImageRepository implements TextElementFactory {
 		this.potionImage = potionImage;
 		this.debtImage = debtImage;
 		this.victoryImage = victoryImage;
+
+		this.expansions = new HashMap<>();
+	}
+
+	public void registerExpansion(String expansionName, PDImageXObject image) {
+		expansions.put(expansionName, image);
+	}
+
+	public PDImageXObject getExpansion(String expansionName) {
+		return expansions.get(expansionName);
 	}
 	
 	@Override

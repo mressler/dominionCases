@@ -1,5 +1,6 @@
 package com.ressq.dominionCases.dto;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -82,4 +83,11 @@ public class CardGrouping implements DisplayableCardInfo {
 		return null;
 	}
 
+	@Override
+	public Set<String> getCardSets() {
+		return allCardInfo.stream()
+				.map(CardInfo::getCardSets)
+				.flatMap(Collection::stream)
+				.collect(Collectors.toSet());
+	}
 }

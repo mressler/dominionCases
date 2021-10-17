@@ -86,4 +86,8 @@ public class CompoundCardInfo implements DisplayableCardInfo {
 		return predicate.test(primary);
 	}
 
+	@Override
+	public Set<String> getCardSets() {
+		return primary.getCardSets();
+	}
 }

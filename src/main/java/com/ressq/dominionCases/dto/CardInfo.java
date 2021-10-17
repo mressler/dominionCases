@@ -1,6 +1,9 @@
 package com.ressq.dominionCases.dto;
 
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -52,6 +55,8 @@ public class CardInfo implements DisplayableCardInfo {
 	private Integer standardCount;
 	private Boolean excludeFromSupply;
 	private String groupWith;
+
+	private String setImageName;
 	
 	public CardInfo() {}
 	public CardInfo(String name, int count) {
@@ -62,6 +67,10 @@ public class CardInfo implements DisplayableCardInfo {
 	@Override
 	public String toString() {
 		return name;
+	}
+
+	public void postConstruct(Map<Integer, CardSet> setIdLookup) {
+		setSetImageName(setIdLookup.get(getSetId()).getImageName());
 	}
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -394,6 +403,19 @@ public class CardInfo implements DisplayableCardInfo {
 	
 	public void setGroupWith(String groupWith) {
 		this.groupWith = groupWith;
+	}
+
+	public Optional<String> getSetImageName() {
+		return Optional.ofNullable(setImageName);
+	}
+
+	@Override
+	public Set<String> getCardSets() {
+		return getSetImageName().map(Set::of).orElseGet(() -> Set.of());
+	}
+
+	public void setSetImageName(String setImageName) {
+		this.setImageName = setImageName;
 	}
 	
 }

@@ -5,7 +5,19 @@
   <groupId>com.ressq</groupId>
   <artifactId>dominionCases</artifactId>
   <version>0.0.1</version>
-  <packaging>jar</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <packaging>jar</packaging>
 
   <name>dominionCases</name>
   <url>http://maven.apache.org</url>
