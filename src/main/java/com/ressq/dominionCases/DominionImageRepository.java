@@ -59,10 +59,8 @@ public class DominionImageRepository implements TextElementFactory {
 				} else if ("v".equalsIgnoreCase(comparison)) {
 					image = victoryImage;
 				}
-				
-				float newWidth = height * image.getWidth() / image.getHeight();
-				
-				return new ImageWithCenteredText(centeredText, fontColor, image, newWidth, height);
+
+				return new ImageWithCenteredText(centeredText, fontColor, image, height);
 			});
 	}
 	

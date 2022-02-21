@@ -40,35 +40,31 @@ public class TopFlap extends CompositeDrawable {
 		Integer cardDebt = cardInfo.getDebt();
 		
 		float usedImageWidth = 0;
-		
-		float coinWidth = height - IMAGE_PADDING * 2;
-		float coinHeight = coinWidth;
+		float imageHeight = height - IMAGE_PADDING * 2;
 		
 		if (cardCost != null) {
-			Image coin = new ImageWithCenteredText(cardCost.toString(), Color.BLACK, imageRepo.getCoinImage(), coinWidth, coinHeight);
-			coin.applyTranslation(height,  (height - coinHeight) / 2);
+			Image coin = new ImageWithCenteredText(cardCost.toString(), Color.BLACK, imageRepo.getCoinImage(), imageHeight);
+			coin.applyTranslation(height,  (height - imageHeight) / 2);
 			add(coin);
 			
-			usedImageWidth += coinWidth;
+			usedImageWidth += coin.getWidth();
 		}
 		
 		if ((cardInfo.getPotion() != null) && cardInfo.getPotion()) {
 			PDImageXObject potion = imageRepo.getPotionImage();
-			float potionWidth = coinHeight * potion.getWidth() / potion.getHeight();
-			Image potionImg = new Image(potion, potionWidth, coinHeight);
-			potionImg.applyTranslation(height + usedImageWidth, (height - coinHeight) / 2);
+			Image potionImg = new Image(potion, imageHeight);
+			potionImg.applyTranslation(height + usedImageWidth, (height - imageHeight) / 2);
 			add(potionImg);
 			
-			usedImageWidth += potionWidth;
+			usedImageWidth += potionImg.getWidth();
 		}
 		
 		if (cardDebt != null) {
-			float debtWidth = coinHeight;
-			Image debt = new ImageWithCenteredText(cardDebt.toString(), Color.WHITE, imageRepo.getDebtImage(), debtWidth, coinHeight);
-			debt.applyTranslation(height + usedImageWidth, (height - coinHeight) / 2);
+			Image debt = new ImageWithCenteredText(cardDebt.toString(), Color.WHITE, imageRepo.getDebtImage(), imageHeight);
+			debt.applyTranslation(height + usedImageWidth, (height - imageHeight) / 2);
 			add(debt);
 			
-			usedImageWidth += debtWidth;
+			usedImageWidth += debt.getWidth();
 		}
 		
 		ScalableText title = new ScalableText(

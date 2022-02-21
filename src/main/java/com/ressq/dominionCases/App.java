@@ -195,7 +195,6 @@ public class App {
 					"Renaissance",
 					"Seaside"
 			)) {
-				System.out.println(s);
 				imageRepo.registerExpansion(s, loadImageResource(masterDoc, "expansions/" + s + ".png"));
 			}
 		} catch (IOException e) {

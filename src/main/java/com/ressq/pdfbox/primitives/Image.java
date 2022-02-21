@@ -12,12 +12,12 @@ public class Image extends BottomLeftAware {
 	private float width;
 	private float height;
 	
-	private PDImageXObject coinImage;
+	private PDImageXObject image;
 	
-	public Image(PDImageXObject coinImage, float width, float height) {
-		this.coinImage = coinImage;
-		this.width = width;
+	public Image(PDImageXObject image, float height) {
+		this.image = image;
 		this.height = height;
+		this.width = height * image.getWidth() / image.getHeight();
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class Image extends BottomLeftAware {
 			return;
 		}
 		
-		cStream.drawImage(coinImage, theta, bottomLeft.getX(), bottomLeft.getY(), width, height);
+		cStream.drawImage(image, theta, bottomLeft.getX(), bottomLeft.getY(), width, height);
 	}
 
 	@Override

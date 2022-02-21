@@ -8,6 +8,7 @@ import static com.ressq.dominionCases.shapes.Card.inchesToPixels;
 import com.ressq.pdfbox.helpers.ContentStream;
 import com.ressq.pdfbox.helpers.DrawOptions;
 import com.ressq.pdfbox.primitives.Drawable;
+import com.ressq.pdfbox.primitives.Image;
 import com.ressq.pdfbox.primitives.Line;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
@@ -109,6 +110,18 @@ public class  CardCase extends CompositeDrawable {
 			TEXT_PADDING, 
 			bottom.getHeight() + mainCardBody.getHeight() + TEXT_PADDING);
 		add(topText);
+
+		cardInfo.getCardSets().stream()
+				.map(imageRepo::getExpansion)
+				.forEach(pdx -> {
+					Image setImage = new Image(pdx, topText.getHeight());
+					setImage.moveTo(top);
+					setImage.applyTranslation(
+							TextAlignment.RIGHT.getStartingX(top.getWidth(), setImage.getWidth()) - TEXT_PADDING,
+							TextAlignment.CENTER.getStartingX(top.getHeight(), setImage.getHeight())
+					);
+					add(setImage);
+				});
 		
 		/////////
 		TopFlap topFlap = new TopFlap(

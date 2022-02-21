@@ -21,17 +21,16 @@ public class ImageWithCenteredText extends Image {
 	public ImageWithCenteredText(
 		String text, 
 		Color fontColor,
-		PDImageXObject coinImage, 
-		float width, 
+		PDImageXObject coinImage,
 		float height) 
 	{
-		super(coinImage, width, height);
+		super(coinImage, height);
 		
 		int fontSize = FontInfo.getFontSizeToScaleToHeight(PDType1Font.TIMES_BOLD, height / 2);
 		
 		centeredText = new BasicText(text, PDType1Font.TIMES_BOLD, fontSize);
-		float startingX = TextAlignment.CENTER.getStartingX(width, centeredText.getWidth());
-		float startingY = TextAlignment.CENTER.getStartingX(height, centeredText.getHeight());
+		float startingX = TextAlignment.CENTER.getStartingX(getWidth(), centeredText.getWidth());
+		float startingY = TextAlignment.CENTER.getStartingX(getHeight(), centeredText.getHeight());
 		centeredText.applyTranslation(startingX, startingY);
 		
 		this.fontColor = fontColor;

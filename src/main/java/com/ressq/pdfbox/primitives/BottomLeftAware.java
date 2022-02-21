@@ -22,7 +22,13 @@ public abstract class BottomLeftAware implements Drawable {
 	@Override
 	public void applyTranslation(float deltaX, float deltaY) {
 		bottomLeft.applyTranslation(deltaX, deltaY);
+	}
 
+	public void moveTo(Drawable otherPoint) {
+		Tuple<Point, Point> boundingBox = otherPoint.getBoundingBox();
+		float minX = Math.min(boundingBox.x.getX(), boundingBox.y.getX());
+		float minY = Math.min(boundingBox.x.getY(), boundingBox.y.getY());
+		this.bottomLeft = new Point(minX, minY);
 	}
 	
 	public Tuple<Point, Point> getBoundingBox() {
