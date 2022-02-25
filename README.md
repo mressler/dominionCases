@@ -6,4 +6,4 @@ They end up looking something like this:
 
 @see [https://imgur.com/gallery/mh31ZyU] for more images.
 
-Check out the PDFs for each expansion [here](https://drive.google.com/drive/folders/1eTTAveEkYSEdwyRX0C164OpVuN_40Ntf?usp=sharing).
+Check out the PDFs for each expansion [here](https://github.com/mressler/dominionCases/releases).
