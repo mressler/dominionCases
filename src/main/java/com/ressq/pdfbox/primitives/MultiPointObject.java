@@ -53,20 +53,20 @@ public class MultiPointObject implements Drawable {
 		
 		allPoints = allPoints.skip(1);
 		allPoints.forEach(cStream::lineTo);
-		
+
 		cStream.closeAndStroke();
 	}
 	
 	private void drawLines(ContentStream cStream) {
 		Point begin = corners.get(0);
 		// WTB Streams? How though?
-		for (int i = 1; i <= corners.size(); i++) {
+		for (int i = 1; i < corners.size(); i++) {
 			Point current = corners.get(i % corners.size());
 			
 			cStream.moveTo(begin);
 			cStream.lineTo(current);
 			cStream.stroke();
-			
+
 			begin = current;
 		}
 	}
