@@ -111,17 +111,23 @@ public class  CardCase extends CompositeDrawable {
 			bottom.getHeight() + mainCardBody.getHeight() + TEXT_PADDING);
 		add(topText);
 
-		cardInfo.getCardSets().stream()
+		List<Image> setImages = cardInfo.getCardSets().stream()
 				.map(imageRepo::getExpansion)
-				.forEach(pdx -> {
-					Image setImage = new Image(pdx, topText.getHeight());
-					setImage.moveTo(top);
-					setImage.applyTranslation(
-							TextAlignment.RIGHT.getStartingX(top.getWidth(), setImage.getWidth()) - TEXT_PADDING,
-							TextAlignment.CENTER.getStartingX(top.getHeight(), setImage.getHeight())
-					);
-					add(setImage);
-				});
+				.map(pdx -> new Image(pdx, topText.getHeight()))
+				.collect(Collectors.toList());
+
+		float setSpaceUsed = 0;
+		for (int i = 0; i < setImages.size(); i++) {
+			Image setImage = setImages.get(i);
+			setImage.moveTo(top);
+			setImage.applyTranslation(
+					TextAlignment.RIGHT.getStartingX(top.getWidth(), setImage.getWidth()) - TEXT_PADDING,
+					TextAlignment.CENTER.getStartingX(top.getHeight(), setImage.getHeight())
+			);
+			setImage.applyTranslation(-1 * setSpaceUsed, 0);
+			setSpaceUsed += setImage.getWidth() + TEXT_PADDING;
+			add(setImage);
+		}
 		
 		/////////
 		TopFlap topFlap = new TopFlap(
